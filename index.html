@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>MacStudy v1.7</title>
+    <title>MacStudy v1.8</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -269,7 +269,7 @@
         .shake-effect { animation: shake 0.5s; }
         @keyframes shake { 0% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } 100% { transform: translateX(0); } }
 
-        /* --- MOBILE RESPONSIVENESS (FIXED) --- */
+        /* --- MOBILE RESPONSIVENESS --- */
         @media (max-width: 768px) {
             #main-window {
                 width: 100%;
@@ -348,7 +348,7 @@
     <div id="main-window">
         <div id="title-bar">
             <div id="close-btn" onclick="quitGame()"></div>
-            <div id="title-text">MacStudy v1.7</div>
+            <div id="title-text">MacStudy v1.8</div>
         </div>
         
         <div id="menu-bar">
@@ -561,7 +561,7 @@
     }
 
     function showHelp() {
-        alert("MacStudy v1.7\n\n1. Pray often.\n2. Always be kind.\n3. Make good choices.\n4. Drink lots of water.\nThat's all the help you are going to get.");
+        alert("MacStudy v1.8\n\n1. Create .json mod files.\n2. Add them to 'modules.json'.\n3. Use File > Open to play.\n\nDirect Link:\n?mod=filename.json");
     }
 
     function loadModule(data) {
@@ -1042,6 +1042,24 @@
         document.getElementById('report-modal').style.display = 'flex';
     }
     function closeReport() { document.getElementById('report-modal').style.display = 'none'; quitGame(); }
+
+    // --- URL PARAMETER HANDLING (NEW) ---
+    function checkUrlParams() {
+        const params = new URLSearchParams(window.location.search);
+        const moduleName = params.get('mod');
+        
+        if (moduleName) {
+            state.selectedFilename = moduleName;
+            // Short delay to ensure UI is ready
+            setTimeout(() => {
+               loadSelectedFile();
+            }, 100);
+        }
+    }
+    
+    // Initialize
+    checkUrlParams();
+
 </script>
 </body>
 </html>
