@@ -1,6 +1,3 @@
-I'll extract the information from the study guide and format it into a valid JSON object for the MacStudy web app.
-
-```json
 {
   "moduleInfo": {
     "title": "The Art of Beatrix Potter: Part Three & Four",
