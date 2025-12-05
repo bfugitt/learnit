@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>MacStudy v1.2</title>
+    <title>MacStudy v1.3</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -81,11 +81,16 @@
         h1 { font-size: 48px; margin: 10px 0 20px 0; text-align: center; letter-spacing: 2px; text-shadow: 2px 2px 0 #ccc; }
         h2 { font-size: 28px; margin: 10px 0; text-align: center; text-decoration: underline; }
 
+        /* MENU GRID FOR BUTTONS */
+        .menu-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;
+        }
+
         .btn {
-            background: #fff; border: 2px solid #000; padding: 10px 30px; margin: 10px;
+            background: #fff; border: 2px solid #000; padding: 10px 10px; 
             font-family: 'VT323', monospace; font-size: 24px; cursor: pointer;
             box-shadow: 3px 3px 0 #000; transition: transform 0.1s, box-shadow 0.1s;
-            min-width: 250px; text-align: center; display: inline-block;
+            width: 200px; text-align: center;
         }
         .btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 #000; }
         .btn:hover { background: #eee; }
@@ -115,9 +120,7 @@
             margin: 10px 20px; background: #fff;
         }
         
-        .file-item {
-            padding: 5px 10px; cursor: pointer; font-size: 20px;
-        }
+        .file-item { padding: 5px 10px; cursor: pointer; font-size: 20px; }
         .file-item:hover { text-decoration: underline; }
         .file-item.selected { background: #000; color: #fff; text-decoration: none; }
 
@@ -145,7 +148,7 @@
         }
         
         .prompt-text { font-size: 28px; margin-bottom: 20px; text-align: center; max-width: 800px; line-height: 1.2; }
-        .main-display { font-size: 36px; font-weight: bold; margin-bottom: 30px; text-align: center; color: #444; }
+        .main-display { font-size: 32px; font-weight: bold; margin-bottom: 30px; text-align: center; color: #444; max-width: 800px;}
 
         .options-grid {
             display: grid; grid-template-columns: 1fr 1fr; gap: 15px;
@@ -156,10 +159,22 @@
             background: #fff; border: 2px solid #000; padding: 12px;
             font-family: 'VT323', monospace; font-size: 24px; cursor: pointer;
             box-shadow: 4px 4px 0 #000; min-height: 60px; line-height: 1.1;
+            display: flex; align-items: center; justify-content: center;
         }
         .option-btn:hover { background: #eee; }
         .option-btn.correct-anim { background: #000; color: #fff; }
         .option-btn.wrong-anim { opacity: 0.5; background: #aaa; text-decoration: line-through; }
+
+        /* TRUE FALSE SPECIFIC */
+        .tf-grid {
+            display: flex; gap: 30px; justify-content: center; width: 100%;
+        }
+        .tf-btn {
+            width: 150px; height: 100px; font-size: 32px; 
+            background: #fff; border: 4px solid #000; box-shadow: 6px 6px 0 #000;
+            cursor: pointer; font-family: 'VT323', monospace;
+        }
+        .tf-btn:active { transform: translate(3px, 3px); box-shadow: 3px 3px 0 #000; }
 
         /* TIMELINE STYLES */
         #timeline-list {
@@ -219,7 +234,7 @@
     <div id="main-window">
         <div id="title-bar">
             <div id="close-btn" onclick="quitGame()"></div>
-            <div id="title-text">MacStudy v1.2</div>
+            <div id="title-text">MacStudy v1.3</div>
         </div>
         
         <div id="menu-bar">
@@ -229,19 +244,25 @@
 
         <div id="content">
 
+            <!-- MENU SCREEN -->
             <div id="menu-screen" class="screen active">
                 <h1>MacStudy</h1>
                 
                 <h2 id="module-title" style="color: #666; font-style: italic;">NO MODULE LOADED</h2>
-                <div style="text-align:center; font-size: 18px; margin-bottom: 20px;">Use FILE > OPEN to load a module</div>
+                <div style="text-align:center; font-size: 18px; margin-bottom: 10px;">Use FILE > OPEN to load a module</div>
 
-                <div style="height: 10px;"></div>
-                <button id="btn-vocab" class="btn" disabled onclick="startGame('vocab')">VOCAB QUIZ</button>
-                <button id="btn-memory" class="btn" disabled onclick="startGame('memory')">MEMORY MATCH</button>
-                <button id="btn-timeline" class="btn" disabled onclick="startGame('timeline')">CHRONOLOGY</button>
-                <button id="btn-quiz" class="btn" disabled onclick="startGame('quiz')">KNOWLEDGE TEST</button>
+                <div class="menu-grid">
+                    <button id="btn-vocab" class="btn" disabled onclick="startGame('vocab')">VOCAB QUIZ</button>
+                    <button id="btn-memory" class="btn" disabled onclick="startGame('memory')">MEMORY MATCH</button>
+                    <button id="btn-timeline" class="btn" disabled onclick="startGame('timeline')">CHRONOLOGY</button>
+                    <button id="btn-quiz" class="btn" disabled onclick="startGame('quiz')">KNOWLEDGE TEST</button>
+                    <button id="btn-gallery" class="btn" disabled onclick="startGame('gallery')">THE GALLERY</button>
+                    <button id="btn-passport" class="btn" disabled onclick="startGame('passport')">PASSPORT</button>
+                    <button id="btn-tf" class="btn" disabled onclick="startGame('truefalse')">FACT OR FICTION</button>
+                </div>
             </div>
 
+            <!-- GAME SCREEN -->
             <div id="game-screen" class="screen">
                 <div id="hud">
                     <span id="score-display">SCORE: 0</span>
@@ -249,18 +270,31 @@
                     <button style="font-family:'VT323'; background:none; border:1px solid #000; cursor:pointer;" onclick="quitGame()">QUIT</button>
                 </div>
 
+                <!-- GENERIC QUIZ UI (Used for Vocab, Quiz, Gallery, Passport) -->
                 <div id="generic-quiz-ui" class="quiz-area" style="display:none;">
                     <div class="prompt-text" id="quiz-prompt">Prompt</div>
                     <div class="main-display" id="quiz-main">Main Item</div>
                     <div class="options-grid" id="quiz-options"></div>
                 </div>
 
+                <!-- TRUE FALSE UI -->
+                <div id="tf-ui" class="quiz-area" style="display:none;">
+                    <div class="prompt-text">FACT OR FICTION?</div>
+                    <div class="main-display" id="tf-statement" style="min-height: 100px; display:flex; align-items:center;">Statement</div>
+                    <div class="tf-grid">
+                        <button class="tf-btn" id="btn-true" onclick="checkTF(true)">TRUE</button>
+                        <button class="tf-btn" id="btn-false" onclick="checkTF(false)">FALSE</button>
+                    </div>
+                </div>
+
+                <!-- TIMELINE UI -->
                 <div id="timeline-ui" class="quiz-area" style="display:none;">
                     <div class="prompt-text">ORDER EVENTS (EARLIEST AT TOP)</div>
                     <div id="timeline-list"></div>
                     <button class="btn" style="margin-top:10px;" onclick="checkTimeline()">CHECK ORDER</button>
                 </div>
 
+                <!-- MEMORY UI -->
                 <div id="memory-ui" class="quiz-area" style="display:none;">
                     <div id="memory-grid"></div>
                 </div>
@@ -268,6 +302,7 @@
                 <div id="feedback-bar"></div>
             </div>
 
+            <!-- FILE PICKER MODAL -->
             <div id="file-picker-modal">
                 <div class="mac-dialog">
                     <div class="dialog-title"><span>SELECT MODULE</span></div>
@@ -282,6 +317,7 @@
                 </div>
             </div>
 
+            <!-- REPORT MODAL -->
             <div id="report-modal">
                 <div id="report-card">
                     <h2>REPORT CARD</h2>
@@ -318,13 +354,12 @@
         isLocked: false
     };
 
-    // --- FILE SYSTEM (UPDATED WITH CACHE BUSTING) ---
+    // --- FILE SYSTEM ---
     async function openFilePicker() {
         document.getElementById('file-picker-modal').style.display = 'flex';
         const list = document.getElementById('file-list-box');
         
         try {
-            // CACHE BUSTER: Added ?v=Date.now() to force fresh load
             const res = await fetch('modules.json?v=' + Date.now());
             if (!res.ok) throw new Error("Could not find modules.json");
             const data = await res.json();
@@ -345,7 +380,6 @@
             div.className = 'file-item';
             div.innerText = mod.name;
             div.onclick = () => {
-                // Deselect others
                 document.querySelectorAll('.file-item').forEach(el => el.classList.remove('selected'));
                 div.classList.add('selected');
                 state.selectedFilename = mod.file;
@@ -356,11 +390,9 @@
 
     async function loadSelectedFile() {
         if (!state.selectedFilename) return;
-        
         document.getElementById('file-picker-modal').style.display = 'none';
         
         try {
-            // CACHE BUSTER: Added ?v=Date.now() here too
             const res = await fetch(state.selectedFilename + '?v=' + Date.now());
             if (!res.ok) throw new Error("File not found");
             const json = await res.json();
@@ -375,24 +407,29 @@
     }
 
     function showHelp() {
-        alert("MacStudy v1.2\n\n1. Create .json mod files.\n2. Add them to 'modules.json'.\n3. Use File > Open to play.");
+        alert("MacStudy v1.3\n\n1. Create .json mod files.\n2. Add them to 'modules.json'.\n3. Use File > Open to play.");
     }
 
     function loadModule(data) {
         state.module = data;
         const info = data.moduleInfo || {};
         
-        // Update Menu Title
         const titleDisplay = document.getElementById('module-title');
         titleDisplay.style.color = "#000";
         titleDisplay.style.fontStyle = "normal";
         titleDisplay.innerText = (info.title || "Untitled Module").toUpperCase();
 
-        // Enable Buttons
-        document.getElementById('btn-vocab').disabled = !data.vocabulary || data.vocabulary.length < 4;
-        document.getElementById('btn-memory').disabled = !data.vocabulary || data.vocabulary.length < 2;
-        document.getElementById('btn-timeline').disabled = !data.timeline || data.timeline.length < 3;
-        document.getElementById('btn-quiz').disabled = !data.quiz || data.quiz.length < 1;
+        // Enable Buttons checks
+        const hasVocab = data.vocabulary && data.vocabulary.length >= 4;
+        document.getElementById('btn-vocab').disabled = !hasVocab;
+        document.getElementById('btn-memory').disabled = !(data.vocabulary && data.vocabulary.length >= 2);
+        document.getElementById('btn-timeline').disabled = !(data.timeline && data.timeline.length >= 3);
+        document.getElementById('btn-quiz').disabled = !(data.quiz && data.quiz.length >= 1);
+        
+        // New Games Checks
+        document.getElementById('btn-gallery').disabled = !(data.artworks && data.artworks.length >= 1);
+        document.getElementById('btn-passport').disabled = !(data.locations && data.locations.length >= 1);
+        document.getElementById('btn-tf').disabled = !(data.trueFalse && data.trueFalse.length >= 1);
     }
 
     // --- GAME ENGINE ---
@@ -421,6 +458,7 @@
         document.getElementById('generic-quiz-ui').style.display = 'none';
         document.getElementById('timeline-ui').style.display = 'none';
         document.getElementById('memory-ui').style.display = 'none';
+        document.getElementById('tf-ui').style.display = 'none';
         document.getElementById('feedback-bar').className = '';
 
         showScreen('game-screen');
@@ -429,6 +467,46 @@
         else if (mode === 'quiz') startQuiz();
         else if (mode === 'timeline') startTimeline();
         else if (mode === 'memory') startMemory();
+        else if (mode === 'gallery') startGallery();
+        else if (mode === 'passport') startPassport();
+        else if (mode === 'truefalse') startTrueFalse();
+    }
+
+    // --- GENERIC QUIZ HANDLERS (Used by multiple modes) ---
+    function checkGeneric(idx, isCorrect, correctText) {
+        const btns = document.querySelectorAll('.option-btn');
+        btns.forEach(b => b.disabled = true);
+        const feedback = document.getElementById('feedback-bar');
+        feedback.classList.add('visible');
+        state.testTotal++;
+        
+        if (isCorrect) {
+            btns[idx].classList.add('correct-anim');
+            feedback.className = 'correct visible'; feedback.innerText = "CORRECT!";
+            state.score += 10; state.testCorrect++;
+            document.getElementById('score-display').innerText = "SCORE: " + state.score;
+            setTimeout(() => {
+                state.currentIdx++;
+                nextRound();
+            }, 1000);
+        } else {
+            btns[idx].classList.add('wrong-anim');
+            feedback.className = 'wrong visible'; feedback.innerText = "WRONG. " + correctText;
+            const win = document.getElementById('game-screen');
+            void win.offsetWidth; win.classList.add('shake-effect');
+            setTimeout(() => {
+                win.classList.remove('shake-effect'); state.currentIdx++;
+                nextRound();
+            }, 2500);
+        }
+    }
+
+    function nextRound() {
+        if (state.gameMode === 'vocab') loadVocabRound();
+        else if (state.gameMode === 'quiz') loadQuizRound();
+        else if (state.gameMode === 'gallery') loadGalleryRound();
+        else if (state.gameMode === 'passport') loadPassportRound();
+        else if (state.gameMode === 'truefalse') loadTrueFalseRound();
     }
 
     // --- VOCAB ENGINE ---
@@ -437,102 +515,162 @@
         document.getElementById('generic-quiz-ui').style.display = 'flex';
         loadVocabRound();
     }
-
     function loadVocabRound() {
         if (state.currentIdx >= state.pool.length) { showReport(); return; }
         const target = state.pool[state.currentIdx];
         const showTerm = Math.random() > 0.5;
-        
         document.getElementById('quiz-prompt').innerText = showTerm ? "DEFINE THIS TERM:" : "IDENTIFY THE TERM:";
         document.getElementById('quiz-main').innerText = showTerm ? target.term.toUpperCase() : `"${target.definition}"`;
-        
         let options = state.module.vocabulary.filter(v => v.term !== target.term).sort(() => 0.5 - Math.random()).slice(0, 3);
         options.push(target);
         state.currentOptions = options.sort(() => 0.5 - Math.random());
-
-        const grid = document.getElementById('quiz-options');
-        grid.innerHTML = '';
-
-        state.currentOptions.forEach((opt, idx) => {
-            const btn = document.createElement('button');
-            btn.className = 'option-btn';
-            btn.innerText = showTerm ? opt.definition : opt.term.toUpperCase();
-            btn.onclick = () => checkVocab(idx, target);
-            if(btn.innerText.length > 60) btn.style.fontSize = "18px";
-            grid.appendChild(btn);
-        });
-        resetFeedback();
+        renderOptions(state.currentOptions.map(o => ({ text: showTerm ? o.definition : o.term.toUpperCase(), isCorrect: o.term === target.term })), target.term + ": " + target.definition);
     }
 
-    function checkVocab(idx, target) {
-        const selected = state.currentOptions[idx];
-        const isCorrect = selected.term === target.term;
-        handleStandardResult(idx, isCorrect, target.term + " / " + target.definition);
-    }
-
-    // --- KNOWLEDGE QUIZ ENGINE ---
+    // --- QUIZ ENGINE ---
     function startQuiz() {
         state.pool = [...state.module.quiz].sort(() => 0.5 - Math.random()).slice(0, 10);
         document.getElementById('generic-quiz-ui').style.display = 'flex';
         loadQuizRound();
     }
-
     function loadQuizRound() {
         if (state.currentIdx >= state.pool.length) { showReport(); return; }
         const qData = state.pool[state.currentIdx];
         document.getElementById('quiz-prompt').innerText = "QUESTION:";
         document.getElementById('quiz-main').innerText = qData.question;
-        state.currentOptions = qData.options.map(o => ({ text: o, isCorrect: o === qData.correctAnswer })).sort(() => 0.5 - Math.random());
-        
+        const opts = qData.options.map(o => ({ text: o, isCorrect: o === qData.correctAnswer })).sort(() => 0.5 - Math.random());
+        renderOptions(opts, qData.correctAnswer);
+    }
+
+    // --- GALLERY ENGINE (NEW) ---
+    function startGallery() {
+        state.pool = [...state.module.artworks].sort(() => 0.5 - Math.random());
+        document.getElementById('generic-quiz-ui').style.display = 'flex';
+        loadGalleryRound();
+    }
+    function loadGalleryRound() {
+        if (state.currentIdx >= state.pool.length) { showReport(); return; }
+        const item = state.pool[state.currentIdx];
+        document.getElementById('quiz-prompt').innerText = "IDENTIFY THE WORK:";
+        document.getElementById('quiz-main').innerText = `"${item.description}"`;
+        // Distractors: other titles
+        let options = state.module.artworks.filter(a => a.title !== item.title).sort(() => 0.5 - Math.random()).slice(0, 3);
+        options.push(item);
+        const finalOpts = options.sort(() => 0.5 - Math.random()).map(o => ({ text: o.title.toUpperCase(), isCorrect: o.title === item.title }));
+        renderOptions(finalOpts, item.title);
+    }
+
+    // --- PASSPORT ENGINE (NEW) ---
+    function startPassport() {
+        state.pool = [...state.module.locations].sort(() => 0.5 - Math.random());
+        document.getElementById('generic-quiz-ui').style.display = 'flex';
+        loadPassportRound();
+    }
+    function loadPassportRound() {
+        if (state.currentIdx >= state.pool.length) { showReport(); return; }
+        const item = state.pool[state.currentIdx];
+        document.getElementById('quiz-prompt').innerText = "WHERE AM I?";
+        document.getElementById('quiz-main').innerText = `"${item.significance}"`;
+        let options = state.module.locations.filter(a => a.name !== item.name).sort(() => 0.5 - Math.random()).slice(0, 3);
+        options.push(item);
+        const finalOpts = options.sort(() => 0.5 - Math.random()).map(o => ({ text: o.name.toUpperCase(), isCorrect: o.name === item.name }));
+        renderOptions(finalOpts, item.name);
+    }
+
+    function renderOptions(optionsArray, correctTextForFeedback) {
         const grid = document.getElementById('quiz-options');
         grid.innerHTML = '';
-        state.currentOptions.forEach((opt, idx) => {
+        const fb = document.getElementById('feedback-bar');
+        fb.className = ''; fb.classList.remove('visible');
+
+        optionsArray.forEach((opt, idx) => {
             const btn = document.createElement('button');
             btn.className = 'option-btn';
             btn.innerText = opt.text;
-            btn.onclick = () => checkQuiz(idx);
+            btn.onclick = () => checkGeneric(idx, opt.isCorrect, correctTextForFeedback);
+            if(btn.innerText.length > 50) btn.style.fontSize = "16px";
             grid.appendChild(btn);
         });
-        resetFeedback();
     }
 
-    function checkQuiz(idx) {
-        const selected = state.currentOptions[idx];
-        const correctOpt = state.currentOptions.find(o => o.isCorrect);
-        handleStandardResult(idx, selected.isCorrect, correctOpt.text);
+    // --- TRUE/FALSE ENGINE (NEW) ---
+    function startTrueFalse() {
+        state.pool = [...state.module.trueFalse].sort(() => 0.5 - Math.random());
+        document.getElementById('tf-ui').style.display = 'flex';
+        loadTrueFalseRound();
+    }
+    function loadTrueFalseRound() {
+        if (state.currentIdx >= state.pool.length) { showReport(); return; }
+        const item = state.pool[state.currentIdx];
+        document.getElementById('tf-statement').innerText = item.statement;
+        
+        document.getElementById('btn-true').className = 'tf-btn';
+        document.getElementById('btn-false').className = 'tf-btn';
+        document.getElementById('btn-true').disabled = false;
+        document.getElementById('btn-false').disabled = false;
+        
+        const fb = document.getElementById('feedback-bar');
+        fb.className = ''; fb.classList.remove('visible');
+    }
+    function checkTF(userSaysTrue) {
+        const item = state.pool[state.currentIdx];
+        const isCorrect = userSaysTrue === item.isTrue;
+        
+        document.getElementById('btn-true').disabled = true;
+        document.getElementById('btn-false').disabled = true;
+        
+        const feedback = document.getElementById('feedback-bar');
+        feedback.classList.add('visible');
+        state.testTotal++;
+
+        if (isCorrect) {
+            feedback.className = 'correct visible'; feedback.innerText = "CORRECT!";
+            state.score += 10; state.testCorrect++;
+            document.getElementById('score-display').innerText = "SCORE: " + state.score;
+            if(userSaysTrue) document.getElementById('btn-true').style.background = "#000"; 
+            else document.getElementById('btn-false').style.background = "#000";
+            if(userSaysTrue) document.getElementById('btn-true').style.color = "#fff"; 
+            else document.getElementById('btn-false').style.color = "#fff";
+            
+            setTimeout(() => {
+                state.currentIdx++; nextRound();
+            }, 1000);
+        } else {
+            feedback.className = 'wrong visible'; 
+            // Show correction if false, or support if true
+            feedback.innerText = item.correction ? item.correction.toUpperCase() : "WRONG.";
+            const win = document.getElementById('game-screen');
+            void win.offsetWidth; win.classList.add('shake-effect');
+            setTimeout(() => {
+                win.classList.remove('shake-effect'); state.currentIdx++; nextRound();
+            }, 3000);
+        }
     }
 
-    // --- TIMELINE ENGINE ---
+
+    // --- TIMELINE & MEMORY (UNCHANGED) ---
     function startTimeline() {
         document.getElementById('timeline-ui').style.display = 'flex';
         state.pool = [...state.module.timeline].sort(() => 0.5 - Math.random()).slice(0, 5);
         renderTimeline();
-        resetFeedback();
+        document.getElementById('feedback-bar').className = '';
     }
-
     function renderTimeline() {
         const list = document.getElementById('timeline-list');
         list.innerHTML = '';
         state.pool.forEach((item, idx) => {
             const row = document.createElement('div');
             row.className = 'timeline-item';
-            row.innerHTML = `
-                <div class="timeline-content">${item.event}</div>
-                <div class="move-controls"><button onclick="moveTimeline(${idx}, -1)">▲</button><button onclick="moveTimeline(${idx}, 1)">▼</button></div>
-            `;
+            row.innerHTML = `<div class="timeline-content">${item.event}</div><div class="move-controls"><button onclick="moveTimeline(${idx}, -1)">▲</button><button onclick="moveTimeline(${idx}, 1)">▼</button></div>`;
             list.appendChild(row);
         });
     }
-
     function moveTimeline(idx, dir) {
         const newIdx = idx + dir;
         if (newIdx < 0 || newIdx >= state.pool.length) return;
-        const temp = state.pool[idx];
-        state.pool[idx] = state.pool[newIdx];
-        state.pool[newIdx] = temp;
+        [state.pool[idx], state.pool[newIdx]] = [state.pool[newIdx], state.pool[idx]];
         renderTimeline();
     }
-
     function checkTimeline() {
         const sorted = [...state.pool].sort((a,b) => a.year - b.year);
         let allCorrect = true;
@@ -540,24 +678,14 @@
         state.pool.forEach((item, idx) => {
             const isPosCorrect = item.year === sorted[idx].year;
             rows[idx].querySelector('.timeline-content').innerText = `${item.year}: ${item.event}`;
-            if (isPosCorrect) rows[idx].classList.add('correct');
-            else allCorrect = false;
+            if (isPosCorrect) rows[idx].classList.add('correct'); else allCorrect = false;
         });
-
-        const fb = document.getElementById('feedback-bar');
-        fb.classList.add('visible');
-        state.testTotal++;
-        if (allCorrect) {
-            fb.className = 'correct visible'; fb.innerText = "PERFECT ORDER!";
-            state.testCorrect++; state.score += 50;
-        } else {
-            fb.className = 'wrong visible'; fb.innerText = "NOT QUITE...";
-        }
+        const fb = document.getElementById('feedback-bar'); fb.classList.add('visible'); state.testTotal++;
+        if (allCorrect) { fb.className = 'correct visible'; fb.innerText = "PERFECT ORDER!"; state.testCorrect++; state.score += 50; } 
+        else { fb.className = 'wrong visible'; fb.innerText = "NOT QUITE..."; }
         document.getElementById('score-display').innerText = "SCORE: " + state.score;
         setTimeout(() => showReport(), 3000);
     }
-
-    // --- MEMORY ENGINE ---
     function startMemory() {
         document.getElementById('memory-ui').style.display = 'flex';
         state.flippedCards = []; state.matchesFound = 0; state.isLocked = false;
@@ -569,84 +697,33 @@
         });
         cards.sort(() => 0.5 - Math.random());
         state.pool = cards;
-        
-        const grid = document.getElementById('memory-grid');
-        grid.innerHTML = '';
+        const grid = document.getElementById('memory-grid'); grid.innerHTML = '';
         cards.forEach((card, idx) => {
-            const div = document.createElement('div');
-            div.className = 'mem-card';
-            div.innerText = card.text;
-            div.dataset.idx = idx;
+            const div = document.createElement('div'); div.className = 'mem-card'; div.innerText = card.text; div.dataset.idx = idx;
             div.onclick = () => flipCard(div, card);
-            if (card.text.length > 50) div.style.fontSize = "12px";
-            else if (card.text.length > 20) div.style.fontSize = "16px";
+            if (card.text.length > 50) div.style.fontSize = "12px"; else if (card.text.length > 20) div.style.fontSize = "16px";
             grid.appendChild(div);
         });
         state.testTotal = pairs.length;
     }
-
     function flipCard(el, cardData) {
         if (state.isLocked || el.classList.contains('flipped') || el.classList.contains('matched')) return;
-        el.classList.add('flipped');
-        state.flippedCards.push({ el, data: cardData });
+        el.classList.add('flipped'); state.flippedCards.push({ el, data: cardData });
         if (state.flippedCards.length === 2) checkForMatch();
     }
-
     function checkForMatch() {
         state.isLocked = true;
         const [c1, c2] = state.flippedCards;
         const isMatch = (c1.data.id === c2.data.id);
         const fb = document.getElementById('feedback-bar');
-        
         if (isMatch) {
-            fb.className = 'correct visible'; fb.innerText = "MATCH FOUND!";
-            state.score += 10; state.matchesFound++;
+            fb.className = 'correct visible'; fb.innerText = "MATCH FOUND!"; state.score += 10; state.matchesFound++;
             document.getElementById('score-display').innerText = "SCORE: " + state.score;
-            setTimeout(() => {
-                c1.el.classList.add('matched'); c2.el.classList.add('matched');
-                state.flippedCards = []; state.isLocked = false; fb.className = '';
-                if (state.matchesFound === state.testTotal) { state.testCorrect = state.testTotal; showReport(); }
-            }, 1000);
+            setTimeout(() => { c1.el.classList.add('matched'); c2.el.classList.add('matched'); state.flippedCards = []; state.isLocked = false; fb.className = ''; if (state.matchesFound === state.testTotal) { state.testCorrect = state.testTotal; showReport(); } }, 1000);
         } else {
             fb.className = 'wrong visible'; fb.innerText = "NO MATCH";
-            setTimeout(() => {
-                c1.el.classList.remove('flipped'); c2.el.classList.remove('flipped');
-                state.flippedCards = []; state.isLocked = false; fb.className = '';
-            }, 1500);
+            setTimeout(() => { c1.el.classList.remove('flipped'); c2.el.classList.remove('flipped'); state.flippedCards = []; state.isLocked = false; fb.className = ''; }, 1500);
         }
-    }
-
-    // --- HELPERS ---
-    function handleStandardResult(idx, isCorrect, correctText) {
-        const btns = document.querySelectorAll('.option-btn');
-        btns.forEach(b => b.disabled = true);
-        const feedback = document.getElementById('feedback-bar');
-        feedback.classList.add('visible');
-        state.testTotal++;
-        if (isCorrect) {
-            btns[idx].classList.add('correct-anim');
-            feedback.className = 'correct visible'; feedback.innerText = "CORRECT!";
-            state.score += 10; state.testCorrect++;
-            document.getElementById('score-display').innerText = "SCORE: " + state.score;
-            setTimeout(() => {
-                state.currentIdx++;
-                if (state.gameMode === 'vocab') loadVocabRound(); else loadQuizRound();
-            }, 1000);
-        } else {
-            btns[idx].classList.add('wrong-anim');
-            feedback.className = 'wrong visible'; feedback.innerText = "WRONG. ANSWER: " + correctText;
-            const win = document.getElementById('game-screen');
-            void win.offsetWidth; win.classList.add('shake-effect');
-            setTimeout(() => {
-                win.classList.remove('shake-effect'); state.currentIdx++;
-                if (state.gameMode === 'vocab') loadVocabRound(); else loadQuizRound();
-            }, 2500);
-        }
-    }
-
-    function resetFeedback() {
-        const fb = document.getElementById('feedback-bar');
-        fb.className = ''; fb.classList.remove('visible');
     }
 
     function showReport() {
@@ -656,11 +733,7 @@
         document.getElementById('report-fraction').innerText = `${state.testCorrect} / ${state.testTotal} Correct`;
         document.getElementById('report-modal').style.display = 'flex';
     }
-
-    function closeReport() {
-        document.getElementById('report-modal').style.display = 'none';
-        quitGame();
-    }
+    function closeReport() { document.getElementById('report-modal').style.display = 'none'; quitGame(); }
 </script>
 </body>
 </html>
