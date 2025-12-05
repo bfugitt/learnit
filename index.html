@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>MacStudy v1.4</title>
+    <title>MacStudy v1.5</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -176,7 +176,7 @@
         }
         .tf-btn:active { transform: translate(3px, 3px); box-shadow: 3px 3px 0 #000; }
 
-        /* HYPERCARD SPECIFIC (NEW) */
+        /* HYPERCARD SPECIFIC */
         .hyper-card {
             width: 100%; max-width: 500px; height: 300px;
             background: #fff; border: 2px solid #000;
@@ -208,6 +208,12 @@
         }
         .nav-btn:active { transform: translate(1px, 1px); box-shadow: 1px 1px 0 #000; }
         .nav-btn:disabled { opacity: 0.3; cursor: default; box-shadow: none; transform: none;}
+
+        .pref-btn {
+            background: #fff; border: 2px solid #000; padding: 5px 15px;
+            font-family: 'VT323'; font-size: 20px; cursor: pointer; box-shadow: 2px 2px 0 #000;
+        }
+        .pref-btn.active { background: #000; color: #fff; }
 
         /* TIMELINE STYLES */
         #timeline-list {
@@ -267,7 +273,7 @@
     <div id="main-window">
         <div id="title-bar">
             <div id="close-btn" onclick="quitGame()"></div>
-            <div id="title-text">MacStudy v1.4</div>
+            <div id="title-text">MacStudy v1.5</div>
         </div>
         
         <div id="menu-bar">
@@ -348,16 +354,23 @@
                 <!-- HYPERCARD MAIN UI -->
                 <div id="hypercard-ui" class="quiz-area" style="display:none;">
                     <div id="card-counter" style="margin-bottom: 5px; font-weight:bold;">CARD 1 / 10</div>
+                    
                     <div id="flash-card" class="hyper-card" onclick="flipHyperCard()">
                         <div class="card-header" id="card-header">TERM</div>
                         <div class="card-body" id="card-content">FRONT TEXT</div>
                     </div>
+
                     <div class="hyper-controls">
                         <button class="nav-btn" onclick="prevCard()">←</button>
                         <button class="nav-btn" onclick="flipHyperCard()">FLIP</button>
                         <button class="nav-btn" onclick="nextCard()">→</button>
                     </div>
-                    <div style="margin-top:10px; font-size: 16px;">(Arrows to Move, Space to Flip)</div>
+
+                    <div style="margin-top: 20px; display: flex; align-items: center; gap: 10px;">
+                        <span>SHOW FIRST:</span>
+                        <button id="pref-btn-front" class="pref-btn active" onclick="setHyperPreference('front')">FRONT (WHITE)</button>
+                        <button id="pref-btn-back" class="pref-btn" onclick="setHyperPreference('back')">BACK (BLACK)</button>
+                    </div>
                 </div>
 
                 <div id="feedback-bar"></div>
@@ -416,7 +429,8 @@
 
         // Hypercard
         hyperStack: [],
-        hyperFlipped: false
+        hyperFlipped: false,
+        hyperPreferredSide: 'front' // 'front' or 'back'
     };
 
     // --- FILE SYSTEM ---
@@ -472,7 +486,7 @@
     }
 
     function showHelp() {
-        alert("MacStudy v1.4\n\n1. Create .json mod files.\n2. Add them to 'modules.json'.\n3. Use File > Open to play.");
+        alert("MacStudy v1.5\n\n1. Create .json mod files.\n2. Add them to 'modules.json'.\n3. Use File > Open to play.");
     }
 
     function loadModule(data) {
@@ -496,7 +510,7 @@
         document.getElementById('btn-passport').disabled = !(data.locations && data.locations.length >= 1);
         document.getElementById('btn-tf').disabled = !(data.trueFalse && data.trueFalse.length >= 1);
         
-        document.getElementById('btn-hyper').disabled = false; // Always enabled if module loaded
+        document.getElementById('btn-hyper').disabled = false;
     }
 
     // --- GAME ENGINE ---
@@ -677,7 +691,6 @@
         
         btnTrue.className = 'tf-btn';
         btnFalse.className = 'tf-btn';
-        // FIX: Explicitly clear inline styles (which were holding the black background)
         btnTrue.style = '';
         btnFalse.style = '';
         
@@ -724,9 +737,8 @@
         }
     }
 
-    // --- HYPERCARD ENGINE (NEW) ---
+    // --- HYPERCARD ENGINE ---
     function startHypercardMenu() {
-        // Switch to game screen but show selector
         state.gameMode = 'hypercard';
         showScreen('game-screen');
         
@@ -742,7 +754,6 @@
         
         document.getElementById('hypercard-selector').style.display = 'flex';
         
-        // Disable invalid stacks
         const d = state.module;
         document.getElementById('stack-vocab').disabled = !(d.vocabulary && d.vocabulary.length > 0);
         document.getElementById('stack-art').disabled = !(d.artworks && d.artworks.length > 0);
@@ -756,7 +767,6 @@
         state.currentIdx = 0;
         state.hyperFlipped = false;
         
-        // Map data to Front/Back format
         if (type === 'vocab') {
             state.hyperStack = state.module.vocabulary.map(i => ({ front: i.term, back: i.definition, title: "VOCABULARY" }));
         } else if (type === 'art') {
@@ -772,9 +782,27 @@
         document.getElementById('hypercard-selector').style.display = 'none';
         document.getElementById('hypercard-ui').style.display = 'flex';
         
-        // Keyboard listeners
         document.addEventListener('keydown', handleHyperKey);
         
+        // Reset to default preference or keep existing? Let's keep existing, but ensure UI matches
+        setHyperPreference(state.hyperPreferredSide);
+        renderCard();
+    }
+
+    function setHyperPreference(side) {
+        state.hyperPreferredSide = side;
+        const btnFront = document.getElementById('pref-btn-front');
+        const btnBack = document.getElementById('pref-btn-back');
+        
+        if (side === 'front') {
+            btnFront.classList.add('active');
+            btnBack.classList.remove('active');
+        } else {
+            btnFront.classList.remove('active');
+            btnBack.classList.add('active');
+        }
+        
+        // Rerender current card to match preference
         renderCard();
     }
 
@@ -785,17 +813,25 @@
         const content = document.getElementById('card-content');
         const counter = document.getElementById('card-counter');
         
-        state.hyperFlipped = false;
+        // Enforce preference
+        state.hyperFlipped = (state.hyperPreferredSide === 'back');
         
         counter.innerText = `CARD ${state.currentIdx + 1} / ${state.hyperStack.length}`;
         header.innerText = item.title;
-        content.innerText = item.front.toUpperCase();
-        content.style.fontSize = item.front.length > 100 ? "18px" : "28px";
         
-        // Visual reset
-        card.style.transform = "rotateY(0deg)";
-        card.style.background = "#fff";
-        card.style.color = "#000";
+        if (state.hyperFlipped) {
+            // BACK
+            card.style.background = "#000";
+            card.style.color = "#fff";
+            content.innerText = item.back.toUpperCase();
+            content.style.fontSize = item.back.length > 100 ? "18px" : "28px";
+        } else {
+            // FRONT
+            card.style.background = "#fff";
+            card.style.color = "#000";
+            content.innerText = item.front.toUpperCase();
+            content.style.fontSize = item.front.length > 100 ? "18px" : "28px";
+        }
     }
 
     function flipHyperCard() {
@@ -805,7 +841,6 @@
         
         state.hyperFlipped = !state.hyperFlipped;
         
-        // Simple flip effect
         if (state.hyperFlipped) {
             card.style.background = "#000";
             card.style.color = "#fff";
