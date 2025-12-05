@@ -1,0 +1,1570 @@
+I'll extract the information from the study guide and format it into a valid JSON object for the MacStudy web app.
+
+```json
+{
+  "moduleInfo": {
+    "title": "The Art of Beatrix Potter: Part Three & Four",
+    "subject": "Fine Arts",
+    "level": "Junior High"
+  },
+  "vocabulary": [
+    {
+      "term": "heather",
+      "definition": "A purple-flowered Eurasian heath that grows abundantly in Western and Northern Europe"
+    },
+    {
+      "term": "mycology",
+      "definition": "A branch of biology dealing with fungi"
+    },
+    {
+      "term": "spores",
+      "definition": "A single-celled reproductive body produced by plants, fungi, and some microorganisms"
+    },
+    {
+      "term": "hybridization",
+      "definition": "The act of producing an offspring of two animals or plants of different breeds or species"
+    },
+    {
+      "term": "lichens",
+      "definition": "Complex plantlike organisms made up of an alga or bacterium and a fungus growing in symbiotic association on a solid surface"
+    },
+    {
+      "term": "Pre-Raphaelite",
+      "definition": "A member of a brotherhood of artists formed in England in 1848 to restore artistic principles characteristic of Italian art before Raphael"
+    },
+    {
+      "term": "custodian",
+      "definition": "One that guards and protects or maintains"
+    },
+    {
+      "term": "seminal",
+      "definition": "Containing or contributing the seeds of later development"
+    },
+    {
+      "term": "amalgamation",
+      "definition": "The action, process, or result of combining or uniting"
+    },
+    {
+      "term": "opaque layering",
+      "definition": "The process of applying multiple layers of opaque materials where underlying layers are completely hidden"
+    },
+    {
+      "term": "verdant",
+      "definition": "Green with vegetation; lush and covered in plants or grass"
+    },
+    {
+      "term": "fauna",
+      "definition": "Animals in a certain region; usually used with flora to mean plants and animals of a given area"
+    },
+    {
+      "term": "cauldron",
+      "definition": "A large kettle or boiler often seen in witch scenes"
+    },
+    {
+      "term": "crones",
+      "definition": "A cruel or ugly old woman"
+    },
+    {
+      "term": "shrouds",
+      "definition": "Something that covers or envelops so as to conceal from view"
+    },
+    {
+      "term": "insomnia",
+      "definition": "Prolonged and usually abnormal inability to get enough sleep"
+    },
+    {
+      "term": "phaeton",
+      "definition": "Any of various light four-wheeled horse-drawn vehicles"
+    },
+    {
+      "term": "tendril",
+      "definition": "A leaf, stipule, or stem modified into a slender spirally coiling sensitive organ for climbing"
+    },
+    {
+      "term": "jaunty",
+      "definition": "Lively in manner or appearance"
+    },
+    {
+      "term": "perplexed",
+      "definition": "Filled with uncertainty, confusing"
+    },
+    {
+      "term": "in situ",
+      "definition": "In the natural or original position or place"
+    },
+    {
+      "term": "curtseys",
+      "definition": "An act of civility or respect made by women consisting of a slight lowering of the body with bending of knees"
+    },
+    {
+      "term": "chides",
+      "definition": "To speak out in angry or displeased rebuke"
+    },
+    {
+      "term": "injudicious",
+      "definition": "Indiscreet, unwise"
+    },
+    {
+      "term": "viscous",
+      "definition": "Having a thick or sticky consistency"
+    },
+    {
+      "term": "striated",
+      "definition": "Marked with striations or stripes"
+    },
+    {
+      "term": "strath",
+      "definition": "A flat wide river valley or the low-lying grassland along it"
+    },
+    {
+      "term": "gills",
+      "definition": "The radiating plates forming the undersurface of the cap of a mushroom fungus"
+    },
+    {
+      "term": "longitudinal",
+      "definition": "Running or cut lengthwise"
+    },
+    {
+      "term": "cross-section",
+      "definition": "A cutting or piece of something cut off at right angles to an axis to see the innards"
+    },
+    {
+      "term": "delineates",
+      "definition": "To mark the outline of"
+    },
+    {
+      "term": "chagrin",
+      "definition": "Distress of mind caused by humiliation, disappointment, or failure"
+    },
+    {
+      "term": "exasperating",
+      "definition": "Causing strong feelings of irritation or annoyance"
+    },
+    {
+      "term": "demarcation",
+      "definition": "Something that marks or constitutes a boundary"
+    },
+    {
+      "term": "crimson",
+      "definition": "Any of several deep purplish reds"
+    },
+    {
+      "term": "tawny",
+      "definition": "Of a warm sandy color"
+    },
+    {
+      "term": "quarries",
+      "definition": "An open excavation site"
+    },
+    {
+      "term": "monochrome",
+      "definition": "A painting, drawing, or photograph in a single hue using only different shades"
+    },
+    {
+      "term": "juxtapositions",
+      "definition": "The act of placing two or more things side by side to compare, contrast, or create an interesting effect"
+    },
+    {
+      "term": "mycelium",
+      "definition": "The vegetative part of a fungus, essentially the root system of a mushroom"
+    },
+    {
+      "term": "asci",
+      "definition": "The membranous oval or tubular spore case"
+    },
+    {
+      "term": "dubious",
+      "definition": "Hesitating or doubting"
+    },
+    {
+      "term": "symbiosis",
+      "definition": "The living together in close union of two dissimilar organisms"
+    },
+    {
+      "term": "coalesce",
+      "definition": "Come together to form one mass or whole"
+    },
+    {
+      "term": "commemoration",
+      "definition": "The act of calling to remembrance"
+    },
+    {
+      "term": "endeavors",
+      "definition": "Activity directed towards a goal"
+    },
+    {
+      "term": "intricate",
+      "definition": "Having many complexly interrelating parts or elements"
+    },
+    {
+      "term": "industrious",
+      "definition": "Constantly, regularly, or habitually active or occupied; busy with important work"
+    },
+    {
+      "term": "bespectacled",
+      "definition": "Wearing spectacles or eyeglasses"
+    },
+    {
+      "term": "imbued",
+      "definition": "To permeate or endow"
+    },
+    {
+      "term": "prolifically",
+      "definition": "Marked by abundant inventiveness or productivity in creation or reproduction"
+    },
+    {
+      "term": "solicitor",
+      "definition": "A qualified legal professional who provides legal advice and representation in property transactions"
+    },
+    {
+      "term": "tersely",
+      "definition": "Using few words, devoid of superfluity, short"
+    },
+    {
+      "term": "inclement",
+      "definition": "Physically severe, very stormy"
+    },
+    {
+      "term": "panoramic",
+      "definition": "Showing a full or wide view"
+    },
+    {
+      "term": "opaque",
+      "definition": "Blocking passage of radiant energy and especially light; not see-through at all"
+    },
+    {
+      "term": "pervades",
+      "definition": "To become diffused throughout every part of"
+    },
+    {
+      "term": "ornately",
+      "definition": "Elaborately or excessively decorated"
+    },
+    {
+      "term": "transcended",
+      "definition": "To go beyond, rise above, or surpass something, often a limit or boundary"
+    },
+    {
+      "term": "mischievous",
+      "definition": "Able or tending to cause annoyance, trouble, or minor injury"
+    },
+    {
+      "term": "cheeky",
+      "definition": "Boldly rude, impudent, or disrespectful in usually a playful or appealing way"
+    },
+    {
+      "term": "propel",
+      "definition": "To drive forward or onward by or as if by means of a force that imparts motion"
+    },
+    {
+      "term": "precarious",
+      "definition": "Lack of security or stability"
+    },
+    {
+      "term": "inscribed",
+      "definition": "To write, engrave, or print as a lasting record"
+    },
+    {
+      "term": "tabby cat",
+      "definition": "A domestic cat with a striped and mottled coat"
+    },
+    {
+      "term": "handkins",
+      "definition": "Shortened form of handkerchiefs"
+    },
+    {
+      "term": "pinny",
+      "definition": "Short for pinafore, a sleeveless garment worn as an apron or dress"
+    },
+    {
+      "term": "vicar",
+      "definition": "A member of the clergy in charge of a parish"
+    },
+    {
+      "term": "petticoat",
+      "definition": "An undergarment worn under a skirt or dress by women, girls, or young children"
+    },
+    {
+      "term": "pastoral",
+      "definition": "Of or relating to the countryside"
+    },
+    {
+      "term": "sarcastic",
+      "definition": "A sharp and often satirical or ironic utterance designed to cut or give pain"
+    },
+    {
+      "term": "awry",
+      "definition": "In a turned or twisted position or direction"
+    },
+    {
+      "term": "stickleback",
+      "definition": "Small scaleless bony fishes having two or more free spines in front of the fin"
+    },
+    {
+      "term": "mackintosh",
+      "definition": "A waterproof raincoat"
+    },
+    {
+      "term": "frontispiece",
+      "definition": "An illustration preceding and usually facing the title page of a book"
+    },
+    {
+      "term": "creel",
+      "definition": "A wicker basket as for carrying newly caught fish"
+    },
+    {
+      "term": "inlet",
+      "definition": "A bay or recess in the shore of a sea, lake, or river"
+    },
+    {
+      "term": "engrossed",
+      "definition": "To take or engage the whole attention of; occupy completely"
+    },
+    {
+      "term": "larder",
+      "definition": "A place where food is stored; pantry"
+    },
+    {
+      "term": "geraniums",
+      "definition": "Plants having regular usually white, pink, or purple flowers with elongated styles"
+    },
+    {
+      "term": "appropriated",
+      "definition": "To set apart for or assign to a particular purpose or use"
+    },
+    {
+      "term": "pomeranians",
+      "definition": "Any of a breed of long-haired compact toy dogs with a soft dense undercoat"
+    },
+    {
+      "term": "ruff",
+      "definition": "A fringe or frill of long hairs or feathers growing around or on the neck of an animal"
+    },
+    {
+      "term": "gestural",
+      "definition": "Characterized by vigorous application of paint and expressive brushwork"
+    },
+    {
+      "term": "flagstone",
+      "definition": "A hard stone with uniform internal layers that split easily into flat pieces suitable for paving"
+    },
+    {
+      "term": "lax",
+      "definition": "Not stringent or strict"
+    },
+    {
+      "term": "warren",
+      "definition": "A place legally authorized for keeping small game"
+    },
+    {
+      "term": "sheaves",
+      "definition": "A quantity of the stalks or other plant material bound together"
+    },
+    {
+      "term": "copse",
+      "definition": "A thicket, grove, or growth of small trees"
+    },
+    {
+      "term": "plein air",
+      "definition": "Of or relating to painting in outdoor daylight"
+    },
+    {
+      "term": "inundated",
+      "definition": "Overwhelm; to cover with a flood"
+    },
+    {
+      "term": "pinafores",
+      "definition": "A sleeveless usually low-necked garment fastened in the back and worn as an apron or dress"
+    },
+    {
+      "term": "meanders",
+      "definition": "To follow a winding or intricate course"
+    },
+    {
+      "term": "sooty",
+      "definition": "Of the color of soot, the product of burnt wood"
+    },
+    {
+      "term": "infestation",
+      "definition": "To spread or swarm in or over in a troublesome manner"
+    },
+    {
+      "term": "balustrades",
+      "definition": "A row of poles to protect one from falling down stairs, topped by a rail"
+    },
+    {
+      "term": "ornithological",
+      "definition": "A branch of zoology dealing with birds"
+    },
+    {
+      "term": "surrogate",
+      "definition": "One appointed to act in place of another"
+    },
+    {
+      "term": "naïve",
+      "definition": "Deficient in worldly wisdom or informed judgment"
+    },
+    {
+      "term": "oblivious",
+      "definition": "Lacking active conscious knowledge or awareness"
+    },
+    {
+      "term": "fragment",
+      "definition": "A part broken off, detached, or incomplete"
+    },
+    {
+      "term": "repose",
+      "definition": "A state of resting"
+    },
+    {
+      "term": "cherubs",
+      "definition": "An innocent-looking usually chubby and rosy angel"
+    },
+    {
+      "term": "anecdotes",
+      "definition": "A usually short narrative of an interesting, amusing, or biographical incident"
+    },
+    {
+      "term": "affinity",
+      "definition": "An attraction to or liking for something"
+    },
+    {
+      "term": "voracious",
+      "definition": "Having a huge appetite"
+    },
+    {
+      "term": "admonition",
+      "definition": "Gentle or friendly rebuke"
+    },
+    {
+      "term": "harkened",
+      "definition": "To bring to mind something in the past"
+    },
+    {
+      "term": "rein",
+      "definition": "Restraining influence"
+    },
+    {
+      "term": "ambiguous",
+      "definition": "Capable of being understood in two or more possible ways"
+    },
+    {
+      "term": "nocturnal",
+      "definition": "Active at night"
+    },
+    {
+      "term": "vicious",
+      "definition": "Dangerously aggressive"
+    },
+    {
+      "term": "scuffle",
+      "definition": "A short confused fight at close quarters"
+    },
+    {
+      "term": "vernacular",
+      "definition": "The normal spoken form of a language in a certain area"
+    },
+    {
+      "term": "endemic",
+      "definition": "Restricted or peculiar to a locality or region"
+    },
+    {
+      "term": "caravan",
+      "definition": "A company of travelers on a journey"
+    },
+    {
+      "term": "derived",
+      "definition": "Obtained something from"
+    },
+    {
+      "term": "annotated",
+      "definition": "Provided with explanatory notes or comments"
+    },
+    {
+      "term": "stiles",
+      "definition": "An arrangement of steps that allows people but not animals to climb over a fence or wall"
+    },
+    {
+      "term": "grange",
+      "definition": "A country house with farm buildings attached"
+    },
+    {
+      "term": "hamper",
+      "definition": "A large basket usually with a cover for packing, storing, or transporting articles"
+    },
+    {
+      "term": "lamented",
+      "definition": "Mourned for, strong desire of missing something or someone"
+    },
+    {
+      "term": "profundity",
+      "definition": "The state of being profound or deep"
+    },
+    {
+      "term": "chimneypiece",
+      "definition": "An ornamental construction over and around a fireplace that includes the mantel"
+    },
+    {
+      "term": "damask",
+      "definition": "A grayish red"
+    },
+    {
+      "term": "espaliers",
+      "definition": "A fruit tree or ornamental shrub whose branches are trained to grow flat against a wall"
+    },
+    {
+      "term": "vista",
+      "definition": "A distant view"
+    },
+    {
+      "term": "noncommittal",
+      "definition": "Giving no clear indication of attitude or feeling"
+    },
+    {
+      "term": "poplars",
+      "definition": "Any of a genus of slender catkin-bearing quick-growing deciduous trees of the willow family"
+    },
+    {
+      "term": "keen",
+      "definition": "Very enthusiastic or excited about"
+    },
+    {
+      "term": "palette",
+      "definition": "A particular range, quality, or use of color"
+    },
+    {
+      "term": "indulgent",
+      "definition": "Willing to allow excessive leniency, generosity, or consideration"
+    },
+    {
+      "term": "rubbish",
+      "definition": "British for trash, waste, or garbage"
+    },
+    {
+      "term": "dummy manuscript",
+      "definition": "A quick version of an illustrated book to show layout and positioning of text and illustrations"
+    },
+    {
+      "term": "soporific",
+      "definition": "Causing or tending to cause sleep"
+    },
+    {
+      "term": "aura",
+      "definition": "A distinctive atmosphere surrounding a given source"
+    },
+    {
+      "term": "embodiments",
+      "definition": "To make concrete and perceptible"
+    },
+    {
+      "term": "incongruous",
+      "definition": "Not harmonious, inconsistent within itself"
+    },
+    {
+      "term": "frailty",
+      "definition": "A fault due to weakness especially of moral character"
+    },
+    {
+      "term": "melancholic",
+      "definition": "Depression of spirits"
+    },
+    {
+      "term": "anti-saccharine",
+      "definition": "Not overly sweet or sentimental"
+    },
+    {
+      "term": "fruition",
+      "definition": "Realization, to come to being"
+    }
+  ],
+  "timeline": [
+    {
+      "year": 1875,
+      "event": "Beatrix Potter created a pencil and watercolor painting of Dalguise gardens"
+    },
+    {
+      "year": 1882,
+      "event": "Potter family's July holiday to Wray Castle; Beatrix toured Hawkshead including Hawkshead Hall"
+    },
+    {
+      "year": 1883,
+      "event": "Miss Cameron stopped giving art lessons to Beatrix after she surpassed Cameron's abilities"
+    },
+    {
+      "year": 1885,
+      "event": "Potter family first rented Lingholm Estate for summer holiday; Beatrix noted lively red squirrels in the woods"
+    },
+    {
+      "year": 1890,
+      "event": "Beatrix Potter painted Fly agaric, showing growing sophistication in rendering texture"
+    },
+    {
+      "year": 1892,
+      "event": "Potter painted Velvet Shank fungi; First meeting between Beatrix Potter and Charles McIntosh on October 29"
+    },
+    {
+      "year": 1893,
+      "event": "Beatrix Potter wrote picture letter featuring Mr. Jeremy Fisher to Eric Moore; First stay at Eastwood in Dunkeld with mycology as main focus"
+    },
+    {
+      "year": 1894,
+      "event": "Potter family's last summer in Scotland at Lennel House; Potter painted Parrot Toadstool and Spike Cap"
+    },
+    {
+      "year": 1896,
+      "event": "Beatrix and Uncle Henry Roscoe visited Royal Botanic Gardens at Kew in May"
+    },
+    {
+      "year": 1898,
+      "event": "Potter painted 'Rain: August in the Lake District' at Lingholm; Continued scientific research through at least this year"
+    },
+    {
+      "year": 1899,
+      "event": "Potter created 'A Dream of Toasted Cheese' for Uncle Henry Roscoe"
+    },
+    {
+      "year": 1900,
+      "event": "Potter began developing The Tale of Squirrel Nutkin in letters to Noel and Norah Moore; Wrote to Moore girls about publisher responses and Easter holiday"
+    },
+    {
+      "year": 1902,
+      "event": "Success of Peter Rabbit; Potter bought back Mr. Jeremy Fisher drawings from Nister"
+    },
+    {
+      "year": 1903,
+      "event": "Potter worked on three books in Hastings; Painted characters and created studies for Benjamin Bunny at Fawe Park; Painted tabby cat study"
+    },
+    {
+      "year": 1904,
+      "event": "The Tale of Benjamin Bunny published with simple plot; Onion studies completed"
+    },
+    {
+      "year": 1905,
+      "event": "Norman Warne proposed to Beatrix; Potter family stayed at Hafod-Y-Bryn in Llanbedr; Norman Warne died during this summer; The Tale of Mrs. Tiggy-Winkle period"
+    },
+    {
+      "year": 1909,
+      "event": "Potter created 'Autumnal Landscape' with bold, modern brushstrokes"
+    },
+    {
+      "year": 1910,
+      "event": "After this year, Potter's art and writing decreased due to farm management and caring for parents"
+    },
+    {
+      "year": 1912,
+      "event": "Potter became ill, likely from balancing Potter household and farm responsibilities"
+    },
+    {
+      "year": 1913,
+      "event": "Beatrix Potter married William Heelis; The Tale of Pigling Bland published"
+    },
+    {
+      "year": 1922,
+      "event": "Charles McIntosh included 25 fungi drawings by Potter in his bequest to Perth Museum"
+    },
+    {
+      "year": 1967,
+      "event": "W.P.K. Findlay used 59 Potter illustrations for fungi volume of Wayside and Woodland series"
+    },
+    {
+      "year": 1978,
+      "event": "Scottish mycologist Dr. Mary Noble positively attributed Perth Museum fungi drawings to Potter"
+    }
+  ],
+  "artworks": [
+    {
+      "title": "Fly agaric",
+      "medium": "Watercolor",
+      "description": "A fungi painting from 1890 showing growing sophistication in rendering texture"
+    },
+    {
+      "title": "Velvet Shank",
+      "medium": "Watercolor",
+      "description": "Depicts fungi at full growth during winter with tiered clusters, dark velvet transitioning to creamy pale-yellow and golden-orange caps"
+    },
+    {
+      "title": "Old man of the woods",
+      "medium": "Watercolor",
+      "description": "Depicts Strobilomyces strobilaceus fungus that resembles a pinecone"
+    },
+    {
+      "title": "Parrot Toadstool",
+      "medium": "Watercolor",
+      "description": "Small fungi with vivid green waxy cap, showing longitudinal cross-sections revealing yellow-green gills and hollow stem, painted in 1894"
+    },
+    {
+      "title": "Cantharellula umbonata",
+      "medium": "Watercolor",
+      "description": "A fungi rendering with troublesome gills that Potter found rather successful"
+    },
+    {
+      "title": "Orange peel fungus",
+      "medium": "Watercolor",
+      "description": "A fungi watercolor with distinctive bright coloring"
+    },
+    {
+      "title": "Red Riding Hood meets the Wolf",
+      "medium": "Ink and wash",
+      "description": "Features mushrooms in the foreground right, incorporating Potter's mycology knowledge"
+    },
+    {
+      "title": "A Dream of Toasted Cheese",
+      "medium": "Watercolor",
+      "description": "Thank-you card for Uncle Henry showing industrious mice in science lab, one reading chemistry textbook with NH3 reference"
+    },
+    {
+      "title": "Toads' Tea Party",
+      "medium": "Watercolor",
+      "description": "Features personified toadstool mushrooms used as seats for frogs"
+    },
+    {
+      "title": "Dalguise gardens",
+      "medium": "Pencil and watercolor",
+      "description": "Painting created in 1875 showing the back gardens of the estate in a self-made sketchbook"
+    },
+    {
+      "title": "Rain: August in the Lake District",
+      "medium": "Watercolor on damp paper",
+      "description": "Painted in 1898 showing Lingholm Estate with Skiddaw mountain in background and the billiard room, capturing gloominess of late summer rainfall"
+    },
+    {
+      "title": "Stairway at Lingholm",
+      "medium": "Watercolor",
+      "description": "Interior painting completed when Potter was confined indoors"
+    },
+    {
+      "title": "Old Brown's oak tree",
+      "medium": "Watercolor",
+      "description": "Uses individual brushstrokes of translucent color that seep at edges where they meet"
+    },
+    {
+      "title": "Fawe Park gardens",
+      "medium": "Pencil, pen-and-ink, sepia ink, and watercolor",
+      "description": "Multi-medium depiction of the estate gardens"
+    },
+    {
+      "title": "Garden at Buckle Yeat",
+      "medium": "Watercolor",
+      "description": "Shows snapdragons and poppies with a lady on a busy Near Sawrey street, painted as study for The Pie and the Patty-Pan"
+    },
+    {
+      "title": "Autumnal Landscape",
+      "medium": "Watercolor",
+      "description": "Created in 1909 with bold, saturated autumn hues, fluid washes, and fast brushstrokes that are almost impressionistic"
+    },
+    {
+      "title": "Tabby cat study",
+      "medium": "Watercolor",
+      "description": "A sleeping cat painted from real life in 1903"
+    },
+    {
+      "title": "Newlands Valley scene",
+      "medium": "Watercolor",
+      "description": "Study with mountain in background used as inspiration for The Tale of Mrs. Tiggy-Winkle"
+    },
+    {
+      "title": "Esthwaite Water",
+      "medium": "Watercolor",
+      "description": "Scene depicting water lilies amongst reeds, showing Potter's favorite Lake District lake"
+    },
+    {
+      "title": "Kep the collie",
+      "medium": "Watercolor",
+      "description": "Portrait of Potter's beloved farm dog"
+    },
+    {
+      "title": "Pringle Wood",
+      "medium": "Pencil and watercolor",
+      "description": "Unfinished and unused illustration created for The Fairy Caravan"
+    },
+    {
+      "title": "Pony Billy",
+      "medium": "Watercolor",
+      "description": "Unfinished painting of a horse character from The Fairy Caravan"
+    },
+    {
+      "title": "Spike Cap mushroom",
+      "medium": "Watercolor",
+      "description": "Depicts Gomphidius glutinosus with round, slimy, purple head, easy to spot among moss"
+    },
+    {
+      "title": "Squirrel Nutkin on stump",
+      "medium": "Watercolor",
+      "description": "Shows the character playing marbles with oak apples"
+    },
+    {
+      "title": "Near Sawrey snow scene",
+      "medium": "Watercolor",
+      "description": "Snowy painting of the town"
+    }
+  ],
+  "locations": [
+    {
+      "name": "Dalguise House, Perthshire, Scotland",
+      "significance": "Potter family's chosen holiday estate during much of Beatrix's childhood; elegant mansion with gardens that Beatrix referred to as 'home sweet home'"
+    },
+    {
+      "name": "Armitt Museum",
+      "significance": "Received Potter's mycological, geological, archaeological, and microscopy portfolio upon her death"
+    },
+    {
+      "name": "Perth Museum",
+      "significance": "Received 25 fungi drawings by Potter in Charles McIntosh's 1922 bequest"
+    },
+    {
+      "name": "Eastwood in Dunkeld, Scotland",
+      "significance": "First stay in 1893 where mycology was Potter's main focus; location where she found rare fungi"
+    },
+    {
+      "name": "Lennel House near Coldstream",
+      "significance": "Potter family's final summer in Scotland in 1894; location where thousands of fungi were found after humid weather"
+    },
+    {
+      "name": "Royal Botanic Gardens at Kew",
+      "significance": "Where Potter and Uncle Henry Roscoe met director William Thiselton-Dyer in May 1896; Potter later met with George Massee"
+    },
+    {
+      "name": "Natural History Museum, London",
+      "significance": "Where Potter studied the limited and poorly labeled fungi collection"
+    },
+    {
+      "name": "Wray Castle on Windermere",
+      "significance": "Large medieval-inspired structure built 1840-1847 at cost of £60,000; Potter family stayed July 1882; where Potter met Canon Rawnsley"
+    },
+    {
+      "name": "Lingholm Estate",
+      "significance": "First rented by Potters in summer 1885; location with lively red squirrels that inspired The Tale of Squirrel Nutkin"
+    },
+    {
+      "name": "Esthwaite Water",
+      "significance": "Potter's favorite lake in Lake District with pastoral landscape and abundant wildlife; inspired Mr. Jeremy Fisher's home"
+    },
+    {
+      "name": "Hill Top Farm, Near Sawrey",
+      "significance": "Potter's first land purchase using book royalties; became her personal space for painting and writing; featured in multiple books"
+    },
+    {
+      "name": "Fawe Park Estate",
+      "significance": "Less formal estate near Derwentwater with productive kitchen gardens that inspired Mr. McGregor's garden in Benjamin Bunny"
+    },
+    {
+      "name": "Buckle Yeat cottage",
+      "significance": "Cottage with splendid flower gardens appropriated as Duchess the Pomeranian's house in The Pie and the Patty-Pan"
+    },
+    {
+      "name": "Lakefield (Ees Wyke), Near Sawrey",
+      "significance": "Location of Mrs. Lord's cottage whose interior rooms Potter studied for The Pie and the Patty-Pan"
+    },
+    {
+      "name": "Hawkshead",
+      "significance": "Busy town Potter toured in 1882; setting for Johnny Town-Mouse in The Tale of Johnny Town-Mouse"
+    },
+    {
+      "name": "Gwaynynog Estate",
+      "significance": "Built 18th-19th century, Uncle Fred Burton's home with 2,000+ acres; gardens inspired TheTale of the Flopsy Bunnies"
+    },
+    {
+      "name": "Hafod-Y-Bryn",
+      "significance": "Estate in Llanbedr, Wales where Potters stayed in 1905; overlooks Cardigan Bay with 20-acre grounds"
+    },
+    {
+      "name": "Tenby, South Wales",
+      "significance": "Where Potter chose bedroom window overlooking gardens"
+    },
+    {
+      "name": "Harescombe Grange, Gloucestershire",
+      "significance": "Cousin Caroline Hutton's home where Potter hunted fossils in nearby quarries"
+    },
+    {
+      "name": "Bull Banks near Oatmeal Crag",
+      "significance": "Near Sawrey countryside setting for The Tale of Mr. Tod"
+    },
+    {
+      "name": "Derwent Bay",
+      "significance": "Views still recognizable today from The Tale of Squirrel Nutkin"
+    },
+    {
+      "name": "Newlands Valley",
+      "significance": "Real inspiration for mountain scenes in The Tale of Mrs. Tiggy-Winkle"
+    },
+    {
+      "name": "Troutbeck Park",
+      "significance": "Where Potter observed wild fell ponies that inspired The Fairy Caravan"
+    },
+    {
+      "name": "Smithy Lane and Stoney Lane",
+      "significance": "Real Near Sawrey streets featured in The Tale of Samuel Whiskers"
+    },
+    {
+      "name": "Castle Farm",
+      "significance": "Pastures of Bull Banks underneath Oatmeal Crag used in The Tale of Mr. Tod"
+    },
+    {
+      "name": "Victoria and Albert Museum",
+      "significance": "Houses Potter's onion studies and original watercolors including The Tailor of Gloucester"
+    },
+    {
+      "name": "National Trust properties",
+      "significance": "Organization to which Potter and William Heelis donated over 8,000 acres; maintains Hill Top Farm as Potter left it"
+    },
+    {
+      "name": "Hastings",
+      "significance": "Location south-east of London where Potter worked on three books in 1903"
+    }
+  ],
+  "trueFalse": [
+    {
+      "statement": "Beatrix Potter referred to Scotland as 'home sweet home' in her memories of childhood.",
+      "isTrue": true,
+      "correction": "She specifically remembered Dalguise in Perthshire, saying 'I remember every stone, every tree, the scent of heather... oh, it was always beautiful, home sweet home.'"
+    },
+    {
+      "statement": "Charles McIntosh was a doctor who mentored Beatrix Potter in her mycology studies.",
+      "isTrue": false,
+      "correction": "Charles McIntosh was a postman who became an expert on fungi after losing fingers in a sawmill accident, not a doctor."
+    },
+    {
+      "statement": "The Perth Museum received 25 fungi drawings by Potter in 1922 through Charles McIntosh's bequest.",
+      "isTrue": true,
+      "correction": "These drawings were later positively attributed to Potter in 1978 by Scottish mycologist Dr. Mary Noble."
+    },
+    {
+      "statement": "Beatrix Potter's fungi research paper was immediately published by the Linnean Society.",
+      "isTrue": false,
+      "correction": "George Massee presented it to the Linnean Society but reported it needed more work before printing; Potter never revised it."
+    },
+    {
+      "statement": "Potter purchased Hill Top Farm using royalties from her books as an act of independence.",
+      "isTrue": true,
+      "correction": "This first land purchase in the Lake District represented her financial independence from her family."
+    },
+    {
+      "statement": "William Heelis was Potter's publisher before becoming her husband.",
+      "isTrue": false,
+      "correction": "William Heelis was her property solicitor, not her publisher. They shared a love for the Lake District and long walks."
+    },
+    {
+      "statement": "Wray Castle took 7 years to build and cost £60,000.",
+      "isTrue": true,
+      "correction": "It was built in mock-Norman style, though the owner's wife refused to live there because the design was excessively Romantic."
+    },
+    {
+      "statement": "The Tale of Squirrel Nutkin ends with the squirrel keeping his magnificent tail.",
+      "isTrue": false,
+      "correction": "Squirrel Nutkin narrowly escapes death but loses his magnificent tail in the process."
+    },
+    {
+      "statement": "Potter used opaque layering technique in her early fungus painting Fly agaric from 1890.",
+      "isTrue": true,
+      "correction": "This painting demonstrates her growing sophistication in rendering texture through this technique."
+    },
+    {
+      "statement": "Miss Cameron continued teaching Beatrix Potter art lessons into the 1890s.",
+      "isTrue": false,
+      "correction": "Miss Cameron stopped giving lessons in 1883, just one year after the Wray Castle holiday, because Beatrix had transcended Cameron's own abilities."
+    },
+    {
+      "statement": "Beatrix Potter painted squirrels using the same technique as mice, with fine individual hairs.",
+      "isTrue": false,
+      "correction": "Potter used layer washes of color for squirrels with more fluid lines to express their lively nature, while mice were painted with painstaking fine detail of individual hairs."
+    },
+    {
+      "statement": "The Tale of Benjamin Bunny was set in Mr. McGregor's garden, inspired by Fawe Park's kitchen gardens.",
+      "isTrue": true,
+      "correction": "The abundant kitchen gardens at Fawe Park near Lingholm Estate provided inspiration for the vegetable garden setting."
+    },
+    {
+      "statement": "Norman Warne enthusiastically supported Potter's idea for a frog main character from the start.",
+      "isTrue": false,
+      "correction": "When Potter kept pushing the frog character idea, Norman said it sounded interesting, though Potter thought he may have been sarcastic."
+    },
+    {
+      "statement": "Mrs. Tiggy-Winkle was inspired by Potter's pet hedgehog of the same name and a visit from Lucie Carr.",
+      "isTrue": true,
+      "correction": "When the Carr family visited, their daughter Lucie loved playing with Potter's hedgehog, and Potter later sent Lucie's forgotten gloves back with a poem."
+    },
+    {
+      "statement": "Potter brought a frog in a jar to her publisher's office to prove her color choices were accurate.",
+      "isTrue": true,
+      "correction": "When Fruing Warne disputed her color decisions for Mr. Jeremy Fisher, she brought a live frog to his office as proof."
+    },
+    {
+      "statement": "The Tale of the Pie and the Patty-Pan features two cats named Ribby and Duchess.",
+      "isTrue": false,
+      "correction": "Ribby is a cat, but Duchess is a Pomeranian dog based on Mrs. Rogerson's dogs."
+    },
+    {
+      "statement": "Hill Top Farm was maintained exactly as Potter left it according to her instructions to the National Trust.",
+      "isTrue": true,
+      "correction": "Potter left detailed outline requiring rooms and furnishings be kept in their present condition, and the National Trust kept their promise."
+    },
+    {
+      "statement": "The Tale of Samuel Whiskers celebrates Potter's independence and her Hill Top Farm renovations.",
+      "isTrue": true,
+      "correction": "This story was immensely personal as it celebrated her becoming entirely independent of her parents and featured architectural details she had added to Hill Top."
+    },
+    {
+      "statement": "Jemima Puddle-Duck's eggs successfully hatch at the end of the tale.",
+      "isTrue": false,
+      "correction": "Although Jemima and her eggs are saved by Kep the Collie, the two farm pups eat all of Jemima's eggs."
+    },
+    {
+      "statement": "Potter adopted a little black piglet that slept in a basket by her bed at night.",
+      "isTrue": true,
+      "correction": "Much to John Cannon's dismay, Potter adopted this piglet which she kept at Hill Top Farm."
+    },
+    {
+      "statement": "The Tale of Mr. Tod has a resolved, happy ending where disagreements are solved.",
+      "isTrue": false,
+      "correction": "The tale ends with disagreements unsolved and no resolution between the characters."
+    },
+    {
+      "statement": "Herdwick sheep have dainty feet and unique wool suitable for cold temperatures and uneven terrain.",
+      "isTrue": true,
+      "correction": "Canon Rawnsley gave Potter her first Herdwick sheep, and she became fascinated with preserving this breed that had fallen out of favor."
+    },
+    {
+      "statement": "Johnny Town-Mouse and Timmy Willie both live in Hawkshead in The Tale of Johnny Town-Mouse.",
+      "isTrue": false,
+      "correction": "Johnny Town-Mouse lives in Hawkshead, while Timmy Willie lives in a garden at a cottage in Near Sawrey."
+    },
+    {
+      "statement": "Norman Warne proposed to Beatrix Potter during the summer of 1905.",
+      "isTrue": true,
+      "correction": "Tragically, Norman died that same summer during the Potter family's stay at Hafod-Y-Bryn in Wales."
+    },
+    {
+      "statement": "The Tale of Timmy Tiptoes is considered one of Potter's most pleasing stories.",
+      "isTrue": false,
+      "correction": "The Tale of Timmy Tiptoes is considered one of the least pleasing stories, proving Potter was best in places that inspired her and with creatures she knew well."
+    },
+    {
+      "statement": "Potter created a hand-written glossary of North Country terms for American readers of The Fairy Caravan.",
+      "isTrue": true,
+      "correction": "This glossary helped American readers understand the North Country dialect used throughout the book."
+    },
+    {
+      "statement": "The National Trust was founded by Canon Hardwicke Rawnsley, who became friends with Potter at Wray Castle.",
+      "isTrue": true,
+      "correction": "This connection made Potter's eventual bequest of over 8,000 acres to the National Trust particularly meaningful."
+    },
+    {
+      "statement": "Beatrix Potter married William Heelis just days after publishing The Tale of Peter Rabbit.",
+      "isTrue": false,
+      "correction": "Potter married William Heelis in 1913, just days after publishing The Tale of Pigling Bland, not Peter Rabbit which was published in 1902."
+    },
+    {
+      "statement": "Potter arranged borrowed archaeological objects from the Bucklersbury excavation by pleasing visual arrangement rather than by type or inventory.",
+      "isTrue": true,
+      "correction": "She varied the type, size, and medium to create an aesthetically pleasing arrangement rather than organizing by classification."
+    },
+    {
+      "statement": "W.P.K. Findlay used 59 of Potter's fungi illustrations in a 1967 botanical publication.",
+      "isTrue": true,
+      "correction": "This fulfilled Potter's prediction to Walter Gaddum that her fungi illustrations would someday be in a book, though she thought it would be dull to read."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What are the main components of Mr. Jeremy Fisher's home?",
+      "options": [
+        "Water lilies",
+        "Oak trees",
+        "Reeds",
+        "Water lilies and reeds"
+      ],
+      "correctAnswer": "Water lilies and reeds"
+    },
+    {
+      "question": "Which property is shown in the pencil and watercolor painting created by Beatrix Potter in 1875?",
+      "options": [
+        "Lingholm estate",
+        "Lennel House",
+        "The gardens at Perth Museum",
+        "Dalguise gardens"
+      ],
+      "correctAnswer": "Dalguise gardens"
+    },
+    {
+      "question": "Who is Samuel Whiskers' wife in the Beatrix Potter stories?",
+      "options": [
+        "Jemima Puddle-Duck",
+        "Mrs. Moppet",
+        "Anna Maria",
+        "Ginger"
+      ],
+      "correctAnswer": "Anna Maria"
+    },
+    {
+      "question": "Which Beatrix Potter quote describes the excitement of finding a new fungus?",
+      "options": [
+        "Oh my golly, the excitement of a new friend",
+        "There is extreme complacency in finding a totally new species for the first time",
+        "They are all so splendid, but a new one, now that is the treasure of treasures",
+        "Perhaps other scientists have seen it, but to this scientist it is new"
+      ],
+      "correctAnswer": "There is extreme complacency in finding a totally new species for the first time"
+    },
+    {
+      "question": "Which character is shown on the cover of The Tale of Timmy Tiptoes?",
+      "options": [
+        "Chippy Hackee",
+        "Squirrel Nutkin",
+        "Mrs. Lady Nutkin",
+        "Timmy Tiptoes"
+      ],
+      "correctAnswer": "Chippy Hackee"
+    },
+    {
+      "question": "What book setting element was inspired by the abundant kitchen gardens at Fawe Park?",
+      "options": [
+        "The garden in The Tale of Johnny Town-Mouse",
+        "Mrs Tiggy-Winkle's garden",
+        "Miss Moppet's kitchen",
+        "Mr. McGregor's garden in The Tale of Benjamin Bunny"
+      ],
+      "correctAnswer": "Mr. McGregor's garden in The Tale of Benjamin Bunny"
+    },
+    {
+      "question": "How did Beatrix Potter's encounters at the Royal Botanic Gardens at Kew result?",
+      "options": [
+        "She left feeling uplifted about her paper submission",
+        "She felt disregarded and did not come away with anything substantive",
+        "She left with a new friend in Charles McIntosh",
+        "She left with a box of specimens to draw"
+      ],
+      "correctAnswer": "She felt disregarded and did not come away with anything substantive"
+    },
+    {
+      "question": "What book is the mouse holding in A Dream of Toasted Cheese?",
+      "options": [
+        "Organic and Inorganic Chemistry",
+        "The Tale of Johnny Town-Mouse",
+        "Inorganic Chemistry for Beginners",
+        "The Tale of Peter Rabbit"
+      ],
+      "correctAnswer": "Inorganic Chemistry for Beginners"
+    },
+    {
+      "question": "Who was Ribby in The Tale of the Pie and the Patty-Pan?",
+      "options": [
+        "A cat",
+        "A dog",
+        "A mouse",
+        "A hedgehog"
+      ],
+      "correctAnswer": "A cat"
+    },
+    {
+      "question": "What creatures in Troutbeck Park led to the idea of The Fairy Caravan?",
+      "options": [
+        "Ladybugs",
+        "Wild fell ponies",
+        "Geese",
+        "Mushrooms imagined as tiny people"
+      ],
+      "correctAnswer": "Wild fell ponies"
+    },
+    {
+      "question": "Why does Tom Kitten need a hot bath at the end of The Roly-Poly Pudding?",
+      "options": [
+        "He is sticky from the rubbish pile",
+        "He is covered in pudding",
+        "He is covered in dirt from escaping a dog",
+        "He is covered in soot from climbing up the chimney"
+      ],
+      "correctAnswer": "He is covered in soot from climbing up the chimney"
+    },
+    {
+      "question": "What medium was used in Red Riding Hood meets the Wolf?",
+      "options": [
+        "Pencil",
+        "Ink and wash",
+        "Sepia paint",
+        "Charcoal"
+      ],
+      "correctAnswer": "Ink and wash"
+    },
+    {
+      "question": "While staying at Lingholm in 1885, what did Beatrix note in the woods?",
+      "options": [
+        "Red squirrels",
+        "Gray squirrels",
+        "Wild hedgehogs",
+        "Birds of all sort"
+      ],
+      "correctAnswer": "Red squirrels"
+    },
+    {
+      "question": "What did Beatrix Potter say about Norman Warne's life after his death?",
+      "options": [
+        "He lived a full life in half the time most do",
+        "I will always be grateful for the love he added to my life",
+        "Life is like art, you never know when you are finished",
+        "He fulfilled a useful happy life"
+      ],
+      "correctAnswer": "He fulfilled a useful happy life"
+    },
+    {
+      "question": "What did Beatrix do at Hill Top Farm after her marriage to William Heelis?",
+      "options": [
+        "Hill Top Farm remained her own space for painting and writing",
+        "She began a world class rose garden",
+        "She downsized her animal count",
+        "She and William lived their remaining years there"
+      ],
+      "correctAnswer": "Hill Top Farm remained her own space for painting and writing"
+    },
+    {
+      "question": "What type of animal is Ginger in The Tale of Ginger and Pickles?",
+      "options": [
+        "A terrier dog",
+        "A hedgehog",
+        "A rabbit",
+        "A tomcat"
+      ],
+      "correctAnswer": "A tomcat"
+    },
+    {
+      "question": "What did Beatrix Potter appreciate about Uncle Fred Burton and Gwaynynog?",
+      "options": [
+        "His intimate dinner parties",
+        "His perfect taste in décor",
+        "Finding a perfect name for the estate",
+        "His welcoming atmosphere for Beatrix"
+      ],
+      "correctAnswer": "His welcoming atmosphere for Beatrix"
+    },
+    {
+      "question": "Who was Beatrix Potter's favorite farm dog at Hill Top Farm?",
+      "options": [
+        "Betty the beagle",
+        "Philip the English bulldog",
+        "Strawberry the blonde Dachshund",
+        "Kep the collie"
+      ],
+      "correctAnswer": "Kep the collie"
+    },
+    {
+      "question": "Which life event took place just days after publishing The Tale of Pigling Bland?",
+      "options": [
+        "She turned 30 and celebrated with a large gala",
+        "Her brother graduated from Oxford",
+        "She purchased her first home",
+        "She became Mrs. William Heelis"
+      ],
+      "correctAnswer": "She became Mrs. William Heelis"
+    },
+    {
+      "question": "How did Beatrix Potter arrange borrowed archaeological objects from Bucklersbury?",
+      "options": [
+        "By inventory number",
+        "Organized by medium/material",
+        "Organized by tool type",
+        "A pleasing arrangement varying in type, size, and medium"
+      ],
+      "correctAnswer": "A pleasing arrangement varying in type, size, and medium"
+    },
+    {
+      "question": "What did Beatrix Potter receive shortly after returning from Heath Park?",
+      "options": [
+        "Her lost sketch journal",
+        "A letter of acceptance into the Linnean Society",
+        "A parcel of fungi from Charles McIntosh",
+        "Caterpillar cocoons"
+      ],
+      "correctAnswer": "A parcel of fungi from Charles McIntosh"
+    },
+    {
+      "question": "When was Beatrix Potter most busy in her farming life?",
+      "options": [
+        "Spring",
+        "Fall",
+        "Late summer",
+        "Fall and late summer"
+      ],
+      "correctAnswer": "Fall and late summer"
+    },
+    {
+      "question": "What did Potter think about her rendering of Cantharellula umbonata?",
+      "options": [
+        "It was by far her favorite fungi",
+        "It was rather successful but the gills continued to be troublesome",
+        "The colors do not do the fungi justice",
+        "The clumpiness made her mind jumbled"
+      ],
+      "correctAnswer": "It was rather successful but the gills continued to be troublesome"
+    },
+    {
+      "question": "Which stories had intricate plots?",
+      "options": [
+        "The Tale of Timmy Tiptoes",
+        "The Tale of Benjamin Bunny",
+        "The Tailor of Gloucester",
+        "The Tailor of Gloucester and The Tale of Squirrel Nutkin"
+      ],
+      "correctAnswer": "The Tailor of Gloucester and The Tale of Squirrel Nutkin"
+    },
+    {
+      "question": "What did Potter think of the Natural History Museum's fungi collection?",
+      "options": [
+        "It was limited and poorly labeled",
+        "It was great, but she desired to see more than English fungi",
+        "The specimens were ancient and disintegrating",
+        "The collection represented only a small region"
+      ],
+      "correctAnswer": "It was limited and poorly labeled"
+    },
+    {
+      "question": "During her microscopy studies, whose microscope did Potter use?",
+      "options": [
+        "Charles McIntosh's",
+        "Her brother Bertram's",
+        "The London Museum of Natural History's",
+        "Her father's"
+      ],
+      "correctAnswer": "Her brother Bertram's"
+    },
+    {
+      "question": "How did Potter convince Fruing Warne her frog colorization was accurate?",
+      "options": [
+        "She invited him to Esthwaite Lake",
+        "She brought a taxidermied frog",
+        "She brought an animal encyclopedia",
+        "She brought a frog to his office"
+      ],
+      "correctAnswer": "She brought a frog to his office"
+    },
+    {
+      "question": "What flowers are shown in the Buckle Yeat garden painting?",
+      "options": [
+        "Snapdragons and poppies",
+        "Lilies and roses",
+        "Peonies and irises",
+        "Daffodils and snap-peas"
+      ],
+      "correctAnswer": "Snapdragons and poppies"
+    },
+    {
+      "question": "Which American mother/son duo charmed Potter with their interest in real story locations?",
+      "options": [
+        "Freda and Noel Moore",
+        "Gail Parson Coolidge and Henry P.",
+        "Carolina and Mark Hutton",
+        "Margaret and James Dawson"
+      ],
+      "correctAnswer": "Gail Parson Coolidge and Henry P."
+    },
+    {
+      "question": "What is the full name of the organization Potter bequeathed property to?",
+      "options": [
+        "People and Places National Trust",
+        "National Trust for Place of Historic Interest or Natural Beauty",
+        "National Trust of the United Kingdom",
+        "For the Betterment of the World National Trust"
+      ],
+      "correctAnswer": "National Trust for Place of Historic Interest or Natural Beauty"
+    },
+    {
+      "question": "Who introduced Potter to mycologists at The Kew Royal Botanic Gardens?",
+      "options": [
+        "Charles McIntosh",
+        "Family friend John Tenniel",
+        "Norman Warne",
+        "Uncle Henry Roscoe"
+      ],
+      "correctAnswer": "Uncle Henry Roscoe"
+    },
+    {
+      "question": "What is the name of the pig Pigling meets and escapes with?",
+      "options": [
+        "Pig-wig",
+        "Aunt Pettitoes",
+        "Mr. Bland",
+        "Dorset the Pig"
+      ],
+      "correctAnswer": "Pig-wig"
+    },
+    {
+      "question": "Where was Johnny Town-Mouse born?",
+      "options": [
+        "Behind a marketplace in a cardboard box",
+        "In the wheel of a vegetable cart",
+        "At a carriage repair shoppe",
+        "In a cupboard in a house in Hawkshead"
+      ],
+      "correctAnswer": "In a cupboard in a house in Hawkshead"
+    },
+    {
+      "question": "What is the common name of the orange-colored fungi in Potter's watercolor?",
+      "options": [
+        "Rose petal fungus",
+        "Orange peel fungus",
+        "Crimson fabric fungus",
+        "Sunset fungus"
+      ],
+      "correctAnswer": "Orange peel fungus"
+    },
+    {
+      "question": "What kept Potter away from art and writing after 1910?",
+      "options": [
+        "Caring for her parents and their estate",
+        "Her new marriage to William",
+        "Managing her farm",
+        "Caring for parents and managing her farm"
+      ],
+      "correctAnswer": "Caring for parents and managing her farm"
+    },
+    {
+      "question": "Who is the man shown in the photograph with Potter?",
+      "options": [
+        "Charles McIntosh",
+        "Uncle Henry Roscoe",
+        "Frederick Warne",
+        "William Heelis"
+      ],
+      "correctAnswer": "Charles McIntosh"
+    },
+    {
+      "question": "What might cross-sectioned fungi stems show in Potter's renderings?",
+      "options": [
+        "Density",
+        "Hollowness",
+        "Texture",
+        "All of the above"
+      ],
+      "correctAnswer": "All of the above"
+    },
+    {
+      "question": "In The Tale of the Flopsy Bunnies, what has Flopsy become?",
+      "options": [
+        "A washerwoman",
+        "Benjamin Bunny's wife",
+        "A farmer",
+        "An artist"
+      ],
+      "correctAnswer": "Benjamin Bunny's wife"
+    },
+    {
+      "question": "What past interest helped Potter with her onion studies for Benjamin Bunny?",
+      "options": [
+        "Gardening",
+        "Cooking",
+        "Natural illustration",
+        "Crocheting"
+      ],
+      "correctAnswer": "Natural illustration"
+    },
+    {
+      "question": "How does Eleanor Taylor believe Potter saw the world?",
+      "options": [
+        "As one big story waiting to be told",
+        "A lesson to be learned each day",
+        "As accurately and sharply as a child does",
+        "We are all just creatures finding our way"
+      ],
+      "correctAnswer": "As accurately and sharply as a child does"
+    },
+    {
+      "question": "What record do William and Beatrix Heelis hold?",
+      "options": [
+        "The largest landholdings in the Lake District",
+        "The biggest donors to the London Art Museum",
+        "The biggest donors to Near Sawrey's library",
+        "The largest patrons of land to the National Trust"
+      ],
+      "correctAnswer": "The largest patrons of land to the National Trust"
+    },
+    {
+      "question": "Where was The Tale of the Pie and the Patty-Pan set?",
+      "options": [
+        "Tenby",
+        "Dunkeld",
+        "Stroud",
+        "Near Sawrey"
+      ],
+      "correctAnswer": "Near Sawrey"
+    },
+    {
+      "question": "What relationship did William Heelis have with Potter before marriage?",
+      "options": [
+        "He was the local librarian",
+        "He worked for the National Trust",
+        "He worked at the Natural History Museum",
+        "He was her property solicitor"
+      ],
+      "correctAnswer": "He was her property solicitor"
+    },
+    {
+      "question": "In what area was Potter's first land purchase, Hill Top Farm?",
+      "options": [
+        "Denbigh",
+        "Lake District",
+        "Gloucestershire",
+        "Hatfield"
+      ],
+      "correctAnswer": "Lake District"
+    },
+    {
+      "question": "With whom did Potter live on Hill Top Farm while sorting repairs?",
+      "options": [
+        "Her husband, William Heelis",
+        "A menagerie of pets",
+        "Her parents in their old age",
+        "John Cannon and his family"
+      ],
+      "correctAnswer": "John Cannon and his family"
+    },
+    {
+      "question": "Which quote tells how fond Potter was of Near Sawrey and Hill Top?",
+      "options": [
+        "Although small, I can find much of what I need right here",
+        "A jewel in the rough",
+        "As nearly perfect a little place as I ever lived in",
+        "A place good enough for my characters to live"
+      ],
+      "correctAnswer": "As nearly perfect a little place as I ever lived in"
+    },
+    {
+      "question": "What town is shown in the snowy painting?",
+      "options": [
+        "Dunkeld",
+        "Near Sawrey",
+        "Newlands Valley",
+        "Hawkshead"
+      ],
+      "correctAnswer": "Near Sawrey"
+    },
+    {
+      "question": "Where is Dalguise House located?",
+      "options": [
+        "Denbighshire, England",
+        "Gloucestershire County, England",
+        "Perthshire, Scotland",
+        "South Wales"
+      ],
+      "correctAnswer": "Perthshire, Scotland"
+    },
+    {
+      "question": "What was Mrs. Tiggy-Winkle's profession?",
+      "options": [
+        "A tailor",
+        "A washerwoman",
+        "A chef",
+        "A lapdog"
+      ],
+      "correctAnswer": "A washerwoman"
+    },
+    {
+      "question": "What was unique about Jemima Puddle-Duck as a main character?",
+      "options": [
+        "She didn't speak",
+        "She didn't wear clothing",
+        "She sung all her lines",
+        "She is the only main character that is a bird"
+      ],
+      "correctAnswer": "She is the only main character that is a bird"
+    }
+  ]
+}
+```
