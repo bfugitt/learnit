@@ -1,0 +1,99 @@
+{
+  "moduleInfo": {
+    "title": "The Art of Beatrix Potter: Sketches, Paintings, and Illustrations",
+    "subject": "Fine Arts"
+  },
+  "vocabulary": [
+    { "term": "heather", "definition": "a purple-flowered Eurasian heath that grows abundantly in Western and Northern Europe" },
+    { "term": "mycology", "definition": "a branch of biology dealing with fungi" },
+    { "term": "spores", "definition": "a single-celled reproductive body produced by plants, fungi, and some microorganisms" },
+    { "term": "hybridization", "definition": "the act or producing an offspring of two animals or plants of different breeds or species" },
+    { "term": "lichens", "definition": "any of numerous complex plantlike organisms made up of an alga or bacterium and a fungus growing in symbiotic association on a solid surface" },
+    { "term": "Pre-Raphaelite", "definition": "a member of a brotherhood of artists formed in England in 1848 to restore the artistic principles and practices regarded as characteristic of Italian art before Raphael" },
+    { "term": "custodian", "definition": "one that guards and protects or maintains" },
+    { "term": "seminal", "definition": "containing or contributing the seeds of later development" },
+    { "term": "amalgamation", "definition": "the action, process, or result of combining or uniting" },
+    { "term": "opaque layering", "definition": "the process of applying multiple layers of opaque materials on top of each other, where the underlying layers are completely hidden by the overlying layers" },
+    { "term": "verdant", "definition": "adjective describing something green with vegetation; lush and covered in plants or grass" },
+    { "term": "fauna", "definition": "animals in a certain region; usually used with 'flora and fauna' meaning the plants and animals of a given area" },
+    { "term": "cauldron", "definition": "a large kettle or boiler often seen in witch scenes" },
+    { "term": "crones", "definition": "a cruel or ugly old woman" },
+    { "term": "shrouds", "definition": "something that covers or envelops so as to conceal from view" },
+    { "term": "insomnia", "definition": "prolonged and usually abnormal inability to get enough sleep especially due to trouble falling asleep or staying asleep" },
+    { "term": "phaeton", "definition": "any of various light four-wheeled horse-drawn vehicles" },
+    { "term": "tendril", "definition": "a leaf, stipule, or stem modified into a slender spirally coiling sensitive organ serving to attach a climbing plant to its support" },
+    { "term": "jaunty", "definition": "lively in manner or appearance" },
+    { "term": "perplexed", "definition": "filled with uncertainty, confusing" }
+  ],
+  "timeline": [
+    { "year": 1875, "event": "Beatrix Potter creates pencil and watercolor painting of Dalguise gardens." },
+    { "year": 1890, "event": "Potter paints 'Fly agaric', an example of her growing sophistication in rendering texture." },
+    { "year": 1892, "event": "First meeting between Beatrix Potter and Charles McIntosh on October 29 at Heath Park." },
+    { "year": 1893, "event": "Beatrix writes picture letter to Eric Moore featuring Mr. Jeremy Fisher." },
+    { "year": 1894, "event": "Potter family's last summer holiday in Scotland at Lennel House." },
+    { "year": 1896, "event": "Beatrix and uncle Henry Roscoe visit Royal Botanic Gardens at Kew in May." },
+    { "year": 1898, "event": "Beatrix Potter paints 'Rain: August in the Lake District'." },
+    { "year": 1899, "event": "Beatrix sends illustration 'A Dream of Toasted Cheese' to uncle Henry Roscoe." },
+    { "year": 1900, "event": "Spring holiday in Tenby, Wales; writes letters to Moore girls." },
+    { "year": 1902, "event": "Success of 'The Tale of Peter Rabbit' leads Potter to buy back Mr. Jeremy Fisher drawings." },
+    { "year": 1903, "event": "Works on 'The Pie and the Patty-Pan', 'The Tale of Two Bad Mice', and 'The Tale of Tuppenny' in Hastings." },
+    { "year": 1904, "event": "Publication of 'The Tale of Benjamin Bunny'." },
+    { "year": 1905, "event": "Death of fiancé Norman Warne during stay at Llanbedr, Wales." },
+    { "year": 1909, "event": "Paints 'Autumnal Landscape' in plein air style." },
+    { "year": 1913, "event": "Photograph taken of Beatrix Potter with William Heelis." },
+    { "year": 1967, "event": "W.P.K. Findlay uses 59 of Potter's fungi illustrations in the fungi volume of Wayside and Woodland series." },
+    { "year": 1978, "event": "Scottish mycologist Dr. Mary Noble attributes fungi drawings at Perth Museum to Beatrix Potter." }
+  ],
+  "quiz": [
+    {
+      "question": "What place was Beatrix Potter describing when she said, 'I remember every stone, every tree, the scent of heather…'?",
+      "options": ["London", "Lake District", "Scotland", "Wales"],
+      "correctAnswer": "Scotland"
+    },
+    {
+      "question": "Who mentored Beatrix Potter in mycology?",
+      "options": ["William Heelis", "Norman Warne", "Charles McIntosh", "Henry Roscoe"],
+      "correctAnswer": "Charles McIntosh"
+    },
+    {
+      "question": "What did Beatrix Potter bequeath to the Armitt Museum?",
+      "options": ["Her original manuscripts", "Her mycological, geological, archaeological, and microscopy portfolio", "Her family estate", "All her paintings of animals"],
+      "correctAnswer": "Her mycological, geological, archaeological, and microscopy portfolio"
+    },
+    {
+      "question": "What story was originally titled 'Something Very Very Nice'?",
+      "options": ["The Tale of Peter Rabbit", "The Tale of the Pie and the Patty-Pan", "The Tale of Mrs. Tiggy-Winkle", "The Tale of Mr. Tod"],
+      "correctAnswer": "The Tale of the Pie and the Patty-Pan"
+    },
+    {
+      "question": "Who was Jemima Puddle-Duck likely named after?",
+      "options": ["Beatrix's mother", "A childhood friend", "The ornithological illustrator Jemima Blackburn", "A neighbor's duck"],
+      "correctAnswer": "The ornithological illustrator Jemima Blackburn"
+    },
+    {
+      "question": "Which lake did Beatrix Potter consider the most beautiful in the Lake District?",
+      "options": ["Windermere", "Coniston Water", "Derwentwater", "Esthwaite Water"],
+      "correctAnswer": "Esthwaite Water"
+    },
+    {
+      "question": "What was the profession of Mrs. Tiggy-Winkle in her story?",
+      "options": ["Tailor", "Washerwoman", "Chef", "Shopkeeper"],
+      "correctAnswer": "Washerwoman"
+    },
+    {
+      "question": "Which character makes their fourth and final appearance in 'The Tale of Mr. Tod'?",
+      "options": ["Peter Rabbit", "The rabbit families", "Mr. Jeremy Fisher", "Samuel Whiskers"],
+      "correctAnswer": "The rabbit families"
+    },
+    {
+      "question": "What did Beatrix Potter compare to 'April showers'?",
+      "options": ["Her artistic inspiration", "Childhood's sorrows", "Her success", "Her travels"],
+      "correctAnswer": "Childhood's sorrows"
+    },
+    {
+      "question": "Which estate's red squirrels inspired 'The Tale of Squirrel Nutkin'?",
+      "options": ["Gwaynynog", "Lingholm Estate", "Hill Top Farm", "Fawc Park"],
+      "correctAnswer": "Lingholm Estate"
+    }
+  ]
+}
