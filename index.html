@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>MacStudy v1.0</title>
+    <title>MacStudy v1.1</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +33,7 @@
             user-select: none;
         }
 
-        /* RETRO MAC WINDOW */
+        /* --- RETRO MAC WINDOW STRUCTURE --- */
         #main-window {
             width: 95%; max-width: 900px; height: 90vh;
             background: var(--window-bg);
@@ -43,19 +43,30 @@
             display: flex; flex-direction: column; position: relative;
         }
 
+        /* TITLE BAR */
         #title-bar {
             background: repeating-linear-gradient(to bottom, #000, #000 1px, #fff 1px, #fff 2px);
             height: 24px; border-bottom: 2px solid var(--border-color);
             display: flex; align-items: center; justify-content: center;
-            flex-shrink: 0;
+            flex-shrink: 0; position: relative;
         }
 
         #title-text { background: #fff; padding: 0 10px; font-size: 18px; font-weight: bold; text-transform: uppercase; }
+        
         #close-btn {
             position: absolute; left: 6px; width: 12px; height: 12px;
             border: 1px solid #000; background: #fff; box-shadow: 1px 1px 0 #000; cursor: pointer;
         }
 
+        /* MENU BAR (NEW) */
+        #menu-bar {
+            border-bottom: 2px solid #000; padding: 2px 5px; font-size: 20px;
+            display: flex; gap: 15px; background: #fff;
+        }
+        .menu-item { cursor: pointer; padding: 0 5px; }
+        .menu-item:hover { background: #000; color: #fff; }
+
+        /* CONTENT AREA */
         #content {
             flex: 1; padding: 20px; overflow: hidden;
             display: flex; flex-direction: column; align-items: center; position: relative;
@@ -67,7 +78,7 @@
         }
         .screen.active { display: flex; }
 
-        h1 { font-size: 48px; margin: 20px 0; text-align: center; letter-spacing: 2px; text-shadow: 2px 2px 0 #ccc; }
+        h1 { font-size: 48px; margin: 10px 0 20px 0; text-align: center; letter-spacing: 2px; text-shadow: 2px 2px 0 #ccc; }
         h2 { font-size: 28px; margin: 10px 0; text-align: center; text-decoration: underline; }
 
         .btn {
@@ -80,18 +91,54 @@
         .btn:hover { background: #eee; }
         .btn:disabled { opacity: 0.3; cursor: not-allowed; border-style: dashed; }
 
-        /* UPLOAD BUTTON SPECIFIC */
-        .file-upload { display: none; }
-        .upload-btn-wrapper { margin-bottom: 20px; }
+        /* --- OPEN FILE DIALOG (NEW) --- */
+        #file-picker-modal {
+            display: none; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5); z-index: 200;
+            align-items: center; justify-content: center;
+        }
+        
+        .mac-dialog {
+            width: 400px; background: #fff; border: 2px solid #000;
+            box-shadow: 8px 8px 0 rgba(0,0,0,0.5); padding: 5px;
+            display: flex; flex-direction: column;
+        }
 
-        /* HUD */
+        .dialog-title {
+            background: repeating-linear-gradient(to bottom, #000, #000 1px, #fff 1px, #fff 2px);
+            height: 20px; text-align: center; margin-bottom: 10px;
+        }
+        .dialog-title span { background: #fff; padding: 0 5px; font-weight: bold; }
+
+        #file-list-box {
+            border: 2px solid #000; height: 200px; overflow-y: scroll;
+            margin: 10px 20px; background: #fff;
+        }
+        
+        .file-item {
+            padding: 5px 10px; cursor: pointer; font-size: 20px;
+        }
+        .file-item:hover { text-decoration: underline; }
+        .file-item.selected { background: #000; color: #fff; text-decoration: none; }
+
+        .dialog-buttons {
+            display: flex; justify-content: flex-end; padding: 10px 20px; gap: 10px;
+        }
+        
+        .dialog-btn {
+            border: 2px solid #000; background: #fff; font-family: 'VT323';
+            font-size: 18px; padding: 5px 20px; cursor: pointer; box-shadow: 2px 2px 0 #000;
+        }
+        .dialog-btn:active { transform: translate(1px, 1px); box-shadow: 1px 1px 0 #000; }
+        .dialog-btn.primary { border: 3px solid #000; font-weight: bold; }
+
+        /* --- GAME UI ELEMENTS --- */
         #hud {
             width: 100%; display: flex; justify-content: space-between;
             border-bottom: 2px dashed #000; padding-bottom: 10px; margin-bottom: 10px;
             font-size: 24px; flex-shrink: 0;
         }
 
-        /* QUIZ LAYOUT */
         .quiz-area {
             flex: 1; width: 100%; display: flex; flex-direction: column;
             justify-content: center; align-items: center; overflow-y: auto;
@@ -114,7 +161,7 @@
         .option-btn.correct-anim { background: #000; color: #fff; }
         .option-btn.wrong-anim { opacity: 0.5; background: #aaa; text-decoration: line-through; }
 
-        /* TIMELINE GAME */
+        /* TIMELINE STYLES */
         #timeline-list {
             display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 500px;
             overflow-y: auto; padding: 10px;
@@ -125,14 +172,13 @@
             box-shadow: 3px 3px 0 #ccc;
         }
         .timeline-item.correct { background: #444; color: #fff; border-color: #444; }
-        .timeline-date { font-weight: bold; margin-right: 15px; border-right: 2px solid #000; padding-right: 10px; min-width: 60px;}
         .timeline-content { flex: 1; text-align: left; }
         .move-controls button {
             background: #fff; border: 1px solid #000; cursor: pointer; font-family: 'VT323';
             width: 30px; height: 30px; font-size: 20px;
         }
 
-        /* MEMORY GAME */
+        /* MEMORY STYLES */
         #memory-grid {
             display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
             width: 100%; max-width: 700px; height: 100%; padding: 10px;
@@ -157,7 +203,7 @@
         #feedback-bar.correct { background: #000; color: #fff; }
         #feedback-bar.wrong { background: repeating-linear-gradient(45deg, #fff, #fff 10px, #ccc 10px, #ccc 20px); color: #000; }
 
-        /* MODAL */
+        /* REPORT CARD MODAL */
         #report-modal {
             display: none; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
             background: rgba(255,255,255,0.95); z-index: 100;
@@ -173,7 +219,12 @@
     <div id="main-window">
         <div id="title-bar">
             <div id="close-btn" onclick="quitGame()"></div>
-            <div id="title-text">MacStudy v1.0</div>
+            <div id="title-text">MacStudy v1.1</div>
+        </div>
+        
+        <div id="menu-bar">
+            <div class="menu-item" onclick="openFilePicker()">FILE</div>
+            <div class="menu-item" onclick="showHelp()">HELP</div>
         </div>
 
         <div id="content">
@@ -181,12 +232,8 @@
             <div id="menu-screen" class="screen active">
                 <h1>MacStudy</h1>
                 
-                <div class="upload-btn-wrapper">
-                    <label for="file-upload" class="btn" style="border-style: dashed;">📂 LOAD .MOD FILE</label>
-                    <input id="file-upload" class="file-upload" type="file" accept=".json,.mod" onchange="handleFileUpload(this)"/>
-                </div>
-                
-                <h2 id="module-title" style="display:none; color: #666;">NO MODULE LOADED</h2>
+                <h2 id="module-title" style="color: #666; font-style: italic;">NO MODULE LOADED</h2>
+                <div style="text-align:center; font-size: 18px; margin-bottom: 20px;">Use FILE > OPEN to load a module</div>
 
                 <div style="height: 10px;"></div>
                 <button id="btn-vocab" class="btn" disabled onclick="startGame('vocab')">VOCAB QUIZ</button>
@@ -203,25 +250,36 @@
                 </div>
 
                 <div id="generic-quiz-ui" class="quiz-area" style="display:none;">
-                    <div class="prompt-text" id="quiz-prompt">Prompt goes here</div>
+                    <div class="prompt-text" id="quiz-prompt">Prompt</div>
                     <div class="main-display" id="quiz-main">Main Item</div>
-                    <div class="options-grid" id="quiz-options">
-                        </div>
+                    <div class="options-grid" id="quiz-options"></div>
                 </div>
 
                 <div id="timeline-ui" class="quiz-area" style="display:none;">
                     <div class="prompt-text">ORDER EVENTS (EARLIEST AT TOP)</div>
-                    <div id="timeline-list">
-                        </div>
+                    <div id="timeline-list"></div>
                     <button class="btn" style="margin-top:10px;" onclick="checkTimeline()">CHECK ORDER</button>
                 </div>
 
                 <div id="memory-ui" class="quiz-area" style="display:none;">
-                    <div id="memory-grid">
-                        </div>
+                    <div id="memory-grid"></div>
                 </div>
 
                 <div id="feedback-bar"></div>
+            </div>
+
+            <div id="file-picker-modal">
+                <div class="mac-dialog">
+                    <div class="dialog-title"><span>SELECT MODULE</span></div>
+                    <div style="padding: 0 20px;">Select a file to open:</div>
+                    <div id="file-list-box">
+                        <div style="padding:10px; text-align:center;">Loading index...</div>
+                    </div>
+                    <div class="dialog-buttons">
+                        <button class="dialog-btn" onclick="closeFilePicker()">Cancel</button>
+                        <button class="dialog-btn primary" onclick="loadSelectedFile()">Open</button>
+                    </div>
+                </div>
             </div>
 
             <div id="report-modal">
@@ -247,6 +305,10 @@
         testTotal: 0,
         testCorrect: 0,
         
+        // File System
+        availableModules: [],
+        selectedFilename: null,
+
         // Quiz/Vocab
         currentOptions: [],
 
@@ -256,22 +318,62 @@
         isLocked: false
     };
 
-    // --- FILE HANDLING ---
-    function handleFileUpload(input) {
-        const file = input.files[0];
-        if (!file) return;
+    // --- FILE SYSTEM ---
+    async function openFilePicker() {
+        document.getElementById('file-picker-modal').style.display = 'flex';
+        const list = document.getElementById('file-list-box');
+        
+        try {
+            const res = await fetch('modules.json');
+            if (!res.ok) throw new Error("Could not find modules.json");
+            const data = await res.json();
+            state.availableModules = data;
+            renderFileList();
+        } catch (e) {
+            list.innerHTML = `<div style="padding:10px; color:red;">Error: modules.json not found.<br><br>Make sure modules.json exists in the same folder.</div>`;
+        }
+    }
 
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            try {
-                const json = JSON.parse(e.target.result);
-                loadModule(json);
-            } catch (err) {
-                alert("Error reading .mod file. Please ensure it is valid JSON.");
-                console.error(err);
-            }
-        };
-        reader.readAsText(file);
+    function renderFileList() {
+        const list = document.getElementById('file-list-box');
+        list.innerHTML = '';
+        state.selectedFilename = null;
+
+        state.availableModules.forEach(mod => {
+            const div = document.createElement('div');
+            div.className = 'file-item';
+            div.innerText = mod.name;
+            div.onclick = () => {
+                // Deselect others
+                document.querySelectorAll('.file-item').forEach(el => el.classList.remove('selected'));
+                div.classList.add('selected');
+                state.selectedFilename = mod.file;
+            };
+            list.appendChild(div);
+        });
+    }
+
+    async function loadSelectedFile() {
+        if (!state.selectedFilename) return;
+        
+        document.getElementById('file-picker-modal').style.display = 'none';
+        
+        try {
+            const res = await fetch(state.selectedFilename);
+            if (!res.ok) throw new Error("File not found");
+            const json = await res.json();
+            loadModule(json);
+        } catch (e) {
+            alert("Error loading " + state.selectedFilename);
+        }
+    }
+
+    function closeFilePicker() {
+        document.getElementById('file-picker-modal').style.display = 'none';
+    }
+
+    function showHelp() {
+        alert("MacStudy v1.1\n\n1. Create .json mod files.\n2. Add them to 'modules.json'.\n3. Use File > Open to play.");
     }
 
     function loadModule(data) {
@@ -280,10 +382,11 @@
         
         // Update Menu Title
         const titleDisplay = document.getElementById('module-title');
-        titleDisplay.style.display = 'block';
+        titleDisplay.style.color = "#000";
+        titleDisplay.style.fontStyle = "normal";
         titleDisplay.innerText = (info.title || "Untitled Module").toUpperCase();
 
-        // Enable Buttons based on keys
+        // Enable Buttons
         document.getElementById('btn-vocab').disabled = !data.vocabulary || data.vocabulary.length < 4;
         document.getElementById('btn-memory').disabled = !data.vocabulary || data.vocabulary.length < 2;
         document.getElementById('btn-timeline').disabled = !data.timeline || data.timeline.length < 3;
@@ -328,7 +431,6 @@
 
     // --- VOCAB ENGINE ---
     function startVocab() {
-        // Pool: vocabulary items
         state.pool = [...state.module.vocabulary].sort(() => 0.5 - Math.random()).slice(0, 10);
         document.getElementById('generic-quiz-ui').style.display = 'flex';
         loadVocabRound();
@@ -336,21 +438,13 @@
 
     function loadVocabRound() {
         if (state.currentIdx >= state.pool.length) { showReport(); return; }
-        
         const target = state.pool[state.currentIdx];
-        
-        // Randomly decide: Show Term, Guess Def OR Show Def, Guess Term
         const showTerm = Math.random() > 0.5;
         
         document.getElementById('quiz-prompt').innerText = showTerm ? "DEFINE THIS TERM:" : "IDENTIFY THE TERM:";
         document.getElementById('quiz-main').innerText = showTerm ? target.term.toUpperCase() : `"${target.definition}"`;
         
-        // Distractors
-        let options = state.module.vocabulary
-            .filter(v => v.term !== target.term)
-            .sort(() => 0.5 - Math.random())
-            .slice(0, 3);
-        
+        let options = state.module.vocabulary.filter(v => v.term !== target.term).sort(() => 0.5 - Math.random()).slice(0, 3);
         options.push(target);
         state.currentOptions = options.sort(() => 0.5 - Math.random());
 
@@ -362,9 +456,9 @@
             btn.className = 'option-btn';
             btn.innerText = showTerm ? opt.definition : opt.term.toUpperCase();
             btn.onclick = () => checkVocab(idx, target);
+            if(btn.innerText.length > 60) btn.style.fontSize = "18px";
             grid.appendChild(btn);
         });
-        
         resetFeedback();
     }
 
@@ -384,18 +478,12 @@
     function loadQuizRound() {
         if (state.currentIdx >= state.pool.length) { showReport(); return; }
         const qData = state.pool[state.currentIdx];
-        
         document.getElementById('quiz-prompt').innerText = "QUESTION:";
         document.getElementById('quiz-main').innerText = qData.question;
+        state.currentOptions = qData.options.map(o => ({ text: o, isCorrect: o === qData.correctAnswer })).sort(() => 0.5 - Math.random());
         
-        state.currentOptions = qData.options.map(o => ({ text: o, isCorrect: o === qData.correctAnswer }));
-        // Shuffle options? Usually good, but let's keep order if module implies it. 
-        // We'll shuffle to be safe.
-        state.currentOptions.sort(() => 0.5 - Math.random());
-
         const grid = document.getElementById('quiz-options');
         grid.innerHTML = '';
-        
         state.currentOptions.forEach((opt, idx) => {
             const btn = document.createElement('button');
             btn.className = 'option-btn';
@@ -415,7 +503,6 @@
     // --- TIMELINE ENGINE ---
     function startTimeline() {
         document.getElementById('timeline-ui').style.display = 'flex';
-        // Pick 5 events
         state.pool = [...state.module.timeline].sort(() => 0.5 - Math.random()).slice(0, 5);
         renderTimeline();
         resetFeedback();
@@ -424,21 +511,12 @@
     function renderTimeline() {
         const list = document.getElementById('timeline-list');
         list.innerHTML = '';
-        
         state.pool.forEach((item, idx) => {
             const row = document.createElement('div');
             row.className = 'timeline-item';
-            
-            // For logic, we hide the actual year in the DOM? No, user needs to know.
-            // Wait, if we show year, it's too easy. We must hide the year!
-            // OR, the game is: Sort these events. We reveal year at end.
-            
             row.innerHTML = `
                 <div class="timeline-content">${item.event}</div>
-                <div class="move-controls">
-                    <button onclick="moveTimeline(${idx}, -1)">▲</button>
-                    <button onclick="moveTimeline(${idx}, 1)">▼</button>
-                </div>
+                <div class="move-controls"><button onclick="moveTimeline(${idx}, -1)">▲</button><button onclick="moveTimeline(${idx}, 1)">▼</button></div>
             `;
             list.appendChild(row);
         });
@@ -447,8 +525,6 @@
     function moveTimeline(idx, dir) {
         const newIdx = idx + dir;
         if (newIdx < 0 || newIdx >= state.pool.length) return;
-        
-        // Swap
         const temp = state.pool[idx];
         state.pool[idx] = state.pool[newIdx];
         state.pool[newIdx] = temp;
@@ -456,195 +532,124 @@
     }
 
     function checkTimeline() {
-        // Correct order is sorted by year
         const sorted = [...state.pool].sort((a,b) => a.year - b.year);
         let allCorrect = true;
-        
-        // Visual check
         const rows = document.querySelectorAll('.timeline-item');
-        
         state.pool.forEach((item, idx) => {
-            const isPosCorrect = item.year === sorted[idx].year; // Simple check
-            const row = rows[idx];
-            
-            row.querySelector('.timeline-content').innerText = `${item.year}: ${item.event}`;
-            
-            if (isPosCorrect) {
-                row.classList.add('correct');
-            } else {
-                allCorrect = false;
-            }
+            const isPosCorrect = item.year === sorted[idx].year;
+            rows[idx].querySelector('.timeline-content').innerText = `${item.year}: ${item.event}`;
+            if (isPosCorrect) rows[idx].classList.add('correct');
+            else allCorrect = false;
         });
 
         const fb = document.getElementById('feedback-bar');
         fb.classList.add('visible');
-        
         state.testTotal++;
         if (allCorrect) {
-            fb.className = 'correct visible';
-            fb.innerText = "PERFECT ORDER!";
-            state.testCorrect++;
-            state.score += 50;
+            fb.className = 'correct visible'; fb.innerText = "PERFECT ORDER!";
+            state.testCorrect++; state.score += 50;
         } else {
-            fb.className = 'wrong visible';
-            fb.innerText = "NOT QUITE...";
+            fb.className = 'wrong visible'; fb.innerText = "NOT QUITE...";
         }
         document.getElementById('score-display').innerText = "SCORE: " + state.score;
-        
-        setTimeout(() => {
-            if (state.testTotal < 3) { // Play 3 rounds? Or just one? Let's do just one for now, or reset.
-                // startTimeline(); // New round
-                showReport();
-            } else {
-                showReport();
-            }
-        }, 3000);
+        setTimeout(() => showReport(), 3000);
     }
 
     // --- MEMORY ENGINE ---
     function startMemory() {
         document.getElementById('memory-ui').style.display = 'flex';
-        state.flippedCards = [];
-        state.matchesFound = 0;
-        state.isLocked = false;
-
-        // Create pairs (Term ID and Def ID)
-        // We use index as ID for simplicity
-        const pairs = state.module.vocabulary.slice(0, 8); // Max 8 pairs (16 cards)
+        state.flippedCards = []; state.matchesFound = 0; state.isLocked = false;
+        const pairs = state.module.vocabulary.slice(0, 8); 
         let cards = [];
-        
         pairs.forEach((item, i) => {
             cards.push({ id: i, type: 'term', text: item.term });
             cards.push({ id: i, type: 'def', text: item.definition });
         });
-        
         cards.sort(() => 0.5 - Math.random());
         state.pool = cards;
         
         const grid = document.getElementById('memory-grid');
         grid.innerHTML = '';
-        
         cards.forEach((card, idx) => {
             const div = document.createElement('div');
             div.className = 'mem-card';
             div.innerText = card.text;
             div.dataset.idx = idx;
             div.onclick = () => flipCard(div, card);
-            
-            // Adjust font size for long definitions
             if (card.text.length > 50) div.style.fontSize = "12px";
             else if (card.text.length > 20) div.style.fontSize = "16px";
-            
             grid.appendChild(div);
         });
-        
-        state.testTotal = pairs.length; // Total matches needed
+        state.testTotal = pairs.length;
     }
 
     function flipCard(el, cardData) {
         if (state.isLocked || el.classList.contains('flipped') || el.classList.contains('matched')) return;
-        
         el.classList.add('flipped');
         state.flippedCards.push({ el, data: cardData });
-
-        if (state.flippedCards.length === 2) {
-            checkForMatch();
-        }
+        if (state.flippedCards.length === 2) checkForMatch();
     }
 
     function checkForMatch() {
         state.isLocked = true;
         const [c1, c2] = state.flippedCards;
         const isMatch = (c1.data.id === c2.data.id);
-
         const fb = document.getElementById('feedback-bar');
         
         if (isMatch) {
-            fb.className = 'correct visible';
-            fb.innerText = "MATCH FOUND!";
-            state.score += 10;
-            state.matchesFound++;
+            fb.className = 'correct visible'; fb.innerText = "MATCH FOUND!";
+            state.score += 10; state.matchesFound++;
             document.getElementById('score-display').innerText = "SCORE: " + state.score;
-            
             setTimeout(() => {
-                c1.el.classList.add('matched');
-                c2.el.classList.add('matched');
-                state.flippedCards = [];
-                state.isLocked = false;
-                fb.className = '';
-                
-                if (state.matchesFound === state.testTotal) {
-                    state.testCorrect = state.testTotal; // Full score
-                    showReport();
-                }
+                c1.el.classList.add('matched'); c2.el.classList.add('matched');
+                state.flippedCards = []; state.isLocked = false; fb.className = '';
+                if (state.matchesFound === state.testTotal) { state.testCorrect = state.testTotal; showReport(); }
             }, 1000);
         } else {
-            fb.className = 'wrong visible';
-            fb.innerText = "NO MATCH";
+            fb.className = 'wrong visible'; fb.innerText = "NO MATCH";
             setTimeout(() => {
-                c1.el.classList.remove('flipped');
-                c2.el.classList.remove('flipped');
-                state.flippedCards = [];
-                state.isLocked = false;
-                fb.className = '';
+                c1.el.classList.remove('flipped'); c2.el.classList.remove('flipped');
+                state.flippedCards = []; state.isLocked = false; fb.className = '';
             }, 1500);
         }
     }
 
-
     // --- HELPERS ---
-    
     function handleStandardResult(idx, isCorrect, correctText) {
-        // Disable buttons
         const btns = document.querySelectorAll('.option-btn');
         btns.forEach(b => b.disabled = true);
-        
         const feedback = document.getElementById('feedback-bar');
         feedback.classList.add('visible');
-        
         state.testTotal++;
-
         if (isCorrect) {
             btns[idx].classList.add('correct-anim');
-            feedback.className = 'correct visible';
-            feedback.innerText = "CORRECT!";
-            state.score += 10;
-            state.testCorrect++;
+            feedback.className = 'correct visible'; feedback.innerText = "CORRECT!";
+            state.score += 10; state.testCorrect++;
             document.getElementById('score-display').innerText = "SCORE: " + state.score;
-            
             setTimeout(() => {
                 state.currentIdx++;
-                if (state.gameMode === 'vocab') loadVocabRound();
-                else loadQuizRound();
+                if (state.gameMode === 'vocab') loadVocabRound(); else loadQuizRound();
             }, 1000);
         } else {
             btns[idx].classList.add('wrong-anim');
-            feedback.className = 'wrong visible';
-            feedback.innerText = "WRONG. ANSWER: " + correctText;
-            
+            feedback.className = 'wrong visible'; feedback.innerText = "WRONG. ANSWER: " + correctText;
             const win = document.getElementById('game-screen');
-            void win.offsetWidth; 
-            win.classList.add('shake-effect');
-            
+            void win.offsetWidth; win.classList.add('shake-effect');
             setTimeout(() => {
-                win.classList.remove('shake-effect');
-                state.currentIdx++;
-                if (state.gameMode === 'vocab') loadVocabRound();
-                else loadQuizRound();
+                win.classList.remove('shake-effect'); state.currentIdx++;
+                if (state.gameMode === 'vocab') loadVocabRound(); else loadQuizRound();
             }, 2500);
         }
     }
 
     function resetFeedback() {
         const fb = document.getElementById('feedback-bar');
-        fb.className = '';
-        fb.classList.remove('visible');
+        fb.className = ''; fb.classList.remove('visible');
     }
 
     function showReport() {
         let pct = state.testTotal === 0 ? 0 : Math.round((state.testCorrect / state.testTotal) * 100);
-        if (state.gameMode === 'timeline') pct = state.testCorrect > 0 ? 100 : 0; // Simple logic for timeline
-        
+        if (state.gameMode === 'timeline') pct = state.testCorrect > 0 ? 100 : 0;
         document.getElementById('report-percent').innerText = pct + "%";
         document.getElementById('report-fraction').innerText = `${state.testCorrect} / ${state.testTotal} Correct`;
         document.getElementById('report-modal').style.display = 'flex';
@@ -654,7 +659,6 @@
         document.getElementById('report-modal').style.display = 'none';
         quitGame();
     }
-
 </script>
 </body>
 </html>
