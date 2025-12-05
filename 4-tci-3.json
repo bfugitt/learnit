@@ -1,0 +1,663 @@
+{
+  "moduleInfo": {
+    "title": "Lesson 3 - Exploration and Settlement of California",
+    "subject": "History",
+    "level": "4th Grade"
+  },
+  "vocabulary": [
+    {
+      "term": "colony",
+      "definition": "A territory that is ruled by a country in another land."
+    },
+    {
+      "term": "current",
+      "definition": "The flow of water in a particular direction in an ocean or river."
+    },
+    {
+      "term": "expedition",
+      "definition": "A journey to explore unknown places."
+    },
+    {
+      "term": "mission",
+      "definition": "A settlement where priests taught their religion to native peoples."
+    },
+    {
+      "term": "peninsula",
+      "definition": "A piece of land that is almost surrounded by water but connected to the mainland."
+    },
+    {
+      "term": "presidio",
+      "definition": "A fort built by the Spanish to protect missions."
+    },
+    {
+      "term": "pueblo",
+      "definition": "A farming settlement started by the Spanish to grow food."
+    },
+    {
+      "term": "strait",
+      "definition": "A narrow strip of water connecting two larger bodies of water."
+    },
+    {
+      "term": "artifact",
+      "definition": "An object made or used by people in the past."
+    },
+    {
+      "term": "explorer",
+      "definition": "A person who travels to discover new places."
+    },
+    {
+      "term": "conquered",
+      "definition": "Defeated and took control of a place or people by force."
+    },
+    {
+      "term": "astonished",
+      "definition": "Very surprised or amazed."
+    },
+    {
+      "term": "harbor",
+      "definition": "A protected area of water where ships can safely anchor."
+    },
+    {
+      "term": "settlement",
+      "definition": "A place where people establish a new community."
+    },
+    {
+      "term": "native peoples",
+      "definition": "The original inhabitants of a land."
+    },
+    {
+      "term": "billowing",
+      "definition": "Swelling out or bulging, like sails filled with wind."
+    },
+    {
+      "term": "infection",
+      "definition": "A disease caused by germs entering the body."
+    },
+    {
+      "term": "knighthood",
+      "definition": "An honor given by a king or queen, making someone a knight."
+    },
+    {
+      "term": "replica",
+      "definition": "An exact copy of something."
+    },
+    {
+      "term": "fake",
+      "definition": "Something that is not real or genuine."
+    }
+  ],
+  "timeline": [
+    {
+      "year": 1492,
+      "event": "Christopher Columbus set sail from Spain and discovered new lands unknown to Europeans."
+    },
+    {
+      "year": 1532,
+      "event": "Spanish explorers began sailing west from Mexico."
+    },
+    {
+      "year": 1542,
+      "event": "Juan Rodríguez Cabrillo led the first sea expedition to Alta California."
+    },
+    {
+      "year": 1542,
+      "event": "Cabrillo reached San Diego Bay in September and claimed the land for Spain."
+    },
+    {
+      "year": 1577,
+      "event": "Francis Drake set off across the Atlantic Ocean."
+    },
+    {
+      "year": 1579,
+      "event": "Francis Drake landed near San Francisco to repair his leaking ship."
+    },
+    {
+      "year": 1579,
+      "event": "Drake ordered a brass plate to be made claiming the land for Queen Elizabeth."
+    },
+    {
+      "year": 1580,
+      "event": "Francis Drake reached England, completing the second expedition to sail around the world."
+    },
+    {
+      "year": 1581,
+      "event": "Queen Elizabeth rewarded Drake with knighthood on April 4."
+    },
+    {
+      "year": 1602,
+      "event": "Sebastián Vizcaíno sailed from Mexico to map the California coast."
+    },
+    {
+      "year": 1602,
+      "event": "Vizcaíno entered Monterey Bay and named it."
+    },
+    {
+      "year": 1728,
+      "event": "Vitus Bering found a waterway separating Asia and North America."
+    },
+    {
+      "year": 1741,
+      "event": "Bering sailed again to map the coast of North America and explored Alaska."
+    },
+    {
+      "year": 1769,
+      "event": "Spain sent a large expedition to California led by Gaspar de Portolá."
+    },
+    {
+      "year": 1769,
+      "event": "Father Junípero Serra founded the first mission in San Diego."
+    },
+    {
+      "year": 1770,
+      "event": "Father Serra started the second mission in Monterey."
+    },
+    {
+      "year": 1775,
+      "event": "Captain Juan Bautista de Anza led another group of settlers to Alta California."
+    },
+    {
+      "year": 1777,
+      "event": "San José, the first pueblo, was started."
+    },
+    {
+      "year": 1778,
+      "event": "English explorer James Cook searched for the Northwest Passage."
+    },
+    {
+      "year": 1781,
+      "event": "Angry Yuma Indians attacked a group of settlers, closing the overland route."
+    },
+    {
+      "year": 1936,
+      "event": "Beryle Shinn found a metal plate north of San Francisco."
+    },
+    {
+      "year": 1937,
+      "event": "Herbert Bolton announced that Drake's brass plate had been found."
+    },
+    {
+      "year": 1953,
+      "event": "Herbert Bolton died without knowing the brass plate was fake."
+    },
+    {
+      "year": 1977,
+      "event": "Researchers performed tests showing the brass plate could not have been made in the 1500s."
+    }
+  ],
+  "artworks": [
+    {
+      "title": "Spanish Ships Arriving in California Waters",
+      "medium": "Historical Illustration",
+      "description": "Three ships with tall masts and billowing sails appearing in the distance off the southern California coast in 1542."
+    },
+    {
+      "title": "Cabrillo's Expedition",
+      "medium": "Historical Painting",
+      "description": "Spanish sailors and soldiers aboard ships sailing northwest along the California coast, with Mexican Indians on board."
+    },
+    {
+      "title": "Meeting at San Diego Bay",
+      "medium": "Historical Scene",
+      "description": "Kumeyaay Indians using sign language to communicate with European explorers who have just landed on shore."
+    },
+    {
+      "title": "The Golden Hind",
+      "medium": "Ship Portrait",
+      "description": "An English ship sailing alone up the western coast, loaded with treasure chests containing jewels, pearls, gold, and silver."
+    },
+    {
+      "title": "Drake's California Landing",
+      "medium": "Historical Illustration",
+      "description": "A large ship raised out of the water for repairs while native people watch the crew work."
+    },
+    {
+      "title": "The Brass Plate",
+      "medium": "Metal Artifact",
+      "description": "A small metal plate with the date 1579 engraved on it, claiming land in the name of a queen, with a hole for a coin."
+    },
+    {
+      "title": "Portolá's Land Expedition",
+      "medium": "Historical Scene",
+      "description": "Soldiers and priests traveling with a huge herd of cattle and horses, with mules carrying packs through hilly desert terrain."
+    },
+    {
+      "title": "Mission San Diego",
+      "medium": "Architectural Drawing",
+      "description": "The first European settlement in Alta California, founded in 1769 by a Catholic priest."
+    },
+    {
+      "title": "Chumash Welcome",
+      "medium": "Historical Painting",
+      "description": "A chief and his entire village bringing food to a camp of travelers, offering more than the people could eat."
+    },
+    {
+      "title": "San Francisco Bay Discovery",
+      "medium": "Landscape View",
+      "description": "A massive bay viewed from high ground, described as big enough for all of Spain's navies."
+    }
+  ],
+  "locations": [
+    {
+      "name": "Spain",
+      "significance": "The country that sent explorers to the Americas and claimed California as a colony."
+    },
+    {
+      "name": "Mexico",
+      "significance": "The land conquered by the Spanish where they found gold and silver from the Aztecs, and the starting point for expeditions to California."
+    },
+    {
+      "name": "Baja California",
+      "significance": "A peninsula that Spanish explorers first thought was an island, meaning 'lower' California in Spanish."
+    },
+    {
+      "name": "Alta California",
+      "significance": "The land to the north of Baja California, meaning 'upper' California, which later became the state of California."
+    },
+    {
+      "name": "San Diego Bay",
+      "significance": "The sheltered bay where Cabrillo landed in September 1542 and claimed the land for Spain."
+    },
+    {
+      "name": "Oregon",
+      "significance": "The northern territory Cabrillo's crew reached before returning to Mexico."
+    },
+    {
+      "name": "England",
+      "significance": "The country that sent Francis Drake to explore and attack Spanish ships in the Pacific."
+    },
+    {
+      "name": "San Francisco",
+      "significance": "The area near where Drake landed in 1579 to repair his ship, and where Portolá's men later spotted the bay."
+    },
+    {
+      "name": "Drakes Bay",
+      "significance": "The area where Drake landed and stayed for over a month, and where he placed his brass plate."
+    },
+    {
+      "name": "Monterey Bay",
+      "significance": "The large bay that Vizcaíno entered and named, calling it a perfect harbor for Spanish ships."
+    },
+    {
+      "name": "Bering Strait",
+      "significance": "The waterway found by Vitus Bering in 1728 that separates Asia and North America."
+    },
+    {
+      "name": "Alaska",
+      "significance": "The coast explored by Bering in 1741, and where Russian fur traders were looking for seals and sea otters."
+    },
+    {
+      "name": "San José",
+      "significance": "The first pueblo (farming settlement) started in 1777 to grow food for the presidios."
+    },
+    {
+      "name": "Mission Santa Clara",
+      "significance": "A mission established by Fray Tomás de la Peña, separated from San José pueblo by the Guadalupe River."
+    },
+    {
+      "name": "Guadalupe River",
+      "significance": "The river that became the boundary between Mission Santa Clara and San José pueblo."
+    },
+    {
+      "name": "Asia",
+      "significance": "The land of spices and silks that European explorers wanted to reach by finding a sea route."
+    },
+    {
+      "name": "Pacific Ocean",
+      "significance": "The vast ocean west of the Americas that explorers had to cross to reach Asia."
+    }
+  ],
+  "trueFalse": [
+    {
+      "statement": "Christopher Columbus discovered California in 1492.",
+      "isTrue": false,
+      "correction": "Christopher Columbus set sail from Spain in 1492 and found new lands unknown to Europeans, but he did not discover California. Juan Rodríguez Cabrillo was the first European to explore California in 1542."
+    },
+    {
+      "statement": "The Spanish found gold and silver in Mexico from the Aztec Indians.",
+      "isTrue": true,
+      "correction": "The Spanish conquered the Aztecs in Mexico and found both gold and silver there, which led them to search for more riches in other lands including California."
+    },
+    {
+      "statement": "Juan Rodríguez Cabrillo completed his entire voyage and returned safely to Mexico.",
+      "isTrue": false,
+      "correction": "Cabrillo died of an infection before finishing the voyage. His crew buried him in California, continued on to Oregon, and then returned to Mexico."
+    },
+    {
+      "statement": "The Pacific coast was difficult for sailors because the ocean current flows south and the wind usually blows from the northwest.",
+      "isTrue": true,
+      "correction": "Both the southward current and the northwestern wind made it very hard for Cabrillo and other explorers to sail north along the coast."
+    },
+    {
+      "statement": "Francis Drake was searching for the Northwest Passage when he reached California.",
+      "isTrue": true,
+      "correction": "Drake was looking for a western opening to the Northwest Passage, which was a hoped-for shortcut between England and Asia through North America."
+    },
+    {
+      "statement": "Queen Elizabeth punished Francis Drake for attacking Spanish ships.",
+      "isTrue": false,
+      "correction": "Queen Elizabeth actually rewarded Drake with knighthood on April 4, 1581, for his efforts, and she had even helped pay for his voyage."
+    },
+    {
+      "statement": "Sebastián Vizcaíno reached San Diego Bay in just one month.",
+      "isTrue": false,
+      "correction": "It took Vizcaíno six months just to reach San Diego Bay because the winds and currents slowed his ships down."
+    },
+    {
+      "statement": "Vitus Bering discovered that Asia and North America are separated by water.",
+      "isTrue": true,
+      "correction": "In 1728, Bering found a waterway separating the two continents, which became known as the Bering Strait."
+    },
+    {
+      "statement": "Spain returned to California in 1769 because they were worried about England and Russia.",
+      "isTrue": true,
+      "correction": "Spain was troubled by England's growing power on the eastern coast of North America and worried that Russian fur traders from Alaska might try to take over California."
+    },
+    {
+      "statement": "All the ships and groups in Portolá's expedition arrived at San Diego without any problems.",
+      "isTrue": false,
+      "correction": "The journey was very difficult. Many sailors got sick and died, one ship sank, and by the time the groups met at San Diego, half the men on one ship had died."
+    },
+    {
+      "statement": "Father Junípero Serra founded the first mission in San Diego in 1769.",
+      "isTrue": true,
+      "correction": "Father Serra, a Catholic priest who came to teach Christianity to native peoples, founded the first mission in San Diego soon after arriving with the Portolá expedition."
+    },
+    {
+      "statement": "The Chumash Indians refused to give food to Portolá's expedition.",
+      "isTrue": false,
+      "correction": "According to Father Crespi's diary, the Chumash chief and his village brought more food than all the people could eat."
+    },
+    {
+      "statement": "Presidios were farming settlements built to grow food.",
+      "isTrue": false,
+      "correction": "Presidios were forts built by the Spanish to protect the missions. Pueblos were the farming settlements built to grow food for the presidios."
+    },
+    {
+      "statement": "The Spanish stopped using the overland route after Yuma Indians attacked settlers in 1781.",
+      "isTrue": true,
+      "correction": "The settlers' animals had trampled the Yuma Indians' crops, making them angry. After the 1781 attack, the Spanish had to bring supplies by ship instead."
+    },
+    {
+      "statement": "San José was moved to higher ground because the river kept flooding the farmland.",
+      "isTrue": true,
+      "correction": "The Guadalupe River often flooded the pueblo farmland, so the San José pueblo was eventually moved one mile south to higher ground."
+    },
+    {
+      "statement": "The brass plate found in 1936 was proven to be authentic and really made by Francis Drake.",
+      "isTrue": false,
+      "correction": "In 1977, researchers performed tests that showed the brass could not have been made in the 1500s. The plate was actually a practical joke created by Herbert Bolton's friends."
+    },
+    {
+      "statement": "Francis Drake ordered a brass plate to be made with the date and words claiming the land for Queen Elizabeth.",
+      "isTrue": true,
+      "correction": "Before leaving California, Drake ordered a plate made of brass with the date engraved on it and words claiming the land in the name of Queen Elizabeth, which was nailed to a post as a monument."
+    },
+    {
+      "statement": "Herbert Bolton knew the brass plate was fake before he died.",
+      "isTrue": false,
+      "correction": "Herbert Bolton died in 1953 without ever knowing the truth that the brass plate was a fake created by his friends as a practical joke."
+    },
+    {
+      "statement": "The Kumeyaay Indians welcomed Cabrillo's crew with open arms when they first arrived.",
+      "isTrue": false,
+      "correction": "The Kumeyaay Indians were afraid and used sign language to explain they had seen other men like the Spanish who had killed many Indians. Some Kumeyaays even attacked Cabrillo's crew when they rowed ashore to fish."
+    },
+    {
+      "statement": "James Cook successfully found the Northwest Passage in 1778.",
+      "isTrue": false,
+      "correction": "James Cook explored the Pacific coast from Oregon to Alaska and sailed through the Bering Strait, but ice blocked his ship. He died before he could return to search again, and never found the Northwest Passage."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Who was the first European explorer to reach Alta California by sea?",
+      "options": [
+        "Juan Rodríguez Cabrillo",
+        "Francis Drake",
+        "Christopher Columbus",
+        "Sebastián Vizcaíno"
+      ],
+      "correctAnswer": "Juan Rodríguez Cabrillo"
+    },
+    {
+      "question": "What year did Cabrillo first explore the coast of Alta California?",
+      "options": [
+        "1542",
+        "1492",
+        "1579",
+        "1602"
+      ],
+      "correctAnswer": "1542"
+    },
+    {
+      "question": "What does the Spanish word 'baja' mean?",
+      "options": [
+        "Lower",
+        "Upper",
+        "Mountain",
+        "Desert"
+      ],
+      "correctAnswer": "Lower"
+    },
+    {
+      "question": "What was Francis Drake searching for when he explored California?",
+      "options": [
+        "The Northwest Passage",
+        "Gold mines",
+        "A new colony",
+        "Spices"
+      ],
+      "correctAnswer": "The Northwest Passage"
+    },
+    {
+      "question": "What reward did Queen Elizabeth give to Francis Drake in 1581?",
+      "options": [
+        "Knighthood",
+        "A ship",
+        "Land in California",
+        "A chest of gold"
+      ],
+      "correctAnswer": "Knighthood"
+    },
+    {
+      "question": "Which bay did Sebastián Vizcaíno name in 1602?",
+      "options": [
+        "Monterey Bay",
+        "San Diego Bay",
+        "San Francisco Bay",
+        "Drakes Bay"
+      ],
+      "correctAnswer": "Monterey Bay"
+    },
+    {
+      "question": "What waterway did Vitus Bering discover that separates Asia and North America?",
+      "options": [
+        "Bering Strait",
+        "Pacific Ocean",
+        "Northwest Passage",
+        "Golden Gate"
+      ],
+      "correctAnswer": "Bering Strait"
+    },
+    {
+      "question": "Who led the 1769 expedition to California?",
+      "options": [
+        "Gaspar de Portolá",
+        "Father Junípero Serra",
+        "Juan Bautista de Anza",
+        "Juan Crespi"
+      ],
+      "correctAnswer": "Gaspar de Portolá"
+    },
+    {
+      "question": "What was the main purpose of the missions established in California?",
+      "options": [
+        "To teach Christianity to native peoples",
+        "To mine for gold",
+        "To grow food",
+        "To protect against enemies"
+      ],
+      "correctAnswer": "To teach Christianity to native peoples"
+    },
+    {
+      "question": "What is a presidio?",
+      "options": [
+        "A fort built to protect missions",
+        "A farming settlement",
+        "A church building",
+        "A type of ship"
+      ],
+      "correctAnswer": "A fort built to protect missions"
+    },
+    {
+      "question": "What is a pueblo?",
+      "options": [
+        "A farming settlement",
+        "A military fort",
+        "A religious mission",
+        "A trading post"
+      ],
+      "correctAnswer": "A farming settlement"
+    },
+    {
+      "question": "What was the first pueblo established in California?",
+      "options": [
+        "San José",
+        "San Diego",
+        "Monterey",
+        "San Francisco"
+      ],
+      "correctAnswer": "San José"
+    },
+    {
+      "question": "Why did the Spanish stop using the overland route to California after 1781?",
+      "options": [
+        "Yuma Indians attacked settlers",
+        "The trail was too long",
+        "There was no water",
+        "The mountains were too high"
+      ],
+      "correctAnswer": "Yuma Indians attacked settlers"
+    },
+    {
+      "question": "What made sailing north along the California coast difficult for explorers?",
+      "options": [
+        "The current flowed south and wind blew from the northwest",
+        "There were too many islands",
+        "The water was too shallow",
+        "Pirates controlled the coast"
+      ],
+      "correctAnswer": "The current flowed south and wind blew from the northwest"
+    },
+    {
+      "question": "What did Father Crespi do during the Portolá expedition?",
+      "options": [
+        "Kept a diary describing the land and people",
+        "Led the soldiers",
+        "Founded missions",
+        "Drew maps"
+      ],
+      "correctAnswer": "Kept a diary describing the land and people"
+    },
+    {
+      "question": "Why did Drake land near San Francisco in 1579?",
+      "options": [
+        "His ship was leaking and needed repairs",
+        "He wanted to claim land",
+        "He ran out of food",
+        "He was searching for gold"
+      ],
+      "correctAnswer": "His ship was leaking and needed repairs"
+    },
+    {
+      "question": "What was the name of Francis Drake's ship?",
+      "options": [
+        "Golden Hind",
+        "Santa Maria",
+        "Mayflower",
+        "Victoria"
+      ],
+      "correctAnswer": "Golden Hind"
+    },
+    {
+      "question": "How long did it take Vizcaíno to reach San Diego Bay from Mexico?",
+      "options": [
+        "Six months",
+        "One month",
+        "One year",
+        "Three weeks"
+      ],
+      "correctAnswer": "Six months"
+    },
+    {
+      "question": "What happened to many sailors during the sea journey to San Diego in 1769?",
+      "options": [
+        "They got sick and died",
+        "They found gold",
+        "They deserted the expedition",
+        "They discovered new islands"
+      ],
+      "correctAnswer": "They got sick and died"
+    },
+    {
+      "question": "When was the brass plate supposedly made by Drake proven to be fake?",
+      "options": [
+        "1977",
+        "1936",
+        "1937",
+        "1953"
+      ],
+      "correctAnswer": "1977"
+    },
+    {
+      "question": "Who found the brass plate in 1936?",
+      "options": [
+        "Beryle Shinn",
+        "Herbert Bolton",
+        "Francis Drake",
+        "James Cook"
+      ],
+      "correctAnswer": "Beryle Shinn"
+    },
+    {
+      "question": "What did the Spanish conquer in Mexico that was filled with treasures?",
+      "options": [
+        "The Aztec civilization",
+        "The Mayan temples",
+        "The Inca empire",
+        "The Olmec cities"
+      ],
+      "correctAnswer": "The Aztec civilization"
+    },
+    {
+      "question": "What indigenous group did Drake meet when he landed in California?",
+      "options": [
+        "Miwok Indians",
+        "Kumeyaay Indians",
+        "Chumash Indians",
+        "Yuma Indians"
+      ],
+      "correctAnswer": "Miwok Indians"
+    },
+    {
+      "question": "Why were the Spanish worried about Russia in the 1760s?",
+      "options": [
+        "Russian fur traders were coming down the Pacific coast from Alaska",
+        "Russia had declared war on Spain",
+        "Russia had already conquered California",
+        "Russian ships were blocking trade routes"
+      ],
+      "correctAnswer": "Russian fur traders were coming down the Pacific coast from Alaska"
+    },
+    {
+      "question": "What caused the San José pueblo to be moved?",
+      "options": [
+        "The Guadalupe River kept flooding the farmland",
+        "Indian attacks",
+        "Lack of water",
+        "Spanish orders from the king"
+      ],
+      "correctAnswer": "The Guadalupe River kept flooding the farmland"
+    }
+  ]
+}
