@@ -1,77 +1,63 @@
 {
   "moduleInfo": {
     "title": "The Art of Beatrix Potter",
-    "subject": "Fine Arts Decathlon",
+    "subject": "Fine Arts",
     "level": "Junior High"
   },
   "vocabulary": [
-    { 
-      "term": "Mycology", 
-      "definition": "A branch of biology dealing with the study of fungi." 
-    },
-    { 
-      "term": "Pre-Raphaelite", 
-      "definition": "A group of artists who sought to restore artistic principles from before Raphael." 
-    },
-    { 
-      "term": "Hybridization", 
-      "definition": "The act of producing an offspring of two animals or plants of different breeds." 
-    },
-    { 
-      "term": "Lichen", 
-      "definition": "A complex organism made of an alga and a fungus growing in symbiotic association." 
-    },
-    { 
-      "term": "Verdant", 
-      "definition": "Green with vegetation; lush and covered in plants or grass." 
-    },
-    { 
-      "term": "Fauna", 
-      "definition": "The animals characteristic of a particular region, period, or special environment." 
-    },
-    { 
-      "term": "Opaque Layering", 
-      "definition": "Applying multiple layers of material where underlying layers are completely hidden." 
-    },
-    { 
-      "term": "Spore", 
-      "definition": "A single-celled reproductive body produced by plants, fungi, and some microorganisms." 
-    }
+    { "term": "Mycology", "definition": "A branch of biology dealing with the study of fungi." },
+    { "term": "Pre-Raphaelite", "definition": "A group of artists who sought to restore artistic principles from before Raphael." },
+    { "term": "Hybridization", "definition": "The act of producing an offspring of two animals or plants of different breeds." },
+    { "term": "Lichen", "definition": "A complex organism made of an alga and a fungus growing in symbiotic association." },
+    { "term": "Verdant", "definition": "Green with vegetation; lush and covered in plants or grass." },
+    { "term": "Fauna", "definition": "The animals characteristic of a particular region, period, or special environment." },
+    { "term": "Opaque Layering", "definition": "Applying multiple layers of material where underlying layers are completely hidden." },
+    { "term": "Spore", "definition": "A single-celled reproductive body produced by plants, fungi, and some microorganisms." }
   ],
   "timeline": [
-    { "year": 1866, "event": "Beatrix Potter is born (150th Anniversary observed in 2016)" },
-    { "year": 1890, "event": "Beatrix paints 'Fly agaric', showing her growing sophistication" },
-    { "year": 1892, "event": "Beatrix meets her mentor, Charles McIntosh, for the first time" },
-    { "year": 1893, "event": "Beatrix spends her first summer holiday at Eastwood in Dunkeld" },
-    { "year": 1894, "event": "The Potters' last family summer holiday in Scotland at Lennel House" },
-    { "year": 1922, "event": "Charles McIntosh bequeaths his drawings to the Perth Museum" },
-    { "year": 1978, "event": "Fungi drawings at Perth Museum are positively attributed to Beatrix Potter" }
+    { "year": 1866, "event": "Beatrix Potter is born in London." },
+    { "year": 1890, "event": "Beatrix paints 'Fly agaric', showing her growing sophistication." },
+    { "year": 1892, "event": "Beatrix meets her mentor, Charles McIntosh, for the first time." },
+    { "year": 1905, "event": "Beatrix purchases Hill Top Farm." },
+    { "year": 1943, "event": "Beatrix Potter passes away." }
+  ],
+  "artworks": [
+    { 
+      "title": "Study of a Bat", 
+      "medium": "Watercolor and pen", 
+      "description": "A precise anatomical drawing showing the wing structure of a nocturnal mammal." 
+    },
+    { 
+      "title": "Fly Agaric", 
+      "medium": "Watercolor", 
+      "description": "A painting of a red-capped toadstool situated among moss and pine needles." 
+    },
+    { 
+      "title": "Peter Rabbit", 
+      "medium": "Ink and Wash", 
+      "description": "An illustration of a rabbit in a blue jacket eating a radish." 
+    },
+    { 
+      "title": "The Tailor of Gloucester", 
+      "medium": "Watercolor", 
+      "description": "Intricate illustrations featuring mice sewing clothes, known for their period detail." 
+    }
+  ],
+  "locations": [
+    { "name": "Eastwood", "significance": "The house in Dunkeld where she met Charles McIntosh." },
+    { "name": "Hill Top Farm", "significance": "The farm she purchased in the Lake District which inspired many books." },
+    { "name": "Bolton Gardens", "significance": "Her childhood home in Kensington, London." },
+    { "name": "Perth Museum", "significance": "The museum where Charles McIntosh's drawings, and later Potter's fungi studies, were kept." }
+  ],
+  "trueFalse": [
+    { "statement": "Beatrix Potter was born in Scotland.", "isTrue": false, "correction": "She was born in London at 2 Bolton Gardens." },
+    { "statement": "Mycology is the study of mosses and ferns.", "isTrue": false, "correction": "Mycology is the study of fungi." },
+    { "statement": "Charles McIntosh was a postman who became an expert naturalist.", "isTrue": true, "correction": "He was indeed a rural postman and a respected naturalist." },
+    { "statement": "Potter's parents were very supportive of her scientific ambitions.", "isTrue": false, "correction": "Her parents, particularly her mother, discouraged her scientific interests." }
   ],
   "quiz": [
-    { 
-      "question": "Who was the Scottish postman and naturalist who mentored Beatrix Potter in mycology?", 
-      "options": ["Charles McIntosh", "John Ruskin", "William Morris", "Mr. McGregor"], 
-      "correctAnswer": "Charles McIntosh" 
-    },
-    { 
-      "question": "Which estate served as the Potters' holiday home during much of Beatrix's childhood?", 
-      "options": ["Dalguise House", "Hill Top Farm", "Lennel House", "Eastwood"], 
-      "correctAnswer": "Dalguise House" 
-    },
-    { 
-      "question": "Beatrix Potter is best known for creating which beloved children's character?", 
-      "options": ["Peter Rabbit", "Paddington Bear", "Winnie the Pooh", "Stuart Little"], 
-      "correctAnswer": "Peter Rabbit" 
-    },
-    { 
-      "question": "What specific scientific field involves the study of fungi?", 
-      "options": ["Mycology", "Botany", "Entomology", "Geology"], 
-      "correctAnswer": "Mycology" 
-    },
-    { 
-      "question": "In what year did Beatrix Potter first meet Charles McIntosh at Heath Park?", 
-      "options": ["1892", "1890", "1893", "1902"], 
-      "correctAnswer": "1892" 
-    }
+    { "question": "Who was the Scottish postman and naturalist who mentored Beatrix Potter?", "options": ["Charles McIntosh", "John Ruskin", "William Morris", "Mr. McGregor"], "correctAnswer": "Charles McIntosh" },
+    { "question": "Which estate served as the Potters' holiday home during much of Beatrix's childhood?", "options": ["Dalguise House", "Hill Top Farm", "Lennel House", "Eastwood"], "correctAnswer": "Dalguise House" },
+    { "question": "What specific scientific field involves the study of fungi?", "options": ["Mycology", "Botany", "Entomology", "Geology"], "correctAnswer": "Mycology" }
   ]
 }
