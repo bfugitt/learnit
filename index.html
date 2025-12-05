@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>MacStudy v1.6</title>
+    <title>MacStudy v1.7</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +31,7 @@
                 linear-gradient(-45deg, transparent 75%, #aaa 75%);
             background-size: 2px 2px;
             user-select: none;
-            -webkit-tap-highlight-color: transparent; /* Remove tap highlight on iOS */
+            -webkit-tap-highlight-color: transparent; 
         }
 
         /* --- RETRO MAC WINDOW STRUCTURE --- */
@@ -269,7 +269,7 @@
         .shake-effect { animation: shake 0.5s; }
         @keyframes shake { 0% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } 100% { transform: translateX(0); } }
 
-        /* --- MOBILE RESPONSIVENESS --- */
+        /* --- MOBILE RESPONSIVENESS (FIXED) --- */
         @media (max-width: 768px) {
             #main-window {
                 width: 100%;
@@ -280,44 +280,66 @@
             }
             
             h1 { font-size: 36px; margin: 10px 0; }
-            h2 { font-size: 22px; }
+            h2 { font-size: 20px; margin: 5px 0;}
             
-            /* Stack Menu Buttons */
+            /* MENU: 2 Columns for Mobile to save height */
             .menu-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
                 width: 100%;
-                max-width: 320px;
+                max-width: 100%;
+                gap: 8px;
             }
             
+            /* Smaller Menu Buttons */
             .btn {
                 width: 100%;
                 min-width: 0;
-                font-size: 20px;
-                margin: 5px 0;
+                font-size: 18px;
+                padding: 8px;
+                margin: 2px 0;
             }
 
-            /* Hypercard mobile tweak */
-            #btn-hyper { grid-column: auto !important; width: 100% !important; }
+            /* Hypercard button spans 2 columns at bottom */
+            #btn-hyper { grid-column: span 2 !important; width: 100% !important; }
 
-            /* Stack Quiz Options */
-            .options-grid { grid-template-columns: 1fr; }
+            /* QUIZ / VOCAB: Compact Layout */
+            .options-grid { 
+                grid-template-columns: 1fr; 
+                gap: 8px;
+            }
             
-            /* Adjust TF Buttons */
+            .option-btn {
+                min-height: 40px; /* Smaller height */
+                padding: 8px;
+                font-size: 18px; /* Smaller text */
+            }
+            
+            /* Compact Question Text */
+            .prompt-text { font-size: 20px; margin-bottom: 5px; }
+            .main-display { 
+                font-size: 20px; 
+                margin-bottom: 10px;
+                min-height: 40px; /* Prevent large whitespace */
+            }
+
+            /* TF Buttons */
             .tf-grid { gap: 10px; }
-            .tf-btn { width: 48%; height: 80px; font-size: 24px; }
+            .tf-btn { width: 48%; height: 70px; font-size: 24px; }
             
-            /* Adjust Dialog */
+            /* Dialog */
             .mac-dialog { width: 90%; max-width: 90%; }
             
             /* Hypercard Sizing */
-            .hyper-card { width: 95%; height: 260px; }
+            .hyper-card { width: 95%; height: 220px; }
             .card-body { font-size: 20px; padding: 10px; }
             
-            /* Content Padding */
+            /* Padding fixes */
             #content { padding: 10px; }
-            #hud { font-size: 18px; }
-            .prompt-text { font-size: 22px; }
-            .main-display { font-size: 24px; }
+            #hud { font-size: 18px; margin-bottom: 5px; padding-bottom: 5px;}
+            
+            /* Memory Grid Tweaks */
+            #memory-grid { gap: 2px; }
+            .mem-card { padding: 2px; font-size: 12px !important; border-width: 1px; }
         }
     </style>
 </head>
@@ -326,7 +348,7 @@
     <div id="main-window">
         <div id="title-bar">
             <div id="close-btn" onclick="quitGame()"></div>
-            <div id="title-text">MacStudy v1.6</div>
+            <div id="title-text">MacStudy v1.7</div>
         </div>
         
         <div id="menu-bar">
@@ -539,7 +561,7 @@
     }
 
     function showHelp() {
-        alert("MacStudy v1.6\n\n1. Create .json mod files.\n2. Add them to 'modules.json'.\n3. Use File > Open to play.");
+        alert("MacStudy v1.7\n\n1. Create .json mod files.\n2. Add them to 'modules.json'.\n3. Use File > Open to play.");
     }
 
     function loadModule(data) {
@@ -723,6 +745,7 @@
             btn.className = 'option-btn';
             btn.innerText = opt.text;
             btn.onclick = () => checkGeneric(idx, opt.isCorrect, correctTextForFeedback);
+            // On desktop we still use the font size adjustment, on mobile CSS handles it
             if(btn.innerText.length > 50) btn.style.fontSize = "16px";
             grid.appendChild(btn);
         });
