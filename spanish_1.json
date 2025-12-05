@@ -1,0 +1,693 @@
+{
+  "moduleInfo": {
+    "title": "Spanish: Holidays and Faith",
+    "subject": "Spanish Language - Catholic Focus",
+    "level": "Grades 3-5"
+  },
+  "vocabulary": [
+    {
+      "term": "Hola",
+      "definition": "Hello"
+    },
+    {
+      "term": "Adiós",
+      "definition": "Goodbye"
+    },
+    {
+      "term": "Buenos días",
+      "definition": "Good morning"
+    },
+    {
+      "term": "Buenas tardes",
+      "definition": "Good afternoon"
+    },
+    {
+      "term": "Buenas noches",
+      "definition": "Good evening/Good night"
+    },
+    {
+      "term": "Dios",
+      "definition": "God"
+    },
+    {
+      "term": "Jesús",
+      "definition": "Jesus"
+    },
+    {
+      "term": "María",
+      "definition": "Mary"
+    },
+    {
+      "term": "santo/santa",
+      "definition": "saint (masculine/feminine)"
+    },
+    {
+      "term": "iglesia",
+      "definition": "church"
+    },
+    {
+      "term": "cruz",
+      "definition": "cross"
+    },
+    {
+      "term": "ángel",
+      "definition": "angel"
+    },
+    {
+      "term": "oración",
+      "definition": "prayer"
+    },
+    {
+      "term": "Biblia",
+      "definition": "Bible"
+    },
+    {
+      "term": "bendición",
+      "definition": "blessing"
+    },
+    {
+      "term": "fe",
+      "definition": "faith"
+    },
+    {
+      "term": "esperanza",
+      "definition": "hope"
+    },
+    {
+      "term": "caridad",
+      "definition": "charity, love"
+    },
+    {
+      "term": "paz",
+      "definition": "peace"
+    },
+    {
+      "term": "amor",
+      "definition": "love"
+    },
+    {
+      "term": "familia",
+      "definition": "family"
+    },
+    {
+      "term": "Navidad",
+      "definition": "Christmas"
+    },
+    {
+      "term": "Nochebuena",
+      "definition": "Christmas Eve (literally 'Good Night')"
+    },
+    {
+      "term": "Pascua",
+      "definition": "Easter"
+    },
+    {
+      "term": "Semana Santa",
+      "definition": "Holy Week"
+    },
+    {
+      "term": "Viernes Santo",
+      "definition": "Good Friday"
+    },
+    {
+      "term": "Domingo de Resurrección",
+      "definition": "Easter Sunday (Resurrection Sunday)"
+    },
+    {
+      "term": "Día de los Reyes Magos",
+      "definition": "Day of the Three Kings (Epiphany) - January 6"
+    },
+    {
+      "term": "Día de Todos los Santos",
+      "definition": "All Saints' Day - November 1"
+    },
+    {
+      "term": "Día de los Muertos",
+      "definition": "Day of the Dead - November 2"
+    },
+    {
+      "term": "Cuaresma",
+      "definition": "Lent (the 40 days before Easter)"
+    },
+    {
+      "term": "Miércoles de Ceniza",
+      "definition": "Ash Wednesday"
+    },
+    {
+      "term": "Adviento",
+      "definition": "Advent (the season before Christmas)"
+    },
+    {
+      "term": "Las Posadas",
+      "definition": "A nine-day Christmas celebration (December 16-24)"
+    },
+    {
+      "term": "el Niño Jesús",
+      "definition": "the Baby Jesus"
+    },
+    {
+      "term": "belén/nacimiento",
+      "definition": "nativity scene (manger scene)"
+    },
+    {
+      "term": "los Reyes Magos",
+      "definition": "the Three Wise Men"
+    },
+    {
+      "term": "estrella",
+      "definition": "star"
+    },
+    {
+      "term": "pesebre",
+      "definition": "manger"
+    },
+    {
+      "term": "pastor",
+      "definition": "shepherd"
+    },
+    {
+      "term": "Virgen María",
+      "definition": "the Virgin Mary"
+    },
+    {
+      "term": "San José",
+      "definition": "Saint Joseph"
+    },
+    {
+      "term": "Nuestra Señora de Guadalupe",
+      "definition": "Our Lady of Guadalupe"
+    },
+    {
+      "term": "rosario",
+      "definition": "rosary"
+    },
+    {
+      "term": "milagro",
+      "definition": "miracle"
+    },
+    {
+      "term": "cielo",
+      "definition": "heaven/sky"
+    },
+    {
+      "term": "regalo",
+      "definition": "gift"
+    },
+    {
+      "term": "fiesta",
+      "definition": "feast, celebration, party"
+    },
+    {
+      "term": "alegría",
+      "definition": "joy, happiness"
+    },
+    {
+      "term": "gracias",
+      "definition": "thank you"
+    },
+    {
+      "term": "por favor",
+      "definition": "please"
+    },
+    {
+      "term": "perdón",
+      "definition": "pardon, forgiveness"
+    },
+    {
+      "term": "¡Feliz Navidad!",
+      "definition": "Merry Christmas!"
+    },
+    {
+      "term": "¡Felices Pascuas!",
+      "definition": "Happy Easter!"
+    },
+    {
+      "term": "¡Viva!",
+      "definition": "Long live! Hooray!"
+    },
+    {
+      "term": "villancico",
+      "definition": "Christmas carol"
+    },
+    {
+      "term": "campana",
+      "definition": "bell"
+    },
+    {
+      "term": "vela",
+      "definition": "candle"
+    },
+    {
+      "term": "luz",
+      "definition": "light"
+    }
+  ],
+  "timeline": [
+    {
+      "year": 1531,
+      "event": "Our Lady of Guadalupe appeared to Juan Diego in Mexico."
+    },
+    {
+      "year": 1492,
+      "event": "Christopher Columbus brought Spanish language and Catholic faith to the Americas."
+    },
+    {
+      "year": 1769,
+      "event": "Father Junípero Serra founded the first California mission in San Diego."
+    },
+    {
+      "year": 1850,
+      "event": "California became a state with many Spanish missions and Spanish-speaking Catholics."
+    }
+  ],
+  "artworks": [
+    {
+      "title": "Our Lady of Guadalupe",
+      "medium": "Religious Icon",
+      "description": "An image of Mary appearing to Juan Diego, wearing a blue-green cloak covered with stars, standing on a crescent moon with an angel below."
+    },
+    {
+      "title": "Las Posadas Procession",
+      "medium": "Folk Art Painting",
+      "description": "People carrying candles walking through streets at night, with children dressed as Mary and Joseph seeking shelter."
+    },
+    {
+      "title": "Mexican Nativity Scene",
+      "medium": "Clay Figurines",
+      "description": "Colorful handmade figures showing the Baby Jesus, Mary, Joseph, shepherds, animals, and the Three Kings around a simple stable."
+    },
+    {
+      "title": "Day of the Dead Altar",
+      "medium": "Mixed Media Installation",
+      "description": "A decorated table with photographs, marigold flowers, candles, sugar skulls, and favorite foods to remember loved ones who have died."
+    },
+    {
+      "title": "Three Kings Day Celebration",
+      "medium": "Illustration",
+      "description": "Three wise men in crowns and robes riding camels, carrying gifts of gold, frankincense, and myrrh, following a bright star."
+    },
+    {
+      "title": "Holy Week Procession in Spain",
+      "medium": "Photography",
+      "description": "People in traditional robes carrying religious statues and crosses through city streets during Semana Santa."
+    },
+    {
+      "title": "Mission Church Bells",
+      "medium": "Architecture",
+      "description": "White adobe church with a bell tower, red tile roof, and arched doorways at a California mission."
+    },
+    {
+      "title": "La Virgen de Guadalupe Tilma",
+      "medium": "Miraculous Image",
+      "description": "The original image preserved in Mexico City showing Mary's appearance to Juan Diego on his cloak made of cactus fiber."
+    }
+  ],
+  "locations": [
+    {
+      "name": "Mexico",
+      "significance": "The largest Spanish-speaking country where many Catholic traditions like Las Posadas and Día de los Muertos originated."
+    },
+    {
+      "name": "Spain",
+      "significance": "The country where the Spanish language comes from and where many Catholic Holy Week traditions are celebrated."
+    },
+    {
+      "name": "Basilica of Our Lady of Guadalupe (Mexico City)",
+      "significance": "The church built where Mary appeared to Juan Diego, one of the most visited Catholic pilgrimage sites in the world."
+    },
+    {
+      "name": "California Missions",
+      "significance": "21 missions founded by Spanish priests where Catholic faith and Spanish language were taught."
+    },
+    {
+      "name": "Vatican City",
+      "significance": "The home of the Pope and center of the Catholic Church, where Latin and many languages including Spanish are used."
+    },
+    {
+      "name": "Bethlehem",
+      "significance": "The birthplace of Jesus, celebrated at Christmas (Navidad) in Spanish-speaking countries."
+    },
+    {
+      "name": "Jerusalem",
+      "significance": "The holy city where Jesus died and rose again, remembered during Semana Santa and Pascua."
+    },
+    {
+      "name": "Latin America",
+      "significance": "The region including Mexico, Central and South America where Spanish is spoken and Catholic faith is widely practiced."
+    }
+  ],
+  "trueFalse": [
+    {
+      "statement": "Navidad is the Spanish word for Christmas.",
+      "isTrue": true,
+      "correction": "Spanish-speaking families celebrate Navidad with special traditions like Las Posadas, nativity scenes (belenes), and special foods."
+    },
+    {
+      "statement": "Las Posadas celebrates Easter.",
+      "isTrue": false,
+      "correction": "Las Posadas is a nine-day Christmas celebration from December 16-24 that reenacts Mary and Joseph's search for shelter in Bethlehem."
+    },
+    {
+      "statement": "Día de los Reyes Magos is celebrated on January 6.",
+      "isTrue": true,
+      "correction": "This day celebrates when the Three Wise Men brought gifts to Baby Jesus. In Spanish-speaking countries, children often receive gifts on this day instead of Christmas."
+    },
+    {
+      "statement": "Semana Santa means 'Happy Week.'",
+      "isTrue": false,
+      "correction": "Semana Santa means 'Holy Week' - the week before Easter when Catholics remember Jesus' death and resurrection."
+    },
+    {
+      "statement": "Our Lady of Guadalupe appeared to Juan Diego in Mexico in 1531.",
+      "isTrue": true,
+      "correction": "Mary appeared to Juan Diego on Tepeyac Hill near Mexico City. Her image miraculously appeared on his cloak and is still preserved today."
+    },
+    {
+      "statement": "Día de los Muertos is a sad day when families are afraid of death.",
+      "isTrue": false,
+      "correction": "Día de los Muertos (Day of the Dead) is a joyful celebration on November 2 when families remember and honor loved ones who have died, believing they are in heaven with God."
+    },
+    {
+      "statement": "Cuaresma is the Spanish word for Lent.",
+      "isTrue": true,
+      "correction": "Cuaresma is the 40-day period before Easter when Catholics pray, fast, and prepare their hearts for Pascua (Easter)."
+    },
+    {
+      "statement": "In Spanish, 'Dios' means 'day.'",
+      "isTrue": false,
+      "correction": "'Dios' means 'God' in Spanish. The word for 'day' is 'día.' Spanish-speaking Catholics pray to Dios and attend church (iglesia)."
+    },
+    {
+      "statement": "Villancicos are Spanish Christmas carols.",
+      "isTrue": true,
+      "correction": "Villancicos are joyful songs sung during the Christmas season in Spanish-speaking countries, often about the birth of Jesus."
+    },
+    {
+      "statement": "Miércoles de Ceniza is the last day of Lent.",
+      "isTrue": false,
+      "correction": "Miércoles de Ceniza (Ash Wednesday) is the FIRST day of Lent, when Catholics receive ashes on their foreheads as a sign of repentance."
+    },
+    {
+      "statement": "The rosario is a Spanish prayer using beads.",
+      "isTrue": true,
+      "correction": "The rosario (rosary) is a special Catholic prayer honoring Mary. Spanish-speaking Catholics often pray the rosary together as families."
+    },
+    {
+      "statement": "Nochebuena is celebrated on December 31.",
+      "isTrue": false,
+      "correction": "Nochebuena (literally 'Good Night') is Christmas Eve, December 24, when many Spanish-speaking families attend midnight Mass and have a special meal."
+    },
+    {
+      "statement": "Saint Joseph is called 'San José' in Spanish.",
+      "isTrue": true,
+      "correction": "San José is Spanish for Saint Joseph, the earthly father of Jesus. Many churches, cities, and missions are named after him."
+    },
+    {
+      "statement": "Spanish-speaking Catholics celebrate All Saints' Day on November 1.",
+      "isTrue": true,
+      "correction": "Día de Todos los Santos (All Saints' Day) honors all the saints in heaven and is celebrated the day before Día de los Muertos."
+    },
+    {
+      "statement": "A 'belén' is a type of Spanish food eaten at Christmas.",
+      "isTrue": false,
+      "correction": "A belén (also called nacimiento) is a nativity scene showing the birth of Jesus with Mary, Joseph, and the Baby Jesus in the manger."
+    },
+    {
+      "statement": "The word 'ángel' means 'angel' in Spanish.",
+      "isTrue": true,
+      "correction": "Angels (ángeles) are important in Catholic faith. The Angel Gabriel announced Jesus' birth to Mary, and angels appeared to the shepherds."
+    },
+    {
+      "statement": "Adviento is the season of preparation before Christmas.",
+      "isTrue": true,
+      "correction": "Adviento (Advent) is the four-week season before Christmas when Catholics prepare their hearts to celebrate Jesus' birth through prayer and waiting."
+    },
+    {
+      "statement": "Pascua refers to Thanksgiving in Spanish.",
+      "isTrue": false,
+      "correction": "Pascua is Easter, the most important celebration in the Catholic Church when we remember that Jesus rose from the dead."
+    },
+    {
+      "statement": "Fe, esperanza, and caridad are the three theological virtues.",
+      "isTrue": true,
+      "correction": "These Spanish words mean faith, hope, and charity (love) - the three main virtues that help us grow closer to God."
+    },
+    {
+      "statement": "The Spanish missions in California were founded to teach Catholic faith.",
+      "isTrue": true,
+      "correction": "Spanish priests like Father Junípero Serra founded 21 missions to share the Catholic faith and teach Spanish to Native Americans."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What does 'Dios' mean in Spanish?",
+      "options": [
+        "God",
+        "Day",
+        "Church",
+        "Prayer"
+      ],
+      "correctAnswer": "God"
+    },
+    {
+      "question": "What is 'Navidad'?",
+      "options": [
+        "Christmas",
+        "Easter",
+        "New Year",
+        "Birthday"
+      ],
+      "correctAnswer": "Christmas"
+    },
+    {
+      "question": "What does 'iglesia' mean?",
+      "options": [
+        "Church",
+        "Cross",
+        "Angel",
+        "Bell"
+      ],
+      "correctAnswer": "Church"
+    },
+    {
+      "question": "When is Día de los Reyes Magos celebrated?",
+      "options": [
+        "January 6",
+        "December 25",
+        "November 1",
+        "April 1"
+      ],
+      "correctAnswer": "January 6"
+    },
+    {
+      "question": "What is 'Semana Santa'?",
+      "options": [
+        "Holy Week",
+        "Christmas Week",
+        "Summer Vacation",
+        "School Week"
+      ],
+      "correctAnswer": "Holy Week"
+    },
+    {
+      "question": "What does 'Pascua' celebrate?",
+      "options": [
+        "Easter",
+        "Christmas",
+        "New Year",
+        "Thanksgiving"
+      ],
+      "correctAnswer": "Easter"
+    },
+    {
+      "question": "What is 'Nuestra Señora de Guadalupe'?",
+      "options": [
+        "Our Lady of Guadalupe",
+        "A Christmas carol",
+        "A type of church",
+        "A prayer"
+      ],
+      "correctAnswer": "Our Lady of Guadalupe"
+    },
+    {
+      "question": "How many days does Las Posadas last?",
+      "options": [
+        "Nine days",
+        "One day",
+        "Three days",
+        "Forty days"
+      ],
+      "correctAnswer": "Nine days"
+    },
+    {
+      "question": "What does 'rosario' mean?",
+      "options": [
+        "Rosary",
+        "Rose",
+        "Rainbow",
+        "Restaurant"
+      ],
+      "correctAnswer": "Rosary"
+    },
+    {
+      "question": "What is 'Cuaresma'?",
+      "options": [
+        "Lent",
+        "Advent",
+        "Christmas",
+        "Summer"
+      ],
+      "correctAnswer": "Lent"
+    },
+    {
+      "question": "What does 'belén' or 'nacimiento' mean?",
+      "options": [
+        "Nativity scene",
+        "Christmas tree",
+        "Church bell",
+        "Christmas dinner"
+      ],
+      "correctAnswer": "Nativity scene"
+    },
+    {
+      "question": "When did Our Lady of Guadalupe appear to Juan Diego?",
+      "options": [
+        "1531",
+        "1492",
+        "1769",
+        "2000"
+      ],
+      "correctAnswer": "1531"
+    },
+    {
+      "question": "What does 'villancico' mean?",
+      "options": [
+        "Christmas carol",
+        "Village",
+        "Candle",
+        "Gift"
+      ],
+      "correctAnswer": "Christmas carol"
+    },
+    {
+      "question": "What is 'Miércoles de Ceniza'?",
+      "options": [
+        "Ash Wednesday",
+        "Good Friday",
+        "Easter Sunday",
+        "Christmas Eve"
+      ],
+      "correctAnswer": "Ash Wednesday"
+    },
+    {
+      "question": "How do you say 'Merry Christmas' in Spanish?",
+      "options": [
+        "¡Feliz Navidad!",
+        "¡Feliz Año Nuevo!",
+        "¡Felices Pascuas!",
+        "¡Buenos días!"
+      ],
+      "correctAnswer": "¡Feliz Navidad!"
+    },
+    {
+      "question": "What does 'paz' mean?",
+      "options": [
+        "Peace",
+        "Love",
+        "Faith",
+        "Hope"
+      ],
+      "correctAnswer": "Peace"
+    },
+    {
+      "question": "What is 'Nochebuena'?",
+      "options": [
+        "Christmas Eve",
+        "New Year's Eve",
+        "Good Friday",
+        "Easter Sunday"
+      ],
+      "correctAnswer": "Christmas Eve"
+    },
+    {
+      "question": "What are the 'Reyes Magos'?",
+      "options": [
+        "The Three Wise Men",
+        "The shepherds",
+        "The angels",
+        "The apostles"
+      ],
+      "correctAnswer": "The Three Wise Men"
+    },
+    {
+      "question": "What does 'ángel' mean?",
+      "options": [
+        "Angel",
+        "Church",
+        "Star",
+        "Heaven"
+      ],
+      "correctAnswer": "Angel"
+    },
+    {
+      "question": "What is 'Día de los Muertos'?",
+      "options": [
+        "Day of the Dead",
+        "All Saints' Day",
+        "Good Friday",
+        "Easter"
+      ],
+      "correctAnswer": "Day of the Dead"
+    },
+    {
+      "question": "What does 'bendición' mean?",
+      "options": [
+        "Blessing",
+        "Prayer",
+        "Church",
+        "Song"
+      ],
+      "correctAnswer": "Blessing"
+    },
+    {
+      "question": "What are 'fe, esperanza, and caridad'?",
+      "options": [
+        "Faith, hope, and charity",
+        "Morning, afternoon, and night",
+        "Father, Son, and Holy Spirit",
+        "Red, green, and white"
+      ],
+      "correctAnswer": "Faith, hope, and charity"
+    },
+    {
+      "question": "What is a 'pesebre'?",
+      "options": [
+        "Manger",
+        "Star",
+        "Shepherd",
+        "Gift"
+      ],
+      "correctAnswer": "Manger"
+    },
+    {
+      "question": "Who is 'San José'?",
+      "options": [
+        "Saint Joseph",
+        "A Spanish king",
+        "An angel",
+        "A shepherd"
+      ],
+      "correctAnswer": "Saint Joseph"
+    },
+    {
+      "question": "What does 'amor' mean?",
+      "options": [
+        "Love",
+        "Friend",
+        "Family",
+        "Peace"
+      ],
+      "correctAnswer": "Love"
+    }
+  ]
+}
