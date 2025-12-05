@@ -1,7 +1,6 @@
 [
-  { "file": "beatrix_potter.json", "name": "Fine Arts: Beatrix Potter" },
   { "file": "potter_big.json", "name": "Complete Fine Arts: Beatrix Potter" },
-  { "file": "deep_potter_1.json", "name": "Deep Potter ..." },
+  { "file": "4-tci-3.json", "name": "Exploration and Settlement - 4th Grade" },
   { "file": "revolution.json", "name": "US History: Revolution" },
   { "file": "latin_vocab.json", "name": "Latin: Level 1" }
 ]
