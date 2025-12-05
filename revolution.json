@@ -1,0 +1,42 @@
+{
+  "moduleInfo": {
+    "title": "American Revolution",
+    "subject": "US History",
+    "level": "Grade 8"
+  },
+  "vocabulary": [
+    { "term": "Militia", "definition": "A military force that is raised from the civil population." },
+    { "term": "Repeal", "definition": "To revoke or annul a law or congressional act." },
+    { "term": "Boycott", "definition": "To withdraw from commercial or social relations as a punishment or protest." },
+    { "term": "Tyranny", "definition": "Cruel and oppressive government or rule." },
+    { "term": "Patriot", "definition": "A person who vigorously supports their country and is prepared to defend it." },
+    { "term": "Loyalist", "definition": "A person who remains loyal to the established ruler or government." },
+    { "term": "Minutemen", "definition": "Civilian colonists who independently organized to form militia companies." },
+    { "term": "Blockade", "definition": "An act of sealing off a place to prevent goods or people from entering or leaving." }
+  ],
+  "timeline": [
+    { "year": 1770, "event": "The Boston Massacre" },
+    { "year": 1773, "event": "The Boston Tea Party" },
+    { "year": 1775, "event": "Battles of Lexington and Concord" },
+    { "year": 1776, "event": "Declaration of Independence Signed" },
+    { "year": 1781, "event": "Battle of Yorktown" },
+    { "year": 1783, "event": "Treaty of Paris" }
+  ],
+  "quiz": [
+    { 
+      "question": "Which treaty ended the Revolutionary War?", 
+      "options": ["Treaty of Paris", "Treaty of Ghent", "Treaty of Versailles", "Treaty of New York"], 
+      "correctAnswer": "Treaty of Paris" 
+    },
+    { 
+      "question": "Who was the commander of the Continental Army?", 
+      "options": ["Thomas Jefferson", "George Washington", "Benjamin Franklin", "John Adams"], 
+      "correctAnswer": "George Washington" 
+    },
+    { 
+      "question": "What pamphlet did Thomas Paine write to encourage independence?", 
+      "options": ["Common Sense", "The Rights of Man", "The Federalist Papers", "Poor Richard's Almanack"], 
+      "correctAnswer": "Common Sense" 
+    }
+  ]
+}
