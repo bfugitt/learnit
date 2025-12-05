@@ -1,0 +1,699 @@
+{
+  "moduleInfo": {
+    "title": "Beginning Latin: The Language of Ancient Rome",
+    "subject": "Latin Language",
+    "level": "Grades 3-5"
+  },
+  "vocabulary": [
+    {
+      "term": "salve",
+      "definition": "Hello! (greeting to one person)"
+    },
+    {
+      "term": "salvete",
+      "definition": "Hello! (greeting to multiple people)"
+    },
+    {
+      "term": "vale",
+      "definition": "Goodbye! (to one person)"
+    },
+    {
+      "term": "valete",
+      "definition": "Goodbye! (to multiple people)"
+    },
+    {
+      "term": "puella",
+      "definition": "girl"
+    },
+    {
+      "term": "puer",
+      "definition": "boy"
+    },
+    {
+      "term": "mater",
+      "definition": "mother"
+    },
+    {
+      "term": "pater",
+      "definition": "father"
+    },
+    {
+      "term": "familia",
+      "definition": "family"
+    },
+    {
+      "term": "amicus",
+      "definition": "friend (male)"
+    },
+    {
+      "term": "amica",
+      "definition": "friend (female)"
+    },
+    {
+      "term": "canis",
+      "definition": "dog"
+    },
+    {
+      "term": "feles",
+      "definition": "cat"
+    },
+    {
+      "term": "equus",
+      "definition": "horse"
+    },
+    {
+      "term": "sum",
+      "definition": "I am"
+    },
+    {
+      "term": "es",
+      "definition": "you are"
+    },
+    {
+      "term": "est",
+      "definition": "he/she/it is"
+    },
+    {
+      "term": "amo",
+      "definition": "I love"
+    },
+    {
+      "term": "amas",
+      "definition": "you love"
+    },
+    {
+      "term": "amat",
+      "definition": "he/she/it loves"
+    },
+    {
+      "term": "habeo",
+      "definition": "I have"
+    },
+    {
+      "term": "habes",
+      "definition": "you have"
+    },
+    {
+      "term": "habet",
+      "definition": "he/she/it has"
+    },
+    {
+      "term": "video",
+      "definition": "I see"
+    },
+    {
+      "term": "vides",
+      "definition": "you see"
+    },
+    {
+      "term": "videt",
+      "definition": "he/she/it sees"
+    },
+    {
+      "term": "et",
+      "definition": "and"
+    },
+    {
+      "term": "sed",
+      "definition": "but"
+    },
+    {
+      "term": "bonus",
+      "definition": "good"
+    },
+    {
+      "term": "malus",
+      "definition": "bad"
+    },
+    {
+      "term": "magnus",
+      "definition": "big, large, great"
+    },
+    {
+      "term": "parvus",
+      "definition": "small, little"
+    },
+    {
+      "term": "Roma",
+      "definition": "Rome"
+    },
+    {
+      "term": "Romanus",
+      "definition": "Roman"
+    },
+    {
+      "term": "casa",
+      "definition": "house, cottage"
+    },
+    {
+      "term": "villa",
+      "definition": "country house, farm"
+    },
+    {
+      "term": "urbs",
+      "definition": "city"
+    },
+    {
+      "term": "aqua",
+      "definition": "water"
+    },
+    {
+      "term": "cibus",
+      "definition": "food"
+    },
+    {
+      "term": "panis",
+      "definition": "bread"
+    },
+    {
+      "term": "liber",
+      "definition": "book"
+    },
+    {
+      "term": "schola",
+      "definition": "school"
+    },
+    {
+      "term": "magister",
+      "definition": "teacher (male)"
+    },
+    {
+      "term": "magistra",
+      "definition": "teacher (female)"
+    },
+    {
+      "term": "unus",
+      "definition": "one"
+    },
+    {
+      "term": "duo",
+      "definition": "two"
+    },
+    {
+      "term": "tres",
+      "definition": "three"
+    },
+    {
+      "term": "quattuor",
+      "definition": "four"
+    },
+    {
+      "term": "quinque",
+      "definition": "five"
+    },
+    {
+      "term": "sex",
+      "definition": "six"
+    },
+    {
+      "term": "septem",
+      "definition": "seven"
+    },
+    {
+      "term": "octo",
+      "definition": "eight"
+    },
+    {
+      "term": "novem",
+      "definition": "nine"
+    },
+    {
+      "term": "decem",
+      "definition": "ten"
+    }
+  ],
+  "timeline": [
+    {
+      "year": 753,
+      "event": "According to legend, Rome was founded by Romulus."
+    },
+    {
+      "year": 509,
+      "event": "The Roman Republic was established."
+    },
+    {
+      "year": 100,
+      "event": "Julius Caesar was born; he would become one of Rome's greatest leaders."
+    },
+    {
+      "year": 44,
+      "event": "Julius Caesar was assassinated in Rome."
+    },
+    {
+      "year": 27,
+      "event": "The Roman Empire began under Emperor Augustus."
+    },
+    {
+      "year": 79,
+      "event": "Mount Vesuvius erupted, burying the city of Pompeii."
+    },
+    {
+      "year": 80,
+      "event": "The Colosseum was completed in Rome."
+    },
+    {
+      "year": 117,
+      "event": "The Roman Empire reached its greatest extent under Emperor Trajan."
+    },
+    {
+      "year": 313,
+      "event": "Emperor Constantine legalized Christianity in the Roman Empire."
+    },
+    {
+      "year": 476,
+      "event": "The Western Roman Empire fell."
+    },
+    {
+      "year": 800,
+      "event": "Charlemagne was crowned Holy Roman Emperor; Latin remained the language of learning."
+    },
+    {
+      "year": 1500,
+      "event": "Latin was still the primary language of education and the Catholic Church in Europe."
+    }
+  ],
+  "artworks": [
+    {
+      "title": "Roman Forum",
+      "medium": "Ancient Architecture",
+      "description": "The central area of ancient Rome where Romans gathered for markets, speeches, and important events, surrounded by temples and government buildings."
+    },
+    {
+      "title": "Pompeii Wall Paintings",
+      "medium": "Fresco",
+      "description": "Colorful paintings preserved on walls in the ancient Roman city buried by a volcano, showing daily life, gardens, and mythological scenes."
+    },
+    {
+      "title": "Roman Mosaic of a Dog",
+      "medium": "Mosaic",
+      "description": "Small colored tiles arranged to form a picture of a guard dog with the Latin words 'Cave Canem' (Beware of the Dog)."
+    },
+    {
+      "title": "Trajan's Column",
+      "medium": "Marble Sculpture",
+      "description": "A tall column in Rome covered with spiral carvings showing the story of Emperor Trajan's military victories."
+    },
+    {
+      "title": "The Pantheon",
+      "medium": "Architecture",
+      "description": "A magnificent Roman temple with a huge dome and an opening at the top to let in light, still standing in Rome today."
+    },
+    {
+      "title": "Roman School Scene",
+      "medium": "Relief Sculpture",
+      "description": "A carving showing Roman children sitting on the ground with scrolls, learning their lessons from a teacher."
+    }
+  ],
+  "locations": [
+    {
+      "name": "Rome (Roma)",
+      "significance": "The capital city where Latin was born and the center of the Roman Empire, located in modern-day Italy."
+    },
+    {
+      "name": "Italy (Italia)",
+      "significance": "The peninsula where Latin originated and where the Roman civilization began."
+    },
+    {
+      "name": "Pompeii",
+      "significance": "An ancient Roman city preserved under volcanic ash, giving us a snapshot of daily Roman life and Latin inscriptions."
+    },
+    {
+      "name": "The Roman Forum",
+      "significance": "The heart of ancient Rome where people gathered, conducted business, and gave speeches in Latin."
+    },
+    {
+      "name": "The Colosseum",
+      "significance": "A massive amphitheater in Rome where gladiator games were announced in Latin."
+    },
+    {
+      "name": "The Mediterranean Sea",
+      "significance": "The sea surrounded by lands where Latin spread as the Roman Empire grew."
+    },
+    {
+      "name": "Gaul (Modern France)",
+      "significance": "A region conquered by Rome where Latin evolved into French."
+    },
+    {
+      "name": "Hispania (Modern Spain)",
+      "significance": "A Roman province where Latin developed into Spanish."
+    },
+    {
+      "name": "Britannia (Modern Britain)",
+      "significance": "A Roman province where Latin influenced the English language."
+    }
+  ],
+  "trueFalse": [
+    {
+      "statement": "Latin is still spoken as an everyday language in Italy today.",
+      "isTrue": false,
+      "correction": "Latin is no longer spoken as an everyday language. It was the language of ancient Rome, but modern Italians speak Italian. However, Latin is still used in the Catholic Church and for scientific names."
+    },
+    {
+      "statement": "The word 'salve' means hello in Latin.",
+      "isTrue": true,
+      "correction": "Romans used 'salve' to greet one person and 'salvete' to greet multiple people, just like we say hello today."
+    },
+    {
+      "statement": "Many English words come from Latin roots.",
+      "isTrue": true,
+      "correction": "About 60% of English words have Latin origins. For example, 'aquarium' comes from 'aqua' (water), and 'family' comes from 'familia.'"
+    },
+    {
+      "statement": "Latin has the same alphabet as English.",
+      "isTrue": false,
+      "correction": "Latin uses most of the same letters as English, but the classical Latin alphabet had only 23 letters and did not include J, U, or W."
+    },
+    {
+      "statement": "The phrase 'et cetera' (etc.) is Latin.",
+      "isTrue": true,
+      "correction": "'Et cetera' means 'and other things' in Latin. 'Et' means 'and' and 'cetera' means 'the rest' or 'other things.'"
+    },
+    {
+      "statement": "A 'villa' in Latin means a city apartment.",
+      "isTrue": false,
+      "correction": "A villa was a country house or farm in ancient Rome. Romans used 'insula' (meaning island) for city apartment buildings."
+    },
+    {
+      "statement": "The word 'amo' means 'I love' in Latin.",
+      "isTrue": true,
+      "correction": "The verb 'amo' is one of the first Latin verbs students learn. It means 'I love,' and 'amat' means 'he/she/it loves.'"
+    },
+    {
+      "statement": "Romans wrote on paper like we do today.",
+      "isTrue": false,
+      "correction": "Romans wrote on wax tablets with a stylus, or on papyrus scrolls. Paper as we know it was invented much later in China."
+    },
+    {
+      "statement": "Latin is called a 'dead language' because no one uses it anymore.",
+      "isTrue": false,
+      "correction": "Latin is called a 'dead language' because it's no longer spoken as a native language in daily life, but it's still used in the Catholic Church, science, medicine, law, and is still studied by students around the world."
+    },
+    {
+      "statement": "The Romans had schools where children learned to read and write Latin.",
+      "isTrue": true,
+      "correction": "Wealthy Roman children attended schools (schola) where a teacher (magister or magistra) taught them reading, writing, arithmetic, and public speaking in Latin."
+    },
+    {
+      "statement": "Latin has only one word for 'the.'",
+      "isTrue": false,
+      "correction": "Latin doesn't have a word for 'the' at all! Romans understood whether something was specific or general from the context and word endings."
+    },
+    {
+      "statement": "The Latin word 'canis' means dog.",
+      "isTrue": true,
+      "correction": "From 'canis' we get English words like 'canine' (relating to dogs) and 'canary' (a bird named because it came from the Canary Islands, which were named for the dogs found there)."
+    },
+    {
+      "statement": "Spanish, French, and Italian all evolved from Latin.",
+      "isTrue": true,
+      "correction": "These languages are called Romance languages because they developed from the Roman language, Latin. Portuguese and Romanian are also Romance languages."
+    },
+    {
+      "statement": "All Roman children went to school for free.",
+      "isTrue": false,
+      "correction": "Only wealthy Roman families could afford to send their children to school. Poor children learned trades from their parents instead of attending formal schools."
+    },
+    {
+      "statement": "The word 'video' means 'I see' in Latin.",
+      "isTrue": true,
+      "correction": "This is why we call recorded images 'video' - it comes from the Latin word meaning 'I see.' The word 'television' combines Greek 'tele' (far) with Latin 'vision' (seeing)."
+    },
+    {
+      "statement": "Romans counted using the same number symbols we use today.",
+      "isTrue": false,
+      "correction": "Romans used Roman numerals (I, V, X, L, C, D, M) instead of the Arabic numerals (1, 2, 3, 4, 5) that we use today."
+    },
+    {
+      "statement": "The word 'aquarium' comes from the Latin word for water.",
+      "isTrue": true,
+      "correction": "Aquarium comes from 'aqua,' the Latin word for water. Many words with 'aqu' in them relate to water, like aquatic, aqueduct, and aquamarine."
+    },
+    {
+      "statement": "In Latin, 'magnus' means small.",
+      "isTrue": false,
+      "correction": "'Magnus' means big, large, or great in Latin. The opposite word 'parvus' means small. We get the English word 'magnify' (make bigger) from 'magnus.'"
+    },
+    {
+      "statement": "Doctors and scientists still use Latin terms today.",
+      "isTrue": true,
+      "correction": "Latin is used for medical terms (like femur, radius), scientific names of plants and animals (like Canis familiaris for dogs), and in law. This helps people from different countries understand each other."
+    },
+    {
+      "statement": "The plural of 'amicus' (friend) is 'amici.'",
+      "isTrue": true,
+      "correction": "In Latin, many masculine nouns ending in -us change to -i in the plural. So one friend is 'amicus,' but multiple friends are 'amici.'"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What does 'salve' mean in Latin?",
+      "options": [
+        "Hello",
+        "Goodbye",
+        "Thank you",
+        "Please"
+      ],
+      "correctAnswer": "Hello"
+    },
+    {
+      "question": "Which language did Latin come from?",
+      "options": [
+        "It was the original language of ancient Rome",
+        "Greek",
+        "Egyptian",
+        "French"
+      ],
+      "correctAnswer": "It was the original language of ancient Rome"
+    },
+    {
+      "question": "What does 'puella' mean?",
+      "options": [
+        "Girl",
+        "Boy",
+        "Mother",
+        "Sister"
+      ],
+      "correctAnswer": "Girl"
+    },
+    {
+      "question": "What does 'puer' mean?",
+      "options": [
+        "Boy",
+        "Father",
+        "Friend",
+        "Teacher"
+      ],
+      "correctAnswer": "Boy"
+    },
+    {
+      "question": "What does 'canis' mean?",
+      "options": [
+        "Dog",
+        "Cat",
+        "Horse",
+        "Bird"
+      ],
+      "correctAnswer": "Dog"
+    },
+    {
+      "question": "What is the Latin word for 'mother'?",
+      "options": [
+        "mater",
+        "pater",
+        "familia",
+        "casa"
+      ],
+      "correctAnswer": "mater"
+    },
+    {
+      "question": "What does 'amo' mean?",
+      "options": [
+        "I love",
+        "I have",
+        "I see",
+        "I am"
+      ],
+      "correctAnswer": "I love"
+    },
+    {
+      "question": "Which modern language did NOT come from Latin?",
+      "options": [
+        "German",
+        "Spanish",
+        "Italian",
+        "French"
+      ],
+      "correctAnswer": "German"
+    },
+    {
+      "question": "What does 'aqua' mean?",
+      "options": [
+        "Water",
+        "Air",
+        "Fire",
+        "Earth"
+      ],
+      "correctAnswer": "Water"
+    },
+    {
+      "question": "What is the Latin word for 'and'?",
+      "options": [
+        "et",
+        "sed",
+        "sum",
+        "est"
+      ],
+      "correctAnswer": "et"
+    },
+    {
+      "question": "What does 'magnus' mean?",
+      "options": [
+        "Big",
+        "Small",
+        "Good",
+        "Bad"
+      ],
+      "correctAnswer": "Big"
+    },
+    {
+      "question": "What was a 'schola' in ancient Rome?",
+      "options": [
+        "A school",
+        "A house",
+        "A temple",
+        "A marketplace"
+      ],
+      "correctAnswer": "A school"
+    },
+    {
+      "question": "How do you say 'three' in Latin?",
+      "options": [
+        "tres",
+        "duo",
+        "quattuor",
+        "quinque"
+      ],
+      "correctAnswer": "tres"
+    },
+    {
+      "question": "What does 'vale' mean?",
+      "options": [
+        "Goodbye",
+        "Hello",
+        "Good morning",
+        "Good night"
+      ],
+      "correctAnswer": "Goodbye"
+    },
+    {
+      "question": "What was the capital city of the Roman Empire?",
+      "options": [
+        "Rome",
+        "Athens",
+        "Paris",
+        "London"
+      ],
+      "correctAnswer": "Rome"
+    },
+    {
+      "question": "What does 'video' mean in Latin?",
+      "options": [
+        "I see",
+        "I hear",
+        "I touch",
+        "I smell"
+      ],
+      "correctAnswer": "I see"
+    },
+    {
+      "question": "What is a 'magister'?",
+      "options": [
+        "A male teacher",
+        "A student",
+        "A book",
+        "A school building"
+      ],
+      "correctAnswer": "A male teacher"
+    },
+    {
+      "question": "What does 'liber' mean?",
+      "options": [
+        "Book",
+        "Library",
+        "Freedom",
+        "Letter"
+      ],
+      "correctAnswer": "Book"
+    },
+    {
+      "question": "How do you say 'five' in Latin?",
+      "options": [
+        "quinque",
+        "quattuor",
+        "sex",
+        "septem"
+      ],
+      "correctAnswer": "quinque"
+    },
+    {
+      "question": "What does 'familia' mean?",
+      "options": [
+        "Family",
+        "House",
+        "Friends",
+        "City"
+      ],
+      "correctAnswer": "Family"
+    },
+    {
+      "question": "What ancient Roman city was buried by a volcano in 79 AD?",
+      "options": [
+        "Pompeii",
+        "Rome",
+        "Athens",
+        "Carthage"
+      ],
+      "correctAnswer": "Pompeii"
+    },
+    {
+      "question": "What does 'habeo' mean?",
+      "options": [
+        "I have",
+        "I love",
+        "I am",
+        "I see"
+      ],
+      "correctAnswer": "I have"
+    },
+    {
+      "question": "What is the Latin word for 'horse'?",
+      "options": [
+        "equus",
+        "canis",
+        "feles",
+        "aqua"
+      ],
+      "correctAnswer": "equus"
+    },
+    {
+      "question": "What does 'bonus' mean?",
+      "options": [
+        "Good",
+        "Bad",
+        "Big",
+        "Small"
+      ],
+      "correctAnswer": "Good"
+    },
+    {
+      "question": "When did the Western Roman Empire fall?",
+      "options": [
+        "476 AD",
+        "100 BC",
+        "79 AD",
+        "800 AD"
+      ],
+      "correctAnswer": "476 AD"
+    }
+  ]
+}
