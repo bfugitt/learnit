@@ -1,0 +1,77 @@
+{
+  "moduleInfo": {
+    "title": "The Art of Beatrix Potter",
+    "subject": "Fine Arts Decathlon",
+    "level": "Junior High"
+  },
+  "vocabulary": [
+    { 
+      "term": "Mycology", 
+      "definition": "A branch of biology dealing with the study of fungi." 
+    },
+    { 
+      "term": "Pre-Raphaelite", 
+      "definition": "A group of artists who sought to restore artistic principles from before Raphael." 
+    },
+    { 
+      "term": "Hybridization", 
+      "definition": "The act of producing an offspring of two animals or plants of different breeds." 
+    },
+    { 
+      "term": "Lichen", 
+      "definition": "A complex organism made of an alga and a fungus growing in symbiotic association." 
+    },
+    { 
+      "term": "Verdant", 
+      "definition": "Green with vegetation; lush and covered in plants or grass." 
+    },
+    { 
+      "term": "Fauna", 
+      "definition": "The animals characteristic of a particular region, period, or special environment." 
+    },
+    { 
+      "term": "Opaque Layering", 
+      "definition": "Applying multiple layers of material where underlying layers are completely hidden." 
+    },
+    { 
+      "term": "Spore", 
+      "definition": "A single-celled reproductive body produced by plants, fungi, and some microorganisms." 
+    }
+  ],
+  "timeline": [
+    { "year": 1866, "event": "Beatrix Potter is born (150th Anniversary observed in 2016)" },
+    { "year": 1890, "event": "Beatrix paints 'Fly agaric', showing her growing sophistication" },
+    { "year": 1892, "event": "Beatrix meets her mentor, Charles McIntosh, for the first time" },
+    { "year": 1893, "event": "Beatrix spends her first summer holiday at Eastwood in Dunkeld" },
+    { "year": 1894, "event": "The Potters' last family summer holiday in Scotland at Lennel House" },
+    { "year": 1922, "event": "Charles McIntosh bequeaths his drawings to the Perth Museum" },
+    { "year": 1978, "event": "Fungi drawings at Perth Museum are positively attributed to Beatrix Potter" }
+  ],
+  "quiz": [
+    { 
+      "question": "Who was the Scottish postman and naturalist who mentored Beatrix Potter in mycology?", 
+      "options": ["Charles McIntosh", "John Ruskin", "William Morris", "Mr. McGregor"], 
+      "correctAnswer": "Charles McIntosh" 
+    },
+    { 
+      "question": "Which estate served as the Potters' holiday home during much of Beatrix's childhood?", 
+      "options": ["Dalguise House", "Hill Top Farm", "Lennel House", "Eastwood"], 
+      "correctAnswer": "Dalguise House" 
+    },
+    { 
+      "question": "Beatrix Potter is best known for creating which beloved children's character?", 
+      "options": ["Peter Rabbit", "Paddington Bear", "Winnie the Pooh", "Stuart Little"], 
+      "correctAnswer": "Peter Rabbit" 
+    },
+    { 
+      "question": "What specific scientific field involves the study of fungi?", 
+      "options": ["Mycology", "Botany", "Entomology", "Geology"], 
+      "correctAnswer": "Mycology" 
+    },
+    { 
+      "question": "In what year did Beatrix Potter first meet Charles McIntosh at Heath Park?", 
+      "options": ["1892", "1890", "1893", "1902"], 
+      "correctAnswer": "1892" 
+    }
+  ]
+}
