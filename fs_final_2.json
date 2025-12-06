@@ -1,0 +1,536 @@
+{
+  "moduleInfo": {
+    "title": "2025 Faith Survey - Final Exam Review",
+    "subject": "Theology",
+    "level": "High School"
+  },
+  "vocabulary": [
+    {
+      "term": "Sacred Scripture",
+      "definition": "The written record of Divine Revelation found in the books of the Old and New Testaments."
+    },
+    {
+      "term": "Sacred Tradition",
+      "definition": "The living transmission of the Church's Gospel message found in the Church's teaching, life, and worship."
+    },
+    {
+      "term": "Original Sin",
+      "definition": "The fallen state of human nature into which all generations of people are born, originating from the disobedience of Adam and Eve."
+    },
+    {
+      "term": "Deposit of Faith",
+      "definition": "The heritage of faith contained in Sacred Scripture and Sacred Tradition, handed down in the Church."
+    },
+    {
+      "term": "Pentateuch",
+      "definition": "The first five books of the Bible (Genesis, Exodus, Leviticus, Numbers, Deuteronomy)."
+    },
+    {
+      "term": "Reason",
+      "definition": "The power of the mind to think, understand, and form judgments by a process of logic, used to know God's existence."
+    },
+    {
+      "term": "Canon",
+      "definition": "The official list of inspired books of the Bible."
+    },
+    {
+      "term": "Divine Revelation",
+      "definition": "The way God communicates knowledge of himself to humankind, realized most fully in Jesus Christ."
+    },
+    {
+      "term": "Gospel",
+      "definition": "Meaning 'Good News', referring to the four accounts of Jesus' life, teaching, death, and resurrection."
+    },
+    {
+      "term": "Atheism",
+      "definition": "The denial of the existence of God."
+    },
+    {
+      "term": "Monotheism",
+      "definition": "The belief in one all-powerful God."
+    },
+    {
+      "term": "Polytheism",
+      "definition": "The belief in many gods."
+    },
+    {
+      "term": "Deism",
+      "definition": "The belief that God created the universe but takes no further interest in it."
+    },
+    {
+      "term": "Holy Trinity",
+      "definition": "The central mystery of the Christian faith; there are Three Divine Persons in one God: Father, Son, and Holy Spirit."
+    },
+    {
+      "term": "Paschal Mystery",
+      "definition": "Christ's work of redemption through His Passion, death, Resurrection, and Ascension."
+    },
+    {
+      "term": "Angels",
+      "definition": "Spiritual beings with intelligence and free will who act as messengers for God."
+    },
+    {
+      "term": "Magisterium",
+      "definition": "The official teaching authority of the Church, bestowed by the Lord on Peter and the Apostles and their successors."
+    },
+    {
+      "term": "Biblical Inspiration",
+      "definition": "The guidance of the Holy Spirit that enabled the human authors to record faithfully, and without error, what God wanted revealed."
+    },
+    {
+      "term": "Inerrancy",
+      "definition": "The doctrine that the Bible is free from error regarding the truth God wishes to reveal for the sake of salvation."
+    },
+    {
+      "term": "Law",
+      "definition": "The code of conduct given by God to the Chosen People, summarized in the Ten Commandments."
+    },
+    {
+      "term": "Abba",
+      "definition": "An Aramaic term of endearment meaning 'Daddy', used by Jesus to address God the Father."
+    },
+    {
+      "term": "Creator",
+      "definition": "Title for God regarding His role as the source of all existence."
+    },
+    {
+      "term": "Ineffable",
+      "definition": "An attribute of God meaning He is beyond full understanding or description."
+    },
+    {
+      "term": "Omnipresent",
+      "definition": "The attribute of God that he is everywhere, unlimited, and all-present."
+    },
+    {
+      "term": "Omnipotent",
+      "definition": "The attribute of God that he is all-powerful."
+    },
+    {
+      "term": "Omniscient",
+      "definition": "The attribute of God that he is all-knowing."
+    },
+    {
+      "term": "Infallibility",
+      "definition": "The gift given by the Holy Spirit to the Pope and bishops in union with him to teach on matters of faith and morals without error."
+    },
+    {
+      "term": "Parousia",
+      "definition": "The Second Coming of Christ when the Lord will judge the living and the dead."
+    },
+    {
+      "term": "Primeval History",
+      "definition": "Stories or myths about the origins of the earth, humans, other creatures, languages, and cultures."
+    },
+    {
+      "term": "Patriarchs",
+      "definition": "The 'fathers of the faith', male rulers, elders, or leaders (Abraham, Isaac, and Jacob)."
+    },
+    {
+      "term": "Prophets",
+      "definition": "People sent by God to encourage the Chosen People and speak on His behalf."
+    },
+    {
+      "term": "Old Testament",
+      "definition": "The forty-six books that make up the first part of the Bible and record salvation history before the coming of the Savior."
+    },
+    {
+      "term": "New Testament",
+      "definition": "The twenty-seven books of the Bible written in apostolic times, which have the life and teaching of Jesus and the beginnings of the Church as their central theme."
+    },
+    {
+      "term": "Creed",
+      "definition": "A statement of belief; sometimes a collection of creedal statements."
+    },
+    {
+      "term": "Messiah",
+      "definition": "Hebrew word for 'Anointed One'."
+    },
+    {
+      "term": "Theophany",
+      "definition": "An appearance or manifestation of God to humans (e.g., the burning bush)."
+    },
+    {
+      "term": "Pentecost",
+      "definition": "The day when the Holy Spirit descended on the Apostles and gave them the power to preach with conviction the message that Jesus is risen."
+    },
+    {
+      "term": "Purgatory",
+      "definition": "The state of purification that takes place after death for those who need to be made clean and holy before meeting the all-holy God in Heaven."
+    },
+    {
+      "term": "Incarnation",
+      "definition": "The dogma that God's eternal Son assumed a human nature and became man in Jesus Christ to save us from our sins."
+    },
+    {
+      "term": "Theotokos",
+      "definition": "A Greek title for Mary meaning 'God bearer'."
+    },
+    {
+      "term": "Ruah",
+      "definition": "Hebrew word meaning 'wind' or 'breath', often used in the Old Testament to refer to God's mysterious and powerful life-giving presence (Holy Spirit)."
+    },
+    {
+      "term": "Salvation History",
+      "definition": "The story of God's saving action in human history."
+    },
+    {
+      "term": "Grace",
+      "definition": "God's gift of friendship and life that enables us to share his life and love."
+    },
+    {
+      "term": "Ecumenical Council",
+      "definition": "A worldwide, official assembly of the bishops under the direction of the Pope."
+    },
+    {
+      "term": "Apostles",
+      "definition": "The twelve men Jesus chose to help him in his earthly ministry; the term means 'one who is sent'."
+    },
+    {
+      "term": "Ecumenism",
+      "definition": "The movement, inspired and led by the Holy Spirit, that seeks the union of all Christian religions."
+    },
+    {
+      "term": "Free Will",
+      "definition": "The power, rooted in reason and will, to perform deliberate actions on one's own responsibility."
+    },
+    {
+      "term": "Disciple",
+      "definition": "A follower of Jesus; the word means 'learner'."
+    },
+    {
+      "term": "Covenant",
+      "definition": "A solemn agreement between human beings or between God and a human being in which mutual commitments are made."
+    },
+    {
+      "term": "Faith",
+      "definition": "The theological virtue by which one believes in all that God has said and revealed."
+    },
+    {
+      "term": "Conscience",
+      "definition": "A practical judgment of reason that helps a person decide the goodness or sinfulness of an action or attitude."
+    },
+    {
+      "term": "St. Jerome",
+      "definition": "Church Father who translated the Bible into Latin (The Vulgate)."
+    },
+    {
+      "term": "St. Thomas Aquinas",
+      "definition": "Dominican friar and Doctor of the Church who authored the 5 Proofs of God's Existence."
+    },
+    {
+      "term": "St. Monica",
+      "definition": "The mother of St. Augustine, known for her persistent prayer for his conversion."
+    },
+    {
+      "term": "St. Kateri Tekakwitha",
+      "definition": "The first Native American saint, known as the 'Lily of the Mohawks'."
+    },
+    {
+      "term": "Blessed Julian of Norwich",
+      "definition": "English anchoress and mystic known for her 'Revelations of Divine Love'."
+    }
+  ],
+  "timeline": [
+    {
+      "year": 1850,
+      "event": "Approximate time of Abraham (The Patriarchs)"
+    },
+    {
+      "year": 1280,
+      "event": "Approximate time of Moses and the Exodus"
+    },
+    {
+      "year": 1000,
+      "event": "Reign of King David"
+    },
+    {
+      "year": 4,
+      "event": "Approximate birth of Jesus Christ"
+    },
+    {
+      "year": 30,
+      "event": "Crucifixion and Resurrection of Jesus"
+    },
+    {
+      "year": 33,
+      "event": "Pentecost (Birth of the Church)"
+    },
+    {
+      "year": 50,
+      "event": "St. Paul writes his Epistles (Earliest New Testament writings)"
+    },
+    {
+      "year": 64,
+      "event": "Martyrdom of St. Peter and St. Paul in Rome (under Nero)"
+    },
+    {
+      "year": 65,
+      "event": "Gospel of Mark written (approximate)"
+    },
+    {
+      "year": 70,
+      "event": "Destruction of the Temple in Jerusalem"
+    },
+    {
+      "year": 85,
+      "event": "Gospels of Matthew and Luke written (approximate)"
+    },
+    {
+      "year": 90,
+      "event": "Gospel of John written (approximate)"
+    },
+    {
+      "year": 100,
+      "event": "Death of the last Apostle (End of Public Revelation)"
+    },
+    {
+      "year": 250,
+      "event": "Birth of St. Helen (approximate)"
+    },
+    {
+      "year": 313,
+      "event": "Edict of Milan (Constantine legalizes Christianity)"
+    },
+    {
+      "year": 325,
+      "event": "Council of Nicaea (Nicene Creed)"
+    },
+    {
+      "year": 347,
+      "event": "Birth of St. Jerome"
+    },
+    {
+      "year": 354,
+      "event": "Birth of St. Augustine in Thagaste"
+    },
+    {
+      "year": 387,
+      "event": "Baptism of St. Augustine"
+    },
+    {
+      "year": 395,
+      "event": "St. Augustine becomes Bishop of Hippo"
+    },
+    {
+      "year": 430,
+      "event": "Death of St. Augustine"
+    },
+    {
+      "year": 1181,
+      "event": "Birth of St. Francis of Assisi"
+    },
+    {
+      "year": 1225,
+      "event": "Birth of St. Thomas Aquinas"
+    },
+    {
+      "year": 1342,
+      "event": "Birth of Blessed Julian of Norwich"
+    },
+    {
+      "year": 1517,
+      "event": "Martin Luther posts the 95 Theses"
+    },
+    {
+      "year": 1656,
+      "event": "Birth of St. Kateri Tekakwitha"
+    }
+  ],
+  "artworks": [],
+  "locations": [
+    {
+      "name": "Thagaste",
+      "significance": "The birthplace of St. Augustine (located in modern-day Algeria)."
+    },
+    {
+      "name": "Hippo",
+      "significance": "The city in North Africa where St. Augustine served as Bishop."
+    },
+    {
+      "name": "Bethlehem",
+      "significance": "The city of David where Jesus was born."
+    },
+    {
+      "name": "Rome",
+      "significance": "The center of the early Church where St. Peter and St. Paul were martyred."
+    },
+    {
+      "name": "Jerusalem",
+      "significance": "The holy city where Jesus' Passion, Death, and Resurrection occurred, and where the Church was born at Pentecost."
+    }
+  ],
+  "trueFalse": [
+    {
+      "statement": "The word 'Trinity' appears directly in the Bible.",
+      "isTrue": false,
+      "correction": "The word 'Trinity' does not appear in the Bible, though the reality of the three persons is revealed in scripture."
+    },
+    {
+      "statement": "There are events in scripture where all three persons of the Trinity are present.",
+      "isTrue": true,
+      "correction": "Yes, specifically at the Transfiguration and the Baptism of Jesus."
+    },
+    {
+      "statement": "St. Paul wrote one of the four Gospels.",
+      "isTrue": false,
+      "correction": "St. Paul wrote Epistles (Letters), not Gospels. The Gospels were written by Matthew, Mark, Luke, and John."
+    },
+    {
+      "statement": "Matthew's genealogy links Jesus all the way back to Abraham.",
+      "isTrue": true,
+      "correction": "Matthew emphasizes Jesus' Jewish heritage by tracing him to Abraham."
+    },
+    {
+      "statement": "Luke's genealogy links Jesus all the way back to Adam.",
+      "isTrue": true,
+      "correction": "Luke emphasizes Jesus as the universal savior of all mankind by tracing him to Adam."
+    },
+    {
+      "statement": "Salvation is available even to those who don't believe in or follow Jesus Christ.",
+      "isTrue": true,
+      "correction": "The Church teaches that those who, through no fault of their own, do not know Christ but seek God with a sincere heart may achieve eternal salvation."
+    },
+    {
+      "statement": "Jesus performed miracles such as nature miracles, physical healings, exorcisms, and raisings from the dead.",
+      "isTrue": true,
+      "correction": "Jesus performed all these types of miracles to demonstrate the coming of God's Kingdom."
+    },
+    {
+      "statement": "The Apostles started writing Gospels immediately after Jesus ascended to Heaven.",
+      "isTrue": false,
+      "correction": "It took several decades (approx. 30-40 years) before the Gospels were written; they first relied on oral tradition."
+    },
+    {
+      "statement": "Mary is considered the 'first disciple'.",
+      "isTrue": true,
+      "correction": "Mary is the first disciple because she was the first to say 'Yes' to God at the Annunciation."
+    },
+    {
+      "statement": "St. Augustine wrote the 5 proofs of God's existence.",
+      "isTrue": false,
+      "correction": "St. Thomas Aquinas wrote the 5 proofs of God's existence."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What is the central mystery of the Catholic Church?",
+      "options": [
+        "The Holy Trinity",
+        "The Resurrection",
+        "The Immaculate Conception",
+        "The Eucharist"
+      ],
+      "correctAnswer": "The Holy Trinity"
+    },
+    {
+      "question": "Who is St. Augustine's mother?",
+      "options": [
+        "St. Monica",
+        "St. Helena",
+        "St. Elizabeth",
+        "St. Mary Magdalene"
+      ],
+      "correctAnswer": "St. Monica"
+    },
+    {
+      "question": "Which saint authored the 5 Proofs of God's Existence?",
+      "options": [
+        "St. Thomas Aquinas",
+        "St. Augustine",
+        "St. Francis of Assisi",
+        "St. Jerome"
+      ],
+      "correctAnswer": "St. Thomas Aquinas"
+    },
+    {
+      "question": "What does the Feast of the Immaculate Conception celebrate?",
+      "options": [
+        "Mary was conceived without Original Sin",
+        "Jesus was conceived without Original Sin",
+        "Jesus was born in Bethlehem",
+        "Mary ascended into Heaven"
+      ],
+      "correctAnswer": "Mary was conceived without Original Sin"
+    },
+    {
+      "question": "Who is considered the 'First Disciple'?",
+      "options": [
+        "Mary",
+        "Peter",
+        "John the Baptist",
+        "Mary Magdalene"
+      ],
+      "correctAnswer": "Mary"
+    },
+    {
+      "question": "Which Gospel was written earliest after Jesus ascended?",
+      "options": [
+        "Mark",
+        "Matthew",
+        "Luke",
+        "John"
+      ],
+      "correctAnswer": "Mark"
+    },
+    {
+      "question": "Where was St. Augustine born?",
+      "options": [
+        "Thagaste",
+        "Hippo",
+        "Rome",
+        "Jerusalem"
+      ],
+      "correctAnswer": "Thagaste"
+    },
+    {
+      "question": "Which two people are believed to be born free from Original Sin?",
+      "options": [
+        "Jesus and Mary",
+        "Jesus and John the Baptist",
+        "Adam and Eve",
+        "Peter and Paul"
+      ],
+      "correctAnswer": "Jesus and Mary"
+    },
+    {
+      "question": "Who translated the Bible into Latin (The Vulgate)?",
+      "options": [
+        "St. Jerome",
+        "St. Augustine",
+        "St. Paul",
+        "King James"
+      ],
+      "correctAnswer": "St. Jerome"
+    },
+    {
+      "question": "About how long did it take for the Apostles to start writing Gospels after Jesus ascended?",
+      "options": [
+        "30-40 years",
+        "5-10 years",
+        "Immediately",
+        "100 years"
+      ],
+      "correctAnswer": "30-40 years"
+    },
+    {
+      "question": "What event marks the 'Birth of the Church'?",
+      "options": [
+        "Pentecost",
+        "The Last Supper",
+        "The Resurrection",
+        "The Ascension"
+      ],
+      "correctAnswer": "Pentecost"
+    },
+    {
+      "question": "Which of these is NOT one of the 5 Proofs of God's existence?",
+      "options": [
+        "Argument from Emotion",
+        "Unmoved Mover",
+        "Grand Designer",
+        "First Cause"
+      ],
+      "correctAnswer": "Argument from Emotion"
+    }
+  ]
+}
