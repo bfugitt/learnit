@@ -1,6 +1,7 @@
 [
   { "file": "potter_big.json", "name": "Decathalon: Fine Arts - Beatrix Potter" },
   { "file": "4-tci-3.json", "name": "CA History: Exploration and Settlement - 4th Grade" },
+  { "file": "faith_survey_2025_final.json", "name": "Religion: Faith Survey 2025 Study Guide" },
   { "file": "revolution.json", "name": "US History: Revolution" },  
   { "file": "spanish_1.json", "name": "Spanish: Level 1" },
   { "file": "latin_1.json", "name": "Latin: Level 1" }
