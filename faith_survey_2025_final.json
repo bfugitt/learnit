@@ -1,0 +1,783 @@
+{
+  "moduleInfo": {
+    "title": "Faith Survey - Final Exam Review",
+    "subject": "Catholic Theology",
+    "level": "High School - Freshman"
+  },
+  "vocabulary": [
+    {
+      "term": "Sacred Scripture",
+      "definition": "The inspired word of God written down; the Bible, composed of the Old Testament and New Testament."
+    },
+    {
+      "term": "Sacred Tradition",
+      "definition": "The living transmission of the Gospel message in the Church through the teachings passed down from the Apostles."
+    },
+    {
+      "term": "Original Sin",
+      "definition": "The sin of Adam and Eve that resulted in the fallen state of human nature; all humans inherit this condition except Jesus and Mary."
+    },
+    {
+      "term": "Deposit of Faith",
+      "definition": "The heritage of faith contained in Sacred Scripture and Sacred Tradition, handed down from the time of the Apostles."
+    },
+    {
+      "term": "Pentateuch",
+      "definition": "The first five books of the Bible (Genesis, Exodus, Leviticus, Numbers, Deuteronomy), also called the Torah."
+    },
+    {
+      "term": "Reason",
+      "definition": "The human ability to think, understand, and form judgments logically; one way we can come to know God."
+    },
+    {
+      "term": "Canon",
+      "definition": "The official list of inspired books of the Bible recognized by the Church as Sacred Scripture."
+    },
+    {
+      "term": "Divine Revelation",
+      "definition": "God's self-communication and making himself known to humanity through his words and deeds."
+    },
+    {
+      "term": "Gospel",
+      "definition": "The 'Good News' of Jesus Christ; specifically the four books of Matthew, Mark, Luke, and John that tell of Jesus' life and teachings."
+    },
+    {
+      "term": "Atheism",
+      "definition": "The denial of God's existence; the belief that there is no God."
+    },
+    {
+      "term": "Monotheism",
+      "definition": "The belief in one God; Judaism, Christianity, and Islam are monotheistic religions."
+    },
+    {
+      "term": "Polytheism",
+      "definition": "The belief in many gods; ancient Greek and Roman religions were polytheistic."
+    },
+    {
+      "term": "Deism",
+      "definition": "The belief that God created the world but does not intervene in it; God is like a 'clockmaker' who set things in motion."
+    },
+    {
+      "term": "Holy Trinity",
+      "definition": "The central mystery of Christian faith: one God in three Divine Persons - Father, Son, and Holy Spirit."
+    },
+    {
+      "term": "Paschal Mystery",
+      "definition": "The passion, death, resurrection, and ascension of Jesus Christ; the central mystery of the Catholic faith."
+    },
+    {
+      "term": "Angels",
+      "definition": "Spiritual beings created by God who serve as messengers and worship God; they have intellect and free will but no physical bodies."
+    },
+    {
+      "term": "Magisterium",
+      "definition": "The teaching authority of the Church, consisting of the Pope and bishops in communion with him."
+    },
+    {
+      "term": "Biblical Inspiration",
+      "definition": "The Holy Spirit's guidance of the human authors of Scripture, ensuring they wrote what God wanted communicated."
+    },
+    {
+      "term": "Inerrancy",
+      "definition": "The truth that the Bible is free from error in matters of faith and salvation; Scripture teaches truth without error."
+    },
+    {
+      "term": "Law",
+      "definition": "God's instruction or commandment; includes Natural Law, Old Law (Mosaic Law), and New Law (Law of the Gospel)."
+    },
+    {
+      "term": "Abba",
+      "definition": "An Aramaic word meaning 'Father' or 'Daddy'; Jesus used this intimate term to address God the Father."
+    },
+    {
+      "term": "Creator",
+      "definition": "God as the maker of all that exists; everything comes from God and depends on God for existence."
+    },
+    {
+      "term": "Ineffable",
+      "definition": "Beyond expression; incapable of being fully described in words; describes God's nature as beyond human comprehension."
+    },
+    {
+      "term": "Omnipresent",
+      "definition": "Present everywhere at all times; God is present in all places simultaneously."
+    },
+    {
+      "term": "Omnipotent",
+      "definition": "All-powerful; God has unlimited power and can do all things."
+    },
+    {
+      "term": "Omniscient",
+      "definition": "All-knowing; God knows everything - past, present, and future."
+    },
+    {
+      "term": "Infallibility",
+      "definition": "The gift of the Holy Spirit that protects the Church from error when teaching definitively on matters of faith and morals."
+    },
+    {
+      "term": "Parousia",
+      "definition": "The second coming of Christ at the end of time when he will judge the living and the dead."
+    },
+    {
+      "term": "Primeval History",
+      "definition": "The early chapters of Genesis (1-11) that tell of creation, the fall, and early humanity before Abraham."
+    },
+    {
+      "term": "Patriarchs",
+      "definition": "The founding fathers of the Israelite people: Abraham, Isaac, Jacob, and Jacob's twelve sons."
+    },
+    {
+      "term": "Prophets",
+      "definition": "People called by God to speak his message; they called Israel to faithfulness and foretold the coming Messiah."
+    },
+    {
+      "term": "Old Testament",
+      "definition": "The first 46 books of the Bible that tell of God's covenant with Israel before Jesus Christ."
+    },
+    {
+      "term": "New Testament",
+      "definition": "The 27 books of the Bible that tell of Jesus Christ and the early Church."
+    },
+    {
+      "term": "Creed",
+      "definition": "A formal statement of religious belief; the Apostles' Creed and Nicene Creed summarize Catholic faith."
+    },
+    {
+      "term": "Messiah",
+      "definition": "The 'Anointed One'; in Hebrew 'Mashiach,' in Greek 'Christos'; Jesus is the promised Messiah."
+    },
+    {
+      "term": "Theophany",
+      "definition": "A visible manifestation or appearance of God; examples include the burning bush and Jesus' baptism."
+    },
+    {
+      "term": "Pentecost",
+      "definition": "The day the Holy Spirit descended upon the Apostles fifty days after Easter; the birthday of the Church."
+    },
+    {
+      "term": "Purgatory",
+      "definition": "A state of final purification after death for those who die in God's grace but need cleansing before entering heaven."
+    },
+    {
+      "term": "Incarnation",
+      "definition": "The mystery that the Son of God took on human nature and became man in Jesus Christ."
+    },
+    {
+      "term": "Theotokos",
+      "definition": "Greek for 'God-bearer' or 'Mother of God'; a title for Mary affirming that Jesus is truly divine."
+    },
+    {
+      "term": "Ruah",
+      "definition": "Hebrew word for 'spirit,' 'breath,' or 'wind'; used for the Holy Spirit in the Old Testament."
+    },
+    {
+      "term": "Salvation History",
+      "definition": "The story of God's saving action throughout human history, from creation through Christ to the end of time."
+    },
+    {
+      "term": "Grace",
+      "definition": "God's free and undeserved gift of his life and help; supernatural assistance for salvation."
+    },
+    {
+      "term": "Ecumenical Council",
+      "definition": "A worldwide gathering of bishops called by the Pope to address important Church matters; 21 have been held."
+    },
+    {
+      "term": "Apostles",
+      "definition": "The twelve men chosen by Jesus to be his closest followers and to lead the Church; includes Peter, John, James, etc."
+    },
+    {
+      "term": "Ecumenism",
+      "definition": "The movement promoting unity among all Christian churches and denominations."
+    },
+    {
+      "term": "Free Will",
+      "definition": "The God-given ability to choose between good and evil; the power of self-determination."
+    },
+    {
+      "term": "Disciple",
+      "definition": "A follower or student of Jesus; anyone who learns from and follows Christ's teachings."
+    },
+    {
+      "term": "Faith",
+      "definition": "Belief in and trust in God; one of the three theological virtues along with hope and charity."
+    },
+    {
+      "term": "Covenant",
+      "definition": "A sacred agreement or relationship between God and humanity; God made covenants with Noah, Abraham, Moses, and David."
+    }
+  ],
+  "timeline": [
+    {
+      "year": 354,
+      "event": "St. Augustine was born in Thagaste, North Africa."
+    },
+    {
+      "year": 395,
+      "event": "St. Augustine was elected Bishop of Hippo."
+    },
+    {
+      "year": 33,
+      "event": "Pentecost occurred - the Holy Spirit descended upon the Apostles, marking the birth of the Church."
+    },
+    {
+      "year": 70,
+      "event": "The Gospel of Mark was written, the earliest Gospel, approximately 40 years after Jesus' ascension."
+    },
+    {
+      "year": 313,
+      "event": "Constantine legalized Christianity in the Roman Empire with the Edict of Milan."
+    },
+    {
+      "year": 325,
+      "event": "The Council of Nicaea, the first Ecumenical Council, addressed the nature of Christ and produced the Nicene Creed."
+    },
+    {
+      "year": 1517,
+      "event": "Martin Luther posted his 95 Theses, beginning the Protestant Reformation."
+    }
+  ],
+  "locations": [
+    {
+      "name": "Thagaste (modern-day Algeria)",
+      "significance": "The birthplace of St. Augustine in North Africa."
+    },
+    {
+      "name": "Hippo (modern-day Annaba, Algeria)",
+      "significance": "The city where St. Augustine served as bishop and wrote many influential theological works."
+    },
+    {
+      "name": "Bethlehem",
+      "significance": "The birthplace of Jesus Christ, fulfilling Old Testament prophecy; where the Incarnation was made visible."
+    },
+    {
+      "name": "Jerusalem",
+      "significance": "The holy city where Jesus was crucified, died, and rose again; where the Apostles received the Holy Spirit at Pentecost."
+    },
+    {
+      "name": "Mount Sinai",
+      "significance": "The mountain where Moses received the Ten Commandments from God in the covenant with Israel."
+    },
+    {
+      "name": "Nazareth",
+      "significance": "The town where Jesus grew up; where the Angel Gabriel announced to Mary that she would bear the Son of God."
+    },
+    {
+      "name": "The Jordan River",
+      "significance": "Where John the Baptist baptized Jesus, and the Holy Trinity was revealed (Father's voice, Son baptized, Spirit as dove)."
+    }
+  ],
+  "trueFalse": [
+    {
+      "statement": "The word 'Trinity' appears in the Bible.",
+      "isTrue": false,
+      "correction": "The word 'Trinity' does not appear in the Bible, but the reality of the three Divine Persons is revealed throughout Scripture, especially at Jesus' baptism and in the Great Commission."
+    },
+    {
+      "statement": "Mary was the first disciple of Jesus.",
+      "isTrue": true,
+      "correction": "Mary is called the first disciple because she was the first to say 'yes' to God's plan, accepting her role as mother of Jesus at the Annunciation."
+    },
+    {
+      "statement": "St. Paul wrote one of the four Gospels.",
+      "isTrue": false,
+      "correction": "St. Paul did not write a Gospel. He wrote epistles (letters) to early Christian communities, including Romans, Corinthians, Galatians, Ephesians, and others."
+    },
+    {
+      "statement": "There were exactly 12 Apostles because they represented the 12 tribes of Israel.",
+      "isTrue": true,
+      "correction": "Jesus chose 12 Apostles to symbolize the restoration and fulfillment of the 12 tribes of Israel, showing continuity between the Old and New Covenants."
+    },
+    {
+      "statement": "Only two people were born free from Original Sin.",
+      "isTrue": true,
+      "correction": "Jesus and Mary were the only two people born without Original Sin. Mary's freedom from sin is celebrated on the Feast of the Immaculate Conception."
+    },
+    {
+      "statement": "The Gospels were written immediately after Jesus ascended into Heaven.",
+      "isTrue": false,
+      "correction": "The Apostles waited approximately 40 years before writing the Gospels because they initially focused on oral preaching and expected Jesus to return soon."
+    },
+    {
+      "statement": "Mark's Gospel was written earliest after Jesus ascended into Heaven.",
+      "isTrue": true,
+      "correction": "The Gospel of Mark, written around 70 AD, is considered the earliest of the four Gospels, approximately 40 years after Jesus' ascension."
+    },
+    {
+      "statement": "Salvation is available only to those who explicitly believe in Jesus Christ.",
+      "isTrue": false,
+      "correction": "The Catholic Church teaches that salvation is available to all people of good will who seek God sincerely, though Christ is the universal savior. Those who through no fault of their own don't know Christ can still be saved through God's grace."
+    },
+    {
+      "statement": "St. Augustine's mother was St. Monica.",
+      "isTrue": true,
+      "correction": "St. Monica prayed faithfully for her son Augustine's conversion for many years before he became one of the greatest theologians in Church history."
+    },
+    {
+      "statement": "The Pentateuch contains the first five books of the Bible.",
+      "isTrue": true,
+      "correction": "The Pentateuch consists of Genesis, Exodus, Leviticus, Numbers, and Deuteronomy, also called the Torah in Hebrew."
+    },
+    {
+      "statement": "The Paschal Mystery is the central mystery of the Catholic Church.",
+      "isTrue": true,
+      "correction": "The Paschal Mystery - Christ's passion, death, resurrection, and ascension - is the central mystery of Christian faith and the source of our salvation."
+    },
+    {
+      "statement": "We can learn about God through faith, reason, Divine Revelation, and our conscience.",
+      "isTrue": true,
+      "correction": "These are the four main ways humans come to know God: through believing (faith), thinking (reason), God revealing himself (Divine Revelation), and inner moral sense (conscience)."
+    },
+    {
+      "statement": "St. Thomas Aquinas authored the 5 proofs of God's existence.",
+      "isTrue": true,
+      "correction": "St. Thomas Aquinas developed the Five Ways (Quinque Viae) - philosophical arguments demonstrating God's existence through reason."
+    },
+    {
+      "statement": "The historical books of the Bible and the wisdom books serve the same purpose.",
+      "isTrue": false,
+      "correction": "Historical books tell the story of Israel's relationship with God, while wisdom books offer practical guidance, poetry, and philosophical reflections on living faithfully."
+    },
+    {
+      "statement": "All three persons of the Trinity are present at Jesus' baptism in the Jordan River.",
+      "isTrue": true,
+      "correction": "At Jesus' baptism, we see the Son being baptized, the Holy Spirit descending as a dove, and the Father's voice saying 'This is my beloved Son.'"
+    },
+    {
+      "statement": "Matthew and Luke have identical infancy narratives.",
+      "isTrue": false,
+      "correction": "Matthew focuses on Joseph, the Magi, and flight to Egypt, while Luke emphasizes Mary, shepherds, and the presentation in the temple. They complement each other but tell different aspects."
+    },
+    {
+      "statement": "We call the first person in God 'Father' because Jesus taught us this intimate name for God.",
+      "isTrue": true,
+      "correction": "Jesus revealed God as 'Abba' (Father), showing God's personal love and inviting us into familial relationship with God through him."
+    },
+    {
+      "statement": "Jesus' disciples were all wealthy, educated religious leaders.",
+      "isTrue": false,
+      "correction": "Jesus called ordinary people from all walks of life - fishermen, tax collectors, zealots - not just religious elites. This showed God's kingdom is open to all."
+    },
+    {
+      "statement": "Common images for the Holy Spirit include a dove, fire, and wind.",
+      "isTrue": true,
+      "correction": "Scripture uses multiple images for the Holy Spirit: a dove at Jesus' baptism, tongues of fire at Pentecost, and wind/breath (ruah) throughout the Bible."
+    },
+    {
+      "statement": "Luke wrote the Acts of the Apostles.",
+      "isTrue": true,
+      "correction": "Luke, the author of the third Gospel, also wrote Acts of the Apostles as a continuation, telling the story of the early Church after Jesus' ascension."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What is faith?",
+      "options": [
+        "Belief in and trust in God; accepting God's revelation as true",
+        "Following rules and commandments",
+        "Going to church every Sunday",
+        "Being a good person"
+      ],
+      "correctAnswer": "Belief in and trust in God; accepting God's revelation as true"
+    },
+    {
+      "question": "How do you reference a Bible verse? For example, John 3:16",
+      "options": [
+        "Book name, chapter number, verse number",
+        "Testament, book name, page number",
+        "Author, year, chapter",
+        "Volume, section, paragraph"
+      ],
+      "correctAnswer": "Book name, chapter number, verse number"
+    },
+    {
+      "question": "What are covenants?",
+      "options": [
+        "Sacred agreements between God and humanity",
+        "Church buildings",
+        "Prayer rituals",
+        "Religious holidays"
+      ],
+      "correctAnswer": "Sacred agreements between God and humanity"
+    },
+    {
+      "question": "Who is St. Augustine's mother?",
+      "options": [
+        "St. Monica",
+        "St. Helen",
+        "St. Mary",
+        "St. Catherine"
+      ],
+      "correctAnswer": "St. Monica"
+    },
+    {
+      "question": "Why is Mary called the 'first disciple'?",
+      "options": [
+        "She was the first to say 'yes' to God's plan at the Annunciation",
+        "She was Jesus' first follower",
+        "She was the oldest disciple",
+        "She wrote the first Gospel"
+      ],
+      "correctAnswer": "She was the first to say 'yes' to God's plan at the Annunciation"
+    },
+    {
+      "question": "What is the central mystery of the Catholic Church?",
+      "options": [
+        "The Paschal Mystery (Christ's passion, death, resurrection, and ascension)",
+        "The Immaculate Conception",
+        "The Last Supper",
+        "The Birth of Jesus"
+      ],
+      "correctAnswer": "The Paschal Mystery (Christ's passion, death, resurrection, and ascension)"
+    },
+    {
+      "question": "What does the Feast of the Immaculate Conception celebrate?",
+      "options": [
+        "Mary being conceived without Original Sin",
+        "Jesus' birth",
+        "The Holy Spirit's coming at Pentecost",
+        "Mary's assumption into heaven"
+      ],
+      "correctAnswer": "Mary being conceived without Original Sin"
+    },
+    {
+      "question": "How many people were born free from Original Sin?",
+      "options": [
+        "Two - Jesus and Mary",
+        "One - Jesus only",
+        "Twelve - the Apostles",
+        "None - everyone has Original Sin"
+      ],
+      "correctAnswer": "Two - Jesus and Mary"
+    },
+    {
+      "question": "Who authored the 5 proofs of God's existence?",
+      "options": [
+        "St. Thomas Aquinas",
+        "St. Augustine",
+        "St. Jerome",
+        "St. Francis"
+      ],
+      "correctAnswer": "St. Thomas Aquinas"
+    },
+    {
+      "question": "Where was St. Augustine born?",
+      "options": [
+        "Thagaste",
+        "Hippo",
+        "Rome",
+        "Jerusalem"
+      ],
+      "correctAnswer": "Thagaste"
+    },
+    {
+      "question": "Where was St. Augustine elected Bishop?",
+      "options": [
+        "Hippo",
+        "Thagaste",
+        "Carthage",
+        "Alexandria"
+      ],
+      "correctAnswer": "Hippo"
+    },
+    {
+      "question": "Whose Gospel was written earliest after Jesus ascended into Heaven?",
+      "options": [
+        "Mark",
+        "Matthew",
+        "Luke",
+        "John"
+      ],
+      "correctAnswer": "Mark"
+    },
+    {
+      "question": "How long after Jesus' ascension did it take for the Apostles to start writing Gospels?",
+      "options": [
+        "About 40 years",
+        "Immediately",
+        "10 years",
+        "100 years"
+      ],
+      "correctAnswer": "About 40 years"
+    },
+    {
+      "question": "Why did it take the Apostles so long to write the Gospels?",
+      "options": [
+        "They focused on oral preaching and expected Jesus to return soon",
+        "They couldn't write",
+        "They were afraid of persecution",
+        "They didn't think it was important"
+      ],
+      "correctAnswer": "They focused on oral preaching and expected Jesus to return soon"
+    },
+    {
+      "question": "What is the main purpose of the Book of Genesis?",
+      "options": [
+        "To tell of creation, the fall, and God's covenant with the patriarchs",
+        "To give laws and commandments",
+        "To tell of Jesus' life",
+        "To describe the end times"
+      ],
+      "correctAnswer": "To tell of creation, the fall, and God's covenant with the patriarchs"
+    },
+    {
+      "question": "What is the main purpose of the Book of Exodus?",
+      "options": [
+        "To tell of Israel's liberation from Egypt and the covenant at Sinai",
+        "To tell of creation",
+        "To give wisdom teachings",
+        "To tell of Jesus' ministry"
+      ],
+      "correctAnswer": "To tell of Israel's liberation from Egypt and the covenant at Sinai"
+    },
+    {
+      "question": "What is the main purpose of Acts of the Apostles?",
+      "options": [
+        "To tell the story of the early Church after Jesus' ascension",
+        "To give Jesus' teachings",
+        "To prophesy the end times",
+        "To tell of Israel's history"
+      ],
+      "correctAnswer": "To tell the story of the early Church after Jesus' ascension"
+    },
+    {
+      "question": "What is the main purpose of the Book of Revelation?",
+      "options": [
+        "To give prophetic visions of the end times and Christ's ultimate victory",
+        "To tell of Jesus' birth",
+        "To give moral teachings",
+        "To record Church history"
+      ],
+      "correctAnswer": "To give prophetic visions of the end times and Christ's ultimate victory"
+    },
+    {
+      "question": "How does Matthew's Gospel begin?",
+      "options": [
+        "With a genealogy tracing Jesus back to Abraham",
+        "With 'In the beginning was the Word'",
+        "With John the Baptist preaching",
+        "With the Annunciation to Mary"
+      ],
+      "correctAnswer": "With a genealogy tracing Jesus back to Abraham"
+    },
+    {
+      "question": "How does Mark's Gospel begin?",
+      "options": [
+        "With John the Baptist preaching in the wilderness",
+        "With Jesus' genealogy",
+        "With the Annunciation",
+        "With a theological prologue"
+      ],
+      "correctAnswer": "With John the Baptist preaching in the wilderness"
+    },
+    {
+      "question": "How does Luke's Gospel begin?",
+      "options": [
+        "With a formal preface and the announcement of John the Baptist's birth",
+        "With Jesus' baptism",
+        "With a genealogy",
+        "With 'In the beginning'"
+      ],
+      "correctAnswer": "With a formal preface and the announcement of John the Baptist's birth"
+    },
+    {
+      "question": "How does John's Gospel begin?",
+      "options": [
+        "With a theological prologue: 'In the beginning was the Word'",
+        "With Jesus' birth in Bethlehem",
+        "With a genealogy",
+        "With John the Baptist"
+      ],
+      "correctAnswer": "With a theological prologue: 'In the beginning was the Word'"
+    },
+    {
+      "question": "Why were there 12 Apostles and not 100?",
+      "options": [
+        "To represent the 12 tribes of Israel and show fulfillment of God's covenant",
+        "Because that's all Jesus could find",
+        "Because 12 is a lucky number",
+        "To keep the group manageable"
+      ],
+      "correctAnswer": "To represent the 12 tribes of Israel and show fulfillment of God's covenant"
+    },
+    {
+      "question": "What is the main point of the Parable of the Prodigal Son?",
+      "options": [
+        "God's merciful love and forgiveness for repentant sinners",
+        "The importance of being responsible",
+        "Brothers should get along",
+        "Hard work is rewarded"
+      ],
+      "correctAnswer": "God's merciful love and forgiveness for repentant sinners"
+    },
+    {
+      "question": "What is the main point of the Parable of the Unforgiving Servant?",
+      "options": [
+        "We must forgive others as God has forgiven us",
+        "Pay your debts on time",
+        "Masters are cruel",
+        "Servants should be honest"
+      ],
+      "correctAnswer": "We must forgive others as God has forgiven us"
+    },
+    {
+      "question": "Who wrote Acts of the Apostles?",
+      "options": [
+        "Luke",
+        "Paul",
+        "Peter",
+        "John"
+      ],
+      "correctAnswer": "Luke"
+    },
+    {
+      "question": "What did St. Paul write?",
+      "options": [
+        "Epistles (letters) to early Christian communities",
+        "A Gospel",
+        "The Acts of the Apostles",
+        "The Book of Revelation"
+      ],
+      "correctAnswer": "Epistles (letters) to early Christian communities"
+    },
+    {
+      "question": "In Matthew's genealogy, Jesus is linked all the way back to whom?",
+      "options": [
+        "Abraham",
+        "Adam",
+        "Moses",
+        "David only"
+      ],
+      "correctAnswer": "Abraham"
+    },
+    {
+      "question": "In Luke's genealogy, Jesus is linked all the way back to whom?",
+      "options": [
+        "Adam",
+        "Abraham",
+        "Moses",
+        "David"
+      ],
+      "correctAnswer": "Adam"
+    },
+    {
+      "question": "What kinds of miracles did Jesus perform?",
+      "options": [
+        "Healing the sick, raising the dead, nature miracles, and casting out demons",
+        "Only healing miracles",
+        "Only nature miracles",
+        "He didn't perform miracles"
+      ],
+      "correctAnswer": "Healing the sick, raising the dead, nature miracles, and casting out demons"
+    },
+    {
+      "question": "What was Noah's covenant sign from God?",
+      "options": [
+        "The rainbow",
+        "Circumcision",
+        "The Ten Commandments",
+        "The star of David"
+      ],
+      "correctAnswer": "The rainbow"
+    },
+    {
+      "question": "What was Abraham's covenant sign from God?",
+      "options": [
+        "Circumcision",
+        "The rainbow",
+        "The stone tablets",
+        "The ark"
+      ],
+      "correctAnswer": "Circumcision"
+    },
+    {
+      "question": "What was Moses' covenant sign from God?",
+      "options": [
+        "The Ten Commandments (stone tablets)",
+        "Circumcision",
+        "The rainbow",
+        "A crown"
+      ],
+      "correctAnswer": "The Ten Commandments (stone tablets)"
+    },
+    {
+      "question": "What was Jesus' covenant sign?",
+      "options": [
+        "His body and blood in the Eucharist (or the Cross)",
+        "The Bible",
+        "Baptism only",
+        "The Church building"
+      ],
+      "correctAnswer": "His body and blood in the Eucharist (or the Cross)"
+    },
+    {
+      "question": "Who was St. Jerome?",
+      "options": [
+        "The saint who translated the Bible into Latin (the Vulgate)",
+        "A pope",
+        "The author of the Gospels",
+        "A martyr"
+      ],
+      "correctAnswer": "The saint who translated the Bible into Latin (the Vulgate)"
+    },
+    {
+      "question": "Who was St. Helen?",
+      "options": [
+        "Mother of Emperor Constantine who found the True Cross in Jerusalem",
+        "A great theologian",
+        "An apostle",
+        "A Gospel writer"
+      ],
+      "correctAnswer": "Mother of Emperor Constantine who found the True Cross in Jerusalem"
+    },
+    {
+      "question": "Who was St. Kateri Tekakwitha?",
+      "options": [
+        "The first Native American saint, known for her faith and devotion",
+        "A Spanish missionary",
+        "A Church doctor",
+        "A martyr in Rome"
+      ],
+      "correctAnswer": "The first Native American saint, known for her faith and devotion"
+    },
+    {
+      "question": "Who was Martin Luther?",
+      "options": [
+        "A German monk who started the Protestant Reformation in 1517",
+        "A Catholic saint",
+        "A pope",
+        "An apostle"
+      ],
+      "correctAnswer": "A German monk who started the Protestant Reformation in 1517"
+    },
+    {
+      "question": "Who was Blessed Julian of Norwich?",
+      "options": [
+        "An English mystic known for 'Revelations of Divine Love' and saying 'All shall be well'",
+        "A pope",
+        "A martyr",
+        "A reformer"
+      ],
+      "correctAnswer": "An English mystic known for 'Revelations of Divine Love' and saying 'All shall be well'"
+    },
+    {
+      "question": "Who was St. Francis of Assisi?",
+      "options": [
+        "Founder of the Franciscan order, known for poverty, care for creation, and the first nativity scene",
+        "A Bible translator",
+        "A Church doctor who wrote the Summa",
+        "A martyr"
+      ],
+      "correctAnswer": "Founder of the Franciscan order, known for poverty, care for creation, and the first nativity scene"
+    },
+    {
+      "question": "Who was John the Baptist?",
+      "options": [
+        "The prophet who prepared the way for Jesus and baptized him in the Jordan River",
+        "One of the twelve apostles",
+        "The author of a Gospel",
+        "Jesus' brother"
+      ],
+      "correctAnswer": "The prophet who prepared the way for Jesus and baptized him in the Jordan River"
+    }
+  ]
+}
