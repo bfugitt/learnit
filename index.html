@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>MacStudy v2.0</title>
+    <title>MacStudy v2.1</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -273,7 +273,7 @@
     <div id="main-window">
         <div id="title-bar">
             <div id="close-btn" onclick="quitGame()"></div>
-            <div id="title-text">MacStudy v2.0</div>
+            <div id="title-text">MacStudy v2.1</div>
         </div>
         
         <div id="menu-bar">
@@ -553,7 +553,7 @@
     }
 
     function closeFilePicker() { document.getElementById('file-picker-modal').style.display = 'none'; }
-    function showHelp() { alert("MacStudy v2.0\n\nProgress is saved automatically.\nUse 'Reset Data' to clear history."); }
+    function showHelp() { alert("MacStudy v2.1\n\nProgress is saved automatically.\nUse 'Reset Data' to clear history."); }
 
     function loadModule(data) {
         state.module = data;
@@ -1007,6 +1007,20 @@
         document.getElementById('report-modal').style.display = 'flex';
     }
     function closeReport() { document.getElementById('report-modal').style.display = 'none'; quitGame(); }
+
+    // --- CHECK URL PARAMS ---
+    function checkUrlParams() {
+        const params = new URLSearchParams(window.location.search);
+        const modFile = params.get('mod');
+        if (modFile) {
+            state.selectedFilename = modFile;
+            loadSelectedFile();
+        }
+    }
+    
+    // Start Application
+    checkUrlParams();
+
 </script>
 </body>
 </html>
