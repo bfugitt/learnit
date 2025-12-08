@@ -1,0 +1,740 @@
+{
+  "moduleInfo": {
+    "title": "The Art of Beatrix Potter: Sections 7-10 (Pages 188-242)",
+    "subject": "Fine Arts",
+    "level": "Junior High"
+  },
+  "vocabulary": [
+    {
+      "term": "pinafores",
+      "definition": "A sleeveless usually low-necked garment fastened in the back and worn as an apron or dress"
+    },
+    {
+      "term": "meanders",
+      "definition": "To follow a winding or intricate course"
+    },
+    {
+      "term": "sooty",
+      "definition": "Of the color of soot, the product of burnt wood"
+    },
+    {
+      "term": "infestation",
+      "definition": "To spread or swarm in or over in a troublesome manner"
+    },
+    {
+      "term": "balustrades",
+      "definition": "A row of poles to protect one from falling down stairs, topped by a rail"
+    },
+    {
+      "term": "ornithological",
+      "definition": "A branch of zoology dealing with birds"
+    },
+    {
+      "term": "contention",
+      "definition": "Something that is a cause of disagreement, argument or conflict"
+    },
+    {
+      "term": "surrogate",
+      "definition": "One appointed to act in place of another, especially when caring for unborn offspring"
+    },
+    {
+      "term": "naïve",
+      "definition": "Deficient in worldly wisdom or informed judgment"
+    },
+    {
+      "term": "oblivious",
+      "definition": "Lacking active conscious knowledge or awareness"
+    },
+    {
+      "term": "rhubarb",
+      "definition": "The tart, succulent, usually pink or red celery-like vegetable used especially in pies"
+    },
+    {
+      "term": "fragment",
+      "definition": "A part broken off, detached, or incomplete"
+    },
+    {
+      "term": "repose",
+      "definition": "A state of resting"
+    },
+    {
+      "term": "cherubs",
+      "definition": "An innocent-looking usually chubby and rosy angel"
+    },
+    {
+      "term": "anecdotes",
+      "definition": "A usually short narrative of an interesting, amusing, or biographical incident"
+    },
+    {
+      "term": "affinity",
+      "definition": "An attraction to or liking for something"
+    },
+    {
+      "term": "voracious",
+      "definition": "Having a huge appetite"
+    },
+    {
+      "term": "admonition",
+      "definition": "Gentle or friendly rebuke"
+    },
+    {
+      "term": "harkened",
+      "definition": "To bring to mind something in the past"
+    },
+    {
+      "term": "rein",
+      "definition": "Restraining influence"
+    },
+    {
+      "term": "ambiguous",
+      "definition": "Capable of being understood in two or more possible ways"
+    },
+    {
+      "term": "nocturnal",
+      "definition": "Active at night"
+    },
+    {
+      "term": "vicious",
+      "definition": "Dangerously aggressive"
+    },
+    {
+      "term": "scuffle",
+      "definition": "A short confused fight at close quarters"
+    },
+    {
+      "term": "vernacular",
+      "definition": "The normal spoken form of a language in a certain area"
+    },
+    {
+      "term": "endemic",
+      "definition": "Restricted or peculiar to a locality or region"
+    },
+    {
+      "term": "caravan",
+      "definition": "A company of travelers on a journey"
+    },
+    {
+      "term": "derived",
+      "definition": "Obtained something from"
+    },
+    {
+      "term": "annotated",
+      "definition": "Provided with explanatory notes or comments"
+    },
+    {
+      "term": "stiles",
+      "definition": "An arrangement of steps that allows people but not animals to climb over a fence or wall"
+    },
+    {
+      "term": "grange",
+      "definition": "A country house with farm buildings attached"
+    },
+    {
+      "term": "hamper",
+      "definition": "A large basket usually with a cover for packing, storing, or transporting articles"
+    },
+    {
+      "term": "lamented",
+      "definition": "Mourned for, strong desire of missing something or someone"
+    },
+    {
+      "term": "profundity",
+      "definition": "The state of being profound or deep"
+    },
+    {
+      "term": "chimneypiece",
+      "definition": "An ornamental construction over and around a fireplace that includes the mantel"
+    },
+    {
+      "term": "damask",
+      "definition": "A grayish red"
+    },
+    {
+      "term": "espaliers",
+      "definition": "A fruit tree or ornamental shrub whose branches are trained to grow flat against a wall"
+    },
+    {
+      "term": "vista",
+      "definition": "A distant view"
+    },
+    {
+      "term": "noncommittal",
+      "definition": "Giving no clear indication of attitude or feeling"
+    },
+    {
+      "term": "poplars",
+      "definition": "Any of a genus of slender catkin-bearing quick-growing deciduous trees of the willow family"
+    },
+    {
+      "term": "keen",
+      "definition": "Very enthusiastic or excited about"
+    },
+    {
+      "term": "palette",
+      "definition": "A particular range, quality, or use of color"
+    },
+    {
+      "term": "indulgent",
+      "definition": "Willing to allow excessive leniency, generosity, or consideration"
+    },
+    {
+      "term": "rubbish",
+      "definition": "British for trash, waste, or garbage"
+    },
+    {
+      "term": "dummy manuscript",
+      "definition": "A quick version of an illustrated book to show layout and positioning of text and illustrations"
+    },
+    {
+      "term": "soporific",
+      "definition": "Causing or tending to cause sleep"
+    },
+    {
+      "term": "aura",
+      "BBContinuedefinition": "A distinctive atmosphere surrounding a given source"
+},
+{
+"term": "embodiments",
+"definition": "To make concrete and perceptible"
+},
+{
+"term": "incongruous",
+"definition": "Not harmonious, inconsistent within itself"
+},
+{
+"term": "frailty",
+"definition": "A fault due to weakness especially of moral character"
+},
+{
+"term": "melancholic",
+"definition": "Depression of spirits"
+},
+{
+"term": "anti-saccharine",
+"definition": "Not overly sweet or sentimental"
+},
+{
+"term": "fruition",
+"definition": "Realization, to come to being"
+}
+],
+"timeline": [
+{
+"year": 1905,
+"event": "Norman Warne died during Potter family stay at Hafod-Y-Bryn in Wales"
+},
+{
+"year": 1910,
+"event": "After this year, Potter's art and writing decreased due to farm management and caring for parents"
+},
+{
+"year": 1913,
+"event": "Beatrix Potter married William Heelis; The Tale of Pigling Bland published"
+}
+],
+"artworks": [
+{
+"title": "Kep the collie",
+"medium": "Watercolor and clay figure",
+"description": "Portrait of Potter's beloved farm dog created in both painting and sculpture"
+},
+{
+"title": "Spout House",
+"medium": "Watercolor",
+"description": "Painting that acted as model for Mr. Piperson's house in The Tale of Pigling Bland"
+},
+{
+"title": "Pony Billy",
+"medium": "Watercolor",
+"description": "Unfinished painting of a horse character from The Fairy Caravan"
+},
+{
+"title": "Near Sawrey streets",
+"medium": "Watercolor",
+"description": "Illustration showing real-life Stoney Lane and Bank Wood"
+},
+{
+"title": "Barley fields sketch",
+"medium": "Watercolor",
+"description": "Sketch Potter painted the night before Norman Warne died, sent to Millie Warne"
+}
+],
+"locations": [
+{
+"name": "Stoney Lane and Bank Wood, Near Sawrey",
+"significance": "Real streets featured in illustrations for The Tale of Samuel Whiskers and Tom Kitten"
+},
+{
+"name": "Bull Banks near Oatmeal Crag",
+"significance": "Near Sawrey countryside setting for The Tale of Mr. Tod, pastures of Castle Farm"
+},
+{
+"name": "Hawkshead",
+"significance": "Busy town Potter toured in 1882; setting for Johnny Town-Mouse in The Tale of Johnny Town-Mouse"
+},
+{
+"name": "Troutbeck Park",
+"significance": "Where Potter observed wild fell ponies that inspired The Fairy Caravan"
+},
+{
+"name": "Tenby, South Wales",
+"significance": "Where Potter chose bedroom window overlooking gardens"
+},
+{
+"name": "Hafod-Y-Bryn, Llanbedr, Wales",
+"significance": "Estate where Potters stayed in 1905; overlooks Cardigan Bay, where Norman Warne died that summer"
+},
+{
+"name": "Gwaynynog Estate",
+"significance": "Uncle Fred Burton's home with 2,000+ acres; gardens inspired The Tale of the Flopsy Bunnies"
+},
+{
+"name": "Denbigh",
+"significance": "Area Potter enjoyed for gardens and fossil quarries but disliked the climate and culture"
+}
+],
+"trueFalse": [
+{
+"statement": "The Tale of Tom Kitten is similar to The Tale of Peter Rabbit because disobedient children lose their clothing.",
+"isTrue": true,
+"correction": "In both stories the disobedient 'child/ren' lose their clothing which upsets their mothers."
+},
+{
+"statement": "Mrs. Cannon found a rat eating dinner under the kitchen table at Hill Top in the afternoon.",
+"isTrue": true,
+"correction": "Although Hill Top's rat infestation was mostly unpleasant, this was a humorous sight."
+},
+{
+"statement": "The Tale of Samuel Whiskers and The Tale of Tom Kitten are both set indoors at Hill Top Farm.",
+"isTrue": false,
+"correction": "Tom Kitten is set outside in the garden and farmyard, while Samuel Whiskers is a tribute to the house interior."
+},
+{
+"statement": "The Tale of Samuel Whiskers was personal to Potter because it celebrated her independence and Hill Top renovations.",
+"isTrue": true,
+"correction": "It was immensely personal as she had become entirely independent of parents and it celebrates making Hill Top her dream home."
+},
+{
+"statement": "Jemima Puddle-Duck was named after the ornithological illustrator Jemima Blackburn.",
+"isTrue": true,
+"correction": "This is the likely origin of the character's name according to the study guide."
+},
+{
+"statement": "The Tale of Jemima Puddle-Duck has a happy ending where all the eggs hatch safely.",
+"isTrue": false,
+"correction": "Although Jemima and eggs are saved by Kep the Collie, the two farm pups eat all of Jemima's eggs."
+},
+{
+"statement": "Potter created both a watercolor painting and a clay figure of her beloved collie Kep.",
+"isTrue": true,
+"correction": "She used multiple mediums to capture her favorite farm dog."
+},
+{
+"statement": "Potter eagerly sold her two farm pigs because she didn't like them.",
+"isTrue": false,
+"correction": "Although saddened by the event, she was accepting because she was paid well and they ate so much it was difficult to keep them fed."
+},
+{
+"statement": "The imagery in The Tale of Mrs. Tittlemouse harkened back to Potter's early natural history illustrations.",
+"isTrue": true,
+"correction": "This story connected to her detailed scientific observation work from earlier years."
+},
+{
+"statement": "Warne encouraged Potter to include as many different creatures as possible in The Tale of Mrs. Tittlemouse.",
+"isTrue": false,
+"correction": "He had to rein in her enthusiasm - the earwig turned to a beetle, centipede to a butterfly, and woodlice wording changed."
+},
+{
+"statement": "The Tale of Mr. Tod is set in Bull Banks, the pastures of Castle Farm near Near Sawrey.",
+"isTrue": true,
+"correction": "Specifically underneath Oatmeal Crag in the Near Sawrey countryside."
+},
+{
+"statement": "The Tale of Mr. Tod ends with all disagreements resolved happily.",
+"isTrue": false,
+"correction": "The tale ends with disagreements unsolved and no resolution between the characters."
+},
+{
+"statement": "Canon Rawnsley gave Potter her first Herdwick sheep.",
+"isTrue": true,
+"correction": "These sheep have dainty feet and unique wool suitable for cold temperatures and uneven terrain."
+},
+{
+"statement": "Potter began working on The Fairy Caravan again after meeting American visitors who appreciated her story settings.",
+"isTrue": true,
+"correction": "After meeting Gail Parsons Coolidge and Henry P., who wished to see the real-life settings, she returned to this book."
+},
+{
+"statement": "Johnny Town-Mouse and Timmy Willie both live in Hawkshead.",
+"isTrue": false,
+"correction": "Johnny Town-Mouse lives in Hawkshead, while Timmy Willie lives in a garden at a cottage in Near Sawrey."
+},
+{
+"statement": "Norman Warne died during the Potter family's stay at Hafod-Y-Bryn in summer 1905.",
+"isTrue": true,
+"correction": "He had proposed to Beatrix that same summer, making his death particularly tragic."
+},
+{
+"statement": "The Tale of Timmy Tiptoes is considered one of Potter's most pleasing stories.",
+"isTrue": false,
+"correction": "It's considered one of the least pleasing, proving Potter was best in places that inspired her with creatures she knew well."
+},
+{
+"statement": "Potter wrote to Millie Warne after Norman's death and included a sketch of barley fields.",
+"isTrue": true,
+"correction": "She included a sketch of the barley fields she painted the night before Norman died."
+},
+{
+"statement": "Benjamin and Flopsy Bunny put toy bunnies in place of their babies when rescuing them from Mr. McGregor.",
+"isTrue": false,
+"correction": "They put old vegetables and brush from the rubbish heap in the sack in place of their baby bunnies."
+},
+{
+"statement": "Eleanor Taylor believes Potter spoke directly to children without condescension in her books.",
+"isTrue": true,
+"correction": "This fellow illustrator wrote about this quality in the Afterword of the book."
+}
+],
+"quiz": [
+{
+"question": "How is The Tale of Tom Kitten similar to The Tale of Peter Rabbit?",
+"options": [
+"Disobedient children lose their clothing which upsets their mothers",
+"Both feature gardens",
+"Both have cats as main characters",
+"Both end happily"
+],
+"correctAnswer": "Disobedient children lose their clothing which upsets their mothers"
+},
+{
+"question": "What real-life streets in Near Sawrey appear in illustrations?",
+"options": [
+"Stoney Lane and Bank Wood",
+"Main Street and Oak Avenue",
+"Church Road and Mill Lane",
+"Market Street and Bridge Way"
+],
+"correctAnswer": "Stoney Lane and Bank Wood"
+},
+{
+"question": "What humorous sight did Mrs. Cannon see during Hill Top's rat infestation?",
+"options": [
+"A rat sitting up eating its dinner under the kitchen table in the afternoon",
+"A rat wearing a tiny hat",
+"A rat dancing",
+"A rat sleeping in a teacup"
+],
+"correctAnswer": "A rat sitting up eating its dinner under the kitchen table in the afternoon"
+},
+{
+"question": "How do the settings differ between The Tale of Samuel Whiskers and The Tale of Tom Kitten?",
+"options": [
+"Tom Kitten is set outside in garden and farmyard; Samuel Whiskers is a tribute to the house",
+"They are both set inside",
+"They are both set outside",
+"Tom Kitten is inside; Samuel Whiskers is outside"
+],
+"correctAnswer": "Tom Kitten is set outside in garden and farmyard; Samuel Whiskers is a tribute to the house"
+},
+{
+"question": "Why was The Tale of Samuel Whiskers so personal to Beatrix Potter?",
+"options": [
+"It celebrated her independence from parents and making Hill Top her dream home",
+"It was her first published book",
+"It featured her favorite animal",
+"It was set in Scotland"
+],
+"correctAnswer": "It celebrated her independence from parents and making Hill Top her dream home"
+},
+{
+"question": "Who was Jemima Puddle-Duck likely named after?",
+"options": [
+"The ornithological illustrator Jemima Blackburn",
+"Potter's grandmother",
+"A childhood friend",
+"A character from a fairy tale"
+],
+"correctAnswer": "The ornithological illustrator Jemima Blackburn"
+},
+{
+"question": "What sad ending concludes The Tale of Jemima Puddle-Duck?",
+"options": [
+"The two farm pups eat Jemima's eggs",
+"Jemima gets lost",
+"The eggs never hatch",
+"Jemima flies away forever"
+],
+"correctAnswer": "The two farm pups eat Jemima's eggs"
+},
+{
+"question": "What other medium besides painting did Beatrix use to create Kep the collie?",
+"options": [
+"A clay figure",
+"A wooden carving",
+"A bronze statue",
+"A tapestry"
+],
+"correctAnswer": "A clay figure"
+},
+{
+"question": "Why was Beatrix accepting of selling two farm pigs despite being sad?",
+"options": [
+"She was paid a good price and they ate so much it was difficult to keep them fed",
+"She didn't like pigs",
+"Her parents made her sell them",
+"They were sick"
+],
+"correctAnswer": "She was paid a good price and they ate so much it was difficult to keep them fed"
+},
+{
+"question": "What did Beatrix Potter adopt that lived at Hill Top Farm, much to John Cannon's dismay?",
+"options": [
+"A little black piglet",
+"A baby goat",
+"A lamb",
+"A puppy"
+],
+"correctAnswer": "A little black piglet"
+},
+{
+"question": "Which home acted as a model for Mr. Piperson's house in The Tale of Pigling Bland?",
+"options": [
+"The Spout House",
+"Hill Top Farm",
+"Fawe Park",
+"Wray Castle"
+],
+"correctAnswer": "The Spout House"
+},
+{
+"question": "What did Potter's imagery in The Tale of Mrs. Tittlemouse harken back to?",
+"options": [
+"Her early natural history illustrations",
+"Her childhood drawings",
+"Scottish folklore",
+"Victorian architecture"
+],
+"correctAnswer": "Her early natural history illustrations"
+},
+{
+"question": "What does Mrs. Tittlemouse give Mr. Jackson through the window?",
+"options": [
+"An acorn-cupful of honey-dew",
+"A piece of cake",
+"A cup of tea",
+"A flower"
+],
+"correctAnswer": "An acorn-cupful of honey-dew"
+},
+{
+"question": "What did Warne have to do with Potter's enthusiasm for creature variety in Mrs. Tittlemouse?",
+"options": [
+"He had to rein in her enthusiasm and some creatures were changed or removed",
+"He encouraged her to add more",
+"He loved all her choices",
+"He didn't comment on it"
+],
+"correctAnswer": "He had to rein in her enthusiasm and some creatures were changed or removed"
+},
+{
+"question": "What is the setting for The Tale of Mr. Tod?",
+"options": [
+"Near Sawrey countryside in Bull Banks, pastures of Castle Farm, underneath Oatmeal Crag",
+"Scotland",
+"London",
+"Wales"
+],
+"correctAnswer": "Near Sawrey countryside in Bull Banks, pastures of Castle Farm, underneath Oatmeal Crag"
+},
+{
+"question": "Why did Potter believe The Tale of Mr. Tod would make a good book?",
+"options": [
+"It would make pretty pictures with effects of moonlight",
+"It had a simple plot",
+"It featured her favorite animals",
+"It was set in her favorite location"
+],
+"correctAnswer": "It would make pretty pictures with effects of moonlight"
+},
+{
+"question": "How did The Tale of Mr. Tod end?",
+"options": [
+"Disagreements were not solved and there was no resolution",
+"Everyone became friends",
+"The characters moved away",
+"They had a big celebration"
+],
+"correctAnswer": "Disagreements were not solved and there was no resolution"
+},
+{
+"question": "What makes Herdwick sheep different from most sheep breeds?",
+"options": [
+"Dainty feet and unique wool",
+"They are much larger",
+"They have spots",
+"They have long tails"
+],
+"correctAnswer": "Dainty feet and unique wool"
+},
+{
+"question": "Who gave Beatrix Potter her first Herdwick sheep?",
+"options": [
+"Canon Rawnsley",
+"William Heelis",
+"Norman Warne",
+"Uncle Henry Roscoe"
+],
+"correctAnswer": "Canon Rawnsley"
+},
+{
+"question": "What book did Potter begin working on again after meeting Gail Parsons Coolidge and Henry P.?",
+"options": [
+"The Fairy Caravan",
+"The Tale of Peter Rabbit",
+"The Tale of Mr. Tod",
+"The Tale of Timmy Tiptoes"
+],
+"correctAnswer": "The Fairy Caravan"
+},
+{
+"question": "What is the horse character's name in the unfinished painting of The Fairy Caravan?",
+"options": [
+"Pony Billy",
+"Horse Harry",
+"Stallion Sam",
+"Mare Mary"
+],
+"correctAnswer": "Pony Billy"
+},
+{
+"question": "What did Potter create to help American readers of The Fairy Caravan?",
+"options": [
+"A hand-written glossary of North Country terms that became a printed glossary",
+"A map of the locations",
+"Character sketches",
+"A pronunciation guide"
+],
+"correctAnswer": "A hand-written glossary of North Country terms that became a printed glossary"
+},
+{
+"question": "What buildings did Potter visit during her tour of Hawkshead in 1882?",
+"options": [
+"Hawkshead Hall, building next to Old Courthouse, and granges of Furness Abbey",
+"Only the church",
+"The market and town hall",
+"The library and museum"
+],
+"correctAnswer": "Hawkshead Hall, building next to Old Courthouse, and granges of Furness Abbey"
+},
+{
+"question": "What towns are backgrounds for each mouse in The Tale of Johnny Town-Mouse?",
+"options": [
+"Johnny Town-Mouse in Hawkshead; Timmy Willie in a garden at cottage in Near Sawrey",
+"Both in London",
+"Both in Hawkshead",
+"Both in Near Sawrey"
+],
+"correctAnswer": "Johnny Town-Mouse in Hawkshead; Timmy Willie in a garden at cottage in Near Sawrey"
+},
+{
+"question": "What bedroom window view did Potter choose when staying at Tenby in South Wales?",
+"options": [
+"Overlooking the gardens",
+"Facing the ocean",
+"Facing the mountains",
+"Facing the street"
+],
+"correctAnswer": "Overlooking the gardens"
+},
+{
+"question": "What event occurred during the Potter family stay at Hafod-Y-Bryn in summer 1905?",
+"options": [
+"Her fiancé Norman Warne died",
+"She published her first book",
+"She bought Hill Top Farm",
+"She met William Heelis"
+],
+"correctAnswer": "Her fiancé Norman Warne died"
+},
+{
+"question": "Which story proves Potter was at her best in places that inspired her with creatures she knew well?",
+"options": [
+"The Tale of Timmy Tiptoes was one of the least pleasing and set in an unfamiliar area",
+"The Tale of Peter Rabbit",
+"The Tale of Samuel Whiskers",
+"The Tale of Mr. Tod"
+],
+"correctAnswer": "The Tale of Timmy Tiptoes was one of the least pleasing and set in an unfamiliar area"
+},
+{
+"question": "What animals did Potter include in Timmy Tiptoes that were unfamiliar to her and don't inhabit the UK?",
+"options": [
+"Gray squirrel, chipmunk, and black bear",
+"Red squirrel, fox, and badger",
+"Rabbit, hedgehog, and owl",
+"Cat, dog, and mouse"
+],
+"correctAnswer": "Gray squirrel, chipmunk, and black bear"
+},
+{
+"question": "Who does Potter write to shortly after Norman Warne's death?",
+"options": [
+"Millie Warne, Norman's sister, with a sketch of barley fields",
+"Her parents",
+"Her publisher",
+"Her cousin Caroline"
+],
+"correctAnswer": "Millie Warne, Norman's sister, with a sketch of barley fields"
+},
+{
+"question": "What do Benjamin and Flopsy Bunny put in place of their baby bunnies when rescuing them?",
+"options": [
+"Old vegetables and brush from the rubbish heap",
+"Stones",
+"Stuffed toys",
+"Nothing"
+],
+"correctAnswer": "Old vegetables and brush from the rubbish heap"
+},
+{
+"question": "How does Potter describe Gwaynynog gardens in The Tale of the Flopsy Bunnies?",
+"options": [
+"Very large, two-thirds surrounded by red-brick wall, with many apricots and old grey apple trees",
+"Small and simple",
+"Wild and overgrown",
+"Modern and minimal"
+],
+"correctAnswer": "Very large, two-thirds surrounded by red-brick wall, with many apricots and old grey apple trees"
+},
+{
+"question": "Give a short summary of The Tale of Timmy Tiptoes.",
+"options": [
+"Timmy falls into hollow tree, Chippy Hackee cares for him, shares nuts, Timmy eats too much to fit through door, storm frees him",
+"Timmy goes on an adventure",
+"Timmy finds a treasure",
+"Timmy makes new friends"
+],
+"correctAnswer": "Timmy falls into hollow tree, Chippy Hackee cares for him, shares nuts, Timmy eats too much to fit through door, storm frees him"
+},
+{
+"question": "How does Eleanor Taylor believe Potter spoke to children through her books?",
+"options": [
+"Spoke directly to children without condescension",
+"Used simple language",
+"Always had happy endings",
+"Included moral lessons"
+],
+"correctAnswer": "Spoke directly to children without condescension"
+},
+{
+"question": "Who is the last person the author Emily Zach thanks in the acknowledgements?",
+"options": [
+"Beatrix Potter Heelis",
+"Her editor",
+"Her family",
+"The museum staff"
+],
+"correctAnswer": "Beatrix Potter Heelis"
+}
+]
+}
