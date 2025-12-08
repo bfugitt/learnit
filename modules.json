@@ -1,9 +1,12 @@
 [
-  { "file": "potter_big.json", "name": "Decathalon: Fine Arts - Beatrix Potter" },
+  { "file": "potter1-3.json", "name": "Beatrix Potter 1-3" },
+  { "file": "potter4-6.json", "name": "Beatrix Potter 4-6" },
+  { "file": "potter7-10.json", "name": "Beatrix Potter 7-10" },
+  { "file": "potter_big.json", "name": "Beatrix Potter - Complete" },
   { "file": "4-tci-3.json", "name": "CA History: Exploration and Settlement - 4th Grade" },
   { "file": "faith_survey_2025_final.json", "name": "Faith Survey Final 1" },
   { "file": "fs_final_2.json", "name": "Faith Survey Final 2" },
   { "file": "revolution.json", "name": "US History: Revolution" },  
-  { "file": "spanish_1.json", "name": "Spanish: Level 1" },
-  { "file": "latin_1.json", "name": "Latin: Level 1" }
+  { "file": "spanish_1.json", "name": "Spanish: Beginner" },
+  { "file": "latin_1.json", "name": "Latin: Beginner" }
 ]
