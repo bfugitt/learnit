@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>MacStudy v2.1</title>
+    <title>MacStudy v2.2</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -237,6 +237,23 @@
         #feedback-bar.correct { background: #000; color: #fff; }
         #feedback-bar.wrong { background: repeating-linear-gradient(45deg, #fff, #fff 10px, #ccc 10px, #ccc 20px); color: #000; }
 
+        /* CERTIFICATE SCREEN */
+        #certificate-screen {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            border: 8px double #000;
+            margin: 20px;
+            background: #fff;
+            box-shadow: 10px 10px 0 rgba(0,0,0,0.2);
+        }
+        .cert-title { font-size: 48px; margin-bottom: 20px; text-decoration: underline; }
+        .cert-score { font-size: 80px; font-weight: bold; margin: 20px 0; }
+        .cert-text { font-size: 24px; margin: 10px 0; }
+
         /* REPORT CARD MODAL */
         #report-modal { display: none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,0.95); z-index: 100; flex-direction: column; justify-content: center; align-items: center; }
         #report-card { background: #fff; border: 4px double #000; padding: 40px; text-align: center; box-shadow: 10px 10px 0 rgba(0,0,0,0.2); }
@@ -250,7 +267,7 @@
             h2 { font-size: 20px; margin: 5px 0;}
             .menu-grid { grid-template-columns: 1fr 1fr; width: 100%; max-width: 100%; gap: 8px; }
             .btn { width: 100%; min-width: 0; font-size: 18px; padding: 8px; margin: 2px 0; }
-            #btn-hyper, #btn-review { grid-column: span 2 !important; width: 100% !important; }
+            #btn-hyper, #btn-review, #btn-test { grid-column: span 2 !important; width: 100% !important; }
             .options-grid { grid-template-columns: 1fr; gap: 8px; }
             .option-btn { min-height: 40px; padding: 8px; font-size: 18px; }
             .prompt-text { font-size: 20px; margin-bottom: 5px; }
@@ -265,6 +282,8 @@
             #memory-grid { gap: 2px; }
             .mem-card { padding: 2px; font-size: 12px !important; border-width: 1px; }
             #menu-stats { max-width: 100%; font-size: 16px; }
+            .cert-title { font-size: 32px; }
+            .cert-score { font-size: 60px; }
         }
     </style>
 </head>
@@ -273,7 +292,7 @@
     <div id="main-window">
         <div id="title-bar">
             <div id="close-btn" onclick="quitGame()"></div>
-            <div id="title-text">MacStudy v2.1</div>
+            <div id="title-text">MacStudy v2.2</div>
         </div>
         
         <div id="menu-bar">
@@ -305,8 +324,9 @@
                     <button id="btn-passport" class="btn" disabled onclick="startGame('passport')">PASSPORT</button>
                     <button id="btn-tf" class="btn" disabled onclick="startGame('truefalse')">FACT OR FICTION</button>
                     <button id="btn-hyper" class="btn" disabled onclick="startHypercardMenu()" style="grid-column: span 2; width: 410px;">HYPERCARDS</button>
-                    <!-- NEW REVIEW BUTTON -->
+                    
                     <button id="btn-review" class="btn" disabled onclick="startGame('review')" style="grid-column: span 2; width: 410px; border-style: double; border-width: 4px;">REVIEW MISSED (0)</button>
+                    <button id="btn-test" class="btn" disabled onclick="startTest()" style="grid-column: span 2; width: 410px; border-style: dashed; background:#eee;">TAKE TEST</button>
                 </div>
             </div>
 
@@ -378,6 +398,17 @@
                     </div>
                 </div>
 
+                <!-- CERTIFICATE SCREEN -->
+                <div id="certificate-screen" class="quiz-area" style="display:none;">
+                    <div class="cert-title">CERTIFICATE OF COMPLETION</div>
+                    <div class="cert-text">THIS CERTIFIES THAT THE USER HAS COMPLETED THE MODULE:</div>
+                    <div class="cert-text" id="cert-module-name" style="font-weight:bold; margin-bottom:20px;">MODULE NAME</div>
+                    <div class="cert-text">WITH A SCORE OF:</div>
+                    <div class="cert-score" id="cert-score-display">95%</div>
+                    <div class="cert-text" id="cert-fraction-display">19 / 20</div>
+                    <button class="btn" onclick="quitGame()" style="margin-top:30px;">RETURN TO MENU</button>
+                </div>
+
                 <div id="feedback-bar"></div>
             </div>
 
@@ -410,6 +441,9 @@
     </div>
 
 <script>
+    // --- CONFIG ---
+    const TEST_QUESTIONS_COUNT = 5;
+
     // --- GLOBAL STATE ---
     const state = {
         module: null,
@@ -483,25 +517,23 @@
     }
 
     function markMissed(item, type) {
-        // Create unique ID based on content
         let id = "";
         if (type === 'vocab') id = "voc_" + item.term;
         else if (type === 'quiz') id = "qz_" + item.question;
         else if (type === 'gallery') id = "gal_" + item.title;
         else if (type === 'passport') id = "loc_" + item.name;
         else if (type === 'tf') id = "tf_" + item.statement;
+        // NOTE: Timeline test questions (date choice) are not currently saved to missed queue 
+        // as they are dynamically generated for the test.
 
-        // Check if already missed
         const exists = state.userData.missedItems.find(i => i.id === id);
-        if (!exists) {
-            // Save item along with its type for reconstruction
+        if (!exists && type !== 'time_test') { // Don't save dynamic test questions
             state.userData.missedItems.push({ id: id, type: type, data: item });
             saveUserData();
         }
     }
 
     function markCorrect(item, type) {
-        // Find and remove if exists
         let id = "";
         if (type === 'vocab') id = "voc_" + item.term;
         else if (type === 'quiz') id = "qz_" + item.question;
@@ -513,7 +545,6 @@
         if (idx > -1) {
             state.userData.missedItems.splice(idx, 1);
         }
-        // Always add score
         state.userData.totalScore += 10;
         saveUserData();
     }
@@ -547,17 +578,17 @@
             const res = await fetch(state.selectedFilename + '?v=' + Date.now());
             if (!res.ok) throw new Error("File not found");
             const json = await res.json();
-            state.moduleFileName = state.selectedFilename; // Set filename for save key
+            state.moduleFileName = state.selectedFilename;
             loadModule(json);
         } catch (e) { alert("Error loading " + state.selectedFilename); }
     }
 
     function closeFilePicker() { document.getElementById('file-picker-modal').style.display = 'none'; }
-    function showHelp() { alert("MacStudy v2.1\n\nProgress is saved automatically.\nUse 'Reset Data' to clear history."); }
+    function showHelp() { alert("MacStudy v2.2\n\nProgress is saved automatically.\nUse 'Reset Data' to clear history."); }
 
     function loadModule(data) {
         state.module = data;
-        loadUserData(); // Load saves
+        loadUserData();
         
         const info = data.moduleInfo || {};
         const titleDisplay = document.getElementById('module-title');
@@ -573,6 +604,17 @@
         document.getElementById('btn-passport').disabled = !(d.locations && d.locations.length >= 1);
         document.getElementById('btn-tf').disabled = !(d.trueFalse && d.trueFalse.length >= 1);
         document.getElementById('btn-hyper').disabled = false;
+        
+        // Test is enabled if at least 2 categories have enough data
+        let validCats = 0;
+        if(d.vocabulary && d.vocabulary.length >= 4) validCats++;
+        if(d.quiz && d.quiz.length >= 1) validCats++;
+        if(d.artworks && d.artworks.length >= 1) validCats++;
+        if(d.locations && d.locations.length >= 1) validCats++;
+        if(d.trueFalse && d.trueFalse.length >= 1) validCats++;
+        if(d.timeline && d.timeline.length >= 3) validCats++;
+        
+        document.getElementById('btn-test').disabled = (validCats < 2);
     }
 
     // --- GAME ENGINE ---
@@ -583,7 +625,7 @@
 
     function quitGame() {
         document.getElementById('report-modal').style.display = 'none';
-        updateMenuStats(); // Refresh stats on exit
+        updateMenuStats(); 
         showScreen('menu-screen');
     }
 
@@ -592,12 +634,9 @@
         document.getElementById('score-display').innerText = "SCORE: 0";
         document.getElementById('mode-display').innerText = mode.toUpperCase();
         
-        document.getElementById('generic-quiz-ui').style.display = 'none';
-        document.getElementById('timeline-ui').style.display = 'none';
-        document.getElementById('memory-ui').style.display = 'none';
-        document.getElementById('tf-ui').style.display = 'none';
-        document.getElementById('hypercard-selector').style.display = 'none';
-        document.getElementById('hypercard-ui').style.display = 'none';
+        // Hide all
+        const uis = ['generic-quiz-ui', 'timeline-ui', 'memory-ui', 'tf-ui', 'hypercard-selector', 'hypercard-ui', 'certificate-screen'];
+        uis.forEach(id => document.getElementById(id).style.display = 'none');
         document.getElementById('feedback-bar').className = '';
 
         showScreen('game-screen');
@@ -612,7 +651,152 @@
         else if (mode === 'review') startReview();
     }
 
-    // --- GENERIC QUIZ HANDLERS ---
+    // --- TEST ENGINE (NEW) ---
+    function startTest() {
+        state.gameMode = 'test'; state.score = 0; state.testTotal = 0; state.testCorrect = 0; state.currentIdx = 0;
+        document.getElementById('score-display').innerText = "SCORE: 0";
+        document.getElementById('mode-display').innerText = "COMPREHENSIVE TEST";
+        
+        // Hide all UIs
+        const uis = ['generic-quiz-ui', 'timeline-ui', 'memory-ui', 'tf-ui', 'hypercard-selector', 'hypercard-ui', 'certificate-screen'];
+        uis.forEach(id => document.getElementById(id).style.display = 'none');
+        document.getElementById('feedback-bar').className = '';
+        
+        showScreen('game-screen');
+        
+        // Build Pool
+        state.pool = [];
+        const d = state.module;
+        const count = TEST_QUESTIONS_COUNT;
+        
+        if(d.vocabulary) {
+            const items = [...d.vocabulary].sort(()=>0.5-Math.random()).slice(0, count);
+            items.forEach(i => state.pool.push({type: 'vocab', data: i}));
+        }
+        if(d.quiz) {
+            const items = [...d.quiz].sort(()=>0.5-Math.random()).slice(0, count);
+            items.forEach(i => state.pool.push({type: 'quiz', data: i}));
+        }
+        if(d.artworks) {
+            const items = [...d.artworks].sort(()=>0.5-Math.random()).slice(0, count);
+            items.forEach(i => state.pool.push({type: 'gallery', data: i}));
+        }
+        if(d.locations) {
+            const items = [...d.locations].sort(()=>0.5-Math.random()).slice(0, count);
+            items.forEach(i => state.pool.push({type: 'passport', data: i}));
+        }
+        if(d.trueFalse) {
+            const items = [...d.trueFalse].sort(()=>0.5-Math.random()).slice(0, count);
+            items.forEach(i => state.pool.push({type: 'tf', data: i}));
+        }
+        if(d.timeline) {
+            // Convert timeline events to MC Date questions
+            const items = [...d.timeline].sort(()=>0.5-Math.random()).slice(0, count);
+            items.forEach(i => state.pool.push({type: 'time_test', data: i}));
+        }
+        
+        // Shuffle the whole test
+        state.pool.sort(() => 0.5 - Math.random());
+        
+        if(state.pool.length === 0) { alert("Not enough data for test."); quitGame(); return; }
+        
+        document.getElementById('generic-quiz-ui').style.display = 'flex';
+        loadTestRound();
+    }
+
+    function loadTestRound() {
+        if (state.currentIdx >= state.pool.length) { 
+            showCertificate(); return; 
+        }
+        
+        const currentItemObj = state.pool[state.currentIdx];
+        const type = currentItemObj.type;
+        const item = currentItemObj.data;
+
+        document.getElementById('generic-quiz-ui').style.display = 'none';
+        document.getElementById('tf-ui').style.display = 'none';
+
+        if (type === 'vocab') {
+            document.getElementById('generic-quiz-ui').style.display = 'flex';
+            const showTerm = Math.random() > 0.5;
+            document.getElementById('quiz-prompt').innerText = showTerm ? "DEFINE THIS TERM:" : "IDENTIFY THE TERM:";
+            document.getElementById('quiz-main').innerText = showTerm ? item.term.toUpperCase() : `"${item.definition}"`;
+            let options = state.module.vocabulary.filter(v => v.term !== item.term).sort(() => 0.5 - Math.random()).slice(0, 3);
+            options.push(item);
+            const opts = options.sort(() => 0.5 - Math.random()).map(o => ({ text: showTerm ? o.definition : o.term.toUpperCase(), isCorrect: o.term === item.term }));
+            renderOptions(opts, item.term, type, item);
+
+        } else if (type === 'quiz') {
+            document.getElementById('generic-quiz-ui').style.display = 'flex';
+            document.getElementById('quiz-prompt').innerText = "QUESTION:";
+            document.getElementById('quiz-main').innerText = item.question;
+            const opts = item.options.map(o => ({ text: o, isCorrect: o === item.correctAnswer })).sort(() => 0.5 - Math.random());
+            renderOptions(opts, item.correctAnswer, type, item);
+
+        } else if (type === 'gallery') {
+            document.getElementById('generic-quiz-ui').style.display = 'flex';
+            document.getElementById('quiz-prompt').innerText = "IDENTIFY THE WORK:";
+            document.getElementById('quiz-main').innerText = `"${item.description}"`;
+            let options = state.module.artworks.filter(a => a.title !== item.title).sort(() => 0.5 - Math.random()).slice(0, 3);
+            options.push(item);
+            const opts = options.sort(() => 0.5 - Math.random()).map(o => ({ text: o.title.toUpperCase(), isCorrect: o.title === item.title }));
+            renderOptions(opts, item.title, type, item);
+
+        } else if (type === 'passport') {
+            document.getElementById('generic-quiz-ui').style.display = 'flex';
+            document.getElementById('quiz-prompt').innerText = "WHERE AM I?";
+            document.getElementById('quiz-main').innerText = `"${item.significance}"`;
+            let options = state.module.locations.filter(a => a.name !== item.name).sort(() => 0.5 - Math.random()).slice(0, 3);
+            options.push(item);
+            const opts = options.sort(() => 0.5 - Math.random()).map(o => ({ text: o.name.toUpperCase(), isCorrect: o.name === item.name }));
+            renderOptions(opts, item.name, type, item);
+
+        } else if (type === 'time_test') {
+            // Timeline Multiple Choice Adapter
+            document.getElementById('generic-quiz-ui').style.display = 'flex';
+            document.getElementById('quiz-prompt').innerText = "WHEN DID THIS HAPPEN?";
+            document.getElementById('quiz-main').innerText = `"${item.event}"`;
+            
+            // Distractors: random years from +/- 20 years
+            const trueYear = item.year;
+            let optsArr = [trueYear];
+            while(optsArr.length < 4) {
+                const offset = Math.floor(Math.random() * 40) - 20;
+                const d = trueYear + offset;
+                if(!optsArr.includes(d)) optsArr.push(d);
+            }
+            const opts = optsArr.sort(() => 0.5 - Math.random()).map(y => ({ text: y.toString(), isCorrect: y === trueYear }));
+            renderOptions(opts, trueYear.toString(), type, item);
+
+        } else if (type === 'tf') {
+            document.getElementById('tf-ui').style.display = 'flex';
+            document.getElementById('tf-statement').innerText = item.statement;
+            const btnTrue = document.getElementById('btn-true');
+            const btnFalse = document.getElementById('btn-false');
+            btnTrue.className = 'tf-btn'; btnFalse.className = 'tf-btn';
+            btnTrue.style = ''; btnFalse.style = '';
+            btnTrue.disabled = false; btnFalse.disabled = false;
+            
+            btnTrue.onclick = () => checkTFGeneric(true, item, type);
+            btnFalse.onclick = () => checkTFGeneric(false, item, type);
+        }
+    }
+
+    function showCertificate() {
+        document.getElementById('generic-quiz-ui').style.display = 'none';
+        document.getElementById('tf-ui').style.display = 'none';
+        document.getElementById('certificate-screen').style.display = 'flex';
+        
+        const info = state.module.moduleInfo || {};
+        document.getElementById('cert-module-name').innerText = (info.title || "Unknown Module").toUpperCase();
+        
+        const pct = state.testTotal === 0 ? 0 : Math.round((state.testCorrect / state.testTotal) * 100);
+        document.getElementById('cert-score-display').innerText = pct + "%";
+        document.getElementById('cert-fraction-display').innerText = `${state.testCorrect} / ${state.testTotal} Correct`;
+    }
+
+    // --- SHARED CHECKERS FOR TEST & REVIEW ---
+    // Used by Vocab, Quiz, Gallery, Passport, TimeTest
     function checkGeneric(idx, isCorrect, correctText, type, itemData) {
         const btns = document.querySelectorAll('.option-btn');
         btns.forEach(b => b.disabled = true);
@@ -626,129 +810,68 @@
             state.score += 10; state.testCorrect++;
             document.getElementById('score-display').innerText = "SCORE: " + state.score;
             
-            // SAVE DATA
-            if(type) markCorrect(itemData, type);
+            // Only update persistent stats if NOT in test mode (or should we?)
+            // Usually Tests don't clear review queues, but they might add to them.
+            // Let's say Test mode ADDS to review queue on miss, but doesn't clear on correct.
+            if(state.gameMode === 'review') markCorrect(itemData, type);
 
-            setTimeout(() => { state.currentIdx++; nextRound(); }, 1000);
+            setTimeout(() => { state.currentIdx++; nextStep(); }, 1000);
         } else {
             btns[idx].classList.add('wrong-anim');
             feedback.className = 'wrong visible'; feedback.innerText = "WRONG. " + correctText;
             const win = document.getElementById('game-screen');
             void win.offsetWidth; win.classList.add('shake-effect');
             
-            // SAVE DATA
-            if(type) markMissed(itemData, type);
+            if(state.gameMode !== 'test' || true) { // Always mark missed
+                 markMissed(itemData, type);
+            }
 
-            setTimeout(() => { win.classList.remove('shake-effect'); state.currentIdx++; nextRound(); }, 2500);
+            setTimeout(() => { win.classList.remove('shake-effect'); state.currentIdx++; nextStep(); }, 2500);
         }
     }
 
+    // Used by TF in Review/Test
+    function checkTFGeneric(userSaysTrue, item, type) {
+        const isCorrect = userSaysTrue === item.isTrue;
+        const feedback = document.getElementById('feedback-bar'); feedback.classList.add('visible'); state.testTotal++;
+        
+        document.getElementById('btn-true').disabled = true;
+        document.getElementById('btn-false').disabled = true;
+
+        if (isCorrect) {
+            feedback.className = 'correct visible'; feedback.innerText = "CORRECT!";
+            state.score += 10; state.testCorrect++;
+            document.getElementById('score-display').innerText = "SCORE: " + state.score;
+            if(userSaysTrue) { document.getElementById('btn-true').style.background = "#000"; document.getElementById('btn-true').style.color = "#fff"; }
+            else { document.getElementById('btn-false').style.background = "#000"; document.getElementById('btn-false').style.color = "#fff"; }
+            
+            if(state.gameMode === 'review') markCorrect(item, type);
+            setTimeout(() => { state.currentIdx++; nextStep(); }, 1000);
+        } else {
+            feedback.className = 'wrong visible'; feedback.innerText = item.correction ? item.correction.toUpperCase() : "WRONG.";
+            const win = document.getElementById('game-screen'); void win.offsetWidth; win.classList.add('shake-effect');
+            
+            markMissed(item, type);
+            setTimeout(() => { win.classList.remove('shake-effect'); state.currentIdx++; nextStep(); }, 3000);
+        }
+    }
+
+    function nextStep() {
+        if(state.gameMode === 'review') loadReviewRound();
+        else if(state.gameMode === 'test') loadTestRound();
+        else nextRound(); // Standard games
+    }
+
+    // --- STANDARD MODES ---
+    // (Previous logic remains, just update 'nextRound' calls if needed, but they are separate)
     function nextRound() {
         if (state.gameMode === 'vocab') loadVocabRound();
         else if (state.gameMode === 'quiz') loadQuizRound();
         else if (state.gameMode === 'gallery') loadGalleryRound();
         else if (state.gameMode === 'passport') loadPassportRound();
         else if (state.gameMode === 'truefalse') loadTrueFalseRound();
-        else if (state.gameMode === 'review') loadReviewRound();
     }
 
-    // --- REVIEW ENGINE (NEW) ---
-    function startReview() {
-        // Pool is the missed items
-        state.pool = [...state.userData.missedItems]; 
-        // We use the 'data' field inside the missed item as the actual content
-        if(state.pool.length === 0) { alert("Nothing to review!"); quitGame(); return; }
-        
-        document.getElementById('generic-quiz-ui').style.display = 'flex';
-        loadReviewRound();
-    }
-
-    function loadReviewRound() {
-        if (state.currentIdx >= state.pool.length) { 
-            alert("Review Complete!"); quitGame(); return; 
-        }
-        
-        const missedItem = state.pool[state.currentIdx];
-        const type = missedItem.type;
-        const item = missedItem.data; // The actual content object
-
-        // Switch UI based on type
-        document.getElementById('generic-quiz-ui').style.display = 'none';
-        document.getElementById('tf-ui').style.display = 'none';
-
-        if (type === 'vocab') {
-            document.getElementById('generic-quiz-ui').style.display = 'flex';
-            // Logic similar to loadVocabRound but for one item
-            const showTerm = Math.random() > 0.5;
-            document.getElementById('quiz-prompt').innerText = showTerm ? "DEFINE THIS TERM:" : "IDENTIFY THE TERM:";
-            document.getElementById('quiz-main').innerText = showTerm ? item.term.toUpperCase() : `"${item.definition}"`;
-            
-            // Need distractors from main module
-            let options = state.module.vocabulary.filter(v => v.term !== item.term).sort(() => 0.5 - Math.random()).slice(0, 3);
-            options.push(item);
-            const opts = options.sort(() => 0.5 - Math.random()).map(o => ({ 
-                text: showTerm ? o.definition : o.term.toUpperCase(), 
-                isCorrect: o.term === item.term 
-            }));
-            renderOptions(opts, item.term, 'vocab', item);
-
-        } else if (type === 'quiz') {
-            document.getElementById('generic-quiz-ui').style.display = 'flex';
-            document.getElementById('quiz-prompt').innerText = "QUESTION:";
-            document.getElementById('quiz-main').innerText = item.question;
-            const opts = item.options.map(o => ({ text: o, isCorrect: o === item.correctAnswer })).sort(() => 0.5 - Math.random());
-            renderOptions(opts, item.correctAnswer, 'quiz', item);
-
-        } else if (type === 'gallery') {
-            document.getElementById('generic-quiz-ui').style.display = 'flex';
-            document.getElementById('quiz-prompt').innerText = "IDENTIFY THE WORK:";
-            document.getElementById('quiz-main').innerText = `"${item.description}"`;
-            let options = state.module.artworks.filter(a => a.title !== item.title).sort(() => 0.5 - Math.random()).slice(0, 3);
-            options.push(item);
-            const opts = options.sort(() => 0.5 - Math.random()).map(o => ({ text: o.title.toUpperCase(), isCorrect: o.title === item.title }));
-            renderOptions(opts, item.title, 'gallery', item);
-
-        } else if (type === 'passport') {
-            document.getElementById('generic-quiz-ui').style.display = 'flex';
-            document.getElementById('quiz-prompt').innerText = "WHERE AM I?";
-            document.getElementById('quiz-main').innerText = `"${item.significance}"`;
-            let options = state.module.locations.filter(a => a.name !== item.name).sort(() => 0.5 - Math.random()).slice(0, 3);
-            options.push(item);
-            const opts = options.sort(() => 0.5 - Math.random()).map(o => ({ text: o.name.toUpperCase(), isCorrect: o.name === item.name }));
-            renderOptions(opts, item.name, 'passport', item);
-
-        } else if (type === 'tf') {
-            document.getElementById('tf-ui').style.display = 'flex';
-            document.getElementById('tf-statement').innerText = item.statement;
-            const btnTrue = document.getElementById('btn-true');
-            const btnFalse = document.getElementById('btn-false');
-            btnTrue.className = 'tf-btn'; btnFalse.className = 'tf-btn';
-            btnTrue.style = ''; btnFalse.style = '';
-            btnTrue.disabled = false; btnFalse.disabled = false;
-            document.getElementById('feedback-bar').className = '';
-            // Hijack buttons for review logic
-            btnTrue.onclick = () => checkTFReview(true, item);
-            btnFalse.onclick = () => checkTFReview(false, item);
-        }
-    }
-
-    function checkTFReview(userSaysTrue, item) {
-        // Specialized checker for Review mode TF
-        const isCorrect = userSaysTrue === item.isTrue;
-        const feedback = document.getElementById('feedback-bar');
-        feedback.classList.add('visible');
-        
-        if (isCorrect) {
-            feedback.className = 'correct visible'; feedback.innerText = "CORRECT!";
-            markCorrect(item, 'tf');
-            setTimeout(() => { state.currentIdx++; nextRound(); }, 1000);
-        } else {
-            feedback.className = 'wrong visible'; feedback.innerText = item.correction ? item.correction.toUpperCase() : "WRONG.";
-            setTimeout(() => { state.currentIdx++; nextRound(); }, 2000);
-        }
-    }
-
-    // --- STANDARD MODES ---
     function startVocab() {
         state.pool = [...state.module.vocabulary].sort(() => 0.5 - Math.random()).slice(0, 10);
         document.getElementById('generic-quiz-ui').style.display = 'flex';
@@ -812,19 +935,76 @@
         renderOptions(opts, item.name, 'passport', item);
     }
 
-    // Helper: Pass Type and ItemData to checkGeneric for saving
-    function renderOptions(optionsArray, correctTextForFeedback, type, itemData) {
-        const grid = document.getElementById('quiz-options'); grid.innerHTML = '';
-        const fb = document.getElementById('feedback-bar'); fb.className = ''; fb.classList.remove('visible');
-        optionsArray.forEach((opt, idx) => {
-            const btn = document.createElement('button'); btn.className = 'option-btn'; btn.innerText = opt.text;
-            btn.onclick = () => checkGeneric(idx, opt.isCorrect, correctTextForFeedback, type, itemData);
-            if(btn.innerText.length > 50) btn.style.fontSize = "16px";
-            grid.appendChild(btn);
-        });
+    // --- REVIEW ENGINE (OLD) ---
+    function startReview() {
+        state.pool = [...state.userData.missedItems]; 
+        if(state.pool.length === 0) { alert("Nothing to review!"); quitGame(); return; }
+        document.getElementById('generic-quiz-ui').style.display = 'flex';
+        loadReviewRound();
+    }
+    function loadReviewRound() {
+        if (state.currentIdx >= state.pool.length) { alert("Review Complete!"); quitGame(); return; }
+        const missedItem = state.pool[state.currentIdx];
+        // Redirect to test logic which is generic enough now, just pass data
+        // Actually, re-using loadTestRound logic is tricky because of the structure.
+        // Let's just manually bridge it.
+        const type = missedItem.type;
+        const item = missedItem.data;
+        
+        // RE-USE Test Round Logic by faking state.pool item structure
+        // loadTestRound expects {type, data} which is exactly what missedItem is!
+        // But loadTestRound calls showCertificate on end. We want Review Complete.
+        
+        // So we copy-paste the display logic logic from loadTestRound but handle end diff.
+        // To save tokens, I will rely on the fact that I separated checkGeneric/checkTFGeneric
+        
+        document.getElementById('generic-quiz-ui').style.display = 'none';
+        document.getElementById('tf-ui').style.display = 'none';
+
+        if(type === 'vocab') {
+            document.getElementById('generic-quiz-ui').style.display = 'flex';
+            const showTerm = Math.random() > 0.5;
+            document.getElementById('quiz-prompt').innerText = showTerm ? "DEFINE THIS TERM:" : "IDENTIFY THE TERM:";
+            document.getElementById('quiz-main').innerText = showTerm ? item.term.toUpperCase() : `"${item.definition}"`;
+            let options = state.module.vocabulary.filter(v => v.term !== item.term).sort(() => 0.5 - Math.random()).slice(0, 3);
+            options.push(item);
+            const opts = options.sort(() => 0.5 - Math.random()).map(o => ({ text: showTerm ? o.definition : o.term.toUpperCase(), isCorrect: o.term === item.term }));
+            renderOptions(opts, item.term, type, item);
+        } else if(type === 'quiz') {
+            document.getElementById('generic-quiz-ui').style.display = 'flex';
+            document.getElementById('quiz-prompt').innerText = "QUESTION:";
+            document.getElementById('quiz-main').innerText = item.question;
+            const opts = item.options.map(o => ({ text: o, isCorrect: o === item.correctAnswer })).sort(() => 0.5 - Math.random());
+            renderOptions(opts, item.correctAnswer, type, item);
+        } else if(type === 'gallery') {
+            document.getElementById('generic-quiz-ui').style.display = 'flex';
+            document.getElementById('quiz-prompt').innerText = "IDENTIFY THE WORK:";
+            document.getElementById('quiz-main').innerText = `"${item.description}"`;
+            let options = state.module.artworks.filter(a => a.title !== item.title).sort(() => 0.5 - Math.random()).slice(0, 3);
+            options.push(item);
+            const opts = options.sort(() => 0.5 - Math.random()).map(o => ({ text: o.title.toUpperCase(), isCorrect: o.title === item.title }));
+            renderOptions(opts, item.title, type, item);
+        } else if(type === 'passport') {
+            document.getElementById('generic-quiz-ui').style.display = 'flex';
+            document.getElementById('quiz-prompt').innerText = "WHERE AM I?";
+            document.getElementById('quiz-main').innerText = `"${item.significance}"`;
+            let options = state.module.locations.filter(a => a.name !== item.name).sort(() => 0.5 - Math.random()).slice(0, 3);
+            options.push(item);
+            const opts = options.sort(() => 0.5 - Math.random()).map(o => ({ text: o.name.toUpperCase(), isCorrect: o.name === item.name }));
+            renderOptions(opts, item.name, type, item);
+        } else if(type === 'tf') {
+            document.getElementById('tf-ui').style.display = 'flex';
+            document.getElementById('tf-statement').innerText = item.statement;
+            const btnTrue = document.getElementById('btn-true'); const btnFalse = document.getElementById('btn-false');
+            btnTrue.className = 'tf-btn'; btnFalse.className = 'tf-btn';
+            btnTrue.style = ''; btnFalse.style = '';
+            btnTrue.disabled = false; btnFalse.disabled = false;
+            btnTrue.onclick = () => checkTFGeneric(true, item, type);
+            btnFalse.onclick = () => checkTFGeneric(false, item, type);
+        }
     }
 
-    // --- TF ENGINE ---
+    // --- TF ENGINE (STANDARD) ---
     function startTrueFalse() {
         state.pool = [...state.module.trueFalse].sort(() => 0.5 - Math.random());
         document.getElementById('tf-ui').style.display = 'flex';
@@ -834,50 +1014,41 @@
         if (state.currentIdx >= state.pool.length) { showReport(); return; }
         const item = state.pool[state.currentIdx];
         document.getElementById('tf-statement').innerText = item.statement;
-        
         const btnTrue = document.getElementById('btn-true'); const btnFalse = document.getElementById('btn-false');
         btnTrue.className = 'tf-btn'; btnFalse.className = 'tf-btn';
         btnTrue.style = ''; btnFalse.style = '';
         btnTrue.disabled = false; btnFalse.disabled = false;
-        
-        // Reset onclicks to standard
         btnTrue.onclick = () => checkTF(true, item);
         btnFalse.onclick = () => checkTF(false, item);
-
-        const fb = document.getElementById('feedback-bar'); fb.className = ''; fb.classList.remove('visible');
+        document.getElementById('feedback-bar').className = '';
     }
     function checkTF(userSaysTrue, item) {
         const isCorrect = userSaysTrue === item.isTrue;
         const feedback = document.getElementById('feedback-bar'); feedback.classList.add('visible'); state.testTotal++;
-        
-        document.getElementById('btn-true').disabled = true;
-        document.getElementById('btn-false').disabled = true;
-
+        document.getElementById('btn-true').disabled = true; document.getElementById('btn-false').disabled = true;
         if (isCorrect) {
             feedback.className = 'correct visible'; feedback.innerText = "CORRECT!";
             state.score += 10; state.testCorrect++;
             document.getElementById('score-display').innerText = "SCORE: " + state.score;
             if(userSaysTrue) { document.getElementById('btn-true').style.background = "#000"; document.getElementById('btn-true').style.color = "#fff"; }
             else { document.getElementById('btn-false').style.background = "#000"; document.getElementById('btn-false').style.color = "#fff"; }
-            
             markCorrect(item, 'tf');
             setTimeout(() => { state.currentIdx++; nextRound(); }, 1000);
         } else {
             feedback.className = 'wrong visible'; feedback.innerText = item.correction ? item.correction.toUpperCase() : "WRONG.";
             const win = document.getElementById('game-screen'); void win.offsetWidth; win.classList.add('shake-effect');
-            
             markMissed(item, 'tf');
             setTimeout(() => { win.classList.remove('shake-effect'); state.currentIdx++; nextRound(); }, 3000);
         }
     }
 
-    // --- OTHER ENGINES (Timeline/Memory/Hyper - Unchanged mostly, no save tracking yet) ---
+    // --- OTHER ENGINES (Timeline/Memory/Hyper - Unchanged) ---
     function startHypercardMenu() {
         state.gameMode = 'hypercard'; showScreen('game-screen');
         document.getElementById('score-display').innerText = "STACK SELECTION"; document.getElementById('mode-display').innerText = "HYPERCARD";
-        document.getElementById('generic-quiz-ui').style.display = 'none'; document.getElementById('timeline-ui').style.display = 'none';
-        document.getElementById('memory-ui').style.display = 'none'; document.getElementById('tf-ui').style.display = 'none';
-        document.getElementById('feedback-bar').className = ''; document.getElementById('hypercard-ui').style.display = 'none';
+        const ids = ['generic-quiz-ui', 'timeline-ui', 'memory-ui', 'tf-ui', 'hypercard-ui', 'certificate-screen'];
+        ids.forEach(id => document.getElementById(id).style.display = 'none');
+        document.getElementById('feedback-bar').className = ''; 
         document.getElementById('hypercard-selector').style.display = 'flex';
         const d = state.module;
         document.getElementById('stack-vocab').disabled = !(d.vocabulary && d.vocabulary.length > 0);
@@ -955,7 +1126,7 @@
         const fb = document.getElementById('feedback-bar'); fb.classList.add('visible'); state.testTotal++;
         if (allCorrect) { 
             fb.className = 'correct visible'; fb.innerText = "PERFECT ORDER!"; state.testCorrect++; state.score += 50; 
-            state.userData.totalScore += 50; saveUserData(); // TRACKING TIMELINE SCORE
+            state.userData.totalScore += 50; saveUserData(); 
         } 
         else { fb.className = 'wrong visible'; fb.innerText = "NOT QUITE..."; }
         document.getElementById('score-display').innerText = "SCORE: " + state.score;
@@ -990,7 +1161,7 @@
         const fb = document.getElementById('feedback-bar');
         if (isMatch) {
             fb.className = 'correct visible'; fb.innerText = "MATCH FOUND!"; state.score += 10; state.matchesFound++;
-            state.userData.totalScore += 10; saveUserData(); // TRACKING MEMORY SCORE
+            state.userData.totalScore += 10; saveUserData(); 
             document.getElementById('score-display').innerText = "SCORE: " + state.score;
             setTimeout(() => { c1.el.classList.add('matched'); c2.el.classList.add('matched'); state.flippedCards = []; state.isLocked = false; fb.className = ''; if (state.matchesFound === state.testTotal) { state.testCorrect = state.testTotal; showReport(); } }, 1000);
         } else {
