@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>MacStudy v2.3</title>
+    <title>MacStudy v2.4</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -292,7 +292,7 @@
     <div id="main-window">
         <div id="title-bar">
             <div id="close-btn" onclick="quitGame()"></div>
-            <div id="title-text">MacStudy v2.3</div>
+            <div id="title-text">MacStudy v2.4</div>
         </div>
         
         <div id="menu-bar">
@@ -587,7 +587,7 @@
     }
 
     function closeFilePicker() { document.getElementById('file-picker-modal').style.display = 'none'; }
-    function showHelp() { alert("MacStudy v2.3\n\nProgress is saved automatically.\nUse 'Reset Data' to clear history."); }
+    function showHelp() { alert("MacStudy v2.4\n\nProgress is saved automatically.\nUse 'Reset Data' to clear history."); }
 
     function loadModule(data) {
         state.module = data;
@@ -752,7 +752,7 @@
             const btnTrue = document.getElementById('btn-true');
             const btnFalse = document.getElementById('btn-false');
             btnTrue.className = 'tf-btn'; btnFalse.className = 'tf-btn';
-            btnTrue.style = ''; btnFalse.style = '';
+            btnTrue.removeAttribute('style'); btnFalse.removeAttribute('style');
             btnTrue.disabled = false; btnFalse.disabled = false;
             
             btnTrue.onclick = () => checkTFGeneric(true, item, type);
@@ -799,8 +799,6 @@
             if(state.gameMode !== 'test') { // Only save misses if NOT in test mode (or optionally, allow in test)
                  markMissed(itemData, type);
             }
-            // Actually, if we WANT to review test misses, we should allow it. 
-            // I'll re-enable it for test mode too, now that I fixed the correct answer bug.
             if(state.gameMode === 'test') markMissed(itemData, type);
 
             setTimeout(() => { win.classList.remove('shake-effect'); state.currentIdx++; nextStep(); }, 2500);
@@ -903,7 +901,7 @@
             document.getElementById('tf-statement').innerText = item.statement;
             const btnTrue = document.getElementById('btn-true'); const btnFalse = document.getElementById('btn-false');
             btnTrue.className = 'tf-btn'; btnFalse.className = 'tf-btn';
-            btnTrue.style = ''; btnFalse.style = '';
+            btnTrue.removeAttribute('style'); btnFalse.removeAttribute('style');
             btnTrue.disabled = false; btnFalse.disabled = false;
             btnTrue.onclick = () => checkTFGeneric(true, item, type);
             btnFalse.onclick = () => checkTFGeneric(false, item, type);
@@ -1011,6 +1009,52 @@
             if(btn.innerText.length > 50) btn.style.fontSize = "16px";
             grid.appendChild(btn);
         });
+    }
+
+    // --- TF ENGINE (STANDARD) ---
+    function startTrueFalse() {
+        state.pool = [...state.module.trueFalse].sort(() => 0.5 - Math.random());
+        document.getElementById('tf-ui').style.display = 'flex';
+        loadTrueFalseRound();
+    }
+    function loadTrueFalseRound() {
+        if (state.currentIdx >= state.pool.length) { showReport(); return; }
+        const item = state.pool[state.currentIdx];
+        
+        // Safety check for invalid items
+        if (!item) {
+            state.currentIdx++;
+            loadTrueFalseRound();
+            return;
+        }
+
+        document.getElementById('tf-statement').innerText = item.statement;
+        const btnTrue = document.getElementById('btn-true'); const btnFalse = document.getElementById('btn-false');
+        btnTrue.className = 'tf-btn'; btnFalse.className = 'tf-btn';
+        btnTrue.removeAttribute('style'); btnFalse.removeAttribute('style');
+        btnTrue.disabled = false; btnFalse.disabled = false;
+        btnTrue.onclick = () => checkTF(true, item);
+        btnFalse.onclick = () => checkTF(false, item);
+        document.getElementById('feedback-bar').className = '';
+    }
+    function checkTF(userSaysTrue, item) {
+        const isCorrect = userSaysTrue === item.isTrue;
+        const feedback = document.getElementById('feedback-bar'); feedback.classList.add('visible'); state.testTotal++;
+        document.getElementById('btn-true').disabled = true; document.getElementById('btn-false').disabled = true;
+        if (isCorrect) {
+            feedback.className = 'correct visible'; feedback.innerText = "CORRECT!";
+            state.score += 10; state.testCorrect++;
+            document.getElementById('score-display').innerText = "SCORE: " + state.score;
+            if(userSaysTrue) { document.getElementById('btn-true').style.background = "#000"; document.getElementById('btn-true').style.color = "#fff"; }
+            else { document.getElementById('btn-false').style.background = "#000"; document.getElementById('btn-false').style.color = "#fff"; }
+            markCorrect(item, 'tf');
+            setTimeout(() => { state.currentIdx++; nextRound(); }, 1000);
+        } else {
+            feedback.className = 'wrong visible'; feedback.innerText = item.correction ? item.correction.toUpperCase() : "WRONG.";
+            const win = document.getElementById('game-screen'); void win.offsetWidth; win.classList.add('shake-effect');
+            markMissed(item, 'tf');
+            setTimeout(() => { win.classList.remove('shake-effect'); state.currentIdx++; nextRound(); }, 3000);
+        }
     }
 
     // --- OTHER ENGINES (Timeline/Memory/Hyper - Unchanged) ---
