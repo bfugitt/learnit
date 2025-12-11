@@ -1,0 +1,151 @@
+{
+"moduleInfo": {
+"title": "Crowns & Crises: European Monarchy (1400-Present)",
+"subject": "European History",
+"level": "High School"
+},
+"vocabulary": [
+{ "term": "Absolute Monarchy", "definition": "A form of government where the monarch holds supreme autocratic authority, not being restricted by written laws, legislature, or customs." },
+{ "term": "Constitutional Monarchy", "definition": "A system of government in which a monarch shares power with a constitutionally organized government, often limited to ceremonial duties." },
+{ "term": "Divine Right of Kings", "definition": "A political and religious doctrine asserting that a monarch is subject to no earthly authority, deriving the right to rule directly from the will of God." },
+{ "term": "Abdication", "definition": "The act of a monarch formally giving up their monarchical authority and status." },
+{ "term": "Regent", "definition": "A person appointed to administer a state because the monarch is a minor, is absent, or is incapacitated." },
+{ "term": "Dynasty", "definition": "A sequence of rulers from the same family, usually in the context of a feudal or monarchical system." },
+{ "term": "Consort", "definition": "The spouse of a reigning monarch." },
+{ "term": "Interregnum", "definition": "A period when normal government is suspended, especially between successive reigns or regimes." },
+{ "term": "Heir Apparent", "definition": "An heir whose claim cannot be set aside by the birth of another heir." },
+{ "term": "Personal Union", "definition": "The combination of two or more states that have the same monarch while their boundaries, laws, and interests remain distinct." },
+{ "term": "Salic Law", "definition": "A rule of succession in some European monarchies that excluded females from the line of succession to the throne." },
+{ "term": "Coronation", "definition": "The ceremony of crowning a sovereign or a sovereign's consort." }
+],
+"timeline": [
+{ "year": 1485, "event": "Henry VII wins the Battle of Bosworth Field, establishing the Tudor Dynasty in England." },
+{ "year": 1516, "event": "Charles V becomes King of Spain, later uniting the Spanish and Holy Roman Empires." },
+{ "year": 1558, "event": "Elizabeth I ascends to the English throne, beginning the Elizabethan Era." },
+{ "year": 1643, "event": "Louis XIV becomes King of France, eventually becoming the longest-reigning sovereign monarch in history." },
+{ "year": 1649, "event": "Execution of Charles I of England following the English Civil War." },
+{ "year": 1688, "event": "The Glorious Revolution sees William III and Mary II replace James II as joint monarchs of England." },
+{ "year": 1715, "event": "Death of Louis XIV, the 'Sun King', marking the end of the height of French absolutism." },
+{ "year": 1789, "event": "The French Revolution begins, leading to the eventual execution of Louis XVI." },
+{ "year": 1815, "event": "The Congress of Vienna restores many European monarchies after the defeat of Napoleon." },
+{ "year": 1837, "event": "Queen Victoria ascends to the British throne, beginning a 63-year reign." },
+{ "year": 1917, "event": "Tsar Nicholas II of Russia abdicates amidst the Russian Revolution, ending the Romanov dynasty." },
+{ "year": 1952, "event": "Elizabeth II becomes Queen of the United Kingdom and other Commonwealth realms." }
+],
+"artworks": [
+{ "title": "Portrait of Henry VIII", "medium": "Oil on Panel", "description": "A commanding painting by Hans Holbein the Younger depicting a Tudor king in a confident, wide-legged stance, symbolizing aggressive masculinity and power." },
+{ "title": "Las Meninas", "medium": "Oil on Canvas", "description": "A complex composition by Diego Velázquez portraying the young Infanta Margarita Teresa and her entourage in the Spanish court, blurring reality and illusion." },
+{ "title": "The Coronation of Napoleon", "medium": "Oil on Canvas", "description": "A massive painting by Jacques-Louis David showing the new Emperor crowning his wife Josephine in Notre Dame Cathedral, legitimizing his self-made rule." },
+{ "title": "The Prince", "medium": "Political Treatise", "description": "A written work by Niccolò Machiavelli that argues rulers should prioritize stability and power over traditional morality, famously asking if it is better to be loved or feared." },
+{ "title": "Leviathan", "medium": "Book", "description": "Thomas Hobbes' influential work arguing for a social contract and rule by an absolute sovereign to prevent the 'war of all against all'." },
+{ "title": "Marie Antoinette with a Rose", "medium": "Oil on Canvas", "description": "A portrait by Élisabeth Vigée Le Brun intended to soften the public image of the French Queen, showing her in a formal yet gentle pose with a flower." }
+],
+"locations": [
+{ "name": "Palace of Versailles", "significance": "The primary residence of French kings from Louis XIV to Louis XVI, symbolizing the absolute power of the Ancien Régime." },
+{ "name": "The Tower of London", "significance": "A historic fortress used as a royal residence and a prison for high-profile figures like Anne Boleyn." },
+{ "name": "Westminster Abbey", "significance": "The traditional site of coronations and burials for English and British monarchs." },
+{ "name": "El Escorial", "significance": "A vast complex in Spain serving as a royal palace, monastery, and burial place for the King of Spain." },
+{ "name": "The Winter Palace", "significance": "The official residence of the Russian monarchs in St. Petersburg until the Russian Revolution." },
+{ "name": "Schönbrunn Palace", "significance": "The main summer residence of the Habsburg rulers in Vienna, Austria." },
+{ "name": "Hampton Court Palace", "significance": "A favorite residence of Henry VIII, originally built for Cardinal Wolsey before being seized by the King." },
+{ "name": "Sanssouci", "significance": "The summer palace of Frederick the Great, King of Prussia, located in Potsdam and famous for its Rococo style." },
+{ "name": "Windsor Castle", "significance": "The oldest and largest occupied castle in the world, a residence of British monarchs for nearly 1,000 years." },
+{ "name": "Fotheringhay Castle", "significance": "The site where Mary, Queen of Scots, was tried and executed in 1587." }
+],
+"trueFalse": [
+{ "statement": "Louis XIV was known as the 'Moon King' because of his nocturnal habits.", "isTrue": false, "correction": "He was known as the 'Sun King' (le Roi Soleil) because he saw himself as the center of the nation." },
+{ "statement": "Queen Victoria wore black mourning clothes for forty years after the death of her husband, Prince Albert.", "isTrue": true, "correction": "She remained in mourning for the rest of her life after Albert died in 1861." },
+{ "statement": "Henry VIII had eight wives.", "isTrue": false, "correction": "Henry VIII had six wives: Catherine of Aragon, Anne Boleyn, Jane Seymour, Anne of Cleves, Catherine Howard, and Catherine Parr." },
+{ "statement": "The Habsburg jaw was a physical condition resulting from generations of royal inbreeding.", "isTrue": true, "correction": "It refers to the mandibular prognathism prominent in the Habsburg family." },
+{ "statement": "Tsar Nicholas II was the first ruler of the Romanov dynasty.", "isTrue": false, "correction": "Nicholas II was the last Emperor of Russia; the dynasty began with Michael I in 1613." },
+{ "statement": "The War of the Spanish Succession was fought to prevent the union of the French and Spanish thrones.", "isTrue": true, "correction": "European powers feared the imbalance of power if the Bourbons controlled both France and Spain." },
+{ "statement": "Catherine the Great was born a Russian princess.", "isTrue": false, "correction": "She was born a German princess named Sophie of Anhalt-Zerbst." },
+{ "statement": "The execution of Charles I led to the establishment of the Commonwealth of England under Oliver Cromwell.", "isTrue": true, "correction": "The monarchy was abolished from 1649 until the Restoration in 1660." },
+{ "statement": "Isabella I of Castile and Ferdinand II of Aragon are known as the Catholic Monarchs.", "isTrue": true, "correction": "Their marriage unified Spain and they were granted the title by the Pope." },
+{ "statement": "King George III is best known for voluntarily giving independence to the American colonies.", "isTrue": false, "correction": "He opposed American independence, which was achieved through the Revolutionary War." },
+{ "statement": "Elizabeth I never married and was known as the 'Virgin Queen'.", "isTrue": true, "correction": "She used her single status as a diplomatic tool throughout her reign." },
+{ "statement": "Napoleon Bonaparte was born into the French Royal family.", "isTrue": false, "correction": "Napoleon was from a minor noble family in Corsica and seized power after the French Revolution." }
+],
+"quiz": [
+{
+"question": "Which English King broke away from the Roman Catholic Church to form the Church of England?",
+"options": ["Henry VII", "James I", "Henry VIII", "Edward VI"],
+"correctAnswer": "Henry VIII"
+},
+{
+"question": "Which French monarch built the Palace of Versailles to control the nobility?",
+"options": ["Louis XIII", "Louis XIV", "Louis XVI", "Napoleon III"],
+"correctAnswer": "Louis XIV"
+},
+{
+"question": "Who was the longest-reigning British monarch before Elizabeth II?",
+"options": ["Queen Victoria", "George III", "Elizabeth I", "Henry III"],
+"correctAnswer": "Queen Victoria"
+},
+{
+"question": "Which family ruled the Holy Roman Empire for centuries until its dissolution in 1806?",
+"options": ["The Bourbons", "The Tudors", "The Habsburgs", "The Romanovs"],
+"correctAnswer": "The Habsburgs"
+},
+{
+"question": "Which Russian Tsar sought to 'Westernize' Russia, moving the capital to St. Petersburg?",
+"options": ["Ivan the Terrible", "Nicholas II", "Peter the Great", "Alexander I"],
+"correctAnswer": "Peter the Great"
+},
+{
+"question": "What was the primary cause of the War of the Roses (1455–1487)?",
+"options": ["Religious conflict between Catholics and Protestants", "A struggle for the English throne between the Houses of York and Lancaster", "War between England and France", "Peasant uprisings against taxation"],
+"correctAnswer": "A struggle for the English throne between the Houses of York and Lancaster"
+},
+{
+"question": "Who was the executed Queen of France during the French Revolution?",
+"options": ["Catherine de' Medici", "Marie Antoinette", "Eleanor of Aquitaine", "Mary, Queen of Scots"],
+"correctAnswer": "Marie Antoinette"
+},
+{
+"question": "Which monarch was restored to the English throne in 1660 after the Interregnum?",
+"options": ["Charles II", "James II", "William III", "George I"],
+"correctAnswer": "Charles II"
+},
+{
+"question": "The 'Pragmatic Sanction' was issued to ensure which ruler could inherit the Habsburg lands?",
+"options": ["Maria Theresa", "Catherine the Great", "Joseph II", "Leopold I"],
+"correctAnswer": "Maria Theresa"
+},
+{
+"question": "Which King of Spain sent the Spanish Armada to invade England in 1588?",
+"options": ["Philip II", "Charles V", "Ferdinand II", "Philip IV"],
+"correctAnswer": "Philip II"
+},
+{
+"question": "What disease, spread through royal intermarriage, famously afflicted Alexei Romanov?",
+"options": ["Gout", "Tuberculosis", "Hemophilia", "Porphyria"],
+"correctAnswer": "Hemophilia"
+},
+{
+"question": "Who was the 'Mad King' of England who suffered from periods of insanity during the Napoleonic Wars?",
+"options": ["George III", "George IV", "William IV", "Edward VII"],
+"correctAnswer": "George III"
+},
+{
+"question": "Which 19th-century Queen of the United Kingdom was also titled 'Empress of India'?",
+"options": ["Queen Anne", "Queen Victoria", "Queen Mary", "Queen Elizabeth I"],
+"correctAnswer": "Queen Victoria"
+},
+{
+"question": "Who was the last Kaiser (Emperor) of Germany?",
+"options": ["Wilhelm I", "Frederick III", "Wilhelm II", "Otto von Bismarck"],
+"correctAnswer": "Wilhelm II"
+},
+{
+"question": "Which joint monarchs signed the English Bill of Rights in 1689?",
+"options": ["William III and Mary II", "Ferdinand and Isabella", "Philip and Mary", "Victoria and Albert"],
+"correctAnswer": "William III and Mary II"
+},
+{
+"question": "In 1936, why did Edward VIII abdicate the British throne?",
+"options": ["To join the military", "Ill health", "To marry Wallis Simpson", "Political revolution"],
+"correctAnswer": "To marry Wallis Simpson"
+}
+]
+}
