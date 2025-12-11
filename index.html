@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>MacStudy v2.4</title>
+    <title>MacStudy v2.5</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,20 +63,37 @@
         #menu-bar {
             border-bottom: 2px solid #000; padding: 2px 5px; font-size: 20px;
             display: flex; gap: 15px; background: #fff;
+            flex-shrink: 0;
         }
         .menu-item { cursor: pointer; padding: 0 5px; }
         .menu-item:hover { background: #000; color: #fff; }
 
-        /* CONTENT AREA */
+        /* CONTENT AREA (UPDATED FOR SCROLLING) */
         #content {
-            flex: 1; padding: 20px; overflow: hidden;
+            flex: 1; padding: 20px; 
+            overflow-y: auto; /* Enable Vertical Scroll */
+            overflow-x: hidden;
             display: flex; flex-direction: column; align-items: center; position: relative;
         }
 
+        /* RETRO SCROLLBAR STYLING */
+        #content::-webkit-scrollbar { width: 16px; }
+        #content::-webkit-scrollbar-track { background: #fff; border-left: 2px solid #000; }
+        #content::-webkit-scrollbar-thumb { 
+            background-color: #fff;
+            border: 2px solid #000;
+            background-image: repeating-linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000), repeating-linear-gradient(45deg, #000 25%, #fff 25%, #fff 75%, #000 75%, #000);
+            background-position: 0 0, 1px 1px;
+            background-size: 4px 4px;
+            box-shadow: inset 1px 1px 0 #fff;
+        }
+
         .screen {
-            display: none; width: 100%; flex: 1; min-height: 0;
+            display: none; width: 100%; min-height: 0;
             flex-direction: column; align-items: center;
             width: 100%;
+            /* Allow screen to grow for scrolling */
+            flex-shrink: 0; 
         }
         .screen.active { display: flex; }
 
@@ -85,7 +102,7 @@
 
         /* MENU GRID */
         .menu-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; padding-bottom: 20px;
         }
 
         .btn {
@@ -157,7 +174,9 @@
 
         .quiz-area {
             flex: 1; width: 100%; display: flex; flex-direction: column;
-            justify-content: center; align-items: center; overflow-y: auto;
+            justify-content: center; align-items: center; 
+            /* Allow quiz area to scroll if content is tall */
+            min-height: min-content;
         }
         
         .prompt-text { font-size: 28px; margin-bottom: 20px; text-align: center; max-width: 800px; line-height: 1.2; }
@@ -166,6 +185,7 @@
         .options-grid {
             display: grid; grid-template-columns: 1fr 1fr; gap: 15px;
             width: 100%; max-width: 600px;
+            padding-bottom: 20px; /* Space for scrolling */
         }
 
         .option-btn {
@@ -292,7 +312,7 @@
     <div id="main-window">
         <div id="title-bar">
             <div id="close-btn" onclick="quitGame()"></div>
-            <div id="title-text">MacStudy v2.4</div>
+            <div id="title-text">MacStudy v2.5</div>
         </div>
         
         <div id="menu-bar">
@@ -587,7 +607,7 @@
     }
 
     function closeFilePicker() { document.getElementById('file-picker-modal').style.display = 'none'; }
-    function showHelp() { alert("MacStudy v2.4\n\nProgress is saved automatically.\nUse 'Reset Data' to clear history."); }
+    function showHelp() { alert("MacStudy v2.5\n\nProgress is saved automatically.\nUse 'Reset Data' to clear history."); }
 
     function loadModule(data) {
         state.module = data;
