@@ -1,0 +1,277 @@
+{
+"moduleInfo": {
+"title": "God's Rules for Love: The 10 Commandments",
+"subject": "Religion/Catechism",
+"level": "Grade 4"
+},
+"vocabulary": [
+{ "term": "I am the LORD your God: you shall not have strange gods before me.", "definition": "Put God first in your life and worship only Him." },
+{ "term": "You shall not take the name of the LORD your God in vain.", "definition": "Show respect for God's name and all holy things; do not use His name carelessly or angrily." },
+{ "term": "Remember to keep holy the LORD’s Day.", "definition": "Go to Mass on Sundays and holy days, and use the day for rest, family, and prayer." },
+{ "term": "Honor your father and your mother.", "definition": "Love, obey, and respect your parents, guardians, and other lawful authorities." },
+{ "term": "You shall not kill.", "definition": "Respect all human life from beginning to end; do not hurt others with your body or unkind words." },
+{ "term": "You shall not commit adultery.", "definition": "Respect the sacrament of marriage and treat your own body and the bodies of others with modesty and respect." },
+{ "term": "You shall not steal.", "definition": "Respect the things that belong to others; do not take, damage, or cheat to get something that is not yours." },
+{ "term": "You shall not bear false witness against your neighbor.", "definition": "Always tell the truth, and do not lie or spread rumors that harm another person's good name." },
+{ "term": "You shall not covet your neighbor’s wife.", "definition": "Be pure in your thoughts and desires; do not wish for something that belongs to someone else's family." },
+{ "term": "You shall not covet your neighbor’s goods.", "definition": "Be thankful for what you have and do not be jealous of the possessions of others." },
+{ "term": "Decalogue", "definition": "Another word for the Ten Commandments." },
+{ "term": "Idolatry", "definition": "Worshipping anything or anyone other than God." },
+{ "term": "Reverence", "definition": "Deep respect for someone or something." },
+{ "term": "Gossip", "definition": "Telling secrets or rumors, especially if they are untrue or unkind." },
+{ "term": "Obedience", "definition": "Listening to and doing what parents or teachers ask." }
+],
+"timeline": [
+{ "year": 1965, "event": "There is no historical timeline information in this module." },
+{ "year": 1970, "event": "There is no historical timeline information in this module." },
+{ "year": 1980, "event": "There is no historical timeline information in this module." },
+{ "year": 1990, "event": "There is no historical timeline information in this module." },
+{ "year": 2000, "event": "There is no historical timeline information in this module." }
+],
+"artworks": [
+{ "title": "The Golden Rule", "medium": "Moral Principle", "description": "The teaching to treat others the way you want to be treated." },
+{ "title": "The Two Great Commandments", "medium": "Religious Teaching", "description": "Jesus’ summary of all the laws: love God and love your neighbor." },
+{ "title": "The Catechism of the Catholic Church", "medium": "Book/Document", "description": "The official summary of Catholic faith and morals." },
+{ "title": "The Gift of Life", "medium": "Scientific Theory", "description": "The belief that every person's life is special and comes from God." },
+{ "title": "The Virtue of Charity", "medium": "Theological Concept", "description": "The Christian habit of loving God above all things and loving your neighbor as yourself." },
+{ "title": "The Sacrament of Holy Matrimony", "medium": "Sacrament", "description": "The special way God blesses the love between a husband and wife." },
+{ "title": "The Virtue of Honesty", "medium": "Moral Principle", "description": "The practice of always telling the truth and respecting others' reputations." },
+{ "title": "Gratitude", "medium": "Moral Value", "description": "Being thankful for the things you have instead of being jealous of others." }
+],
+"locations": [
+{ "name": "Mount Sinai", "significance": "The place where God gave the Ten Commandments to Moses." },
+{ "name": "The Church", "significance": "The place where Catholics keep the Lord's Day holy by attending Mass." },
+{ "name": "Home", "significance": "The first and most important place where children learn to honor their parents." },
+{ "name": "School", "significance": "A place where children practice honesty, respect for property, and kindness to their neighbors." },
+{ "name": "The Vatican", "significance": "The home of the Pope, the chief teacher of the Catholic faith, which explains the Commandments." },
+{ "name": "The Heart", "significance": "The spiritual place where we decide to love or covet, and where God's law is written." },
+{ "name": "Heaven", "significance": "The final goal for those who follow God's Commandments on earth." },
+{ "name": "Egypt", "significance": "The land from which God freed the Israelites before giving them the Commandments." },
+{ "name": "The Garden of Eden", "significance": "The place where God first created human life, which the Fifth Commandment protects." },
+{ "name": "The Bible", "significance": "The book where the story of Moses receiving the Commandments is found." },
+{ "name": "Any Parish", "significance": "A local Catholic community where people gather to worship and learn God's rules." },
+{ "name": "Your Conscience", "significance": "The inner voice that tells you right from wrong, helping you follow the Commandments." },
+{ "name": "The Neighborhood", "significance": "The area where we treat our 'neighbor' with respect and truthfulness." },
+{ "name": "The Confessional", "significance": "The place where Catholics receive forgiveness for breaking the Commandments." },
+{ "name": "Jerusalem", "significance": "The city where Jesus taught the importance of loving God and neighbor." }
+],
+"trueFalse": [
+{ "statement": "The First Commandment teaches us to put our favorite video game before going to church.", "isTrue": false, "correction": "The First Commandment teaches us to put God first and worship only Him, not video games or other things." },
+{ "statement": "Using God’s name when you are angry is a way of keeping the Second Commandment.", "isTrue": false, "correction": "The Second Commandment says not to take God's name in vain; we must use His name with reverence and respect." },
+{ "statement": "The Third Commandment asks us to attend Mass on Sunday and treat the day as special.", "isTrue": true, "correction": "Attending Mass and resting from unnecessary work are ways to keep the Lord's Day holy." },
+{ "statement": "The Fourth Commandment is only about obeying your mother and father when you are a baby.", "isTrue": false, "correction": "The Fourth Commandment says to honor your parents, which means respecting and obeying them even as you grow older." },
+{ "statement": "The Fifth Commandment means you should never punch or hit someone, even if you are very angry.", "isTrue": true, "correction": "The Fifth Commandment protects life, which includes avoiding physical harm and hurtful words to others." },
+{ "statement": "The Sixth Commandment is mainly about showing love and respect in marriage.", "isTrue": true, "correction": "The Sixth Commandment is about respecting the commitment of marriage and being chaste." },
+{ "statement": "If you borrow a friend's pencil and forget to give it back, you are breaking the Seventh Commandment.", "isTrue": true, "correction": "The Seventh Commandment forbids stealing and requires us to respect the property of others, including returning borrowed items." },
+{ "statement": "Gossip and telling lies about your neighbor are fine, as long as it's only a small lie.", "isTrue": false, "correction": "The Eighth Commandment requires us to always tell the truth and protect our neighbor's good name." },
+{ "statement": "The Ninth and Tenth Commandments are special because they focus on our thoughts and feelings.", "isTrue": true, "correction": "These commandments teach us to control our inner desires and avoid jealousy and coveting." },
+{ "statement": "It is okay to cheat on a test as long as you promise to study harder next time.", "isTrue": false, "correction": "Cheating is a form of stealing (Seven/Eighth Commandment violation) because it is dishonest and taking a grade you did not earn." },
+{ "statement": "You honor your parents when you help with chores without being asked.", "isTrue": true, "correction": "Showing respect and obedience by helping out without being reminded is a way to honor parents." },
+{ "statement": "Wishing you had your friend's new bicycle instead of your old one is a sign of coveting.", "isTrue": true, "correction": "Coveting means being jealous or wishing for what belongs to another person, which breaks the Tenth Commandment." },
+{ "statement": "Respecting your body and avoiding unhealthy habits fulfills the positive meaning of the Fifth Commandment.", "isTrue": true, "correction": "The Fifth Commandment also includes taking care of our own life and health." },
+{ "statement": "If a teacher asks you to be quiet, you only have to obey if you agree with the reason.", "isTrue": false, "correction": "The Fourth Commandment to honor your parents extends to obeying lawful superiors like teachers, regardless of your personal agreement." },
+{ "statement": "We keep the Lord’s Day holy by spending the whole day buying new things at the mall.", "isTrue": false, "correction": "The Lord’s Day should be focused on God (Mass) and rest, not unnecessary work or excessive shopping." }
+],
+"quiz": [
+{
+"question": "Sarah spends all her allowance on a new figurine and starts praying to it, saying it brings her good luck. Which Commandment is she breaking?",
+"options": [
+"You shall not steal.",
+"I am the LORD your God: you shall not have strange gods before me.",
+"Honor your father and your mother.",
+"You shall not kill."
+],
+"correctAnswer": "I am the LORD your God: you shall not have strange gods before me."
+},
+{
+"question": "When Mike got angry, he shouted out God's name carelessly in frustration. Which Commandment did he break?",
+"options": [
+"Remember to keep holy the LORD’s Day.",
+"You shall not take the name of the LORD your God in vain.",
+"You shall not bear false witness against your neighbor.",
+"You shall not commit adultery."
+],
+"correctAnswer": "You shall not take the name of the LORD your God in vain."
+},
+{
+"question": "It's Sunday, and Maria’s family decides to skip Mass to go to a theme park instead. Which Commandment did they fail to keep?",
+"options": [
+"Honor your father and your mother.",
+"You shall not covet your neighbor’s goods.",
+"Remember to keep holy the LORD’s Day.",
+"You shall not kill."
+],
+"correctAnswer": "Remember to keep holy the LORD’s Day."
+},
+{
+"question": "Tom's mom asked him to clean his room, but he pretended he didn't hear her and went to play video games. Which Commandment is he disrespecting?",
+"options": [
+"Honor your father and your mother.",
+"You shall not bear false witness against your neighbor.",
+"You shall not steal.",
+"You shall not covet your neighbor’s wife."
+],
+"correctAnswer": "Honor your father and your mother."
+},
+{
+"question": "During recess, some kids started making fun of a new student, calling him mean names until he cried. Which Commandment are they going against?",
+"options": [
+"You shall not covet your neighbor’s goods.",
+"You shall not kill.",
+"You shall not take the name of the LORD your God in vain.",
+"You shall not bear false witness against your neighbor."
+],
+"correctAnswer": "You shall not kill."
+},
+{
+"question": "Jane found a \$ 5 bill on the floor of the classroom and decided to keep it without asking the teacher if anyone lost it. Which Commandment does this relate to?",
+"options": [
+"You shall not commit adultery.",
+"You shall not covet your neighbor’s wife.",
+"You shall not steal.",
+"Remember to keep holy the LORD’s Day."
+],
+"correctAnswer": "You shall not steal."
+},
+{
+"question": "When the principal asked who broke the window, Ben lied and said his friend Alex did it, to avoid getting in trouble himself. Which Commandment did Ben break?",
+"options": [
+"You shall not covet your neighbor’s goods.",
+"You shall not bear false witness against your neighbor.",
+"You shall not kill.",
+"Honor your father and your mother."
+],
+"correctAnswer": "You shall not bear false witness against your neighbor."
+},
+{
+"question": "Lisa saw her friend's new shoes and wished they were hers, feeling unhappy with her own old shoes. Which Commandment is her thought breaking?",
+"options": [
+"You shall not steal.",
+"Honor your father and your mother.",
+"You shall not take the name of the LORD your God in vain.",
+"You shall not covet your neighbor’s goods."
+],
+"correctAnswer": "You shall not covet your neighbor’s goods."
+},
+{
+"question": "A newly married couple promises to always be faithful to each other. Which Commandment helps them keep this special promise?",
+"options": [
+"You shall not kill.",
+"You shall not commit adultery.",
+"Remember to keep holy the LORD’s Day.",
+"You shall not steal."
+],
+"correctAnswer": "You shall not commit adultery."
+},
+{
+"question": "What is the primary positive action commanded by 'I am the LORD your God: you shall not have strange gods before me'?",
+"options": [
+"Telling the truth.",
+"Worshipping only God.",
+"Being kind to animals.",
+"Sharing your toys."
+],
+"correctAnswer": "Worshipping only God."
+},
+{
+"question": "If you are playing a game and someone cheats, they are breaking the spirit of which Commandment?",
+"options": [
+"You shall not kill.",
+"Remember to keep holy the LORD’s Day.",
+"You shall not steal.",
+"Honor your father and your mother."
+],
+"correctAnswer": "You shall not steal."
+},
+{
+"question": "What is the best way a child can practice 'Honor your father and your mother'?",
+"options": [
+"Buying them expensive presents.",
+"Obeying them with a cheerful heart.",
+"Only talking to them when they are happy.",
+"Arguing until they get their way."
+],
+"correctAnswer": "Obeying them with a cheerful heart."
+},
+{
+"question": "The Commandments that deal with loving God directly are the first how many?",
+"options": [
+"One",
+"Three",
+"Seven",
+"Ten"
+],
+"correctAnswer": "Three"
+},
+{
+"question": "The Commandments that focus on loving your neighbor are the last how many?",
+"options": [
+"Two",
+"Five",
+"Seven",
+"Four"
+],
+"correctAnswer": "Seven"
+},
+{
+"question": "What is another name for the Ten Commandments?",
+"options": [
+"The Beatitudes",
+"The Decalogue",
+"The Apostles' Creed",
+"The Seven Sacraments"
+],
+"correctAnswer": "The Decalogue"
+},
+{
+"question": "Which Commandment asks us to be thankful for what we have instead of being jealous of others' possessions?",
+"options": [
+"The Third Commandment",
+"The Fifth Commandment",
+"The Eighth Commandment",
+"The Tenth Commandment"
+],
+"correctAnswer": "The Tenth Commandment"
+},
+{
+"question": "Which of these is a way to respect the Fifth Commandment ('You shall not kill') in everyday life?",
+"options": [
+"Eating only vegetables.",
+"Refusing to help a friend.",
+"Being kind and speaking gently to others.",
+"Never going outside."
+],
+"correctAnswer": "Being kind and speaking gently to others."
+},
+{
+"question": "If you spread a false rumor about a classmate, which Commandment have you broken?",
+"options": [
+"You shall not steal.",
+"You shall not covet your neighbor’s goods.",
+"You shall not bear false witness against your neighbor.",
+"Remember to keep holy the LORD’s Day."
+],
+"correctAnswer": "You shall not bear false witness against your neighbor."
+},
+{
+"question": "How do you 'keep holy' the Lord's Day according to the Third Commandment?",
+"options": [
+"By doing all your homework on Sunday.",
+"By attending Mass and setting time aside for rest and family.",
+"By playing video games all day.",
+"By only thinking about God for five minutes."
+],
+"correctAnswer": "By attending Mass and setting time aside for rest and family."
+},
+{
+"question": "Which Commandment encourages you to respect your own life and health?",
+"options": [
+"The First Commandment",
+"The Fourth Commandment",
+"The Fifth Commandment",
+"The Seventh Commandment"
+],
+"correctAnswer": "The Fifth Commandment"
+}
+]
+}
