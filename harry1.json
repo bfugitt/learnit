@@ -1,0 +1,182 @@
+{
+"moduleInfo": {
+"title": "Unlocking the World of Harry Potter: Auror Level",
+"subject": "Literature/Fantasy",
+"level": "Adult Expert"
+},
+"vocabulary": [
+{ "term": "Horcrux", "definition": "An object in which a Dark wizard has hidden a fragment of his or her soul for the purpose of attaining immortality." },
+{ "term": "Animagus", "definition": "A witch or wizard who can transform himself or herself into an animal at will; this transformation ability is learned, not hereditary." },
+{ "term": "Parselmouth", "definition": "One who can speak and understand the language of snakes (Parseltongue), a rare skill often associated with Dark Wizards." },
+{ "term": "Thestral", "definition": "A skeletal, black, winged horse visible only to those who have witnessed death." },
+{ "term": "Occlumency", "definition": "The magical art of closing one's mind against Legilimency (the intrusion of others) and mind manipulation." },
+{ "term": "Legilimency", "definition": "The magical art of navigating through the mental landscape of another person, often referred to as 'mind-reading'." },
+{ "term": "Portkey", "definition": "A magical object charmed to transport anyone who touches it instantly to a specific destination." },
+{ "term": "Unspeakable", "definition": "An employee of the Department of Mysteries in the Ministry of Magic, dealing with confidential and often mysterious magical matters." },
+{ "term": "Boggart", "definition": "A shapeshifting non-being that takes on the form of whatever most frightens the person who encounters it." },
+{ "term": "Hinkypunk", "definition": "A small, one-legged creature that appears to be made of wispy smoke, known for luring travellers into bogs with a lantern." },
+{ "term": "Peruvian Instant Darkness Powder", "definition": "A magical item sold at Weasleys' Wizard Wheezes that creates an immediate, impenetrable black cloud when thrown." },
+{ "term": "Mandrake", "definition": "A magical plant whose root is a powerful restorer; its cry is fatal to anyone who hears it when fully grown." },
+{ "term": "Fidelius Charm", "definition": "A complex charm used to conceal a secret, storing it within a single person, the Secret-Keeper." },
+{ "term": "Blast-Ended Skrewt", "definition": "A monstrous hybrid creature resulting from Hagrid breeding a Manticore with a Fire Crab." },
+{ "term": "Splinching", "definition": "An accidental side-effect of Apparition where part of the wizard's body is left behind." }
+],
+"timeline": [
+{ "year": 1492, "event": "Sir Nicholas de Mimsy-Porpington (Nearly Headless Nick) dies on October 31st." },
+{ "year": 1943, "event": "Tom Riddle opens the Chamber of Secrets, resulting in the death of Myrtle Warren, and frames Rubeus Hagrid." },
+{ "year": 1945, "event": "Albus Dumbledore defeats the Dark wizard Gellert Grindelwald in a duel." },
+{ "year": 1971, "event": "James Potter, Lily Evans, Sirius Black, and Peter Pettigrew all start their first year at Hogwarts." },
+{ "year": 1980, "event": "Harry Potter is born on July 31st." },
+{ "year": 1981, "event": "Voldemort attacks the Potters in Godric's Hollow, killing James and Lily, and his curse rebounds on Harry, making him 'The Boy Who Lived'." },
+{ "year": 1991, "event": "Harry Potter begins his first year at Hogwarts and stops Professor Quirrell from stealing the Philosopher's Stone." },
+{ "year": 1992, "event": "The Chamber of Secrets is reopened, and Harry defeats the Basilisk and Tom Riddle's memory." },
+{ "year": 1994, "event": "Harry participates in the Triwizard Tournament, which concludes with the rebirth of Lord Voldemort." },
+{ "year": 1998, "event": "The Battle of Hogwarts takes place, resulting in the final defeat and death of Lord Voldemort." }
+],
+"artworks": [
+{ "title": "A History of Magic", "medium": "Textbook", "description": "A standard school history book required for first-year students, penned by a prolific but dull wizarding historian." },
+{ "title": "Magical Me", "medium": "Autobiography", "description": "A highly-embellished life story of a charming, yet fraudulent, celebrity wizard who was briefly a Defence Against the Dark Arts professor." },
+{ "title": "The Statute of Secrecy", "medium": "International Law", "description": "A global piece of legislation enacted in the late 17th century to hide the existence of the wizarding world from Muggles." },
+{ "title": "The Fountain of Fair Fortune", "medium": "Fairy Tale/Story", "description": "A story from an ancient collection of wizarding folklore, involving three witches and a knight who seek happiness by bathing in an enchanted fountain." },
+{ "title": "The Marauder's Map", "medium": "Enchanted Parchment", "description": "A seemingly blank piece of paper that, when activated with a phrase, reveals the entire grounds and all inhabitants of the wizarding school." },
+{ "title": "The Vanishing Cabinet", "medium": "Magical Object Pair", "description": "A set of two large wooden wardrobes that connect two distant locations, creating a hidden passageway between them." },
+{ "title": "The Half-Blood Prince's Textbook", "medium": "Potions Textbook", "description": "An old school book with handwritten notes, spells, and corrections, which drastically improves its owner's ability in the subject." },
+{ "title": "The Deathly Hallows", "medium": "Legendary Objects/Artifacts", "description": "Three mythical objects—a wand, a stone, and a cloak—that are said to grant their master power over Death itself." }
+],
+"locations": [
+{ "name": "Godric's Hollow", "significance": "The village where both Harry Potter and Albus Dumbledore's family once lived, and the site of Lily and James Potter's murder." },
+{ "name": "Number 12, Grimmauld Place", "significance": "The ancestral home of the Black family and the secret headquarters of the Order of the Phoenix." },
+{ "name": "Azkaban", "significance": "The terrible wizarding prison located on a remote island in the middle of the North Sea, guarded by Dementors." },
+{ "name": "Spinner's End", "significance": "The Muggle street and house where Professor Snape lives during the summer holidays." },
+{ "name": "Gringotts Wizarding Bank", "significance": "The goblin-run bank in Diagon Alley, famously the safest place in the wizarding world (except for Hogwarts)." },
+{ "name": "Little Hangleton", "significance": "The Muggle village near the Riddle House and the home of Voldemort's maternal ancestors, the Gaunts." },
+{ "name": "The Hog's Head Inn", "significance": "A notoriously dingy pub in Hogsmeade run by Aberforth Dumbledore, used for the first D.A. meeting and as a safe escape route during the Battle of Hogwarts." },
+{ "name": "The Department of Mysteries", "significance": "The section of the Ministry of Magic containing various rooms dedicated to fundamental forces like Time, Space, and Death, where the Battle of the Department of Mysteries took place." },
+{ "name": "Shell Cottage", "significance": "The seaside home of Bill and Fleur Weasley, which served as a safe haven and refuge for Harry, Ron, and Hermione." },
+{ "name": "The Chamber of Secrets", "significance": "A hidden chamber beneath Hogwarts, housing a Basilisk and created by Salazar Slytherin to purge the school of Muggle-born students." },
+{ "name": "Malfoy Manor", "significance": "The lavish home of the Malfoy family, used as the Death Eaters' headquarters and a holding cell for prisoners during the Second Wizarding War." },
+{ "name": "The Leaky Cauldron", "significance": "A dark, shabby London pub that serves as the hidden entrance between the Muggle world and Diagon Alley." },
+{ "name": "The Shrieking Shack", "significance": "An abandoned building in Hogsmeade, infamous for being the most haunted in Britain, but actually used as a place for Remus Lupin to transform safely during the full moon." },
+{ "name": "Ollivanders", "significance": "The wand shop in Diagon Alley, established in 382 B.C., where Harry and many other students bought their first wand." },
+{ "name": "Room of Requirement", "significance": "A secret room in Hogwarts that only appears when a person is in genuine need, transforming itself into whatever the person requires." }
+],
+"trueFalse": [
+{ "statement": "Neville Longbottom's parents were killed by Bellatrix Lestrange during the First Wizarding War.", "isTrue": false, "correction": "Neville's parents were tortured into insanity with the Cruciatus Curse, but they were not killed. They live at St. Mungo's Hospital." },
+{ "statement": "Dumbledore's Patronus is a phoenix, mirroring his beloved pet, Fawkes.", "isTrue": false, "correction": "Dumbledore's Patronus is a phoenix, but his pet Fawkes is not the reason; the phoenix Patronus appeared before he acquired Fawkes." },
+{ "statement": "The first name of Lord Voldemort's mother was Merope.", "isTrue": true, "correction": "Voldemort's mother's full name was Merope Gaunt, the last known descendant of Salazar Slytherin." },
+{ "statement": "The maximum number of turns Hermione was instructed to use on the Time-Turner was four, to prevent 'nasty side-effects'.", "isTrue": false, "correction": "The instructions were to turn the knob three times, and Hermione said that any more would cause them to travel too far back in time." },
+{ "statement": "The core of Harry Potter's first wand was a single Phoenix feather, donated by Fawkes.", "isTrue": true, "correction": "The core of Harry's wand came from the same phoenix, Fawkes, that provided the core for Voldemort's wand." },
+{ "statement": "The 'Mudblood' slur was first used in the books by Draco Malfoy to insult Hermione.", "isTrue": false, "correction": "The slur 'Mudblood' was first used by Draco Malfoy, but it was directed at Hermione, not used by her to insult someone." },
+{ "statement": "The Ministry of Magic's Auror Office is located on the second level of the Ministry's headquarters.", "isTrue": false, "correction": "The Auror Office is located on Level Two, but the Department of Magical Law Enforcement is located there, the Auror Office is inside that department." },
+{ "statement": "The password to the Headmaster's Office is always the name of a type of magical sweet.", "isTrue": true, "correction": "Dumbledore is known for using names of Muggle sweets like Sherbet Lemon and Cockroach Cluster as passwords." },
+{ "statement": "The second Horcrux Harry and Dumbledore destroy is Salazar Slytherin's locket.", "isTrue": false, "correction": "The second Horcrux Dumbledore and Harry sought to destroy was Slytherin's locket, but they only retrieved a fake locket; the real second Horcrux destroyed was the diary." },
+{ "statement": "The official colors of the Quidditch team Chudley Cannons are orange and purple.", "isTrue": true, "correction": "The Chudley Cannons, Ron Weasley's favorite team, wear orange robes with a cannon emblem." },
+{ "statement": "During the Triwizard Tournament, Fleur Delacour's sister, Gabrielle, was the person taken by the merpeople during the Second Task.", "isTrue": true, "correction": "Gabrielle Delacour was the person 'most dear' to Fleur and was taken to the bottom of the Black Lake." },
+{ "statement": "Gilderoy Lockhart's favorite color, as revealed in his autobiography, is lilac.", "isTrue": false, "correction": "Gilderoy Lockhart's favorite color is lavender, as mentioned in Chamber of Secrets, not lilac." },
+{ "statement": "The Black family house-elf, Kreacher, was killed during the Battle of Hogwarts.", "isTrue": false, "correction": "Kreacher survived the Battle of Hogwarts and led the house-elves to join the fight against the Death Eaters." },
+{ "statement": "The Hogwarts house that Filius Flitwick originally belonged to as a student was Ravenclaw.", "isTrue": true, "correction": "Flitwick, the Charms Master and Head of Ravenclaw House, was indeed a Ravenclaw student." },
+{ "statement": "The only Deathly Hallow that Harry Potter ultimately keeps is the Elder Wand.", "isTrue": false, "correction": "Harry kept the Invisibility Cloak, rejected the Resurrection Stone, and decided to let the Elder Wand’s power die with him." }
+],
+"quiz": [
+{
+"question": "What is the name of the magical alley where you can find Borgin and Burkes, which sells unusual and Dark objects?",
+"options": ["Diagon Alley", "Knocturne Alley", "Carkitt Market", "Horizont Alley"],
+"correctAnswer": "Knocturne Alley"
+},
+{
+"question": "What creature is on the top of the weather vane in the courtyard of the Burrow, the Weasley family home?",
+"options": ["A Lion", "A Basilisk", "A Phoenix", "A Dragon"],
+"correctAnswer": "A Dragon"
+},
+{
+"question": "Who was the Headmaster of Hogwarts before Albus Dumbledore's tenure began?",
+"options": ["Phineas Nigellus Black", "Armando Dippet", "Armando Dumbledore", "Armando Phineas"],
+"correctAnswer": "Armando Dippet"
+},
+{
+"question": "What object did Harry first use to transport himself to the Leaky Cauldron after blowing up Aunt Marge?",
+"options": ["The Knight Bus", "The Flying Ford Anglia", "A Portkey", "A Broomstick"],
+"correctAnswer": "The Knight Bus"
+},
+{
+"question": "What is the incantation for the Charm that lights up the tip of a wizard's wand, a spell first taught by Professor Flitwick?",
+"options": ["Lumos", "Nox", "Accio", "Wingardium Leviosa"],
+"correctAnswer": "Lumos"
+},
+{
+"question": "What is the name of the Hippogriff that Harry saves from execution in his third year?",
+"options": ["Witherwings", "Buckbeak", "Fawkes", "Firebolt"],
+"correctAnswer": "Buckbeak"
+},
+{
+"question": "What is the name of the popular wizarding newspaper based in London, England?",
+"options": ["The Wizarding World News", "The Daily Prophet", "The Quibbler", "Witch Weekly"],
+"correctAnswer": "The Daily Prophet"
+},
+{
+"question": "What were the initials of the organization Hermione Granger founded to advocate for house-elf rights?",
+"options": ["H.E.L.P.", "S.P.E.W.", "W.I.Z.E.", "F.A.R.E."],
+"correctAnswer": "S.P.E.W."
+},
+{
+"question": "Who was the first person to successfully raise their wand to honor Albus Dumbledore after his death?",
+"options": ["Harry Potter", "Minerva McGonagall", "Remus Lupin", "Rubeus Hagrid"],
+"correctAnswer": "Minerva McGonagall"
+},
+{
+"question": "What flavor of Bertie Bott's Every Flavor Beans did Dumbledore famously taste in the hospital wing, making him swear off them?",
+"options": ["Earwax", "Booger", "Vomit", "Liver"],
+"correctAnswer": "Earwax"
+},
+{
+"question": "What is the magical protection placed on the house where Harry and his parents lived in Godric's Hollow?",
+"options": ["The Patronus Charm", "The Unbreakable Vow", "The Fidelius Charm", "The Muggle-Repelling Charm"],
+"correctAnswer": "The Fidelius Charm"
+},
+{
+"question": "The three Unforgivable Curses are Avada Kedavra, Crucio, and what other spell?",
+"options": ["Sectumsempra", "Imperio", "Reducto", "Stupefy"],
+"correctAnswer": "Imperio"
+},
+{
+"question": "What item did Harry's father, James Potter, use to turn into his Animagus form?",
+"options": ["A Snitch", "A Silver Stag", "A Mirror", "None, it was an innate ability"],
+"correctAnswer": "None, it was an innate ability"
+},
+{
+"question": "In Harry's fifth year, what magical creature does Luna Lovegood mention that Harry and his friends initially doubt the existence of?",
+"options": ["Gnomes", "Nifflers", "Crumple-Horned Snorkacks", "Quintapeds"],
+"correctAnswer": "Crumple-Horned Snorkacks"
+},
+{
+"question": "What item did Alastor 'Mad-Eye' Moody use to detect magical concealment and Dark Objects on students?",
+"options": ["A Deluminator", "A Foe-Glass", "A Sneakoscope", "A Probity Probe"],
+"correctAnswer": "A Probity Probe"
+},
+{
+"question": "What is the correct incantation for the spell Professor McGonagall uses to animate the statues of Hogwarts in the final battle?",
+"options": ["Protego Maxima", "Piertotum Locomotor", "Expecto Patronum", "Confringo"],
+"correctAnswer": "Piertotum Locomotor"
+},
+{
+"question": "What was the name of the lake where the second task of the Triwizard Tournament took place?",
+"options": ["The Great Lake", "The Black Lake", "The Mermaid Lake", "Lake Hogwarts"],
+"correctAnswer": "The Black Lake"
+},
+{
+"question": "What position did Percy Weasley hold at the Ministry of Magic right after graduating from Hogwarts?",
+"options": ["Junior Assistant to the Minister for Magic", "Trainee Auror", "Head of the Department of Magical Games and Sports", "Undersecretary to the Senior Undersecretary"],
+"correctAnswer": "Junior Assistant to the Minister for Magic"
+},
+{
+"question": "Which of the founders of Hogwarts School of Witchcraft and Wizardry left the school after a disagreement with the others?",
+"options": ["Helga Hufflepuff", "Rowena Ravenclaw", "Salazar Slytherin", "Godric Gryffindor"],
+"correctAnswer": "Salazar Slytherin"
+},
+{
+"question": "Who was the witch who originally owned the Time-Turner that Hermione used to attend extra classes?",
+"options": ["Minerva McGonagall", "Bathilda Bagshot", "Narcissa Malfoy", "None, it was a Ministry object"],
+"correctAnswer": "None, it was a Ministry object"
+}
+]
+}
