@@ -9,5 +9,6 @@
   { "file": "fs_final_2.json", "name": "Faith Survey Final 2" },
   { "file": "revolution.json", "name": "US History: Revolution" },  
   { "file": "spanish_1.json", "name": "Spanish: Beginner" },
+  { "file": "10com.json", "name": "10 Commandments" },
   { "file": "latin_1.json", "name": "Latin: Beginner" }
 ]
