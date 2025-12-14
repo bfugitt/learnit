@@ -21,13 +21,8 @@
 { "term": "Gossip", "definition": "Telling secrets or rumors, especially if they are untrue or unkind." },
 { "term": "Obedience", "definition": "Listening to and doing what parents or teachers ask." }
 ],
-"timeline": [
-{ "year": 1965, "event": "There is no historical timeline information in this module." },
-{ "year": 1970, "event": "There is no historical timeline information in this module." },
-{ "year": 1980, "event": "There is no historical timeline information in this module." },
-{ "year": 1990, "event": "There is no historical timeline information in this module." },
-{ "year": 2000, "event": "There is no historical timeline information in this module." }
-],
+
+
 "artworks": [
 { "title": "The Golden Rule", "medium": "Moral Principle", "description": "The teaching to treat others the way you want to be treated." },
 { "title": "The Two Great Commandments", "medium": "Religious Teaching", "description": "Jesus’ summary of all the laws: love God and love your neighbor." },
