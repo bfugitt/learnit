@@ -33,16 +33,11 @@
                     },
                     animation: {
                         'float': 'float 6s ease-in-out infinite',
-                        'flip': 'flip 0.6s forwards',
                     },
                     keyframes: {
                         float: {
                             '0%, 100%': { transform: 'translateY(0)' },
                             '50%': { transform: 'translateY(-10px)' },
-                        },
-                        flip: {
-                            '0%': { transform: 'rotateY(0deg)' },
-                            '100%': { transform: 'rotateY(180deg)' },
                         }
                     }
                 }
@@ -55,14 +50,6 @@
         .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         .card-hover:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
         
-        /* Memory Card Styles */
-        .memory-card { perspective: 1000px; transform-style: preserve-3d; transition: transform 0.5s; }
-        .memory-card.flipped { transform: rotateY(180deg); }
-        .memory-face { backface-visibility: hidden; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 1rem; text-align: center; border-radius: 0.75rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
-        .memory-front { background-color: #9EB298; color: white; transform: rotateY(0deg); }
-        .memory-back { background-color: white; color: #5C5C5C; transform: rotateY(180deg); border: 2px solid #9EB298; }
-        .memory-card.matched { visibility: hidden; opacity: 0; transition: visibility 0s 0.5s, opacity 0.5s linear; }
-
         /* Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: transparent; }
@@ -74,20 +61,25 @@
     <!-- CONFIGURATION -->
     <script>
         // === MODULE LIST ===
-        // Add new modules here to see them in the app
+        // These match the files listed in your modules.json
         const MODULE_LIST = [
-              { "file": "potter4-6.json", "name": "Beatrix Potter 4-6" },
-  { "file": "potter7-10.json", "name": "Beatrix Potter 7-10" },
-            
             { file: "spanish_1.json", name: "Spanish: Holidays & Faith" },
-            { file: "potter1-3.json", name: "The Art of Beatrix Potter (Sections 1-3)" }
+            { file: "potter1-3.json", name: "Beatrix Potter 1-3" },
+            { file: "potter4-6.json", name: "Beatrix Potter 4-6" },
+            { file: "potter7-10.json", name: "Beatrix Potter 7-10" },
+            { file: "potter_big.json", name: "Beatrix Potter - Complete" },
+            { file: "4-tci-3.json", name: "CA History: Exploration" },
+            { file: "royals.json", name: "European Royal Families" },
+            { file: "revolution.json", name: "US History: Revolution" },
+            { file: "10com.json", name: "10 Commandments" },
+            { file: "latin_1.json", name: "Latin: Beginner" }
         ];
 
         // === SETTINGS ===
         const TEACHER_SETTINGS = {
             startingLives: 5,
             pointsPerCorrect: 10,
-            passingScore: 100, // Points to get a "Win"
+            passingScore: 100, 
             appTitle: "The Learning Garden",
             soundEnabled: true
         };
@@ -95,9 +87,15 @@
 
     <!-- HEADER -->
     <header class="h-16 bg-white shadow-sm flex items-center justify-between px-6 z-20 flex-shrink-0">
-        <div class="flex items-center gap-3 cursor-pointer" onclick="App.showMenu()">
-            <i class="ph ph-potted-plant text-3xl text-reggio-darkSage"></i>
-            <h1 class="text-xl font-bold text-reggio-darkSage truncate max-w-[200px] md:max-w-none" id="header-title">The Learning Garden</h1>
+        <div class="flex items-center gap-4">
+            <!-- Icon goes to Main Menu -->
+            <div class="cursor-pointer hover:scale-110 transition-transform" onclick="App.showMenu()" title="Return to Garden">
+                <i class="ph ph-potted-plant text-3xl text-reggio-darkSage"></i>
+            </div>
+            <!-- Title goes to Activity Select (if inside module) -->
+            <div class="cursor-pointer group" onclick="App.handleTitleClick()">
+                <h1 class="text-xl font-bold text-reggio-darkSage truncate max-w-[200px] md:max-w-none group-hover:underline decoration-reggio-clay decoration-2 underline-offset-4" id="header-title">The Learning Garden</h1>
+            </div>
         </div>
         
         <div class="flex items-center gap-4">
@@ -123,12 +121,13 @@
 
         <!-- VIEW: ACTIVITY SELECTOR -->
         <div id="view-activity-select" class="hidden w-full max-w-4xl animate-fade-in flex-col items-center">
-            <h2 id="selected-module-title" class="text-2xl font-bold text-reggio-stone mb-6 text-center"></h2>
+            <h2 id="selected-module-title" class="text-2xl font-bold text-reggio-stone mb-2 text-center"></h2>
+            <p class="text-gray-400 mb-8">Select an activity</p>
             <div id="activity-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full"></div>
-            <button onclick="App.showMenu()" class="mt-8 text-reggio-stone/50 hover:text-reggio-stone flex items-center gap-2"><i class="ph ph-arrow-left"></i> Back</button>
+            <button onclick="App.showMenu()" class="mt-8 text-reggio-stone/50 hover:text-reggio-stone flex items-center gap-2"><i class="ph ph-arrow-left"></i> Return to Garden</button>
         </div>
 
-        <!-- VIEW: QUIZ / TIMELINE / PEOPLE -->
+        <!-- VIEW: QUIZ ENGINE (Shared by all games) -->
         <div id="view-quiz" class="hidden w-full max-w-3xl flex-col items-center h-full">
             <div class="w-full h-2 bg-gray-200 rounded-full mb-6 overflow-hidden"><div id="progress-fill" class="h-full bg-reggio-sage transition-all duration-500" style="width: 0%"></div></div>
             
@@ -139,15 +138,11 @@
                 </div>
                 <div id="quiz-options" class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full mt-8 pb-10"></div>
             </div>
-        </div>
-
-        <!-- VIEW: MEMORY MATCH -->
-        <div id="view-memory" class="hidden w-full max-w-5xl flex-col items-center h-full">
-            <div class="flex justify-between w-full mb-4 px-4">
-                <h2 class="text-xl font-bold text-reggio-darkSage">Vocabulary Match</h2>
-                <span class="text-reggio-stone">Matches: <span id="match-count">0</span></span>
-            </div>
-            <div id="memory-grid" class="grid grid-cols-3 md:grid-cols-4 gap-3 w-full h-full content-center p-2 pb-20"></div>
+            
+            <!-- Back Button inside Game -->
+            <button onclick="App.handleTitleClick()" class="mb-4 text-reggio-stone/50 hover:text-reggio-stone flex items-center gap-2 text-sm">
+                <i class="ph ph-squares-four"></i> Change Activity
+            </button>
         </div>
 
     </main>
@@ -173,8 +168,7 @@
                 o.stop(this.ctx.currentTime + dur);
             },
             correct: () => { AudioSys.play(600, 'sine', 0.1); setTimeout(() => AudioSys.play(900, 'sine', 0.2), 100); },
-            wrong: () => AudioSys.play(200, 'triangle', 0.3),
-            flip: () => AudioSys.play(400, 'sine', 0.05)
+            wrong: () => AudioSys.play(200, 'triangle', 0.3)
         };
 
         const App = {
@@ -216,20 +210,34 @@
                     const res = await fetch(mod.file);
                     if (!res.ok) throw new Error("File not found");
                     this.currentData = await res.json();
-                    this.currentData.filename = mod.file; // Store for saving
-                    this.showActivitySelect(mod.name);
+                    this.currentData.filename = mod.file;
+                    // Use title from JSON if available, otherwise fallback to module list name
+                    const title = (this.currentData.moduleInfo && this.currentData.moduleInfo.title) ? this.currentData.moduleInfo.title : mod.name;
+                    this.showActivitySelect(title);
                 } catch (e) {
-                    alert("Could not load " + mod.file + ". Make sure the file is in the same folder.");
+                    alert("Could not load " + mod.file + ". Ensure the file is in the folder.");
+                }
+            },
+
+            handleTitleClick() {
+                // If we have a module loaded, go to its activity Select. Otherwise go to Main Menu.
+                if (this.currentData) {
+                    // Get title again safely
+                    const modTitle = MODULE_LIST.find(m => m.file === this.currentData.filename)?.name || "Activities";
+                    this.showActivitySelect(modTitle);
+                } else {
+                    this.showMenu();
                 }
             },
 
             showActivitySelect(title) {
                 this.switchView('view-activity-select');
                 document.getElementById('selected-module-title').innerText = title;
+                document.getElementById('header-title').innerText = title; // Update header to match current module
+                
                 const grid = document.getElementById('activity-grid');
                 grid.innerHTML = '';
 
-                // Helper to create buttons
                 const createBtn = (icon, label, onClick, colorClass) => {
                     const btn = document.createElement('div');
                     btn.className = `p-6 bg-white rounded-xl shadow-sm border-l-4 ${colorClass} cursor-pointer card-hover flex items-center gap-4`;
@@ -239,70 +247,90 @@
                 };
 
                 const d = this.currentData;
+                let hasActivities = false;
 
-                // 1. QUIZ (Default or from 'quiz')
+                // 1. QUIZ
                 if (d.quiz && d.quiz.length > 0) {
-                    createBtn('ph-question', 'Take the Quiz', () => QuizEngine.start(d.quiz, 'quiz'), 'border-blue-400');
+                    createBtn('ph-question', 'Standard Quiz', () => QuizEngine.start(d.quiz, 'Quiz'), 'border-blue-400');
+                    hasActivities = true;
                 }
 
-                // 2. VOCAB MATCH (from 'vocabulary')
+                // 2. VOCABULARY
                 if (d.vocabulary && d.vocabulary.length > 0) {
-                    createBtn('ph-cards', 'Vocabulary Match', () => MemoryEngine.start(d.vocabulary), 'border-green-400');
-                    // Also offer vocab as a quiz
-                    createBtn('ph-translate', 'Vocabulary Quiz', () => QuizEngine.start(this.transformVocabToQuiz(d.vocabulary), 'vocab'), 'border-teal-400');
+                    createBtn('ph-book-bookmark', 'Vocabulary', () => QuizEngine.start(this.transformVocabToQuiz(d.vocabulary), 'Vocabulary'), 'border-green-400');
+                    hasActivities = true;
                 }
 
-                // 3. TIMELINE (from 'dates')
+                // 3. PEOPLE
+                if (d.people && d.people.length > 0) {
+                    createBtn('ph-user', 'People', () => QuizEngine.start(this.transformConnectionsToQuiz(d.people, 'person'), 'People'), 'border-orange-400');
+                    hasActivities = true;
+                }
+
+                // 4. PLACES
+                if (d.places && d.places.length > 0) {
+                    createBtn('ph-map-pin', 'Places', () => QuizEngine.start(this.transformConnectionsToQuiz(d.places, 'place'), 'Places'), 'border-red-400');
+                    hasActivities = true;
+                }
+
+                // 5. DATES
                 if (d.dates && d.dates.length > 0) {
-                    createBtn('ph-clock', 'Timeline Challenge', () => QuizEngine.start(this.transformDatesToQuiz(d.dates), 'dates'), 'border-purple-400');
+                    createBtn('ph-clock', 'Dates & Timeline', () => QuizEngine.start(this.transformDatesToQuiz(d.dates), 'Dates'), 'border-purple-400');
+                    hasActivities = true;
                 }
 
-                // 4. PEOPLE & PLACES (from 'people' or 'places')
-                const connections = [...(d.people || []), ...(d.places || [])];
-                if (connections.length > 0) {
-                    createBtn('ph-users', 'People & Places', () => QuizEngine.start(this.transformConnectionsToQuiz(connections), 'connections'), 'border-orange-400');
+                if (!hasActivities) {
+                    grid.innerHTML = `<div class="col-span-full text-center text-gray-400 p-8">No specific activities found in this module.</div>`;
                 }
             },
 
-            // Transformers to convert different data shapes into standard Quiz format
-            transformVocabToQuiz(vocabList) {
-                return vocabList.map(v => {
-                    // Get 3 random wrong answers
-                    const others = vocabList.filter(i => i !== v).sort(() => 0.5 - Math.random()).slice(0, 3).map(i => i.definition);
+            // --- DATA TRANSFORMERS ---
+            // Converts different JSON data types into a standard Question/Answer format
+            
+            transformVocabToQuiz(list) {
+                return list.map(v => {
+                    // Find 3 wrong definitions
+                    const others = list.filter(i => i !== v).sort(() => 0.5 - Math.random()).slice(0, 3).map(i => i.definition);
                     const options = [...others, v.definition].sort(() => 0.5 - Math.random());
-                    return { question: `What is <b>"${v.term}"</b>?`, options: options, correctAnswer: v.definition };
+                    return { question: `What is the definition of:<br><b class="text-reggio-darkSage text-3xl block mt-2">"${v.term}"</b>`, options: options, correctAnswer: v.definition };
                 });
             },
             
-            transformDatesToQuiz(dateList) {
-                return dateList.map(d => {
-                    const others = dateList.filter(i => i !== d).sort(() => 0.5 - Math.random()).slice(0, 3).map(i => i.date);
+            transformDatesToQuiz(list) {
+                return list.map(d => {
+                    // Find 3 wrong dates
+                    const others = list.filter(i => i !== d).sort(() => 0.5 - Math.random()).slice(0, 3).map(i => i.date);
                     const options = [...others, d.date].sort(() => 0.5 - Math.random());
                     return { question: `When did this happen?<br><br><i>"${d.event}"</i>`, options: options, correctAnswer: d.date };
                 });
             },
 
-            transformConnectionsToQuiz(list) {
+            transformConnectionsToQuiz(list, type) {
                 return list.map(item => {
-                    const name = item.name || item.term; // Handle variations
+                    const name = item.name || item.term; 
                     const desc = item.role || item.description || item.definition;
                     const others = list.filter(i => i !== item).sort(() => 0.5 - Math.random()).slice(0, 3).map(i => i.name || i.term);
                     const options = [...others, name].sort(() => 0.5 - Math.random());
-                    return { question: `Who or what is this?<br><br><i>"${desc}"</i>`, options: options, correctAnswer: name };
+                    
+                    let prompt = type === 'person' ? "Who is this person?" : "What place is this?";
+                    
+                    return { question: `${prompt}<br><br><i>"${desc}"</i>`, options: options, correctAnswer: name };
                 });
             },
 
             switchView(id) {
-                ['view-menu', 'view-activity-select', 'view-quiz', 'view-memory'].forEach(v => document.getElementById(v).classList.add('hidden'));
+                ['view-menu', 'view-activity-select', 'view-quiz'].forEach(v => document.getElementById(v).classList.add('hidden'));
+                
                 if(id !== 'view-menu' && id !== 'view-activity-select') document.getElementById('game-stats').classList.remove('hidden');
                 else document.getElementById('game-stats').classList.add('hidden');
                 
                 const el = document.getElementById(id);
                 el.classList.remove('hidden');
-                if(id !== 'view-memory') el.classList.add('flex'); // Memory is grid, not flex
+                el.classList.add('flex');
             },
 
             showMenu() {
+                this.currentData = null; // Clear selection
                 this.switchView('view-menu');
                 document.getElementById('header-title').innerText = TEACHER_SETTINGS.appTitle;
                 this.renderMenu();
@@ -316,7 +344,7 @@
             }
         };
 
-        // === QUIZ ENGINE (Handles Standard, Dates, People) ===
+        // === QUIZ ENGINE ===
         const QuizEngine = {
             questions: [],
             idx: 0,
@@ -365,7 +393,6 @@
                 } else {
                     AudioSys.wrong();
                     btn.classList.add('bg-red-100', 'border-red-500');
-                    // Highlight correct one
                     Array.from(btns).forEach(b => { if(b.innerHTML === correct) b.classList.add('bg-green-50', 'border-green-300'); });
                     this.lives--;
                     this.showFeedback(false);
@@ -409,9 +436,8 @@
 
             end(won = true) {
                 if (this.lives > 0) {
-                    AudioSys.play(400, 'sine', 0.1); // Win sound
+                    AudioSys.play(400, 'sine', 0.1); 
                     confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#9EB298', '#C89F91'] });
-                    // Save
                     const key = 'reggio_' + App.currentData.filename;
                     const prev = JSON.parse(localStorage.getItem(key) || '{}');
                     localStorage.setItem(key, JSON.stringify({ score: Math.max(this.score, prev.score || 0) }));
@@ -421,96 +447,9 @@
                     <div class="col-span-full text-center py-8">
                         <h2 class="text-3xl font-bold mb-4">${this.lives > 0 ? 'Activity Complete!' : 'Out of Lives'}</h2>
                         <p class="text-xl mb-6">Final Score: ${this.score}</p>
-                        <button onclick="App.showMenu()" class="px-8 py-3 bg-reggio-sage text-white rounded-full font-bold shadow-lg hover:bg-reggio-darkSage">Return to Garden</button>
+                        <button onclick="App.handleTitleClick()" class="px-8 py-3 bg-reggio-sage text-white rounded-full font-bold shadow-lg hover:bg-reggio-darkSage">Choose Another Activity</button>
                     </div>
                 `;
-            }
-        };
-
-        // === MEMORY ENGINE ===
-        const MemoryEngine = {
-            cards: [],
-            flipped: [],
-            matches: 0,
-            
-            start(vocabList) {
-                App.switchView('view-memory');
-                document.getElementById('match-count').innerText = 0;
-                this.matches = 0;
-                this.flipped = [];
-                
-                // Take up to 8 pairs (16 cards) to fit screen
-                const subset = vocabList.sort(() => 0.5 - Math.random()).slice(0, 8);
-                
-                // Create pairs
-                let deck = [];
-                subset.forEach((v, i) => {
-                    deck.push({ id: i, text: v.term, type: 'term' });
-                    deck.push({ id: i, text: v.definition, type: 'def' });
-                });
-                deck.sort(() => 0.5 - Math.random());
-                
-                const grid = document.getElementById('memory-grid');
-                grid.innerHTML = '';
-                
-                deck.forEach((card, idx) => {
-                    const el = document.createElement('div');
-                    el.className = "memory-card w-full h-32 md:h-40 relative cursor-pointer group";
-                    el.innerHTML = `
-                        <div class="memory-face memory-front rounded-xl border-2 border-reggio-sage">
-                            <i class="ph ph-plant text-4xl opacity-50"></i>
-                        </div>
-                        <div class="memory-face memory-back bg-white rounded-xl overflow-hidden flex items-center justify-center p-2">
-                            <span class="text-sm md:text-base font-bold leading-tight select-none">${card.text}</span>
-                        </div>
-                    `;
-                    el.onclick = () => this.flip(el, card);
-                    grid.appendChild(el);
-                });
-            },
-
-            flip(el, card) {
-                if (this.flipped.length >= 2 || el.classList.contains('flipped') || el.classList.contains('matched')) return;
-                
-                AudioSys.flip();
-                el.classList.add('flipped');
-                this.flipped.push({ el, card });
-                
-                if (this.flipped.length === 2) {
-                    this.check();
-                }
-            },
-
-            check() {
-                const [c1, c2] = this.flipped;
-                if (c1.card.id === c2.card.id) {
-                    // Match
-                    setTimeout(() => {
-                        AudioSys.correct();
-                        c1.el.classList.add('matched');
-                        c2.el.classList.add('matched');
-                        this.matches++;
-                        document.getElementById('match-count').innerText = this.matches;
-                        this.flipped = [];
-                        
-                        // Win Check
-                        if (document.querySelectorAll('.memory-card:not(.matched)').length === 0) {
-                            setTimeout(() => {
-                                confetti();
-                                alert("Memory Master! Well done.");
-                                App.showMenu();
-                            }, 500);
-                        }
-                    }, 600);
-                } else {
-                    // No match
-                    setTimeout(() => {
-                        AudioSys.wrong();
-                        c1.el.classList.remove('flipped');
-                        c2.el.classList.remove('flipped');
-                        this.flipped = [];
-                    }, 1200);
-                }
             }
         };
 
