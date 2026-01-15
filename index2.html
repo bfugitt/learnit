@@ -54,6 +54,14 @@
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #BCA88E; border-radius: 4px; }
+
+        /* Flashcard Styles */
+        .flashcard-scene { perspective: 1000px; width: 100%; height: 350px; cursor: pointer; }
+        .flashcard-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1); transform-style: preserve-3d; }
+        .flashcard-inner.is-flipped { transform: rotateY(180deg); }
+        .flashcard-face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 1.5rem; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border: 2px solid; overflow-y: auto; }
+        .flashcard-front { background: white; border-color: #BCA88E; color: #5C5C5C; z-index: 2; }
+        .flashcard-back { transform: rotateY(180deg); background: #F9F7F2; border-color: #9EB298; color: #5C5C5C; z-index: 1; }
     </style>
 </head>
 <body class="text-reggio-stone overflow-hidden h-screen w-full select-none flex flex-col">
@@ -126,15 +134,17 @@
             <button onclick="App.showMenu()" class="mt-8 text-reggio-stone/50 hover:text-reggio-stone flex items-center gap-2"><i class="ph ph-arrow-left"></i> Return to Garden</button>
         </div>
 
-        <!-- VIEW: STUDY GUIDE -->
-        <div id="view-study" class="hidden w-full max-w-4xl animate-fade-in flex-col items-center h-full">
-            <div class="w-full bg-white rounded-2xl shadow-sm border border-reggio-wood/20 overflow-hidden flex flex-col max-h-full">
+        <!-- VIEW: STUDY GUIDE (FLASHCARDS) -->
+        <div id="view-study" class="hidden w-full max-w-3xl animate-fade-in flex-col items-center h-full">
+            <div class="w-full bg-white rounded-2xl shadow-sm border border-reggio-wood/20 overflow-hidden flex flex-col h-full max-h-[600px]">
                 <div class="bg-reggio-cream p-4 border-b border-reggio-sage/20 flex justify-between items-center">
-                    <h3 class="text-xl font-bold text-reggio-darkSage"><i class="ph ph-notebook mr-2"></i>Study Guide</h3>
+                    <h3 class="text-xl font-bold text-reggio-darkSage"><i class="ph ph-cards mr-2"></i>Study Flashcards</h3>
                     <button onclick="App.handleTitleClick()" class="text-sm text-gray-500 hover:text-reggio-darkSage"><i class="ph ph-x text-lg"></i> Close</button>
                 </div>
-                <div id="study-content" class="overflow-y-auto p-6 space-y-8">
-                    <!-- Study cards injected here -->
+                
+                <!-- Dynamic Content Area -->
+                <div id="study-content" class="flex-1 flex flex-col p-6 overflow-hidden relative">
+                    <!-- Categories or Cards will be injected here -->
                 </div>
             </div>
         </div>
@@ -180,7 +190,8 @@
                 o.stop(this.ctx.currentTime + dur);
             },
             correct: () => { AudioSys.play(600, 'sine', 0.1); setTimeout(() => AudioSys.play(900, 'sine', 0.2), 100); },
-            wrong: () => AudioSys.play(200, 'triangle', 0.3)
+            wrong: () => AudioSys.play(200, 'triangle', 0.3),
+            flip: () => AudioSys.play(400, 'sine', 0.05)
         };
 
         const App = {
@@ -297,62 +308,50 @@
                 }
             },
 
-            // --- STUDY GUIDE RENDERER ---
+            // --- STUDY GUIDE RENDERER (CATEGORY SELECTION) ---
             renderStudyGuide() {
                 this.switchView('view-study');
                 const content = document.getElementById('study-content');
                 content.innerHTML = '';
                 const d = this.currentData;
 
-                const createSection = (title, items, renderer) => {
+                const header = document.createElement('div');
+                header.className = "text-center mb-8";
+                header.innerHTML = `<h2 class="text-2xl font-bold text-reggio-stone">Select a Topic</h2><p class="text-gray-400">Tap a category to start reviewing.</p>`;
+                content.appendChild(header);
+
+                const grid = document.createElement('div');
+                grid.className = "grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-2xl mx-auto";
+                content.appendChild(grid);
+
+                const createCatBtn = (icon, title, items, renderer) => {
                     if(!items || items.length === 0) return;
-                    const sec = document.createElement('div');
-                    sec.innerHTML = `<h4 class="font-bold text-lg text-reggio-darkSage mb-3 border-b border-reggio-sage/20 pb-1">${title}</h4>`;
-                    const grid = document.createElement('div');
-                    grid.className = "grid grid-cols-1 md:grid-cols-2 gap-4";
-                    items.forEach(item => {
-                        const card = document.createElement('div');
-                        card.className = "bg-white p-4 rounded-xl border border-reggio-wood/20 shadow-sm";
-                        card.innerHTML = renderer(item);
-                        grid.appendChild(card);
-                    });
-                    sec.appendChild(grid);
-                    content.appendChild(sec);
+                    const btn = document.createElement('button');
+                    btn.className = "p-6 bg-white rounded-xl shadow-sm border border-reggio-wood/20 hover:border-reggio-sage hover:bg-reggio-cream transition-all flex items-center gap-4 text-left group";
+                    btn.innerHTML = `
+                        <div class="w-12 h-12 rounded-full bg-reggio-paper border border-reggio-wood/30 flex items-center justify-center text-reggio-darkSage group-hover:scale-110 transition-transform">
+                            <i class="ph-fill ${icon} text-2xl"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold text-lg text-reggio-stone">${title}</div>
+                            <div class="text-xs text-gray-400">${items.length} cards</div>
+                        </div>
+                    `;
+                    btn.onclick = () => FlashcardEngine.start(items, title, renderer);
+                    grid.appendChild(btn);
                 };
 
-                // Vocabulary
-                createSection('Vocabulary', d.vocabulary, (i) => 
-                    `<div class="font-bold text-reggio-stone">${i.term || i.word}</div><div class="text-sm text-gray-600">${i.definition || i.meaning}</div>`
-                );
-
-                // People
-                createSection('Important People', d.people, (i) => 
-                    `<div class="font-bold text-reggio-stone">${i.name || i.term}</div><div class="text-sm text-gray-600">${i.role || i.description || i.fact}</div>`
-                );
-
-                // Places
+                // Add Categories (skipping True/False)
+                createCatBtn('ph-book-bookmark', 'Vocabulary', d.vocabulary, (i) => ({front: i.term || i.word, back: i.definition || i.meaning}));
+                createCatBtn('ph-user', 'People', d.people, (i) => ({front: i.name || i.term, back: i.role || i.description || i.fact}));
+                
                 const places = [...(d.places || []), ...(d.locations || [])];
-                createSection('Places & Locations', places, (i) => 
-                    `<div class="font-bold text-reggio-stone">${i.name || i.location}</div><div class="text-sm text-gray-600">${i.significance || i.description}</div>`
-                );
+                createCatBtn('ph-map-pin', 'Places', places, (i) => ({front: i.name || i.location, back: i.significance || i.description}));
 
-                // Timeline
                 const dates = [...(d.dates || []), ...(d.timeline || [])];
-                createSection('Timeline', dates, (i) => 
-                    `<div class="font-bold text-reggio-clay">${i.year || i.date}</div><div class="text-sm text-reggio-stone">${i.event || i.description}</div>`
-                );
+                createCatBtn('ph-clock', 'Timeline', dates, (i) => ({front: i.year || i.date, back: i.event || i.description}));
 
-                // Artworks
-                createSection('Artworks & Images', d.artworks, (i) => 
-                    `<div class="font-bold text-reggio-stone">${i.title}</div><div class="text-xs text-gray-400 mb-1">${i.medium || ''}</div><div class="text-sm text-gray-600">${i.description}</div>`
-                );
-
-                // Facts (True/False)
-                createSection('Facts to Know', d.trueFalse, (i) => {
-                    const isTrue = (i.isTrue === true || String(i.answer).toLowerCase() === 'true');
-                    const icon = isTrue ? '<i class="ph-fill ph-check text-green-500"></i>' : '<i class="ph-fill ph-x text-red-400"></i>';
-                    return `<div class="flex gap-2"><div class="mt-1">${icon}</div><div class="text-sm text-gray-600">${i.statement || i.question}</div></div>${i.correction ? `<div class="text-xs text-reggio-clay mt-1 ml-6">Note: ${i.correction}</div>` : ''}`
-                });
+                createCatBtn('ph-image', 'Artworks & Images', d.artworks, (i) => ({front: i.title, back: `<div class='text-xs text-reggio-sage mb-2'>${i.medium || ''}</div>${i.description}`}));
             },
 
             // --- DATA TRANSFORMERS ---
@@ -387,7 +386,7 @@
                     let prompt = "Who or what is this?";
                     if(type === 'place') prompt = "Where is this?";
                     if(type === 'person') prompt = "Who is this person?";
-                    if(type === 'artwork') prompt = "What is this?"; // Updated Prompt
+                    if(type === 'artwork') prompt = "What is this?"; 
                     
                     return { question: `${prompt}<br><br><i>"${desc || 'No description available'}"</i>`, options: options, correctAnswer: name };
                 });
@@ -433,6 +432,85 @@
             }
         };
 
+        // === FLASHCARD ENGINE ===
+        const FlashcardEngine = {
+            deck: [],
+            idx: 0,
+            
+            start(data, categoryName, transformFn) {
+                this.deck = data.map(transformFn);
+                this.idx = 0;
+                this.renderUI(categoryName);
+                this.renderCard();
+            },
+
+            renderUI(categoryName) {
+                const content = document.getElementById('study-content');
+                content.innerHTML = `
+                    <div class="w-full h-full flex flex-col items-center">
+                        <div class="w-full flex justify-between items-center mb-4">
+                            <button onclick="App.renderStudyGuide()" class="text-sm text-reggio-stone hover:text-reggio-darkSage flex items-center gap-1"><i class="ph ph-arrow-left"></i> Categories</button>
+                            <span class="font-bold text-reggio-sage uppercase tracking-widest text-xs">${categoryName}</span>
+                            <div class="w-16"></div> <!-- spacer -->
+                        </div>
+                        
+                        <div class="flashcard-scene group" onclick="FlashcardEngine.flip(this)">
+                            <div id="flashcard-inner" class="flashcard-inner">
+                                <div class="flashcard-face flashcard-front">
+                                    <div class="text-xs text-reggio-wood uppercase font-bold mb-4">Front</div>
+                                    <div id="fc-front" class="text-2xl font-bold text-center"></div>
+                                    <div class="mt-auto text-xs text-gray-300">Tap to flip</div>
+                                </div>
+                                <div class="flashcard-face flashcard-back">
+                                    <div class="text-xs text-reggio-sage uppercase font-bold mb-4">Back</div>
+                                    <div id="fc-back" class="text-xl text-center"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between w-full max-w-xs mt-6">
+                            <button onclick="FlashcardEngine.prev()" class="p-3 rounded-full bg-white shadow-sm border border-gray-200 text-reggio-stone hover:bg-reggio-cream"><i class="ph ph-caret-left text-xl"></i></button>
+                            <span class="font-mono text-sm text-gray-400" id="fc-counter">1 / 10</span>
+                            <button onclick="FlashcardEngine.next()" class="p-3 rounded-full bg-white shadow-sm border border-gray-200 text-reggio-stone hover:bg-reggio-cream"><i class="ph ph-caret-right text-xl"></i></button>
+                        </div>
+                    </div>
+                `;
+            },
+
+            renderCard() {
+                const card = this.deck[this.idx];
+                const inner = document.getElementById('flashcard-inner');
+                inner.classList.remove('is-flipped'); // Reset flip
+                
+                // Small delay to allow flip reset before changing text if coming from a flipped state
+                setTimeout(() => {
+                    document.getElementById('fc-front').innerHTML = card.front;
+                    document.getElementById('fc-back').innerHTML = card.back;
+                    document.getElementById('fc-counter').innerText = `${this.idx + 1} / ${this.deck.length}`;
+                }, 150);
+            },
+
+            flip(el) {
+                const inner = el.querySelector('.flashcard-inner');
+                inner.classList.toggle('is-flipped');
+                AudioSys.flip();
+            },
+
+            next() {
+                if (this.idx < this.deck.length - 1) {
+                    this.idx++;
+                    this.renderCard();
+                }
+            },
+
+            prev() {
+                if (this.idx > 0) {
+                    this.idx--;
+                    this.renderCard();
+                }
+            }
+        };
+
         // === QUIZ ENGINE ===
         const QuizEngine = {
             questions: [],
@@ -440,7 +518,7 @@
             score: 0,
             lives: 0,
             currentType: '',
-            guessesOnCurrent: 0, // Track guesses per question
+            guessesOnCurrent: 0, 
             
             start(data, type) {
                 App.switchView('view-quiz');
@@ -464,7 +542,7 @@
 
             render() {
                 if(this.idx >= this.questions.length) return this.end();
-                this.guessesOnCurrent = 0; // Reset guesses for new question
+                this.guessesOnCurrent = 0; 
                 
                 const q = this.questions[this.idx];
                 document.getElementById('q-text').innerHTML = q.question;
@@ -487,21 +565,18 @@
                 const btns = document.getElementById('quiz-options').children;
 
                 if (selected === correct) {
-                    // CORRECT
                     AudioSys.correct();
                     btn.classList.add('bg-green-100', 'border-green-500');
-                    Array.from(btns).forEach(b => b.disabled = true); // Disable all
+                    Array.from(btns).forEach(b => b.disabled = true);
                     this.score += TEACHER_SETTINGS.pointsPerCorrect;
                     this.showFeedback(true);
                     setTimeout(() => { this.idx++; this.render(); }, 1200);
 
                 } else {
-                    // WRONG
                     this.lives--;
                     this.updateUI();
                     
                     if (isTF || this.lives <= 0) {
-                        // Immediate Fail Logic (True/False OR Dead)
                         AudioSys.wrong();
                         btn.classList.add('bg-red-100', 'border-red-500');
                         Array.from(btns).forEach(b => { 
@@ -512,19 +587,15 @@
                         setTimeout(() => { 
                             if(this.lives <= 0) this.end(false);
                             else { this.idx++; this.render(); }
-                        }, 2000); // Longer delay to read answer
+                        }, 2000); 
                     } else {
-                        // MULTI-GUESS Logic (Standard Quiz)
                         this.guessesOnCurrent++;
-                        
                         if (this.guessesOnCurrent < 2) {
-                            // First Wrong Guess: Just mark wrong, remove heart, let them try again
                             AudioSys.wrong();
                             btn.classList.add('bg-red-100', 'border-red-300', 'opacity-50');
                             btn.disabled = true;
                             this.showFeedback(false, "Try Again!");
                         } else {
-                            // Second Wrong Guess: Fail Question
                             AudioSys.wrong();
                             btn.classList.add('bg-red-100', 'border-red-500');
                             Array.from(btns).forEach(b => { 
