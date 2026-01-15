@@ -200,6 +200,14 @@
             init() {
                 this.renderMenu();
                 document.body.addEventListener('click', () => { if (AudioSys.ctx.state === 'suspended') AudioSys.ctx.resume(); }, {once:true});
+                
+                // URL Parameter Check
+                const params = new URLSearchParams(window.location.search);
+                const modFile = params.get('mod');
+                if (modFile) {
+                    const modObj = MODULE_LIST.find(m => m.file === modFile) || { file: modFile, name: "Loading Module..." };
+                    this.loadModule(modObj);
+                }
             },
 
             renderMenu() {
