@@ -5,18 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Learning Garden</title>
     
-    <!-- Fonts: Quicksand for that organic, friendly Reggio feel -->
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Phosphor Icons (Clean, organic icons) -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-
-    <!-- Canvas Confetti -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
     <script>
@@ -36,6 +30,20 @@
                     },
                     fontFamily: {
                         sans: ['Quicksand', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'flip': 'flip 0.6s forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        flip: {
+                            '0%': { transform: 'rotateY(0deg)' },
+                            '100%': { transform: 'rotateY(180deg)' },
+                        }
                     }
                 }
             }
@@ -43,560 +51,469 @@
     </script>
 
     <style>
-        /* Custom Animations */
         body { background-color: #F9F7F2; background-image: radial-gradient(#E5E5E5 1px, transparent 1px); background-size: 20px 20px; }
-        
         .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         .card-hover:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
-        .card-active { transform: scale(0.98); }
         
-        /* Flip Card Effect */
-        .perspective-1000 { perspective: 1000px; }
-        .transform-style-3d { transform-style: preserve-3d; }
-        .backface-hidden { backface-visibility: hidden; }
-        .rotate-y-180 { transform: rotateY(180deg); }
+        /* Memory Card Styles */
+        .memory-card { perspective: 1000px; transform-style: preserve-3d; transition: transform 0.5s; }
+        .memory-card.flipped { transform: rotateY(180deg); }
+        .memory-face { backface-visibility: hidden; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 1rem; text-align: center; border-radius: 0.75rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+        .memory-front { background-color: #9EB298; color: white; transform: rotateY(0deg); }
+        .memory-back { background-color: white; color: #5C5C5C; transform: rotateY(180deg); border: 2px solid #9EB298; }
+        .memory-card.matched { visibility: hidden; opacity: 0; transition: visibility 0s 0.5s, opacity 0.5s linear; }
 
-        /* Gentle Pulse for Hints */
-        @keyframes gentle-pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.05); }
-        }
-        .animate-gentle-pulse { animation: gentle-pulse 2s infinite; }
-
-        /* Floating particles */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        .floating { animation: float 6s ease-in-out infinite; }
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #BCA88E; border-radius: 4px; }
     </style>
 </head>
-<body class="text-reggio-stone overflow-hidden h-screen w-full select-none">
+<body class="text-reggio-stone overflow-hidden h-screen w-full select-none flex flex-col">
 
-    <!-- ========================================== -->
-    <!-- TEACHER CONFIGURATION SECTION -->
-    <!-- Edit values inside this script block -->
-    <!-- ========================================== -->
+    <!-- CONFIGURATION -->
     <script>
+        // === MODULE LIST ===
+        // Add new modules here to see them in the app
+        const MODULE_LIST = [
+              { "file": "potter4-6.json", "name": "Beatrix Potter 4-6" },
+  { "file": "potter7-10.json", "name": "Beatrix Potter 7-10" },
+            
+            { file: "spanish_1.json", name: "Spanish: Holidays & Faith" },
+            { file: "potter1-3.json", name: "The Art of Beatrix Potter (Sections 1-3)" }
+        ];
+
+        // === SETTINGS ===
         const TEACHER_SETTINGS = {
-            // General Game Settings
-            startingLives: 5,           // Number of hearts to start with
-            pointsPerCorrect: 10,       // Points earned for a correct answer
-            pointsPenalty: 2,           // Points lost for a wrong answer
-            hintsAllowed: 3,            // Number of hints allowed per session
-            
-            // Difficulty Adjustments
-            passingScorePercent: 70,    // Percent needed to "Master" a module
-            animationSpeed: 1000,       // Speed of transitions in milliseconds
-            
-            // Text & Labels
+            startingLives: 5,
+            pointsPerCorrect: 10,
+            passingScore: 100, // Points to get a "Win"
             appTitle: "The Learning Garden",
-            welcomeMessage: "Welcome, 4th Graders! Choose a path to explore.",
-            
-            // Audio Settings
-            soundEnabled: true,         // Set to false to mute all sounds by default
-        };
-    </script>
-    <!-- ========================================== -->
-    <!-- END TEACHER CONFIGURATION -->
-    <!-- ========================================== -->
-
-    <!-- AUDIO SYSTEM (Synthesized, no external files needed) -->
-    <script>
-        const AudioSys = {
-            ctx: new (window.AudioContext || window.webkitAudioContext)(),
-            playTone: function(freq, type, duration) {
-                if (!TEACHER_SETTINGS.soundEnabled) return;
-                const osc = this.ctx.createOscillator();
-                const gain = this.ctx.createGain();
-                osc.type = type;
-                osc.frequency.value = freq;
-                osc.connect(gain);
-                gain.connect(this.ctx.destination);
-                osc.start();
-                gain.gain.exponentialRampToValueAtTime(0.00001, this.ctx.currentTime + duration);
-                osc.stop(this.ctx.currentTime + duration);
-            },
-            playCorrect: function() {
-                this.playTone(600, 'sine', 0.1);
-                setTimeout(() => this.playTone(900, 'sine', 0.4), 100);
-            },
-            playWrong: function() {
-                this.playTone(200, 'triangle', 0.3);
-            },
-            playClick: function() {
-                this.playTone(400, 'sine', 0.05);
-            },
-            playWin: function() {
-                let note = 400;
-                for(let i=0; i<5; i++) {
-                    setTimeout(() => this.playTone(note + (i*100), 'sine', 0.2), i*150);
-                }
-            }
+            soundEnabled: true
         };
     </script>
 
-    <!-- APP CONTAINER -->
-    <div id="app" class="h-full w-full flex flex-col relative">
+    <!-- HEADER -->
+    <header class="h-16 bg-white shadow-sm flex items-center justify-between px-6 z-20 flex-shrink-0">
+        <div class="flex items-center gap-3 cursor-pointer" onclick="App.showMenu()">
+            <i class="ph ph-potted-plant text-3xl text-reggio-darkSage"></i>
+            <h1 class="text-xl font-bold text-reggio-darkSage truncate max-w-[200px] md:max-w-none" id="header-title">The Learning Garden</h1>
+        </div>
         
-        <!-- HEADER -->
-        <header class="h-16 bg-white shadow-sm flex items-center justify-between px-6 z-20 border-b border-reggio-sage/20">
-            <div class="flex items-center gap-3">
-                <i class="ph ph-potted-plant text-3xl text-reggio-darkSage"></i>
-                <h1 class="text-xl font-bold tracking-tight text-reggio-darkSage" id="header-title">Loading...</h1>
+        <div class="flex items-center gap-4">
+            <div id="game-stats" class="hidden flex items-center gap-4 bg-reggio-cream px-4 py-1 rounded-full border border-reggio-sage/30">
+                <div class="flex items-center gap-1 text-reggio-clay font-bold"><i class="ph-fill ph-heart text-red-400"></i> <span id="lives-display">5</span></div>
+                <div class="flex items-center gap-1 text-reggio-darkSage font-bold"><i class="ph-fill ph-star text-yellow-500"></i> <span id="score-display">0</span></div>
             </div>
+            <button onclick="App.resetProgress()" title="Reset All" class="text-reggio-stone/50 hover:text-red-400"><i class="ph ph-trash"></i></button>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="flex-1 overflow-y-auto relative p-4 flex flex-col items-center">
+        
+        <!-- VIEW: MENU -->
+        <div id="view-menu" class="w-full max-w-6xl animate-fade-in pb-10">
+            <div class="text-center py-6">
+                <h2 class="text-3xl text-reggio-darkSage font-bold">Welcome, Learners!</h2>
+                <p class="text-reggio-stone/70">Choose a path to explore.</p>
+            </div>
+            <div id="module-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4"></div>
+        </div>
+
+        <!-- VIEW: ACTIVITY SELECTOR -->
+        <div id="view-activity-select" class="hidden w-full max-w-4xl animate-fade-in flex-col items-center">
+            <h2 id="selected-module-title" class="text-2xl font-bold text-reggio-stone mb-6 text-center"></h2>
+            <div id="activity-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full"></div>
+            <button onclick="App.showMenu()" class="mt-8 text-reggio-stone/50 hover:text-reggio-stone flex items-center gap-2"><i class="ph ph-arrow-left"></i> Back</button>
+        </div>
+
+        <!-- VIEW: QUIZ / TIMELINE / PEOPLE -->
+        <div id="view-quiz" class="hidden w-full max-w-3xl flex-col items-center h-full">
+            <div class="w-full h-2 bg-gray-200 rounded-full mb-6 overflow-hidden"><div id="progress-fill" class="h-full bg-reggio-sage transition-all duration-500" style="width: 0%"></div></div>
             
-            <div class="flex items-center gap-4">
-                <!-- Stats Display (Hidden on menu) -->
-                <div id="game-stats" class="hidden flex items-center gap-4 bg-reggio-cream px-4 py-1 rounded-full border border-reggio-sage/30">
-                    <div class="flex items-center gap-1 text-reggio-clay font-bold">
-                        <i class="ph-fill ph-heart text-red-400"></i>
-                        <span id="lives-display">5</span>
-                    </div>
-                    <div class="flex items-center gap-1 text-reggio-darkSage font-bold">
-                        <i class="ph-fill ph-star text-yellow-500"></i>
-                        <span id="score-display">0</span>
-                    </div>
+            <div class="w-full flex-1 flex flex-col items-center justify-center relative">
+                <div id="quiz-card" class="bg-white w-full shadow-xl rounded-2xl p-6 md:p-10 border-b-4 border-reggio-sage/20 relative min-h-[250px] flex flex-col items-center justify-center text-center floating">
+                    <span id="q-category" class="uppercase tracking-widest text-xs font-bold text-reggio-sage mb-4">Question</span>
+                    <h2 id="q-text" class="text-2xl md:text-3xl font-medium text-reggio-stone mb-6">?</h2>
                 </div>
-                
-                <button onclick="App.toggleSettings()" class="text-reggio-stone hover:text-reggio-darkSage transition-colors">
-                    <i class="ph ph-gear text-2xl"></i>
-                </button>
-            </div>
-        </header>
-
-        <!-- MAIN CONTENT AREA -->
-        <main class="flex-1 overflow-hidden relative flex flex-col items-center justify-center p-4">
-            
-            <!-- VIEW: SPLASH / MENU -->
-            <div id="view-menu" class="w-full max-w-5xl h-full flex flex-col animate-fade-in">
-                <div class="text-center py-8">
-                    <h2 class="text-3xl text-reggio-darkSage font-bold mb-2" id="welcome-msg"></h2>
-                    <p class="text-reggio-stone/70">Select a module to begin your journey.</p>
-                </div>
-                
-                <div id="module-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 overflow-y-auto pb-20 px-4">
-                    <!-- Modules injected here -->
-                </div>
-            </div>
-
-            <!-- VIEW: GAME -->
-            <div id="view-game" class="hidden w-full max-w-3xl flex-col items-center h-full pt-4">
-                
-                <!-- Progress Bar -->
-                <div class="w-full h-3 bg-gray-200 rounded-full mb-6 overflow-hidden">
-                    <div id="progress-fill" class="h-full bg-reggio-sage transition-all duration-500" style="width: 0%"></div>
-                </div>
-
-                <!-- Card Container -->
-                <div class="w-full flex-1 flex flex-col items-center justify-center relative">
-                    
-                    <!-- Question Card -->
-                    <div id="card-container" class="bg-white w-full shadow-xl rounded-2xl p-8 border-b-4 border-reggio-sage/20 relative min-h-[300px] flex flex-col items-center justify-center text-center floating">
-                        <!-- Hint Button -->
-                        <button id="hint-btn" onclick="Game.useHint()" class="absolute top-4 right-4 text-reggio-clay hover:text-reggio-darkSage transition-colors flex items-center gap-1 text-sm font-bold">
-                            <i class="ph ph-lightbulb text-xl"></i>
-                            <span id="hints-left">3</span>
-                        </button>
-
-                        <span id="q-category" class="uppercase tracking-widest text-xs font-bold text-reggio-sage mb-4">Vocabulary</span>
-                        <h2 id="q-text" class="text-3xl md:text-4xl font-medium text-reggio-stone mb-6">Question Text</h2>
-                        
-                        <!-- Feedback Overlay -->
-                        <div id="feedback-overlay" class="absolute inset-0 rounded-2xl flex items-center justify-center bg-white/95 z-10 hidden opacity-0 transition-opacity duration-300">
-                            <div class="text-center">
-                                <i id="fb-icon" class="ph-fill ph-check-circle text-6xl text-green-500 mb-2 block"></i>
-                                <h3 id="fb-text" class="text-2xl font-bold">Correct!</h3>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Options Grid -->
-                    <div id="options-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full mt-8">
-                        <!-- Options injected here -->
-                    </div>
-
-                </div>
-                
-                <button onclick="App.showMenu()" class="mt-6 mb-2 text-reggio-stone/50 hover:text-reggio-stone text-sm flex items-center gap-2">
-                    <i class="ph ph-arrow-left"></i> Return to Garden
-                </button>
-            </div>
-
-        </main>
-
-        <!-- SETTINGS MODAL -->
-        <div id="settings-modal" class="hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-50 items-center justify-center">
-            <div class="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-md mx-4">
-                <div class="flex justify-between items-center mb-6">
-                    <h3 class="text-xl font-bold text-reggio-darkSage">Settings</h3>
-                    <button onclick="App.toggleSettings()" class="text-gray-400 hover:text-gray-600"><i class="ph ph-x text-xl"></i></button>
-                </div>
-                
-                <div class="space-y-4">
-                    <div class="p-4 bg-reggio-cream rounded-lg border border-reggio-sage/20">
-                        <h4 class="font-bold text-sm uppercase text-reggio-stone mb-2">My Progress</h4>
-                        <div class="flex justify-between items-center">
-                            <span>Total Score:</span>
-                            <span class="font-bold text-reggio-darkSage" id="total-score-display">0</span>
-                        </div>
-                    </div>
-
-                    <div class="pt-4 border-t">
-                        <h4 class="font-bold text-sm uppercase text-red-400 mb-2">Danger Zone</h4>
-                        <p class="text-xs text-gray-500 mb-3">Clear all progress and badges. This cannot be undone.</p>
-                        <button onclick="App.resetProgress()" class="w-full py-2 bg-red-50 text-red-500 hover:bg-red-100 rounded-lg font-bold text-sm transition-colors">
-                            Reset All Progress
-                        </button>
-                    </div>
-                </div>
+                <div id="quiz-options" class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full mt-8 pb-10"></div>
             </div>
         </div>
 
+        <!-- VIEW: MEMORY MATCH -->
+        <div id="view-memory" class="hidden w-full max-w-5xl flex-col items-center h-full">
+            <div class="flex justify-between w-full mb-4 px-4">
+                <h2 class="text-xl font-bold text-reggio-darkSage">Vocabulary Match</h2>
+                <span class="text-reggio-stone">Matches: <span id="match-count">0</span></span>
+            </div>
+            <div id="memory-grid" class="grid grid-cols-3 md:grid-cols-4 gap-3 w-full h-full content-center p-2 pb-20"></div>
+        </div>
+
+    </main>
+
+    <!-- FEEDBACK OVERLAY -->
+    <div id="feedback-overlay" class="fixed inset-0 pointer-events-none flex items-center justify-center z-50 transition-opacity opacity-0 duration-300">
+        <div class="bg-white/95 backdrop-blur shadow-2xl rounded-2xl p-8 transform scale-95 transition-transform duration-300 text-center border-4 border-reggio-sage" id="feedback-box">
+            <i id="fb-icon" class="ph-fill ph-check-circle text-6xl text-green-500 mb-2"></i>
+            <h3 id="fb-text" class="text-2xl font-bold text-reggio-stone">Correct!</h3>
+        </div>
     </div>
 
     <!-- LOGIC -->
     <script>
-        // --- STATE MANAGEMENT ---
+        const AudioSys = {
+            ctx: new (window.AudioContext || window.webkitAudioContext)(),
+            play(freq, type, dur) {
+                if (!TEACHER_SETTINGS.soundEnabled) return;
+                const o = this.ctx.createOscillator(); const g = this.ctx.createGain();
+                o.type = type; o.frequency.value = freq;
+                o.connect(g); g.connect(this.ctx.destination);
+                o.start(); g.gain.exponentialRampToValueAtTime(0.00001, this.ctx.currentTime + dur);
+                o.stop(this.ctx.currentTime + dur);
+            },
+            correct: () => { AudioSys.play(600, 'sine', 0.1); setTimeout(() => AudioSys.play(900, 'sine', 0.2), 100); },
+            wrong: () => AudioSys.play(200, 'triangle', 0.3),
+            flip: () => AudioSys.play(400, 'sine', 0.05)
+        };
+
         const App = {
-            modules: [],
-            currentModule: null,
+            currentData: null,
             
-            init: async function() {
-                // Apply Teacher Settings
-                document.getElementById('header-title').innerText = TEACHER_SETTINGS.appTitle;
-                document.getElementById('welcome-msg').innerText = TEACHER_SETTINGS.welcomeMessage;
-                
-                this.loadProgress();
-                await this.fetchModules();
-                
-                // Audio Context unlock for browsers
-                document.body.addEventListener('click', () => {
-                    if (AudioSys.ctx.state === 'suspended') AudioSys.ctx.resume();
-                }, {once:true});
+            init() {
+                this.renderMenu();
+                // Unlock audio context
+                document.body.addEventListener('click', () => { if (AudioSys.ctx.state === 'suspended') AudioSys.ctx.resume(); }, {once:true});
             },
 
-            fetchModules: async function() {
-                try {
-                    const response = await fetch('modules.json');
-                    if (!response.ok) throw new Error("Couldn't find modules.json");
-                    this.modules = await response.json();
-                    this.renderMenu();
-                } catch (e) {
-                    console.error(e);
-                    document.getElementById('module-grid').innerHTML = `
-                        <div class="col-span-full text-center p-8 bg-red-50 rounded-xl text-red-500">
-                            <i class="ph ph-warning-circle text-4xl mb-2"></i>
-                            <p>Could not load learning modules. Please ensure 'modules.json' is in the same folder.</p>
-                        </div>`;
-                }
-            },
-
-            renderMenu: function() {
+            renderMenu() {
                 const grid = document.getElementById('module-grid');
                 grid.innerHTML = '';
-                
-                this.modules.forEach(mod => {
-                    const savedData = this.getProgress(mod.file);
-                    const isMastered = savedData && savedData.bestScore >= 100; // Simplified mastery logic
-                    
+                MODULE_LIST.forEach(mod => {
+                    const saved = JSON.parse(localStorage.getItem('reggio_' + mod.file) || 'null');
                     const card = document.createElement('div');
-                    card.className = `bg-white rounded-xl p-6 shadow-sm border border-reggio-wood/20 cursor-pointer card-hover relative overflow-hidden group`;
-                    card.onclick = () => this.startModule(mod);
-                    
-                    let badgeHTML = isMastered 
-                        ? `<div class="absolute top-2 right-2 text-yellow-400 drop-shadow-sm"><i class="ph-fill ph-medal text-2xl"></i></div>` 
-                        : '';
-
+                    card.className = "bg-white rounded-xl p-6 shadow-sm border border-reggio-wood/20 cursor-pointer card-hover flex flex-col h-full";
+                    card.onclick = () => this.loadModule(mod);
                     card.innerHTML = `
-                        ${badgeHTML}
-                        <div class="w-12 h-12 rounded-full bg-reggio-cream flex items-center justify-center mb-4 text-reggio-sage group-hover:bg-reggio-sage group-hover:text-white transition-colors">
-                            <i class="ph-fill ph-book-open text-2xl"></i>
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 rounded-full bg-reggio-cream flex items-center justify-center text-reggio-sage">
+                                <i class="ph-fill ph-plant text-2xl"></i>
+                            </div>
+                            ${saved ? '<i class="ph-fill ph-star text-yellow-400 text-xl"></i>' : ''}
                         </div>
-                        <h3 class="font-bold text-lg text-reggio-stone mb-1">${mod.name}</h3>
-                        <p class="text-sm text-gray-500">Tap to start</p>
-                        ${savedData ? `<div class="mt-4 text-xs font-mono text-gray-400">Best: ${savedData.score} pts</div>` : ''}
+                        <h3 class="font-bold text-lg text-reggio-stone mb-2 leading-tight">${mod.name}</h3>
+                        <div class="mt-auto pt-4 border-t border-reggio-cream flex justify-between text-xs text-gray-400">
+                            <span>Tap to start</span>
+                            <span>${saved ? 'Score: ' + saved.score : 'New'}</span>
+                        </div>
                     `;
                     grid.appendChild(card);
                 });
             },
 
-            startModule: async function(moduleObj) {
+            async loadModule(mod) {
                 try {
-                    const res = await fetch(moduleObj.file);
-                    if(!res.ok) throw new Error('File not found');
-                    const data = await res.json();
-                    
-                    // Normalize data (handle both 'quiz' arrays and 'vocabulary' arrays)
-                    let questions = [];
-                    
-                    // If it has a quiz section, use that
-                    if (data.quiz && Array.isArray(data.quiz)) {
-                        questions = data.quiz.map(q => ({
-                            type: 'quiz',
-                            prompt: q.question,
-                            options: q.options, // Assumes options are strings
-                            answer: q.correctAnswer,
-                            hint: "Think carefully!" // Default hint if none provided
-                        }));
-                    } 
-                    // If it has vocabulary, generate questions
-                    else if (data.vocabulary && Array.isArray(data.vocabulary)) {
-                        questions = data.vocabulary.map(v => {
-                            // Generate 3 random wrong answers from other vocab words
-                            const otherTerms = data.vocabulary.filter(t => t.term !== v.term);
-                            const wrongOptions = otherTerms.sort(() => 0.5 - Math.random()).slice(0, 3).map(t => t.definition);
-                            const options = [...wrongOptions, v.definition].sort(() => 0.5 - Math.random());
-                            
-                            return {
-                                type: 'vocab',
-                                prompt: `What does <span class="text-reggio-darkSage font-bold">"${v.term}"</span> mean?`,
-                                options: options,
-                                answer: v.definition,
-                                hint: v.partOfSpeech ? `It is a ${v.partOfSpeech}.` : "Recall the flashcards."
-                            };
-                        });
-                    }
-
-                    if (questions.length === 0) throw new Error("No questions found in file.");
-
-                    Game.start(questions, moduleObj.file);
-                    
-                    // UI Switch
-                    document.getElementById('view-menu').classList.add('hidden');
-                    document.getElementById('view-game').classList.remove('hidden');
-                    document.getElementById('view-game').classList.add('flex');
-                    document.getElementById('game-stats').classList.remove('hidden');
-                    document.getElementById('header-title').innerText = moduleObj.name;
-
+                    const res = await fetch(mod.file);
+                    if (!res.ok) throw new Error("File not found");
+                    this.currentData = await res.json();
+                    this.currentData.filename = mod.file; // Store for saving
+                    this.showActivitySelect(mod.name);
                 } catch (e) {
-                    alert("Error loading module: " + e.message);
+                    alert("Could not load " + mod.file + ". Make sure the file is in the same folder.");
                 }
             },
 
-            showMenu: function() {
-                Game.stop();
-                document.getElementById('view-game').classList.add('hidden');
-                document.getElementById('view-game').classList.remove('flex');
-                document.getElementById('view-menu').classList.remove('hidden');
-                document.getElementById('game-stats').classList.add('hidden');
+            showActivitySelect(title) {
+                this.switchView('view-activity-select');
+                document.getElementById('selected-module-title').innerText = title;
+                const grid = document.getElementById('activity-grid');
+                grid.innerHTML = '';
+
+                // Helper to create buttons
+                const createBtn = (icon, label, onClick, colorClass) => {
+                    const btn = document.createElement('div');
+                    btn.className = `p-6 bg-white rounded-xl shadow-sm border-l-4 ${colorClass} cursor-pointer card-hover flex items-center gap-4`;
+                    btn.onclick = onClick;
+                    btn.innerHTML = `<i class="ph-fill ${icon} text-3xl text-gray-400"></i><span class="text-xl font-bold text-gray-600">${label}</span>`;
+                    grid.appendChild(btn);
+                };
+
+                const d = this.currentData;
+
+                // 1. QUIZ (Default or from 'quiz')
+                if (d.quiz && d.quiz.length > 0) {
+                    createBtn('ph-question', 'Take the Quiz', () => QuizEngine.start(d.quiz, 'quiz'), 'border-blue-400');
+                }
+
+                // 2. VOCAB MATCH (from 'vocabulary')
+                if (d.vocabulary && d.vocabulary.length > 0) {
+                    createBtn('ph-cards', 'Vocabulary Match', () => MemoryEngine.start(d.vocabulary), 'border-green-400');
+                    // Also offer vocab as a quiz
+                    createBtn('ph-translate', 'Vocabulary Quiz', () => QuizEngine.start(this.transformVocabToQuiz(d.vocabulary), 'vocab'), 'border-teal-400');
+                }
+
+                // 3. TIMELINE (from 'dates')
+                if (d.dates && d.dates.length > 0) {
+                    createBtn('ph-clock', 'Timeline Challenge', () => QuizEngine.start(this.transformDatesToQuiz(d.dates), 'dates'), 'border-purple-400');
+                }
+
+                // 4. PEOPLE & PLACES (from 'people' or 'places')
+                const connections = [...(d.people || []), ...(d.places || [])];
+                if (connections.length > 0) {
+                    createBtn('ph-users', 'People & Places', () => QuizEngine.start(this.transformConnectionsToQuiz(connections), 'connections'), 'border-orange-400');
+                }
+            },
+
+            // Transformers to convert different data shapes into standard Quiz format
+            transformVocabToQuiz(vocabList) {
+                return vocabList.map(v => {
+                    // Get 3 random wrong answers
+                    const others = vocabList.filter(i => i !== v).sort(() => 0.5 - Math.random()).slice(0, 3).map(i => i.definition);
+                    const options = [...others, v.definition].sort(() => 0.5 - Math.random());
+                    return { question: `What is <b>"${v.term}"</b>?`, options: options, correctAnswer: v.definition };
+                });
+            },
+            
+            transformDatesToQuiz(dateList) {
+                return dateList.map(d => {
+                    const others = dateList.filter(i => i !== d).sort(() => 0.5 - Math.random()).slice(0, 3).map(i => i.date);
+                    const options = [...others, d.date].sort(() => 0.5 - Math.random());
+                    return { question: `When did this happen?<br><br><i>"${d.event}"</i>`, options: options, correctAnswer: d.date };
+                });
+            },
+
+            transformConnectionsToQuiz(list) {
+                return list.map(item => {
+                    const name = item.name || item.term; // Handle variations
+                    const desc = item.role || item.description || item.definition;
+                    const others = list.filter(i => i !== item).sort(() => 0.5 - Math.random()).slice(0, 3).map(i => i.name || i.term);
+                    const options = [...others, name].sort(() => 0.5 - Math.random());
+                    return { question: `Who or what is this?<br><br><i>"${desc}"</i>`, options: options, correctAnswer: name };
+                });
+            },
+
+            switchView(id) {
+                ['view-menu', 'view-activity-select', 'view-quiz', 'view-memory'].forEach(v => document.getElementById(v).classList.add('hidden'));
+                if(id !== 'view-menu' && id !== 'view-activity-select') document.getElementById('game-stats').classList.remove('hidden');
+                else document.getElementById('game-stats').classList.add('hidden');
+                
+                const el = document.getElementById(id);
+                el.classList.remove('hidden');
+                if(id !== 'view-memory') el.classList.add('flex'); // Memory is grid, not flex
+            },
+
+            showMenu() {
+                this.switchView('view-menu');
                 document.getElementById('header-title').innerText = TEACHER_SETTINGS.appTitle;
-                this.renderMenu(); // Refresh to show scores
+                this.renderMenu();
             },
 
-            toggleSettings: function() {
-                const modal = document.getElementById('settings-modal');
-                const isHidden = modal.classList.contains('hidden');
-                if(isHidden) {
-                    modal.classList.remove('hidden');
-                    modal.classList.add('flex');
-                    // Update total score
-                    const total = Object.values(this.progress).reduce((acc, curr) => acc + (curr.score || 0), 0);
-                    document.getElementById('total-score-display').innerText = total;
-                } else {
-                    modal.classList.add('hidden');
-                    modal.classList.remove('flex');
-                }
-            },
-
-            // --- LOCAL STORAGE ---
-            progress: {},
-            loadProgress: function() {
-                const stored = localStorage.getItem('reggioApp_progress');
-                if (stored) this.progress = JSON.parse(stored);
-            },
-            saveProgress: function(filename, score, completed) {
-                if (!this.progress[filename]) this.progress[filename] = { score: 0, bestScore: 0 };
-                
-                // Add cumulative score
-                this.progress[filename].score = (this.progress[filename].score || 0) + score;
-                
-                // Track mastery (pseudo percentage based on completion)
-                if (completed) this.progress[filename].bestScore = 100;
-                
-                localStorage.setItem('reggioApp_progress', JSON.stringify(this.progress));
-            },
-            getProgress: function(filename) {
-                return this.progress[filename];
-            },
-            resetProgress: function() {
-                if(confirm("Are you sure you want to erase all history?")) {
-                    localStorage.removeItem('reggioApp_progress');
-                    this.progress = {};
+            resetProgress() {
+                if(confirm("Reset all scores and badges?")) {
+                    localStorage.clear();
                     location.reload();
                 }
             }
         };
 
-        // --- GAME ENGINE ---
-        const Game = {
+        // === QUIZ ENGINE (Handles Standard, Dates, People) ===
+        const QuizEngine = {
             questions: [],
-            currentQIndex: 0,
+            idx: 0,
             score: 0,
             lives: 0,
-            hints: 0,
-            currentFilename: '',
             
-            start: function(questions, filename) {
-                this.questions = questions.sort(() => 0.5 - Math.random()); // Shuffle
-                this.currentFilename = filename;
-                this.currentQIndex = 0;
+            start(data, type) {
+                App.switchView('view-quiz');
+                this.questions = data.sort(() => 0.5 - Math.random());
+                this.idx = 0;
                 this.score = 0;
                 this.lives = TEACHER_SETTINGS.startingLives;
-                this.hints = TEACHER_SETTINGS.hintsAllowed;
-                this.updateStats();
-                this.renderQuestion();
+                document.getElementById('q-category').innerText = type.toUpperCase();
+                this.updateUI();
+                this.render();
             },
 
-            stop: function() {
-                this.questions = [];
-            },
-
-            renderQuestion: function() {
-                if (this.currentQIndex >= this.questions.length) {
-                    this.endGame(true);
-                    return;
-                }
-
-                const q = this.questions[this.currentQIndex];
+            render() {
+                if(this.idx >= this.questions.length) return this.end();
+                const q = this.questions[this.idx];
+                document.getElementById('q-text').innerHTML = q.question;
+                document.getElementById('progress-fill').style.width = ((this.idx / this.questions.length) * 100) + '%';
                 
-                // UI Updates
-                document.getElementById('q-category').innerText = q.type === 'vocab' ? 'Translation' : 'Quiz';
-                document.getElementById('q-text').innerHTML = q.prompt;
-                document.getElementById('hints-left').innerText = this.hints;
-                document.getElementById('hint-btn').classList.remove('opacity-50', 'cursor-not-allowed');
-                
-                // Progress Bar
-                const pct = (this.currentQIndex / this.questions.length) * 100;
-                document.getElementById('progress-fill').style.width = `${pct}%`;
-
-                // Render Options
-                const grid = document.getElementById('options-grid');
+                const grid = document.getElementById('quiz-options');
                 grid.innerHTML = '';
-                
                 q.options.forEach(opt => {
                     const btn = document.createElement('button');
-                    btn.className = `w-full p-4 bg-white border-2 border-reggio-wood/20 rounded-xl text-lg font-medium text-reggio-stone hover:bg-reggio-cream hover:border-reggio-sage transition-all active:scale-95 shadow-sm text-left`;
-                    btn.innerText = opt;
-                    btn.onclick = (e) => this.handleAnswer(opt, q.answer, e.target);
+                    btn.className = "w-full p-4 bg-white border-2 border-reggio-wood/20 rounded-xl text-lg text-reggio-stone hover:bg-reggio-cream hover:border-reggio-sage transition-all active:scale-95 shadow-sm text-left";
+                    btn.innerHTML = opt;
+                    btn.onclick = (e) => this.check(opt, q.correctAnswer, e.target);
                     grid.appendChild(btn);
                 });
-
-                // Hide feedback
-                const fb = document.getElementById('feedback-overlay');
-                fb.classList.add('hidden');
-                fb.classList.remove('opacity-100');
-                fb.classList.add('opacity-0');
             },
 
-            handleAnswer: function(selected, correct, btnElement) {
-                if (document.getElementById('feedback-overlay').classList.contains('opacity-100')) return; // Prevent double clicking
+            check(selected, correct, btn) {
+                if(btn.disabled) return;
+                const btns = document.getElementById('quiz-options').children;
+                Array.from(btns).forEach(b => b.disabled = true);
 
-                const isCorrect = selected === correct;
-                
-                if (isCorrect) {
-                    AudioSys.playCorrect();
+                if (selected === correct) {
+                    AudioSys.correct();
+                    btn.classList.add('bg-green-100', 'border-green-500');
                     this.score += TEACHER_SETTINGS.pointsPerCorrect;
                     this.showFeedback(true);
-                    setTimeout(() => {
-                        this.currentQIndex++;
-                        this.renderQuestion();
-                    }, TEACHER_SETTINGS.animationSpeed);
+                    setTimeout(() => { this.idx++; this.render(); }, 1200);
                 } else {
-                    AudioSys.playWrong();
-                    this.score = Math.max(0, this.score - TEACHER_SETTINGS.pointsPenalty);
+                    AudioSys.wrong();
+                    btn.classList.add('bg-red-100', 'border-red-500');
+                    // Highlight correct one
+                    Array.from(btns).forEach(b => { if(b.innerHTML === correct) b.classList.add('bg-green-50', 'border-green-300'); });
                     this.lives--;
-                    
-                    btnElement.classList.add('bg-red-50', 'border-red-300');
-                    btnElement.classList.add('shake-anim'); // We'd need to define this CSS, keeping it simple for now
-                    
-                    this.updateStats();
-                    
-                    if (this.lives <= 0) {
-                        this.endGame(false);
-                    }
+                    this.showFeedback(false);
+                    if(this.lives <= 0) setTimeout(() => this.end(false), 1500);
+                    else setTimeout(() => { this.idx++; this.render(); }, 1500);
                 }
-                this.updateStats();
+                this.updateUI();
             },
 
-            useHint: function() {
-                if (this.hints <= 0) return;
-                
-                const q = this.questions[this.currentQIndex];
-                const grid = document.getElementById('options-grid');
-                const buttons = Array.from(grid.children);
-                
-                // Find wrong answers that haven't been disabled yet
-                const wrongButtons = buttons.filter(btn => btn.innerText !== q.answer && !btn.disabled);
-                
-                if (wrongButtons.length > 0) {
-                    // Disable/Hide one wrong answer
-                    const toRemove = wrongButtons[Math.floor(Math.random() * wrongButtons.length)];
-                    toRemove.style.opacity = '0.3';
-                    toRemove.disabled = true;
-                    this.hints--;
-                    AudioSys.playClick();
-                    document.getElementById('hints-left').innerText = this.hints;
-                    
-                    if(this.hints === 0) {
-                        document.getElementById('hint-btn').classList.add('opacity-50', 'cursor-not-allowed');
-                    }
-                }
-            },
-
-            showFeedback: function(isCorrect) {
-                const fb = document.getElementById('feedback-overlay');
+            showFeedback(isCorrect) {
+                const ol = document.getElementById('feedback-overlay');
+                const box = document.getElementById('feedback-box');
                 const icon = document.getElementById('fb-icon');
                 const text = document.getElementById('fb-text');
                 
-                fb.classList.remove('hidden');
-                // Trigger reflow
-                void fb.offsetWidth;
-                fb.classList.remove('opacity-0');
-                fb.classList.add('opacity-100');
+                ol.classList.remove('opacity-0');
+                box.classList.remove('scale-95');
+                box.classList.add('scale-100');
                 
-                if (isCorrect) {
-                    icon.className = 'ph-fill ph-check-circle text-6xl text-reggio-sage mb-2 block animate-bounce';
-                    text.innerText = "Excellent!";
-                    text.className = "text-2xl font-bold text-reggio-darkSage";
+                if(isCorrect) {
+                    box.className = "bg-white/95 backdrop-blur shadow-2xl rounded-2xl p-8 transform scale-100 transition-transform duration-300 text-center border-4 border-reggio-sage";
+                    icon.className = "ph-fill ph-check-circle text-6xl text-reggio-sage mb-2";
+                    text.innerText = "Correct!";
+                } else {
+                    box.className = "bg-white/95 backdrop-blur shadow-2xl rounded-2xl p-8 transform scale-100 transition-transform duration-300 text-center border-4 border-red-400";
+                    icon.className = "ph-fill ph-x-circle text-6xl text-red-400 mb-2";
+                    text.innerText = "Keep Trying!";
                 }
+
+                setTimeout(() => {
+                    ol.classList.add('opacity-0');
+                    box.classList.add('scale-95');
+                    box.classList.remove('scale-100');
+                }, 1000);
             },
 
-            updateStats: function() {
+            updateUI() {
                 document.getElementById('score-display').innerText = this.score;
                 document.getElementById('lives-display').innerText = this.lives;
             },
 
-            endGame: function(won) {
-                const overlay = document.getElementById('feedback-overlay');
-                overlay.classList.remove('hidden', 'opacity-0');
-                overlay.classList.add('opacity-100');
-                overlay.innerHTML = `
-                    <div class="text-center p-8">
-                        <i class="ph-fill ${won ? 'ph-trophy' : 'ph-smiley-sad'} text-6xl ${won ? 'text-yellow-400' : 'text-gray-400'} mb-4"></i>
-                        <h2 class="text-3xl font-bold mb-2 text-reggio-stone">${won ? 'Module Complete!' : 'Try Again'}</h2>
-                        <p class="mb-6 text-lg">Final Score: <span class="font-bold text-reggio-darkSage">${this.score}</span></p>
-                        <button onclick="App.showMenu()" class="px-6 py-3 bg-reggio-sage text-white rounded-full font-bold hover:bg-reggio-darkSage transition-colors shadow-lg">
-                            Return to Garden
-                        </button>
+            end(won = true) {
+                if (this.lives > 0) {
+                    AudioSys.play(400, 'sine', 0.1); // Win sound
+                    confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#9EB298', '#C89F91'] });
+                    // Save
+                    const key = 'reggio_' + App.currentData.filename;
+                    const prev = JSON.parse(localStorage.getItem(key) || '{}');
+                    localStorage.setItem(key, JSON.stringify({ score: Math.max(this.score, prev.score || 0) }));
+                }
+                
+                document.getElementById('quiz-options').innerHTML = `
+                    <div class="col-span-full text-center py-8">
+                        <h2 class="text-3xl font-bold mb-4">${this.lives > 0 ? 'Activity Complete!' : 'Out of Lives'}</h2>
+                        <p class="text-xl mb-6">Final Score: ${this.score}</p>
+                        <button onclick="App.showMenu()" class="px-8 py-3 bg-reggio-sage text-white rounded-full font-bold shadow-lg hover:bg-reggio-darkSage">Return to Garden</button>
                     </div>
                 `;
+            }
+        };
 
-                if (won) {
-                    AudioSys.playWin();
-                    confetti({
-                        particleCount: 100,
-                        spread: 70,
-                        origin: { y: 0.6 },
-                        colors: ['#9EB298', '#C89F91', '#F9F7F2']
-                    });
-                    App.saveProgress(this.currentFilename, this.score, true);
+        // === MEMORY ENGINE ===
+        const MemoryEngine = {
+            cards: [],
+            flipped: [],
+            matches: 0,
+            
+            start(vocabList) {
+                App.switchView('view-memory');
+                document.getElementById('match-count').innerText = 0;
+                this.matches = 0;
+                this.flipped = [];
+                
+                // Take up to 8 pairs (16 cards) to fit screen
+                const subset = vocabList.sort(() => 0.5 - Math.random()).slice(0, 8);
+                
+                // Create pairs
+                let deck = [];
+                subset.forEach((v, i) => {
+                    deck.push({ id: i, text: v.term, type: 'term' });
+                    deck.push({ id: i, text: v.definition, type: 'def' });
+                });
+                deck.sort(() => 0.5 - Math.random());
+                
+                const grid = document.getElementById('memory-grid');
+                grid.innerHTML = '';
+                
+                deck.forEach((card, idx) => {
+                    const el = document.createElement('div');
+                    el.className = "memory-card w-full h-32 md:h-40 relative cursor-pointer group";
+                    el.innerHTML = `
+                        <div class="memory-face memory-front rounded-xl border-2 border-reggio-sage">
+                            <i class="ph ph-plant text-4xl opacity-50"></i>
+                        </div>
+                        <div class="memory-face memory-back bg-white rounded-xl overflow-hidden flex items-center justify-center p-2">
+                            <span class="text-sm md:text-base font-bold leading-tight select-none">${card.text}</span>
+                        </div>
+                    `;
+                    el.onclick = () => this.flip(el, card);
+                    grid.appendChild(el);
+                });
+            },
+
+            flip(el, card) {
+                if (this.flipped.length >= 2 || el.classList.contains('flipped') || el.classList.contains('matched')) return;
+                
+                AudioSys.flip();
+                el.classList.add('flipped');
+                this.flipped.push({ el, card });
+                
+                if (this.flipped.length === 2) {
+                    this.check();
+                }
+            },
+
+            check() {
+                const [c1, c2] = this.flipped;
+                if (c1.card.id === c2.card.id) {
+                    // Match
+                    setTimeout(() => {
+                        AudioSys.correct();
+                        c1.el.classList.add('matched');
+                        c2.el.classList.add('matched');
+                        this.matches++;
+                        document.getElementById('match-count').innerText = this.matches;
+                        this.flipped = [];
+                        
+                        // Win Check
+                        if (document.querySelectorAll('.memory-card:not(.matched)').length === 0) {
+                            setTimeout(() => {
+                                confetti();
+                                alert("Memory Master! Well done.");
+                                App.showMenu();
+                            }, 500);
+                        }
+                    }, 600);
+                } else {
+                    // No match
+                    setTimeout(() => {
+                        AudioSys.wrong();
+                        c1.el.classList.remove('flipped');
+                        c2.el.classList.remove('flipped');
+                        this.flipped = [];
+                    }, 1200);
                 }
             }
         };
 
-        // Start the app
         window.onload = () => App.init();
 
     </script>
