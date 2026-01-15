@@ -222,7 +222,6 @@
             handleTitleClick() {
                 // If we have a module loaded, go to its activity Select. Otherwise go to Main Menu.
                 if (this.currentData) {
-                    // Get title again safely
                     const modTitle = MODULE_LIST.find(m => m.file === this.currentData.filename)?.name || "Activities";
                     this.showActivitySelect(modTitle);
                 } else {
@@ -233,7 +232,7 @@
             showActivitySelect(title) {
                 this.switchView('view-activity-select');
                 document.getElementById('selected-module-title').innerText = title;
-                document.getElementById('header-title').innerText = title; // Update header to match current module
+                document.getElementById('header-title').innerText = title; 
                 
                 const grid = document.getElementById('activity-grid');
                 grid.innerHTML = '';
@@ -249,72 +248,112 @@
                 const d = this.currentData;
                 let hasActivities = false;
 
-                // 1. QUIZ
+                // --- DATA DETECTION STRATEGY (Supports Legacy tags) ---
+                
+                // 1. QUIZ (Legacy: "quiz")
                 if (d.quiz && d.quiz.length > 0) {
                     createBtn('ph-question', 'Standard Quiz', () => QuizEngine.start(d.quiz, 'Quiz'), 'border-blue-400');
                     hasActivities = true;
                 }
 
-                // 2. VOCABULARY
+                // 2. VOCABULARY (Legacy: "vocabulary")
                 if (d.vocabulary && d.vocabulary.length > 0) {
                     createBtn('ph-book-bookmark', 'Vocabulary', () => QuizEngine.start(this.transformVocabToQuiz(d.vocabulary), 'Vocabulary'), 'border-green-400');
                     hasActivities = true;
                 }
 
-                // 3. PEOPLE
+                // 3. PEOPLE (Legacy: "people" or just implicit in "locations" sometimes, but typically "people")
+                // Added check for "people" array
                 if (d.people && d.people.length > 0) {
                     createBtn('ph-user', 'People', () => QuizEngine.start(this.transformConnectionsToQuiz(d.people, 'person'), 'People'), 'border-orange-400');
                     hasActivities = true;
                 }
 
-                // 4. PLACES
-                if (d.places && d.places.length > 0) {
-                    createBtn('ph-map-pin', 'Places', () => QuizEngine.start(this.transformConnectionsToQuiz(d.places, 'place'), 'Places'), 'border-red-400');
+                // 4. PLACES / LOCATIONS (Legacy: "locations", Modern: "places")
+                // We combine both into one array to be safe
+                const placesData = [...(d.places || []), ...(d.locations || [])];
+                if (placesData.length > 0) {
+                    createBtn('ph-map-pin', 'Places & Locations', () => QuizEngine.start(this.transformConnectionsToQuiz(placesData, 'place'), 'Places'), 'border-red-400');
                     hasActivities = true;
                 }
 
-                // 5. DATES
-                if (d.dates && d.dates.length > 0) {
-                    createBtn('ph-clock', 'Dates & Timeline', () => QuizEngine.start(this.transformDatesToQuiz(d.dates), 'Dates'), 'border-purple-400');
+                // 5. DATES / TIMELINE (Legacy: "timeline", Modern: "dates")
+                const timelineData = [...(d.dates || []), ...(d.timeline || [])];
+                if (timelineData.length > 0) {
+                    createBtn('ph-clock', 'Timeline Challenge', () => QuizEngine.start(this.transformDatesToQuiz(timelineData), 'Dates'), 'border-purple-400');
+                    hasActivities = true;
+                }
+                
+                // 6. TRUE / FALSE (Legacy: "trueFalse")
+                if (d.trueFalse && d.trueFalse.length > 0) {
+                    createBtn('ph-check-circle', 'True or False', () => QuizEngine.start(this.transformTrueFalseToQuiz(d.trueFalse), 'True/False'), 'border-indigo-400');
                     hasActivities = true;
                 }
 
                 if (!hasActivities) {
-                    grid.innerHTML = `<div class="col-span-full text-center text-gray-400 p-8">No specific activities found in this module.</div>`;
+                    grid.innerHTML = `
+                        <div class="col-span-full text-center bg-white p-8 rounded-xl border border-red-200">
+                            <i class="ph ph-warning text-4xl text-red-300 mb-2"></i>
+                            <p class="text-gray-500">No compatible games found in this module.</p>
+                            <p class="text-xs text-gray-400 mt-2">Checked for: quiz, vocabulary, people, places/locations, dates/timeline, trueFalse.</p>
+                        </div>`;
                 }
             },
 
             // --- DATA TRANSFORMERS ---
-            // Converts different JSON data types into a standard Question/Answer format
             
             transformVocabToQuiz(list) {
                 return list.map(v => {
-                    // Find 3 wrong definitions
-                    const others = list.filter(i => i !== v).sort(() => 0.5 - Math.random()).slice(0, 3).map(i => i.definition);
-                    const options = [...others, v.definition].sort(() => 0.5 - Math.random());
-                    return { question: `What is the definition of:<br><b class="text-reggio-darkSage text-3xl block mt-2">"${v.term}"</b>`, options: options, correctAnswer: v.definition };
+                    // Safe property access
+                    const term = v.term || v.word;
+                    const def = v.definition || v.meaning;
+                    
+                    const others = list.filter(i => i !== v).sort(() => 0.5 - Math.random()).slice(0, 3).map(i => i.definition || i.meaning);
+                    const options = [...others, def].sort(() => 0.5 - Math.random());
+                    return { question: `What is the definition of:<br><b class="text-reggio-darkSage text-3xl block mt-2">"${term}"</b>`, options: options, correctAnswer: def };
                 });
             },
             
             transformDatesToQuiz(list) {
                 return list.map(d => {
-                    // Find 3 wrong dates
-                    const others = list.filter(i => i !== d).sort(() => 0.5 - Math.random()).slice(0, 3).map(i => i.date);
-                    const options = [...others, d.date].sort(() => 0.5 - Math.random());
-                    return { question: `When did this happen?<br><br><i>"${d.event}"</i>`, options: options, correctAnswer: d.date };
+                    // Handle "date" OR "year"
+                    const dateVal = d.date || d.year;
+                    const evt = d.event || d.description;
+
+                    const others = list.filter(i => i !== d).sort(() => 0.5 - Math.random()).slice(0, 3).map(i => i.date || i.year);
+                    const options = [...others, dateVal].sort(() => 0.5 - Math.random());
+                    return { question: `When did this happen?<br><br><i>"${evt}"</i>`, options: options, correctAnswer: dateVal };
                 });
             },
 
             transformConnectionsToQuiz(list, type) {
                 return list.map(item => {
-                    const name = item.name || item.term; 
-                    const desc = item.role || item.description || item.definition;
-                    const others = list.filter(i => i !== item).sort(() => 0.5 - Math.random()).slice(0, 3).map(i => i.name || i.term);
+                    // Smart property detection for legacy files
+                    const name = item.name || item.term || item.location || item.place || item.person; 
+                    const desc = item.role || item.description || item.definition || item.fact;
+                    
+                    const others = list.filter(i => i !== item).sort(() => 0.5 - Math.random()).slice(0, 3).map(i => i.name || i.term || i.location || i.place || i.person);
                     const options = [...others, name].sort(() => 0.5 - Math.random());
                     
-                    let prompt = type === 'person' ? "Who is this person?" : "What place is this?";
+                    let prompt = "Who or what is this?";
+                    if(type === 'place') prompt = "Where is this?";
+                    if(type === 'person') prompt = "Who is this person?";
                     
                     return { question: `${prompt}<br><br><i>"${desc}"</i>`, options: options, correctAnswer: name };
+                });
+            },
+            
+            transformTrueFalseToQuiz(list) {
+                return list.map(item => {
+                    // Legacy TrueFalse usually has {question: "...", answer: "true"}
+                    // Normalize answer to string "True" or "False" with capital first letter
+                    let correct = String(item.answer).toLowerCase() === 'true' ? 'True' : 'False';
+                    
+                    return { 
+                        question: item.question, 
+                        options: ['True', 'False'], 
+                        correctAnswer: correct 
+                    };
                 });
             },
 
@@ -330,7 +369,7 @@
             },
 
             showMenu() {
-                this.currentData = null; // Clear selection
+                this.currentData = null; 
                 this.switchView('view-menu');
                 document.getElementById('header-title').innerText = TEACHER_SETTINGS.appTitle;
                 this.renderMenu();
@@ -353,6 +392,13 @@
             
             start(data, type) {
                 App.switchView('view-quiz');
+                // Check if data exists
+                if(!data || data.length === 0) {
+                    alert("No questions available for this activity.");
+                    App.handleTitleClick();
+                    return;
+                }
+
                 this.questions = data.sort(() => 0.5 - Math.random());
                 this.idx = 0;
                 this.score = 0;
