@@ -1,0 +1,142 @@
+{
+  "moduleInfo": {
+    "title": "Iditarod 7-10: Champions, Evolution, and the Modern Era",
+    "subject": "Social Studies",
+    "level": "Intermediate"
+  },
+  "vocabulary": [
+    { "term": "maneuvers", "definition": "an armed forces training exercise; a procedure or method of working usually involving expert physical movement" },
+    { "term": "scratched", "definition": "a contestant whose name is withdrawn" },
+    { "term": "veteran", "definition": "a musher who is experienced" },
+    { "term": "unprecedented", "definition": "having no earlier occurrence of something similar" },
+    { "term": "cutthroat", "definition": "ruthless, tough competition, not befriending others, each man for himself with the sole purpose of winning" },
+    { "term": "finished in the money", "definition": "in the top 20 places earning prize money" },
+    { "term": "epitome", "definition": "ideal or perfect example" },
+    { "term": "heralded", "definition": "to greet with enthusiasm; to give notice of" },
+    { "term": "sabotage", "definition": "an act or process tending to hamper or hurt" },
+    { "term": "hiatus", "definition": "an interruption in time or continuity, break" },
+    { "term": "stamina", "definition": "the moral or emotional strength to continue with a difficult process; endurance" },
+    { "term": "quantum", "definition": "large, significant" },
+    { "term": "vindicated", "definition": "to free from allegation or blame" },
+    { "term": "necropsy", "definition": "an investigation into the cause of death performed on an animal" },
+    { "term": "precarious", "definition": "dependent on chance circumstances, unknown conditions, or uncertain developments" }
+  ],
+  "people": [
+    { "name": "George Attla", "role": "Famous forerunner in the 1970s for breeding dogs specifically for racing success" },
+    { "name": "Emmitt Peters", "role": "Champion of the 1975 Iditarod who now greets mushers at his hometown checkpoint of Ruby" },
+    { "name": "Rick Swenson", "role": "Five-time Iditarod champion who moved from Minnesota to Alaska at age 22 and won championships in 1977, 1979, 1981, 1982, and 1991" },
+    { "name": "Susan Butcher", "role": "Four-time Iditarod champion who won in 1986, 1987, 1988, and 1990; received her famous lead dog Granite from Joe Redington Sr." },
+    { "name": "Martin Buser", "role": "Swiss-born musher who won four Iditarod championships in 1992, 1994, 1997, and 2002; broke the sub-11 day barrier in 1992" },
+    { "name": "Jeff King", "role": "Four-time Iditarod champion from California who moved to Alaska in 1975 and won in 1993, 1996, 1998, and 2006" },
+    { "name": "Doug Swingley", "role": "Four-time Iditarod champion who won in 1995, 1999, 2000, and 2001; started with a mishmash team including dogs from the pound" },
+    { "name": "Dallas Seavey", "role": "Six-time Iditarod champion who won in 2012, 2014, 2015, 2016, 2021, and 2024; holds the current speed record" },
+    { "name": "Mitch Seavey", "role": "Three-time Iditarod champion who won in 2004, 2013, and 2017; set a speed record in 2017 and became the oldest winner" },
+    { "name": "Lance Mackey", "role": "Four-time Iditarod champion who won in 2007, 2008, 2009, and 2010; runs the Comeback Kennel north of Fairbanks" }
+  ],
+  "places": [
+    { "name": "Eureka", "significance": "Bush community where Rick Swenson built his home after moving from Minnesota to Alaska" },
+    { "name": "Poorman, Alaska", "significance": "Location where mushers were pinned down by stormy weather in 1976 until Native mushers Billy Demoski and Warner Vent broke trail" },
+    { "name": "South Fork of the Kuskokwim River", "significance": "Site of the 1973 near-death experience where Tom Mercer rescued Terry Miller from a dangerous overflow water hole" },
+    { "name": "Norton Sound", "significance": "Coastal area where Bob Ernisse was caught in a ground blizzard at the Solomon Blow Hole in 1992" },
+    { "name": "Denali Park", "significance": "Area near Denali National Park where Jeff King settled after moving from California in 1975" },
+    { "name": "Big Lake, Alaska", "significance": "Town where Martin Buser moved from Zurich, Switzerland in the 1970s" },
+    { "name": "Comeback Kennel", "significance": "Lance Mackey's kennel just north of Fairbanks, named after his setbacks and comebacks throughout his career" },
+    { "name": "Kotzebue, Alaska", "significance": "Hometown of John Baker, who became the first Native Alaskan to win the Iditarod since 1976 when he won in 2011" }
+  ],
+  "dates": [
+    { "date": "1973", "event": "First long-distance Iditarod Race held; Tom Mercer and Terry Miller had near-death experience on South Fork of the Kuskokwim River" },
+    { "date": "1974", "event": "Mary Shields and Lolly Medley became the first two women to complete the Iditarod; severe mountain storm in Alaska Range with -130 wind chill" },
+    { "date": "1975", "event": "Norman Vaughan entered race at age 69 and suffered severe frostbite after 10-inch overflow on the Kuskokwim River" },
+    { "date": "1976", "event": "Norman Vaughan was lost for 5 days in a blizzard; Native mushers broke trail at Poorman; Rick Swenson's rookie year finishing 10th" },
+    { "date": "1978", "event": "Dick Mackey and Rick Swenson were separated by only the tick of a clock for first and second place; Norman Vaughan returned to complete the race" },
+    { "date": "1982", "event": "Susan Butcher placed 2nd behind Rick Swenson in his 4th championship race; Herbie Nayokpuk finished 7th after retreating from a storm" },
+    { "date": "1992", "event": "Martin Buser broke the sub-11 day barrier and won championship; Bob Ernisse had near-death experience at Solomon Blow Hole" },
+    { "date": "2011", "event": "John Baker from Kotzebue became the first Native Alaskan to win the Iditarod since 1976" },
+    { "date": "2017", "event": "Mitch Seavey set the fastest time record of 8 days, 3 hours, 40 minutes, and 13 seconds while becoming the oldest winner" },
+    { "date": "2021", "event": "Dallas Seavey broke his father's record with a time of 7 days, 14 hours, 8 minutes, and 57 seconds" }
+  ],
+  "artworks": [
+    { "title": "Early Iditarod Sleds Diagram", "medium": "Diagram", "description": "Graphic showing large, heavy wooden freighting sleds up to 13 feet long, weighing 80-90 pounds, fully loaded at 400-500 pounds" },
+    { "title": "Dog Care Improvements Pentagon", "medium": "Diagram", "description": "Five-sided graphic showing areas of improvement including long-distance racing diets and pacing of dogs" },
+    { "title": "Near-Death Experiences Chart", "medium": "Table", "description": "Chart documenting multiple near-death stories from 1973-1979 including Tom Mercer, Norman Vaughan, and Joe May" },
+    { "title": "Rick Swenson Timeline", "medium": "Timeline", "description": "Sequential timeline showing Swenson's journey from age 22 in Minnesota through his five championship wins" },
+    { "title": "Susan Butcher Early History Timeline", "medium": "Timeline", "description": "Timeline showing Butcher's progression from age 17 in Massachusetts through her 2nd place finish in 1982" },
+    { "title": "Bob Ernisse Rescue Flowchart", "medium": "Flowchart", "description": "Visual showing the sequence of events leading to Ernisse's rescue from hypothermia and frostbite in 1992" },
+    { "title": "Martin Buser Championship Timeline", "medium": "Timeline", "description": "Timeline from Switzerland through his four Iditarod championships and sub-11 day barrier break" },
+    { "title": "Five Decades of Improvements Pentagon", "medium": "Diagram", "description": "Multi-sided graphic showing improvements including communication links, trail markers, and rescue operations" }
+  ],
+  "trueFalse": [
+    { "statement": "When Army soldiers on maneuvers tried to clear the trail before the first 1973 race, all six machines made it through successfully.", "isTrue": false, "correction": "Only one out of six machines made it the entire way, and storms covered their trails with more snow." },
+    { "statement": "Early Iditarod sleds were large, heavy wooden freighting sleds weighing 80-90 pounds.", "isTrue": true, "correction": "These sleds were built for hauling and transporting, not racing, and could weigh 400-500 pounds when fully loaded." },
+    { "statement": "George Attla was a famous forerunner in the 1970s for breeding dogs specifically for racing success.", "isTrue": true, "correction": "While most mushers used dogs for both racing and work, Attla focused on breeding for racing." },
+    { "statement": "Native village mushers in early races were focused on winning and competitive edges.", "isTrue": false, "correction": "They were more interested in showing other mushers the route, telling stories, and doing the hard work of trailbreaking." },
+    { "statement": "Rick Swenson won the 1978 race by one second over Dick Mackey.", "isTrue": false, "correction": "Dick Mackey won by one second over Rick Swenson; they were separated by only the tick of a clock." },
+    { "statement": "Women were not allowed to race in the Iditarod until the 1980s.", "isTrue": false, "correction": "Women were never prohibited; two women signed up and completed the race in 1974." },
+    { "statement": "Susan Butcher received her famous lead dog Granite for free from Joe Redington Sr.", "isTrue": true, "correction": "Joe offered her the small, scroungy-looking dog for free, and Granite led her to three of her four victories." },
+    { "statement": "Martin Buser broke the sub-11 day barrier and won the championship in 1992.", "isTrue": true, "correction": "This was a significant achievement in the evolution of race speeds." },
+    { "statement": "Dallas Seavey has won the Iditarod six times, the most of any musher.", "isTrue": true, "correction": "He won in 2012, 2014, 2015, 2016, 2021, and 2024, and holds the current speed record." },
+    { "statement": "Climate change has had no effect on the Iditarod Race.", "isTrue": false, "correction": "Low snowfall affects route choices, rivers break early, and there are economic impacts to checkpoint towns when routes change." }
+  ],
+  "quiz": [
+    {
+      "question": "What happened when Army soldiers tried to clear the trail before the first 1973 Iditarod Race?",
+      "options": ["All machines succeeded", "Only one out of six machines made it the entire way", "Half the machines made it", "No machines made it through"],
+      "correctAnswer": "Only one out of six machines made it the entire way"
+    },
+    {
+      "question": "How much did early Iditarod sleds weigh when fully loaded?",
+      "options": ["100-200 pounds", "200-300 pounds", "300-400 pounds", "400-500 pounds"],
+      "correctAnswer": "400-500 pounds"
+    },
+    {
+      "question": "Who was a famous forerunner in the 1970s for breeding dogs specifically for racing success?",
+      "options": ["Joe Redington Sr.", "George Attla", "Rick Swenson", "Emmitt Peters"],
+      "correctAnswer": "George Attla"
+    },
+    {
+      "question": "What was the main focus of Native village mushers in the early race years?",
+      "options": ["Winning at all costs", "Showing the route, telling stories, and trailbreaking", "Setting speed records", "Training other mushers"],
+      "correctAnswer": "Showing the route, telling stories, and trailbreaking"
+    },
+    {
+      "question": "Who won the 1978 Iditarod by only the tick of a clock?",
+      "options": ["Rick Swenson", "Dick Mackey", "Susan Butcher", "Jeff King"],
+      "correctAnswer": "Dick Mackey"
+    },
+    {
+      "question": "When did the first two women complete the Iditarod Race?",
+      "options": ["1973", "1974", "1975", "1978"],
+      "correctAnswer": "1974"
+    },
+    {
+      "question": "Who gave Susan Butcher her famous lead dog Granite?",
+      "options": ["Rick Swenson", "Dorothy Page", "Joe Redington Sr.", "Martin Buser"],
+      "correctAnswer": "Joe Redington Sr."
+    },
+    {
+      "question": "Who broke the sub-11 day barrier in 1992?",
+      "options": ["Rick Swenson", "Susan Butcher", "Martin Buser", "Jeff King"],
+      "correctAnswer": "Martin Buser"
+    },
+    {
+      "question": "How many times has Dallas Seavey won the Iditarod?",
+      "options": ["Four times", "Five times", "Six times", "Seven times"],
+      "correctAnswer": "Six times"
+    },
+    {
+      "question": "When did John Baker become the first Native Alaskan to win the Iditarod since 1976?",
+      "options": ["2007", "2009", "2011", "2013"],
+      "correctAnswer": "2011"
+    },
+    {
+      "question": "What is the name of Lance Mackey's kennel north of Fairbanks?",
+      "options": ["Victory Kennel", "Comeback Kennel", "Champion Kennel", "Alaska Kennel"],
+      "correctAnswer": "Comeback Kennel"
+    },
+    {
+      "question": "What year did Mitch Seavey set a speed record and become the oldest winner?",
+      "options": ["2013", "2015", "2017", "2021"],
+      "correctAnswer": "2017"
+    }
+  ]
+}
