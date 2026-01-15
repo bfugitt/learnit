@@ -1,0 +1,129 @@
+```json
+{
+  "moduleInfo": {
+    "title": "Iditarod 1-3: Trail History and the Great Race",
+    "subject": "Social Studies",
+    "level": "Intermediate"
+  },
+  "vocabulary": [
+    { "term": "grandeur", "definition": "the quality or state of being grand" },
+    { "term": "husky", "definition": "a heavy-coated working dog of the New World arctic region" },
+    { "term": "dog mushing", "definition": "to travel over snow with a sled drawn by dogs" },
+    { "term": "serum", "definition": "a liquid that is injected into someone's blood to protect them against a poison or disease" },
+    { "term": "indigenous", "definition": "descended from the earliest known inhabitants of a place" },
+    { "term": "sourdough", "definition": "an old-time prospector or pioneer, particularly in Alaska or northwestern Canada, stemming from the use of sourdough bread as a staple food" },
+    { "term": "claim jumping", "definition": "the act of someone illegally seizing or attempting to take over a mining claim or land that another person or party has already claimed" },
+    { "term": "roadhouses", "definition": "an inn or tavern outside city limits providing meals to travelers" },
+    { "term": "purse", "definition": "prize money, often the whole sum of money awarded to all who place" },
+    { "term": "tundra", "definition": "a level or rolling treeless plain that is characteristic of arctic and subarctic regions" },
+    { "term": "diphtheria", "definition": "a serious bacterial infection that usually affects the mucous membranes of the nose and throat and is highly contagious" },
+    { "term": "inoculations", "definition": "the introduction of a pathogen or antigen into a living organism to stimulate the production of antibodies" },
+    { "term": "epoch", "definition": "an extended period of time usually characterized by a distinctive development or by a memorable series of events" },
+    { "term": "decimation", "definition": "to reduce drastically especially in number" },
+    { "term": "gale-force", "definition": "very strong wind" }
+  ],
+  "people": [
+    { "name": "Joe Redington Sr.", "role": "Co-founder of the modern Iditarod Race, known as the Father of the Iditarod" },
+    { "name": "Dorothy Page", "role": "Co-founder of the modern Iditarod Race, known as the Mother of the Iditarod" },
+    { "name": "Leonhard Seppala", "role": "Norwegian musher who won the All-Alaska Sweepstakes three times and heroically transported serum 91 miles during the 1925 Nome diphtheria outbreak" },
+    { "name": "Scotty Allan", "role": "Famous musher who won multiple All-Alaska Sweepstakes races and innovated lighter sleds and better harnesses" },
+    { "name": "Gunnar Kaasen", "role": "Musher who completed the final 53-mile leg of the 1925 Serum Run to Nome, controversial for not waking relief musher Ed Rohn" },
+    { "name": "Dr. Curtis Welch", "role": "Doctor who diagnosed the diphtheria outbreak in Nome in 1925 and helped devise the relay plan" },
+    { "name": "Wild Bill Shannon", "role": "Former Army blacksmith and mail driver who ran the first leg of the 1925 Serum Run from Nenana to Tolovana" },
+    { "name": "John Iron Man Johnson", "role": "Musher who won the 1910 All-Alaska Sweepstakes in record time using Siberian huskies" }
+  ],
+  "places": [
+    { "name": "Seward, Alaska", "significance": "Southern starting point of the historic Iditarod Trail" },
+    { "name": "Nome, Alaska", "significance": "Northern endpoint of the Iditarod Trail and site of major gold rush; also the destination for the 1925 Serum Run" },
+    { "name": "Iditarod Trail", "significance": "Historic trail connecting Seward to Nome, now a National Historical Trail, spanning over 1,000 miles through Alaska wilderness" },
+    { "name": "Cook Inlet Country", "significance": "Region where the southern portion of the Iditarod Trail route was created in the late 1880s" },
+    { "name": "Nenana", "significance": "Town where the serum was transferred from train to dog sled during the 1925 relay" },
+    { "name": "Norton Bay", "significance": "Frozen bay that Leonhard Seppala crossed as a dangerous shortcut during the 1925 Serum Run" },
+    { "name": "Resurrection Creek", "significance": "Site of the first notable gold strike in the Cook Inlet region in 1891" },
+    { "name": "Bering Land Bridge", "significance": "Ancient landmass that connected Asia and North America, allowing migration of people and animals between continents" }
+  ],
+  "dates": [
+    { "date": "1891", "event": "First notable gold strike made at Resurrection Creek in Cook Inlet region" },
+    { "date": "1896", "event": "More than 3,000 people had poured into the Cook Inlet district during the gold rush" },
+    { "date": "1898", "event": "Second rush into the region occurred in Cook Inlet and Nome's golden shores" },
+    { "date": "1908", "event": "Inaugural All-Alaska Sweepstakes held with a 408-mile course from Nome" },
+    { "date": "1910", "event": "John Iron Man Johnson won the All-Alaska Sweepstakes in record time using Siberian huskies" },
+    { "date": "1918", "event": "All-Alaska Sweepstakes was discontinued and never revived after World War I" },
+    { "date": "January 1925", "event": "Two young Eskimo children died from diphtheria, sparking the famous Serum Run to Nome" },
+    { "date": "1925", "event": "The Great Race for Life - relay of 20 mushers transported life-saving diphtheria serum 674 miles to Nome in just over 5 days" }
+  ],
+  "artworks": [
+    { "title": "Map showing Seward and Nome locations", "medium": "Map", "description": "Geographic map of Alaska highlighting the endpoints of the historic Iditarod Trail" },
+    { "title": "Goals Graphic Organizer", "medium": "Diagram", "description": "Visual organizer showing three accomplishments of Joe and Vi Redington including dog mushing as state sport" },
+    { "title": "Iditarod Trail Connection Diagram", "medium": "Diagram", "description": "Graphic showing how the trail connected mining camps, trading posts, and settlements" },
+    { "title": "Price Chart by Charles Lee Cadwallader", "medium": "Chart", "description": "Historical price comparison showing costs along the Iditarod Trail with adjusted modern values" },
+    { "title": "All-Alaska Sweepstakes Timeline", "medium": "Timeline", "description": "Sequential events showing the development of early sled dog racing from 1908-1918" },
+    { "title": "1925 Serum Run Flowchart", "medium": "Flowchart", "description": "Diagram showing the steps from diphtheria diagnosis to the organization of the relay transport" },
+    { "title": "Terrain Pentagon", "medium": "Diagram", "description": "Five-sided graphic showing different terrain types crossed during the 408-mile All-Alaska Sweepstakes" }
+  ],
+  "trueFalse": [
+    { "statement": "Joe Redington Sr. and Dorothy Page are called the Father and Mother of the Iditarod Race.", "isTrue": true, "correction": "Bill Sherwonit gave them these titles for their founding role in creating the modern race." },
+    { "statement": "The early teams of sled dogs had 5 to 7 dogs.", "isTrue": true, "correction": "This was the typical size for early dog sled teams in Alaska." },
+    { "statement": "Dogs had to be middle-aged to be successful on dog sled teams.", "isTrue": false, "correction": "Dogs of various ages could be successful; age alone did not determine success on teams." },
+    { "statement": "The Iditarod Trail was declared a National Historical Trail.", "isTrue": true, "correction": "This was one of the three major goals accomplished by Joe and Vi Redington." },
+    { "statement": "Planes were commonly used to transport the serum during the 1925 diphtheria outbreak.", "isTrue": false, "correction": "Bush flying was too new and untested in winter conditions, so dog sled relay was used instead." },
+    { "statement": "Mail carriers received special treatment at roadhouses including best seats and first servings.", "isTrue": true, "correction": "Mail carriers earned special acclaim and received the best accommodations at roadhouse inns." },
+    { "statement": "The All-Alaska Sweepstakes was revived after World War I.", "isTrue": false, "correction": "The race was discontinued in 1918 and was never revived after the war." },
+    { "statement": "Leonhard Seppala ran 91 miles during the 1925 Serum Run, the longest individual portion.", "isTrue": true, "correction": "Due to miscommunication, Seppala ran both Henry Ivanoff's section and his own, totaling 91 miles." },
+    { "statement": "Siberian huskies were larger and heavier than the dogs originally used in Alaskan races.", "isTrue": false, "correction": "Siberian huskies were much smaller and lighter than the malamutes and other breeds previously used." },
+    { "statement": "Gunnar Kaasen woke Ed Rohn to complete the final leg of the Serum Run.", "isTrue": false, "correction": "Kaasen did not wake Rohn and instead ran the final 53 miles to Nome himself, causing decades of controversy." }
+  ],
+  "quiz": [
+    {
+      "question": "Who first introduced Joe Redington to the Iditarod Trail?",
+      "options": ["Dorothy Page", "Lee Ellexson", "Bill Sherwonit", "Leonhard Seppala"],
+      "correctAnswer": "Lee Ellexson"
+    },
+    {
+      "question": "What is the nickname of the Iditarod Race presented in the opening of Chapter 1?",
+      "options": ["The Great Northern Challenge", "The Last Great Race", "The Alaskan Adventure", "The Ultimate Mushing Competition"],
+      "correctAnswer": "The Last Great Race"
+    },
+    {
+      "question": "Where and when did humans first begin using dogs to pull sleds?",
+      "options": ["Southern Alaska, 500 years ago", "Northern Eurasia, thousands of years ago", "Arctic Canada, 1000 years ago", "Siberia, 2000 years ago"],
+      "correctAnswer": "Northern Eurasia, thousands of years ago"
+    },
+    {
+      "question": "What determined Charles Lee Cadwallader's daily travel distances on the Iditarod Trail?",
+      "options": ["Weather conditions", "Distance between roadhouses", "Dog team stamina", "Available daylight hours"],
+      "correctAnswer": "Distance between roadhouses"
+    },
+    {
+      "question": "What was needed before 1909 to make dog sledding a true competition?",
+      "options": ["Faster dogs", "Official rules, judges, trails, and purse", "More participants", "Better weather conditions"],
+      "correctAnswer": "Official rules, judges, trails, and purse"
+    },
+    {
+      "question": "Who won the 1910 All-Alaska Sweepstakes in record time using Siberian huskies?",
+      "options": ["Scotty Allan", "Leonhard Seppala", "John Iron Man Johnson", "Fox Maule Ramsay"],
+      "correctAnswer": "John Iron Man Johnson"
+    },
+    {
+      "question": "What disease outbreak led to the famous 1925 Serum Run to Nome?",
+      "options": ["Influenza", "Tuberculosis", "Diphtheria", "Smallpox"],
+      "correctAnswer": "Diphtheria"
+    },
+    {
+      "question": "Why weren't planes used to transport the serum to Nome in 1925?",
+      "options": ["No planes were available", "The serum was too heavy", "Bush flying was new and untested in winter conditions", "The distance was too far"],
+      "correctAnswer": "Bush flying was new and untested in winter conditions"
+    },
+    {
+      "question": "What heroic action did Charlie Olson take during his leg of the 1925 Serum Run?",
+      "options": ["He carried an injured musher", "He ungloved his hands to blanket wrap his freezing dogs", "He ran through a blizzard without a lead dog", "He swam across a frozen river"],
+      "correctAnswer": "He ungloved his hands to blanket wrap his freezing dogs"
+    },
+    {
+      "question": "In what year was the first notable gold strike made at Resurrection Creek?",
+      "options": ["1885", "1891", "1896", "1898"],
+      "correctAnswer": "1891"
+    }
+  ]
+}
+```
