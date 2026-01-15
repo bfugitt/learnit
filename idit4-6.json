@@ -1,0 +1,140 @@
+{
+  "moduleInfo": {
+    "title": "Iditarod 4-6: The Modern Race and Trail Challenges",
+    "subject": "Social Studies",
+    "level": "Intermediate"
+  },
+  "vocabulary": [
+    { "term": "subsistence", "definition": "a source or means of obtaining only the necessities of life" },
+    { "term": "qualifying race", "definition": "a race that must be completed to prove ability to safely complete another race; often there is a list of qualifying races which can earn you entrance into a more famous and highly regarded race" },
+    { "term": "lucrative", "definition": "producing wealth; profitable" },
+    { "term": "cynic", "definition": "someone who finds a fault; a tough critic" },
+    { "term": "glamour", "definition": "an exciting and often illusory and romantic attractiveness" },
+    { "term": "conformation", "definition": "the shape or proportionate dimensions especially of an animal" },
+    { "term": "distemper", "definition": "a highly contagious virus disease of canines and especially of dogs" },
+    { "term": "predispose", "definition": "to make susceptible, or more likely for something to happen" },
+    { "term": "overflow", "definition": "condition caused when water gets on top of an already frozen body of water, not allowing the water to escape" },
+    { "term": "hallucination", "definition": "a visual image or a sound that occurs in the absence of an actual event" },
+    { "term": "tussocks", "definition": "clumps of grass that mushroom out as they grow to heights of 2 feet or more, and when not covered in snow form a natural obstacle course" },
+    { "term": "drop-bags", "definition": "bags with necessary gear, packed prior to race by mushers and transported by volunteers to future rest stops for mushers to access upon arrival" },
+    { "term": "Iditariders", "definition": "fans of the race who pay money to ride on a sled for the ceremonial start of the race, 11 miles through the city of Anchorage" },
+    { "term": "camaraderie", "definition": "a spirit of friendly good-fellowship" },
+    { "term": "elite", "definition": "superior in quality, rank, and skill" }
+  ],
+  "people": [
+    { "name": "Dorothy Page", "role": "President of the Wasilla-Knik Centennial Committee who planned the celebration for Alaska's 100th anniversary and helped organize the first Iditarod Race" },
+    { "name": "Lee Ellexson", "role": "Mail carrier who introduced Joe Redington to the Iditarod Trail and the sport of dog mushing in 1948" },
+    { "name": "Susan Butcher", "role": "Champion musher who won four Iditarod victories with the help of her lead dog Granite; survived a moose attack that killed two of her dogs" },
+    { "name": "Rick Swenson", "role": "Five-time Iditarod champion whose main leader dog Andy helped him win his first four victories" },
+    { "name": "Libby Riddles", "role": "Winner of the 1985 Iditarod Race who became a legend after surviving a harrowing night on Norton Bay sea ice; led by dogs Axle and Dugan" },
+    { "name": "Emmitt Peters", "role": "Winner of the 1975 Iditarod Race from the town of Ruby, nicknamed 'The Yukon Fox'" },
+    { "name": "Herbie Nayokpuk", "role": "Inupiat musher and ivory carver from Shishmaref who drove into a fierce 1982 storm but was forced to retreat" },
+    { "name": "Dick Mackey", "role": "Winner of the 1978 Iditarod Race, separated from second place by only the tick of a clock" }
+  ],
+  "places": [
+    { "name": "Wasilla-Knik", "significance": "Area where Dorothy Page served as president of the Centennial Committee and helped organize the first Iditarod celebration" },
+    { "name": "Anchorage", "significance": "Starting location for the ceremonial 11-mile start of the modern Iditarod Race" },
+    { "name": "Willow", "significance": "Actual starting point of the competitive Iditarod Race after the ceremonial start in Anchorage" },
+    { "name": "Dalzell Gorge", "significance": "Treacherous steep descent from Rainy Pass Lodge, considered a 'controlled fall' where dogs slip and have difficulty getting traction" },
+    { "name": "Farewell Burn", "significance": "Area scarred by a 1976 fire between Rohn and Nikolai, filled with burned timber, stumps, and tussocks that mushers must navigate around" },
+    { "name": "McGrath", "significance": "Popular checkpoint village with population of 346, named after US Marshal Peter McGrath, featuring two stores, restaurant, bar, and large airfield" },
+    { "name": "Shaktoolik", "significance": "Checkpoint where Herbie Nayokpuk and Libby Riddles made memorable decisions to drive into fierce storms" },
+    { "name": "Norton Bay", "significance": "Sea ice area where Libby Riddles survived a harrowing night in 1985 to win the race and become a legend" }
+  ],
+  "dates": [
+    { "date": "1948", "event": "Joe Redington met Lee Ellexson who introduced him to the Iditarod Trail and dog mushing" },
+    { "date": "1967", "event": "First Iditarod Race held as part of Alaska's Centennial celebration" },
+    { "date": "1969", "event": "Joe Redington Sr. promised there would be a long-distance race to Nome by 1973 with $50,000 prize money" },
+    { "date": "1973", "event": "First long-distance Iditarod Trail Sled Dog Race to Nome was held" },
+    { "date": "1974", "event": "Pre-race veterinarian check-ups of all race dogs were implemented" },
+    { "date": "1975", "event": "Corporate sponsor pledged $50,000 prize money and rule changes about dog care were made; Emmitt Peters won the race" },
+    { "date": "1976", "event": "Iditarod Trail Committee considered postponing the race for two years after sponsorship was withdrawn; fire created the Farewell Burn area" },
+    { "date": "1982", "event": "Herbie Nayokpuk drove into a fierce storm at Shaktoolik but was forced to retreat" },
+    { "date": "1985", "event": "Libby Riddles won the race after surviving a harrowing night on Norton Bay sea ice, creating the 'Legend of Libby'" },
+    { "date": "1978", "event": "Dick Mackey and Rick Swenson were separated by only the tick of a clock for first and second place" }
+  ],
+  "artworks": [
+    { "title": "Musher and Dog Comparison Graphic", "medium": "Diagram", "description": "Organizer showing mushers receive attention and praise while dogs labor in obscurity and anonymity" },
+    { "title": "Contestant Mushers Chart", "medium": "Chart", "description": "Table showing where mushers live, their experience levels, and occupations including carpenters, lawyers, veterinarians, and more" },
+    { "title": "Volunteer Types Diagram", "medium": "Diagram", "description": "Graphic showing essential volunteers including veterinarians, pilots, computer operators, checkpoint workers, and search and rescue teams" },
+    { "title": "Sled Dog Paw Characteristics", "medium": "Diagram", "description": "Graphic with paws showing traits that make a great sled dog" },
+    { "title": "Dog Classes Connection Chart", "medium": "Diagram", "description": "Visual showing three classes of mushing dogs: sprinters, mid-distance runners, and marathoners" },
+    { "title": "Iditarod Race Sketch Timeline", "medium": "Map/Timeline", "description": "Illustrated timeline showing checkpoints and important details along the entire race route from start to finish" },
+    { "title": "Sedge-Tussock Tundra Visual", "medium": "Diagram", "description": "Illustration showing clumps of grass growing to 2 feet creating a natural frozen obstacle course" },
+    { "title": "McGrath Village History Graphic", "medium": "Timeline", "description": "Organizer showing McGrath settlement by Athabascans, gold miner arrival in 1904, town establishment in 1907, and current population" }
+  ],
+  "trueFalse": [
+    { "statement": "Snow machines and snowmobiles pushed dog sledding towards extinction in the mid-1960s.", "isTrue": true, "correction": "This new invention threatened the traditional practice of dog sledding in Alaska." },
+    { "statement": "Joe Redington owned 40 dogs after his first winter living in Alaska.", "isTrue": true, "correction": "This showed his quick commitment to the sport of dog mushing." },
+    { "statement": "All Iditarod mushers are professional mushers who earn their living from the sport.", "isTrue": false, "correction": "Only a handful are professional mushers; most are part-time or hobby mushers with other occupations." },
+    { "statement": "The prize purse has grown to over $500,000 since the 1970s.", "isTrue": true, "correction": "The race has steadily grown in prestige and prize money since its early years." },
+    { "statement": "Mushers receive too much credit for wins while dogs labor in obscurity and anonymity.", "isTrue": true, "correction": "With few exceptions, the dogs are the unsung heroes who don't receive recognition for their critical role." },
+    { "statement": "Siberian huskies were larger than Malamutes and other mixed-breed huskies.", "isTrue": false, "correction": "Siberian huskies were smaller and lighter but had more stamina and speed for long distances." },
+    { "statement": "Pre-race veterinarian check-ups of all race dogs were implemented in 1974.", "isTrue": true, "correction": "This was an important safety measure to protect the health of racing dogs." },
+    { "statement": "At least 10 dogs must be harnessed at all times during the race.", "isTrue": false, "correction": "A minimum of 5 dogs must be harnessed at all times during the race." },
+    { "statement": "The ceremonial start of the Iditarod Race begins in Willow.", "isTrue": false, "correction": "The ceremonial start is in Anchorage; the actual competitive race starts in Willow." },
+    { "statement": "Libby Riddles won the 1985 race after surviving a night on Norton Bay sea ice.", "isTrue": true, "correction": "Her brave decision to push through the storm created the 'Legend of Libby' and led to her victory." }
+  ],
+  "quiz": [
+    {
+      "question": "What new invention pushed dog sledding towards extinction in the mid-1960s?",
+      "options": ["Airplanes", "Snow machines and snowmobiles", "Trains", "Automobiles"],
+      "correctAnswer": "Snow machines and snowmobiles"
+    },
+    {
+      "question": "What was Dorothy Page tasked to plan as president of the Wasilla-Knik Centennial Committee?",
+      "options": ["A dog sled race", "A celebration for the 100th anniversary of the American purchase of Alaska", "A gold mining festival", "A winter carnival"],
+      "correctAnswer": "A celebration for the 100th anniversary of the American purchase of Alaska"
+    },
+    {
+      "question": "Who introduced Joe Redington to the Iditarod Trail and dog mushing in 1948?",
+      "options": ["Dorothy Page", "Lee Ellexson", "Leonhard Seppala", "Rick Swenson"],
+      "correctAnswer": "Lee Ellexson"
+    },
+    {
+      "question": "Why did some people call Joe Redington Sr. 'the Don Quixote of Alaska'?",
+      "options": ["He was from Spain", "He rode horses instead of sleds", "The proposed 1,000-mile race was thought to be an impossible dream", "He wrote novels about Alaska"],
+      "correctAnswer": "The proposed 1,000-mile race was thought to be an impossible dream"
+    },
+    {
+      "question": "In what year were pre-race veterinarian check-ups of all race dogs implemented?",
+      "options": ["1967", "1973", "1974", "1975"],
+      "correctAnswer": "1974"
+    },
+    {
+      "question": "What is the minimum number of dogs that must be harnessed at all times during the race?",
+      "options": ["3 dogs", "5 dogs", "7 dogs", "10 dogs"],
+      "correctAnswer": "5 dogs"
+    },
+    {
+      "question": "Where does the ceremonial start of the Iditarod Race begin?",
+      "options": ["Nome", "Willow", "Anchorage", "Seward"],
+      "correctAnswer": "Anchorage"
+    },
+    {
+      "question": "Why is the first 72 miles of the trail sometimes called 'Moose Alley'?",
+      "options": ["Moose are friendly there", "It's shaped like antlers", "Moose use the trail when snow limits their movement and won't move out of the way", "Moose racing occurs there"],
+      "correctAnswer": "Moose use the trail when snow limits their movement and won't move out of the way"
+    },
+    {
+      "question": "What is 'Farewell Burn' and why is it difficult to cross?",
+      "options": ["A hot spring area", "An area scarred by a 1976 fire with burned timber, stumps, and tussocks", "A volcanic crater", "A steep mountain pass"],
+      "correctAnswer": "An area scarred by a 1976 fire with burned timber, stumps, and tussocks"
+    },
+    {
+      "question": "Who won the 1985 Iditarod Race after surviving a harrowing night on Norton Bay sea ice?",
+      "options": ["Susan Butcher", "Libby Riddles", "Rick Swenson", "Emmitt Peters"],
+      "correctAnswer": "Libby Riddles"
+    },
+    {
+      "question": "What nickname was given to Emmitt Peters, winner of the 1975 race from Ruby?",
+      "options": ["The Alaska Fox", "The Yukon Fox", "The Ice Runner", "The Ruby Racer"],
+      "correctAnswer": "The Yukon Fox"
+    },
+    {
+      "question": "In what year were Dick Mackey and Rick Swenson separated by only the tick of a clock?",
+      "options": ["1975", "1977", "1978", "1982"],
+      "correctAnswer": "1978"
+    }
+  ]
+}
