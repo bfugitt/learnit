@@ -61,7 +61,6 @@
     <!-- CONFIGURATION -->
     <script>
         // === MODULE LIST ===
-        // These match the files listed in your modules.json
         const MODULE_LIST = [
             { file: "spanish_1.json", name: "Spanish: Holidays & Faith" },
             { file: "potter1-3.json", name: "Beatrix Potter 1-3" },
@@ -176,7 +175,6 @@
             
             init() {
                 this.renderMenu();
-                // Unlock audio context
                 document.body.addEventListener('click', () => { if (AudioSys.ctx.state === 'suspended') AudioSys.ctx.resume(); }, {once:true});
             },
 
@@ -211,7 +209,6 @@
                     if (!res.ok) throw new Error("File not found");
                     this.currentData = await res.json();
                     this.currentData.filename = mod.file;
-                    // Use title from JSON if available, otherwise fallback to module list name
                     const title = (this.currentData.moduleInfo && this.currentData.moduleInfo.title) ? this.currentData.moduleInfo.title : mod.name;
                     this.showActivitySelect(title);
                 } catch (e) {
@@ -220,7 +217,6 @@
             },
 
             handleTitleClick() {
-                // If we have a module loaded, go to its activity Select. Otherwise go to Main Menu.
                 if (this.currentData) {
                     const modTitle = MODULE_LIST.find(m => m.file === this.currentData.filename)?.name || "Activities";
                     this.showActivitySelect(modTitle);
@@ -248,8 +244,6 @@
                 const d = this.currentData;
                 let hasActivities = false;
 
-                // --- DATA DETECTION STRATEGY (Supports Legacy tags) ---
-                
                 // 1. QUIZ (Legacy: "quiz")
                 if (d.quiz && d.quiz.length > 0) {
                     createBtn('ph-question', 'Standard Quiz', () => QuizEngine.start(d.quiz, 'Quiz'), 'border-blue-400');
@@ -262,29 +256,33 @@
                     hasActivities = true;
                 }
 
-                // 3. PEOPLE (Legacy: "people" or just implicit in "locations" sometimes, but typically "people")
-                // Added check for "people" array
+                // 3. PEOPLE (Legacy: "people")
                 if (d.people && d.people.length > 0) {
                     createBtn('ph-user', 'People', () => QuizEngine.start(this.transformConnectionsToQuiz(d.people, 'person'), 'People'), 'border-orange-400');
                     hasActivities = true;
                 }
 
                 // 4. PLACES / LOCATIONS (Legacy: "locations", Modern: "places")
-                // We combine both into one array to be safe
                 const placesData = [...(d.places || []), ...(d.locations || [])];
                 if (placesData.length > 0) {
                     createBtn('ph-map-pin', 'Places & Locations', () => QuizEngine.start(this.transformConnectionsToQuiz(placesData, 'place'), 'Places'), 'border-red-400');
                     hasActivities = true;
                 }
 
-                // 5. DATES / TIMELINE (Legacy: "timeline", Modern: "dates")
+                // 5. ARTWORKS / GALLERY (Modern: "artworks")
+                if (d.artworks && d.artworks.length > 0) {
+                    createBtn('ph-paint-brush', 'The Gallery', () => QuizEngine.start(this.transformConnectionsToQuiz(d.artworks, 'artwork'), 'Artworks'), 'border-pink-400');
+                    hasActivities = true;
+                }
+
+                // 6. DATES / TIMELINE (Legacy: "timeline", Modern: "dates")
                 const timelineData = [...(d.dates || []), ...(d.timeline || [])];
                 if (timelineData.length > 0) {
                     createBtn('ph-clock', 'Timeline Challenge', () => QuizEngine.start(this.transformDatesToQuiz(timelineData), 'Dates'), 'border-purple-400');
                     hasActivities = true;
                 }
                 
-                // 6. TRUE / FALSE (Legacy: "trueFalse")
+                // 7. TRUE / FALSE (Legacy: "trueFalse")
                 if (d.trueFalse && d.trueFalse.length > 0) {
                     createBtn('ph-check-circle', 'True or False', () => QuizEngine.start(this.transformTrueFalseToQuiz(d.trueFalse), 'True/False'), 'border-indigo-400');
                     hasActivities = true;
@@ -295,7 +293,7 @@
                         <div class="col-span-full text-center bg-white p-8 rounded-xl border border-red-200">
                             <i class="ph ph-warning text-4xl text-red-300 mb-2"></i>
                             <p class="text-gray-500">No compatible games found in this module.</p>
-                            <p class="text-xs text-gray-400 mt-2">Checked for: quiz, vocabulary, people, places/locations, dates/timeline, trueFalse.</p>
+                            <p class="text-xs text-gray-400 mt-2">Checked for: quiz, vocabulary, people, places/locations, artworks, dates/timeline, trueFalse.</p>
                         </div>`;
                 }
             },
@@ -304,7 +302,6 @@
             
             transformVocabToQuiz(list) {
                 return list.map(v => {
-                    // Safe property access
                     const term = v.term || v.word;
                     const def = v.definition || v.meaning;
                     
@@ -316,7 +313,6 @@
             
             transformDatesToQuiz(list) {
                 return list.map(d => {
-                    // Handle "date" OR "year"
                     const dateVal = d.date || d.year;
                     const evt = d.event || d.description;
 
@@ -328,31 +324,39 @@
 
             transformConnectionsToQuiz(list, type) {
                 return list.map(item => {
-                    // Smart property detection for legacy files
-                    const name = item.name || item.term || item.location || item.place || item.person; 
-                    const desc = item.role || item.description || item.definition || item.fact;
+                    // UPDATED: Now looks for title (artworks), term, place, person, location
+                    const name = item.name || item.title || item.term || item.location || item.place || item.person; 
+                    // UPDATED: Now looks for significance (locations), medium, fact
+                    const desc = item.role || item.description || item.definition || item.fact || item.significance || (item.medium ? item.medium + ": " + item.description : null);
                     
-                    const others = list.filter(i => i !== item).sort(() => 0.5 - Math.random()).slice(0, 3).map(i => i.name || i.term || i.location || i.place || i.person);
+                    const others = list.filter(i => i !== item).sort(() => 0.5 - Math.random()).slice(0, 3).map(i => i.name || i.title || i.term || i.location || i.place || i.person);
                     const options = [...others, name].sort(() => 0.5 - Math.random());
                     
                     let prompt = "Who or what is this?";
                     if(type === 'place') prompt = "Where is this?";
                     if(type === 'person') prompt = "Who is this person?";
+                    if(type === 'artwork') prompt = "Which work of art is this?";
                     
-                    return { question: `${prompt}<br><br><i>"${desc}"</i>`, options: options, correctAnswer: name };
+                    return { question: `${prompt}<br><br><i>"${desc || 'No description available'}"</i>`, options: options, correctAnswer: name };
                 });
             },
             
             transformTrueFalseToQuiz(list) {
                 return list.map(item => {
-                    // Legacy TrueFalse usually has {question: "...", answer: "true"}
-                    // Normalize answer to string "True" or "False" with capital first letter
-                    let correct = String(item.answer).toLowerCase() === 'true' ? 'True' : 'False';
+                    // UPDATED: Now checks for 'statement' (New Schema) OR 'question' (Legacy)
+                    const qText = item.statement || item.question;
+                    
+                    // UPDATED: Now checks for 'isTrue' (New Schema) OR 'answer' (Legacy)
+                    let correctVal = item.answer;
+                    if(item.isTrue !== undefined) correctVal = item.isTrue;
+                    
+                    // Normalize to String "True" or "False"
+                    const correctStr = String(correctVal).toLowerCase() === 'true' ? 'True' : 'False';
                     
                     return { 
-                        question: item.question, 
+                        question: qText || "True or False?", 
                         options: ['True', 'False'], 
-                        correctAnswer: correct 
+                        correctAnswer: correctStr 
                     };
                 });
             },
@@ -392,7 +396,6 @@
             
             start(data, type) {
                 App.switchView('view-quiz');
-                // Check if data exists
                 if(!data || data.length === 0) {
                     alert("No questions available for this activity.");
                     App.handleTitleClick();
