@@ -126,6 +126,19 @@
             <button onclick="App.showMenu()" class="mt-8 text-reggio-stone/50 hover:text-reggio-stone flex items-center gap-2"><i class="ph ph-arrow-left"></i> Return to Garden</button>
         </div>
 
+        <!-- VIEW: STUDY GUIDE -->
+        <div id="view-study" class="hidden w-full max-w-4xl animate-fade-in flex-col items-center h-full">
+            <div class="w-full bg-white rounded-2xl shadow-sm border border-reggio-wood/20 overflow-hidden flex flex-col max-h-full">
+                <div class="bg-reggio-cream p-4 border-b border-reggio-sage/20 flex justify-between items-center">
+                    <h3 class="text-xl font-bold text-reggio-darkSage"><i class="ph ph-notebook mr-2"></i>Study Guide</h3>
+                    <button onclick="App.handleTitleClick()" class="text-sm text-gray-500 hover:text-reggio-darkSage"><i class="ph ph-x text-lg"></i> Close</button>
+                </div>
+                <div id="study-content" class="overflow-y-auto p-6 space-y-8">
+                    <!-- Study cards injected here -->
+                </div>
+            </div>
+        </div>
+
         <!-- VIEW: QUIZ ENGINE (Shared by all games) -->
         <div id="view-quiz" class="hidden w-full max-w-3xl flex-col items-center h-full">
             <div class="w-full h-2 bg-gray-200 rounded-full mb-6 overflow-hidden"><div id="progress-fill" class="h-full bg-reggio-sage transition-all duration-500" style="width: 0%"></div></div>
@@ -242,69 +255,111 @@
                 };
 
                 const d = this.currentData;
-                let hasActivities = false;
 
-                // 1. QUIZ (Legacy: "quiz")
+                // --- 0. STUDY GUIDE (Always available) ---
+                createBtn('ph-notebook', 'Study Guide', () => this.renderStudyGuide(), 'border-reggio-darkSage');
+
+                // --- 1. QUIZ ---
                 if (d.quiz && d.quiz.length > 0) {
                     createBtn('ph-question', 'Standard Quiz', () => QuizEngine.start(d.quiz, 'Quiz'), 'border-blue-400');
-                    hasActivities = true;
                 }
 
-                // 2. VOCABULARY (Legacy: "vocabulary")
+                // --- 2. VOCABULARY ---
                 if (d.vocabulary && d.vocabulary.length > 0) {
                     createBtn('ph-book-bookmark', 'Vocabulary', () => QuizEngine.start(this.transformVocabToQuiz(d.vocabulary), 'Vocabulary'), 'border-green-400');
-                    hasActivities = true;
                 }
 
-                // 3. PEOPLE (Legacy: "people")
+                // --- 3. PEOPLE ---
                 if (d.people && d.people.length > 0) {
                     createBtn('ph-user', 'People', () => QuizEngine.start(this.transformConnectionsToQuiz(d.people, 'person'), 'People'), 'border-orange-400');
-                    hasActivities = true;
                 }
 
-                // 4. PLACES / LOCATIONS (Legacy: "locations", Modern: "places")
+                // --- 4. PLACES ---
                 const placesData = [...(d.places || []), ...(d.locations || [])];
                 if (placesData.length > 0) {
                     createBtn('ph-map-pin', 'Places & Locations', () => QuizEngine.start(this.transformConnectionsToQuiz(placesData, 'place'), 'Places'), 'border-red-400');
-                    hasActivities = true;
                 }
 
-                // 5. ARTWORKS / GALLERY (Modern: "artworks")
+                // --- 5. ARTWORKS / IMAGES ---
                 if (d.artworks && d.artworks.length > 0) {
-                    createBtn('ph-paint-brush', 'The Gallery', () => QuizEngine.start(this.transformConnectionsToQuiz(d.artworks, 'artwork'), 'Artworks'), 'border-pink-400');
-                    hasActivities = true;
+                    createBtn('ph-image', 'Artworks & Images', () => QuizEngine.start(this.transformConnectionsToQuiz(d.artworks, 'artwork'), 'Artworks & Images'), 'border-pink-400');
                 }
 
-                // 6. DATES / TIMELINE (Legacy: "timeline", Modern: "dates")
+                // --- 6. DATES ---
                 const timelineData = [...(d.dates || []), ...(d.timeline || [])];
                 if (timelineData.length > 0) {
                     createBtn('ph-clock', 'Timeline Challenge', () => QuizEngine.start(this.transformDatesToQuiz(timelineData), 'Dates'), 'border-purple-400');
-                    hasActivities = true;
                 }
                 
-                // 7. TRUE / FALSE (Legacy: "trueFalse")
+                // --- 7. TRUE / FALSE ---
                 if (d.trueFalse && d.trueFalse.length > 0) {
                     createBtn('ph-check-circle', 'True or False', () => QuizEngine.start(this.transformTrueFalseToQuiz(d.trueFalse), 'True/False'), 'border-indigo-400');
-                    hasActivities = true;
-                }
-
-                if (!hasActivities) {
-                    grid.innerHTML = `
-                        <div class="col-span-full text-center bg-white p-8 rounded-xl border border-red-200">
-                            <i class="ph ph-warning text-4xl text-red-300 mb-2"></i>
-                            <p class="text-gray-500">No compatible games found in this module.</p>
-                            <p class="text-xs text-gray-400 mt-2">Checked for: quiz, vocabulary, people, places/locations, artworks, dates/timeline, trueFalse.</p>
-                        </div>`;
                 }
             },
 
+            // --- STUDY GUIDE RENDERER ---
+            renderStudyGuide() {
+                this.switchView('view-study');
+                const content = document.getElementById('study-content');
+                content.innerHTML = '';
+                const d = this.currentData;
+
+                const createSection = (title, items, renderer) => {
+                    if(!items || items.length === 0) return;
+                    const sec = document.createElement('div');
+                    sec.innerHTML = `<h4 class="font-bold text-lg text-reggio-darkSage mb-3 border-b border-reggio-sage/20 pb-1">${title}</h4>`;
+                    const grid = document.createElement('div');
+                    grid.className = "grid grid-cols-1 md:grid-cols-2 gap-4";
+                    items.forEach(item => {
+                        const card = document.createElement('div');
+                        card.className = "bg-white p-4 rounded-xl border border-reggio-wood/20 shadow-sm";
+                        card.innerHTML = renderer(item);
+                        grid.appendChild(card);
+                    });
+                    sec.appendChild(grid);
+                    content.appendChild(sec);
+                };
+
+                // Vocabulary
+                createSection('Vocabulary', d.vocabulary, (i) => 
+                    `<div class="font-bold text-reggio-stone">${i.term || i.word}</div><div class="text-sm text-gray-600">${i.definition || i.meaning}</div>`
+                );
+
+                // People
+                createSection('Important People', d.people, (i) => 
+                    `<div class="font-bold text-reggio-stone">${i.name || i.term}</div><div class="text-sm text-gray-600">${i.role || i.description || i.fact}</div>`
+                );
+
+                // Places
+                const places = [...(d.places || []), ...(d.locations || [])];
+                createSection('Places & Locations', places, (i) => 
+                    `<div class="font-bold text-reggio-stone">${i.name || i.location}</div><div class="text-sm text-gray-600">${i.significance || i.description}</div>`
+                );
+
+                // Timeline
+                const dates = [...(d.dates || []), ...(d.timeline || [])];
+                createSection('Timeline', dates, (i) => 
+                    `<div class="font-bold text-reggio-clay">${i.year || i.date}</div><div class="text-sm text-reggio-stone">${i.event || i.description}</div>`
+                );
+
+                // Artworks
+                createSection('Artworks & Images', d.artworks, (i) => 
+                    `<div class="font-bold text-reggio-stone">${i.title}</div><div class="text-xs text-gray-400 mb-1">${i.medium || ''}</div><div class="text-sm text-gray-600">${i.description}</div>`
+                );
+
+                // Facts (True/False)
+                createSection('Facts to Know', d.trueFalse, (i) => {
+                    const isTrue = (i.isTrue === true || String(i.answer).toLowerCase() === 'true');
+                    const icon = isTrue ? '<i class="ph-fill ph-check text-green-500"></i>' : '<i class="ph-fill ph-x text-red-400"></i>';
+                    return `<div class="flex gap-2"><div class="mt-1">${icon}</div><div class="text-sm text-gray-600">${i.statement || i.question}</div></div>${i.correction ? `<div class="text-xs text-reggio-clay mt-1 ml-6">Note: ${i.correction}</div>` : ''}`
+                });
+            },
+
             // --- DATA TRANSFORMERS ---
-            
             transformVocabToQuiz(list) {
                 return list.map(v => {
                     const term = v.term || v.word;
                     const def = v.definition || v.meaning;
-                    
                     const others = list.filter(i => i !== v).sort(() => 0.5 - Math.random()).slice(0, 3).map(i => i.definition || i.meaning);
                     const options = [...others, def].sort(() => 0.5 - Math.random());
                     return { question: `What is the definition of:<br><b class="text-reggio-darkSage text-3xl block mt-2">"${term}"</b>`, options: options, correctAnswer: def };
@@ -315,7 +370,6 @@
                 return list.map(d => {
                     const dateVal = d.date || d.year;
                     const evt = d.event || d.description;
-
                     const others = list.filter(i => i !== d).sort(() => 0.5 - Math.random()).slice(0, 3).map(i => i.date || i.year);
                     const options = [...others, dateVal].sort(() => 0.5 - Math.random());
                     return { question: `When did this happen?<br><br><i>"${evt}"</i>`, options: options, correctAnswer: dateVal };
@@ -324,9 +378,7 @@
 
             transformConnectionsToQuiz(list, type) {
                 return list.map(item => {
-                    // UPDATED: Now looks for title (artworks), term, place, person, location
                     const name = item.name || item.title || item.term || item.location || item.place || item.person; 
-                    // UPDATED: Now looks for significance (locations), medium, fact
                     const desc = item.role || item.description || item.definition || item.fact || item.significance || (item.medium ? item.medium + ": " + item.description : null);
                     
                     const others = list.filter(i => i !== item).sort(() => 0.5 - Math.random()).slice(0, 3).map(i => i.name || i.title || i.term || i.location || i.place || i.person);
@@ -335,7 +387,7 @@
                     let prompt = "Who or what is this?";
                     if(type === 'place') prompt = "Where is this?";
                     if(type === 'person') prompt = "Who is this person?";
-                    if(type === 'artwork') prompt = "Which work of art is this?";
+                    if(type === 'artwork') prompt = "What is this?"; // Updated Prompt
                     
                     return { question: `${prompt}<br><br><i>"${desc || 'No description available'}"</i>`, options: options, correctAnswer: name };
                 });
@@ -343,16 +395,10 @@
             
             transformTrueFalseToQuiz(list) {
                 return list.map(item => {
-                    // UPDATED: Now checks for 'statement' (New Schema) OR 'question' (Legacy)
                     const qText = item.statement || item.question;
-                    
-                    // UPDATED: Now checks for 'isTrue' (New Schema) OR 'answer' (Legacy)
                     let correctVal = item.answer;
                     if(item.isTrue !== undefined) correctVal = item.isTrue;
-                    
-                    // Normalize to String "True" or "False"
                     const correctStr = String(correctVal).toLowerCase() === 'true' ? 'True' : 'False';
-                    
                     return { 
                         question: qText || "True or False?", 
                         options: ['True', 'False'], 
@@ -362,9 +408,9 @@
             },
 
             switchView(id) {
-                ['view-menu', 'view-activity-select', 'view-quiz'].forEach(v => document.getElementById(v).classList.add('hidden'));
+                ['view-menu', 'view-activity-select', 'view-quiz', 'view-study'].forEach(v => document.getElementById(v).classList.add('hidden'));
                 
-                if(id !== 'view-menu' && id !== 'view-activity-select') document.getElementById('game-stats').classList.remove('hidden');
+                if(id !== 'view-menu' && id !== 'view-activity-select' && id !== 'view-study') document.getElementById('game-stats').classList.remove('hidden');
                 else document.getElementById('game-stats').classList.add('hidden');
                 
                 const el = document.getElementById(id);
@@ -393,6 +439,8 @@
             idx: 0,
             score: 0,
             lives: 0,
+            currentType: '',
+            guessesOnCurrent: 0, // Track guesses per question
             
             start(data, type) {
                 App.switchView('view-quiz');
@@ -406,6 +454,9 @@
                 this.idx = 0;
                 this.score = 0;
                 this.lives = TEACHER_SETTINGS.startingLives;
+                this.currentType = type;
+                this.guessesOnCurrent = 0;
+                
                 document.getElementById('q-category').innerText = type.toUpperCase();
                 this.updateUI();
                 this.render();
@@ -413,6 +464,8 @@
 
             render() {
                 if(this.idx >= this.questions.length) return this.end();
+                this.guessesOnCurrent = 0; // Reset guesses for new question
+                
                 const q = this.questions[this.idx];
                 document.getElementById('q-text').innerHTML = q.question;
                 document.getElementById('progress-fill').style.width = ((this.idx / this.questions.length) * 100) + '%';
@@ -430,28 +483,62 @@
 
             check(selected, correct, btn) {
                 if(btn.disabled) return;
+                const isTF = (this.currentType === 'True/False');
                 const btns = document.getElementById('quiz-options').children;
-                Array.from(btns).forEach(b => b.disabled = true);
 
                 if (selected === correct) {
+                    // CORRECT
                     AudioSys.correct();
                     btn.classList.add('bg-green-100', 'border-green-500');
+                    Array.from(btns).forEach(b => b.disabled = true); // Disable all
                     this.score += TEACHER_SETTINGS.pointsPerCorrect;
                     this.showFeedback(true);
                     setTimeout(() => { this.idx++; this.render(); }, 1200);
+
                 } else {
-                    AudioSys.wrong();
-                    btn.classList.add('bg-red-100', 'border-red-500');
-                    Array.from(btns).forEach(b => { if(b.innerHTML === correct) b.classList.add('bg-green-50', 'border-green-300'); });
+                    // WRONG
                     this.lives--;
-                    this.showFeedback(false);
-                    if(this.lives <= 0) setTimeout(() => this.end(false), 1500);
-                    else setTimeout(() => { this.idx++; this.render(); }, 1500);
+                    this.updateUI();
+                    
+                    if (isTF || this.lives <= 0) {
+                        // Immediate Fail Logic (True/False OR Dead)
+                        AudioSys.wrong();
+                        btn.classList.add('bg-red-100', 'border-red-500');
+                        Array.from(btns).forEach(b => { 
+                            if(b.innerHTML === correct) b.classList.add('bg-green-50', 'border-green-300'); 
+                            b.disabled = true;
+                        });
+                        this.showFeedback(false, "The answer was: " + correct);
+                        setTimeout(() => { 
+                            if(this.lives <= 0) this.end(false);
+                            else { this.idx++; this.render(); }
+                        }, 2000); // Longer delay to read answer
+                    } else {
+                        // MULTI-GUESS Logic (Standard Quiz)
+                        this.guessesOnCurrent++;
+                        
+                        if (this.guessesOnCurrent < 2) {
+                            // First Wrong Guess: Just mark wrong, remove heart, let them try again
+                            AudioSys.wrong();
+                            btn.classList.add('bg-red-100', 'border-red-300', 'opacity-50');
+                            btn.disabled = true;
+                            this.showFeedback(false, "Try Again!");
+                        } else {
+                            // Second Wrong Guess: Fail Question
+                            AudioSys.wrong();
+                            btn.classList.add('bg-red-100', 'border-red-500');
+                            Array.from(btns).forEach(b => { 
+                                if(b.innerHTML === correct) b.classList.add('bg-green-50', 'border-green-300'); 
+                                b.disabled = true;
+                            });
+                            this.showFeedback(false, "Correct: " + correct);
+                            setTimeout(() => { this.idx++; this.render(); }, 2000);
+                        }
+                    }
                 }
-                this.updateUI();
             },
 
-            showFeedback(isCorrect) {
+            showFeedback(isCorrect, customMsg) {
                 const ol = document.getElementById('feedback-overlay');
                 const box = document.getElementById('feedback-box');
                 const icon = document.getElementById('fb-icon');
@@ -468,7 +555,7 @@
                 } else {
                     box.className = "bg-white/95 backdrop-blur shadow-2xl rounded-2xl p-8 transform scale-100 transition-transform duration-300 text-center border-4 border-red-400";
                     icon.className = "ph-fill ph-x-circle text-6xl text-red-400 mb-2";
-                    text.innerText = "Keep Trying!";
+                    text.innerText = customMsg || "Keep Trying!";
                 }
 
                 setTimeout(() => {
