@@ -1,0 +1,352 @@
+{
+"moduleInfo": {
+"title": "Animal Kingdom: Practice 1",
+"subject": "Science",
+"level": "Junior High"
+},
+"vocabulary": [
+{
+"term": "birds",
+"definition": "Warm-blooded, egg-laying animals, most of which are able to fly. Their features include feathers, powerful wings, and hollow bones."
+},
+{
+"term": "predator",
+"definition": "An animal that hunts, kills, and eats other animals."
+},
+{
+"term": "preening",
+"definition": "When a bird cleans and smooths its feathers with its beak."
+},
+{
+"term": "skeleton",
+"definition": "The rigid framework (usually of bone or cartilage) of an animal’s body."
+},
+{
+"term": "nectar",
+"definition": "Sweet liquid produced by flowers; some birds and insects feed on it."
+},
+{
+"term": "raptor",
+"definition": "Birds of prey that feed wholly or chiefly on meat taken by hunting or on carrion."
+},
+{
+"term": "stoop",
+"definition": "To fly or dive down swiftly, usually to catch prey."
+},
+{
+"term": "migration",
+"definition": "Moving from one place to another according to the seasons, usually to find food or breed."
+},
+{
+"term": "reptile",
+"definition": "A cold-blooded, usually egg-laying vertebrate covered with scales or horny plates that breathes through lungs."
+},
+{
+"term": "vertebrate",
+"definition": "An animal that has a backbone."
+},
+{
+"term": "cold-blooded",
+"definition": "An animal whose body temperature depends on their surroundings."
+},
+{
+"term": "fish",
+"definition": "Cold-blooded animals that live in water. Most have gills that absorb oxygen from the water and the majority have fins and scales."
+},
+{
+"term": "gills",
+"definition": "Feathery structures on the side of a fish’s head that extract oxygen from the water."
+},
+{
+"term": "colony",
+"definition": "A localized population of a species or organism."
+},
+{
+"term": "pollination",
+"definition": "The transfer of pollen from anther to stigma."
+},
+{
+"term": "arachnid",
+"definition": "A class of arthropods including spiders, scorpions, mites, and ticks, having a segmented body divided into two regions."
+},
+{
+"term": "carapace",
+"definition": "A bony case or shield covering the back or part of the back of an animal."
+},
+{
+"term": "scavenge",
+"definition": "To feed on the carcasses of other animals."
+},
+{
+"term": "decomposer",
+"definition": "An animal that helps to decay and recycle vast amounts of organic waste."
+},
+{
+"term": "tentacle",
+"definition": "A long, bendy, armlike body part that aquatic animals such as squid and cuttlefish use for touching and grasping."
+}
+],
+"locations": [
+{
+"name": "Florida",
+"significance": "Its swamps, rivers, and lakes serve as the primary habitat for the American alligator."
+},
+{
+"name": "Columbia",
+"significance": "Home to the endangered Doris Swanson’s poison dart frog, whose territory covers less than 0.2 square miles of forest here."
+},
+{
+"name": "Indian Ocean",
+"significance": "The warm shallow waters around coral reefs here are the habitat for the giant grouper fish."
+},
+{
+"name": "Pacific Ocean",
+"significance": "The western and central parts of this ocean provide a habitat for the giant grouper fish."
+},
+{
+"name": "Caribbean",
+"significance": "The waters where the endangered staghorn coral forms branching shapes like antlers on upper to mid-reef slopes."
+},
+{
+"name": "Europe",
+"significance": "One of the regions where the Golden Eagle is found soaring through the sky."
+},
+{
+"name": "Asia",
+"significance": "A continent where the Golden Eagle is commonly found."
+},
+{
+"name": "North Africa",
+"significance": "A geographic region that supports populations of the Golden Eagle."
+}
+],
+"trueFalse": [
+{
+"statement": "Hard corals build huge coral reefs using an external skeleton made of limestone.",
+"isTrue": false,
+"correction": "Hard corals have an internal skeleton made of limestone, not an external one."
+},
+{
+"statement": "Soft corals often look like plants and possess a flexible internal skeleton.",
+"isTrue": true,
+"correction": "They have a flexible internal skeleton that allows them to sway in the water."
+},
+{
+"statement": "All corals grow from one tiny animal called a polyp when it produces new polyps to create a coral.",
+"isTrue": true,
+"correction": "Polyps are the building blocks of coral reefs."
+},
+{
+"statement": "The orange cup coral attaches to rocks along the deep ocean floor.",
+"isTrue": false,
+"correction": "The orange cup coral actually attaches to rocks in tidal pools."
+},
+{
+"statement": "The staghorn coral is located in upper to mid-reef slopes and lagoons in waters of the Caribbean.",
+"isTrue": true,
+"correction": "It thrives in the shallow waters of the Caribbean."
+},
+{
+"statement": "The polyps that form a brain coral arrange themselves in wandering lines giving it a wrinkled appearance like a brain.",
+"isTrue": true,
+"correction": "This unique arrangement gives the brain coral its name."
+},
+{
+"statement": "Mute swans make their nests high in trees away from predators.",
+"isTrue": false,
+"correction": "It is the Mandarin duck that makes its nest high in trees, not the mute swan."
+},
+{
+"statement": "The American alligator spends almost all of its time in fresh water and is a good swimmer that primarily hunts fish.",
+"isTrue": false,
+"correction": "That describes the Gharial; the American alligator lives in swamps, rivers, and lakes of Florida."
+},
+{
+"statement": "The golden poison dart frog is the most poisonous frog on earth, containing enough poison in its skin to kill 10 humans.",
+"isTrue": true,
+"correction": "It is considered one of the most toxic animals on the planet."
+},
+{
+"statement": "Bony fish account for 9 out of 10 species of fish.",
+"isTrue": true,
+"correction": "Bony fish are the most diverse and abundant class of fish."
+},
+{
+"statement": "The estuarine stonefish has 13 venomous spines along its back that could kill a human if stepped on.",
+"isTrue": true,
+"correction": "It is the most venomous fish in the world."
+},
+{
+"statement": "Giant grouper fish live in large schools in the deep ocean.",
+"isTrue": false,
+"correction": "They live alone in warm, shallow waters around coral reefs."
+},
+{
+"statement": "Jellyfish move using jet propulsion when they aren't floating in the current.",
+"isTrue": true,
+"correction": "They contract their bell to push water out and propel themselves forward."
+},
+{
+"statement": "A treehopper avoids predators by disguising itself as a thorn on a branch.",
+"isTrue": true,
+"correction": "This disguise, along with foul-tasting chemicals, protects them from being eaten."
+},
+{
+"statement": "The blue starfish cannot survive if its limbs are torn apart.",
+"isTrue": false,
+"correction": "The blue starfish can regrow into 5 separate starfish even if all 5 limbs are torn apart."
+}
+],
+"quiz": [
+{
+"question": "What is the term for when a bird cleans and smooths its feathers with its beak?",
+"options": [
+"Preening",
+"Molting",
+"Shedding",
+"Flocking"
+],
+"correctAnswer": "Preening"
+},
+{
+"question": "Which characteristic is NOT typical of a bird?",
+"options": [
+"Toothed jaws",
+"Feathers",
+"Hollow bones",
+"Powerful wings"
+],
+"correctAnswer": "Toothed jaws"
+},
+{
+"question": "Where does the extremely vulnerable Doris Swanson’s poison dart frog live?",
+"options": [
+"Columbia",
+"Brazil",
+"Costa Rica",
+"Peru"
+],
+"correctAnswer": "Columbia"
+},
+{
+"question": "How many venomous spines does the estuarine stonefish have along its back?",
+"options": [
+"13",
+"5",
+"8",
+"20"
+],
+"correctAnswer": "13"
+},
+{
+"question": "Which crocodile feeds by pulling its large prey into the water and spinning around to tear off chunks?",
+"options": [
+"Nile crocodile",
+"Dwarf crocodile",
+"American alligator",
+"Gharial"
+],
+"correctAnswer": "Nile crocodile"
+},
+{
+"question": "Which frog collects poison from the bugs it eats and deposits the poison on its skin?",
+"options": [
+"Harlequin poison dart frog",
+"Golden poison dart frog",
+"Dyeing poison dart frog",
+"Green and black poison dart frog"
+],
+"correctAnswer": "Harlequin poison dart frog"
+},
+{
+"question": "What do manta rays use to funnel water and prey into their mouths?",
+"options": [
+"Large lobes on the side of the head",
+"Pectoral fins",
+"Specialized tentacles",
+"A tubular proboscis"
+],
+"correctAnswer": "Large lobes on the side of the head"
+},
+{
+"question": "Which deep-sea fish has a mouth much wider than its body and an expanding stomach to consume food larger than itself?",
+"options": [
+"Pelican eel",
+"Sloane’s viperfish",
+"Metallic lantern fish",
+"Yellow goosefish"
+],
+"correctAnswer": "Pelican eel"
+},
+{
+"question": "Which poor swimmer dwells at 3,280 ft deep and lies in wait for its prey?",
+"options": [
+"Yellow goosefish",
+"Pelican eel",
+"Atlantic football fish",
+"Lowcrest hatchetfish"
+],
+"correctAnswer": "Yellow goosefish"
+},
+{
+"question": "Which endangered coral forms branching shapes like antlers in the waters of the Caribbean?",
+"options": [
+"Staghorn coral",
+"Brain coral",
+"Orange cup coral",
+"Soft coral"
+],
+"correctAnswer": "Staghorn coral"
+},
+{
+"question": "What insect avoids predators by disguising itself as a thorn and containing foul-tasting chemicals?",
+"options": [
+"Treehopper",
+"Periodical cicada",
+"Assassin bug",
+"Forest shield bug"
+],
+"correctAnswer": "Treehopper"
+},
+{
+"question": "Which sea creature can regrow into separate individuals if its limbs are completely torn apart?",
+"options": [
+"Blue starfish",
+"Crown-of-thorns starfish",
+"Common starfish",
+"Violet sea apple"
+],
+"correctAnswer": "Blue starfish"
+},
+{
+"question": "What is the favorite food of the Crown-of-thorns starfish, which can eat voraciously and damage habitats?",
+"options": [
+"Corals",
+"Bivalve mollusks",
+"Plankton",
+"Decaying organic matter"
+],
+"correctAnswer": "Corals"
+},
+{
+"question": "How does the common starfish eat bivalve mollusks like mussels and clams?",
+"options": [
+"Pushing its stomach out of its body and inside the shell",
+"Swallowing the entire shell whole",
+"Crushing the shell with its powerful jaws",
+"Injecting venom to dissolve the shell from the outside"
+],
+"correctAnswer": "Pushing its stomach out of its body and inside the shell"
+},
+{
+"question": "What material makes up the internal skeleton of hard corals?",
+"options": [
+"Limestone",
+"Keratin",
+"Chitin",
+"Cartilage"
+],
+"correctAnswer": "Limestone"
+}
+]
+}
